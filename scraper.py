@@ -155,16 +155,45 @@ def scrape_quest_info(wiki_url):
 @app.route('/api/quest/<path:wiki_url>')
 def get_quest_info(wiki_url):
     """Endpoint para obter informações da quest"""
-    # Decodificar a URL
-    from urllib.parse import unquote
+    from urllib.parse import unquote, urlparse, urlunparse, quote
+    
+    # Decodificar a URL (pode estar codificada múltiplas vezes)
     full_url = unquote(wiki_url)
+    
+    # Decodificar novamente se necessário (para URLs duplamente codificadas)
+    decoded = unquote(full_url)
+    while decoded != full_url:
+        full_url = decoded
+        decoded = unquote(full_url)
     
     # Se não começar com http, adicionar
     if not full_url.startswith('http'):
         full_url = 'https://' + full_url
     
-    quest_info = scrape_quest_info(full_url)
-    return jsonify(quest_info)
+    # Corrigir em-dash (–) para hífen normal (-) na URL
+    # A wiki pode não aceitar em-dash codificado
+    parsed = urlparse(full_url)
+    path_decoded = unquote(parsed.path)
+    
+    # Substituir em-dash e outros caracteres especiais por hífen
+    path_decoded = path_decoded.replace('–', '-').replace('—', '-')
+    
+    # Recodificar o path corretamente
+    path_encoded = quote(path_decoded, safe='/')
+    corrected_url = urlunparse((parsed.scheme, parsed.netloc, path_encoded, parsed.params, parsed.query, parsed.fragment))
+    
+    # Tentar fazer a requisição com a URL corrigida
+    try:
+        quest_info = scrape_quest_info(corrected_url)
+        return jsonify(quest_info)
+    except Exception as e:
+        # Se ainda falhar, tentar com a URL original
+        try:
+            quest_info = scrape_quest_info(full_url)
+            return jsonify(quest_info)
+        except Exception as e2:
+            # Se ainda falhar, retornar erro
+            return jsonify({'error': f'Erro ao buscar quest: {str(e2)}. URL tentada: {corrected_url}'}), 500
 
 @app.route('/quest-details.html')
 def quest_details_page():

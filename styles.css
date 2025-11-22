@@ -630,11 +630,20 @@ h1 {
     width: 100%;
     height: 100%;
     animation: fadeIn 0.3s ease;
-    overflow-y: auto;
+    overflow: hidden;
 }
 
 .screen.active {
     display: block;
+}
+
+/* Tela de detalhes específica - tudo em uma tela sem scroll */
+#questDetailsScreen .container {
+    overflow: hidden;
+    height: 100%;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
 }
 
 @keyframes fadeIn {
@@ -652,13 +661,14 @@ h1 {
     background: var(--secondary-color);
     color: white;
     border: none;
-    padding: 12px 24px;
+    padding: 8px 16px;
     border-radius: 8px;
     cursor: pointer;
-    font-size: 1em;
+    font-size: 0.9em;
     font-weight: 600;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
     transition: all 0.3s ease;
+    flex-shrink: 0;
 }
 
 .back-to-main-btn:hover {
@@ -669,48 +679,120 @@ h1 {
 
 .quest-details-header {
     border-bottom: 2px solid var(--secondary-color);
-    padding-bottom: 20px;
-    margin-bottom: 30px;
+    padding-bottom: 8px;
+    margin-bottom: 10px;
+    width: 100%;
+    flex-shrink: 0;
+}
+
+.npc-badge {
+    display: inline-block;
+    background: var(--secondary-color);
+    color: white;
+    padding: 3px 10px;
+    border-radius: 15px;
+    font-size: 0.75em;
+    margin-top: 5px;
 }
 
 .quest-details-header h1 {
     color: var(--secondary-color);
-    font-size: 2.5em;
-    margin-bottom: 10px;
+    font-size: 1.5em;
+    margin-bottom: 5px;
+    line-height: 1.2;
 }
 
 .quest-details-body {
-    margin-top: 30px;
+    margin-top: 8px;
+    width: 100%;
+    flex: 1;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+#questDetailsContent {
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
 }
 
 .quest-details-section {
-    margin-bottom: 40px;
+    margin-bottom: 0;
     background: var(--card-bg);
-    padding: 25px;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    padding: 12px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    flex: 1;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
 }
 
 .quest-details-section .section-title {
     color: var(--secondary-color);
-    font-size: 1.8em;
-    margin-bottom: 20px;
-    padding-bottom: 15px;
-    border-bottom: 2px solid var(--border-color);
+    font-size: 1.1em;
+    margin-bottom: 8px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid var(--border-color);
+    flex-shrink: 0;
+}
+
+.objectives-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    overflow-y: auto;
+    flex: 1;
+    min-height: 0;
+}
+
+.objectives-list li {
+    padding: 6px 0;
+    padding-left: 20px;
+    position: relative;
+    color: var(--text-color);
+    line-height: 1.4;
+    font-size: 0.85em;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.objectives-list li:last-child {
+    border-bottom: none;
+}
+
+.objectives-list li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: var(--secondary-color);
+    font-size: 1.2em;
+    line-height: 1;
 }
 
 .quest-details-loading {
     text-align: center;
-    padding: 40px;
+    padding: 20px;
     color: var(--secondary-color);
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .quest-details-error {
     background: var(--danger-color);
     color: white;
-    padding: 15px;
+    padding: 10px;
     border-radius: 5px;
-    margin: 20px 0;
+    margin: 10px 0;
+    flex-shrink: 0;
+    font-size: 0.9em;
 }
 
 /* Modal de imagem maximizada */
@@ -789,29 +871,40 @@ h1 {
 
 .guide-images {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 8px;
+    width: 100%;
+    margin-top: 8px;
+    overflow-y: auto;
+    flex: 1;
+    min-height: 0;
+    max-height: 100%;
 }
 
 .guide-image-container {
     background: var(--primary-color);
-    padding: 15px;
+    padding: 8px;
     border-radius: 5px;
     overflow: hidden;
-    min-height: 200px;
+    min-height: 120px;
+    max-height: 200px;
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 100%;
+    position: relative;
 }
 
 .guide-image {
     width: 100%;
-    height: auto;
+    height: 100%;
     border-radius: 5px;
     display: block;
     max-width: 100%;
+    max-height: 100%;
     cursor: pointer;
     transition: transform 0.2s;
+    object-fit: contain;
 }
 
 .guide-image:hover {

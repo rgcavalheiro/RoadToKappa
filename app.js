@@ -351,7 +351,16 @@ function showQuestDetailsScreen(wikiUrl) {
     document.getElementById('guideSection').style.display = 'none';
     
     // Carregar dados da quest
-    fetch(`http://localhost:5000/api/quest/${encodeURIComponent(wikiUrl)}`)
+    // Se a URL já está completa, usar diretamente; caso contrário, codificar
+    let questUrl = wikiUrl;
+    if (wikiUrl.startsWith('http://') || wikiUrl.startsWith('https://')) {
+        // URL completa - codificar apenas para passar como parâmetro de path
+        questUrl = encodeURIComponent(wikiUrl);
+    } else {
+        // URL parcial - codificar normalmente
+        questUrl = encodeURIComponent(wikiUrl);
+    }
+    fetch(`http://localhost:5000/api/quest/${questUrl}`)
         .then(response => response.json())
         .then(data => {
             loading.style.display = 'none';
