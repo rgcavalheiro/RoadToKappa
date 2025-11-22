@@ -5,7 +5,7 @@ let progress = {};
 
 // Configuração da URL da API
 // Se você hospedar o Flask no Render, coloque a URL aqui (ex: 'https://seu-app.onrender.com')
-const RENDER_API_URL = ''; // Deixe vazio se não tiver Render configurado ainda
+const RENDER_API_URL = 'https://roadtokappa.onrender.com';
 
 // Detectar URL da API automaticamente
 let API_BASE_URL;
