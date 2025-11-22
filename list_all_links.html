@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Links da Wiki - Validação</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #1a1a1a;
+            color: #ecf0f1;
+        }
+        h1 {
+            color: #3498db;
+        }
+        .npc-section {
+            margin: 30px 0;
+            padding: 20px;
+            background: #2d2d2d;
+            border-radius: 8px;
+        }
+        .npc-name {
+            font-size: 1.5em;
+            color: #3498db;
+            margin-bottom: 15px;
+        }
+        .quest-item {
+            padding: 10px;
+            margin: 5px 0;
+            background: #3d3d3d;
+            border-radius: 4px;
+        }
+        .quest-name {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .quest-link {
+            color: #3498db;
+            text-decoration: none;
+            font-size: 0.9em;
+        }
+        .quest-link:hover {
+            text-decoration: underline;
+        }
+        .status {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 3px;
+            font-size: 0.8em;
+            margin-left: 10px;
+        }
+        .status-ok {
+            background: #27ae60;
+            color: white;
+        }
+        .status-error {
+            background: #e74c3c;
+            color: white;
+        }
+        .test-btn {
+            background: #3498db;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+        .test-btn:hover {
+            background: #2980b9;
+        }
+    </style>
+</head>
+<body>
+    <h1>Lista de Links da Wiki - Validação Manual</h1>
+    <p>Clique nos links para testar. Se algum não funcionar, me avise qual foi.</p>
+    
+    <div id="questList"></div>
+
+    <script>
+        async function loadQuests() {
+            const response = await fetch('quests-data.json');
+            const data = await response.json();
+            const container = document.getElementById('questList');
+            
+            for (const [npcId, npcData] of Object.entries(data.npcs)) {
+                const npcSection = document.createElement('div');
+                npcSection.className = 'npc-section';
+                
+                const npcTitle = document.createElement('div');
+                npcTitle.className = 'npc-name';
+                npcTitle.textContent = npcData.name;
+                npcSection.appendChild(npcTitle);
+                
+                npcData.quests.forEach(quest => {
+                    const questItem = document.createElement('div');
+                    questItem.className = 'quest-item';
+                    
+                    const questName = document.createElement('div');
+                    questName.className = 'quest-name';
+                    questName.textContent = quest.name;
+                    questItem.appendChild(questName);
+                    
+                    const link = document.createElement('a');
+                    link.href = quest.wikiUrl;
+                    link.target = '_blank';
+                    link.className = 'quest-link';
+                    link.textContent = quest.wikiUrl;
+                    link.onclick = function(e) {
+                        // Abrir em nova aba e verificar se funciona
+                        window.open(quest.wikiUrl, '_blank');
+                    };
+                    questItem.appendChild(link);
+                    
+                    npcSection.appendChild(questItem);
+                });
+                
+                container.appendChild(npcSection);
+            }
+        }
+        
+        loadQuests();
+    </script>
+</body>
+</html>
+
