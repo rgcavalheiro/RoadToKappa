@@ -343,7 +343,7 @@ function showMainScreen() {
     detailsScreen.classList.remove('active');
 }
 
-function showQuestDetailsScreen(wikiUrl) {
+function showQuestDetailsScreen(wikiUrl, retryCount = 0) {
     const mainScreen = document.getElementById('mainScreen');
     const detailsScreen = document.getElementById('questDetailsScreen');
     const loading = document.getElementById('questDetailsLoading');
@@ -385,8 +385,35 @@ function showQuestDetailsScreen(wikiUrl) {
         // URL parcial - codificar normalmente
         questUrl = encodeURIComponent(wikiUrl);
     }
-    fetch(`${API_BASE_URL}/api/quest/${questUrl}`)
-        .then(response => response.json())
+    
+    // Atualizar mensagem de loading
+    const loadingText = loading.querySelector('p');
+    if (loadingText) {
+        if (retryCount > 0) {
+            loadingText.textContent = `Tentando novamente... (tentativa ${retryCount + 1}/3)`;
+        } else {
+            loadingText.textContent = 'Carregando informações da quest... (pode demorar na primeira requisição)';
+        }
+    }
+    
+    // Criar AbortController para timeout (Render pode demorar no cold start)
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 60000); // 60 segundos para Render
+    
+    fetch(`${API_BASE_URL}/api/quest/${questUrl}`, {
+        signal: controller.signal,
+        headers: {
+            'Accept': 'application/json'
+        }
+    })
+        .then(response => {
+            clearTimeout(timeoutId);
+            // Verificar se a resposta está OK
+            if (!response.ok) {
+                throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+            }
+            return response.json();
+        })
         .then(data => {
             loading.style.display = 'none';
             
@@ -477,10 +504,50 @@ function showQuestDetailsScreen(wikiUrl) {
             content.style.display = 'block';
         })
         .catch(err => {
+            clearTimeout(timeoutId);
+            
+            // Tentar novamente se for erro de rede/timeout e ainda tiver tentativas
+            const maxRetries = 3;
+            const isRetryableError = err.name === 'AbortError' || 
+                                   err.message.includes('Failed to fetch') || 
+                                   err.message.includes('NetworkError') || 
+                                   err.message.includes('Network request failed');
+            
+            if (isRetryableError && retryCount < maxRetries) {
+                // Aguardar antes de tentar novamente (exponencial backoff)
+                const delay = Math.min(2000 * Math.pow(2, retryCount), 10000); // 2s, 4s, 8s, max 10s
+                
+                const loadingText = loading.querySelector('p');
+                if (loadingText) {
+                    loadingText.textContent = `Servidor iniciando... Tentando novamente em ${delay/1000} segundos (${retryCount + 1}/${maxRetries})...`;
+                }
+                
+                setTimeout(() => {
+                    showQuestDetailsScreen(wikiUrl, retryCount + 1);
+                }, delay);
+                return;
+            }
+            
+            // Se não for possível retry ou esgotou tentativas, mostrar erro
             loading.style.display = 'none';
             error.style.display = 'block';
-            error.textContent = 'Erro ao conectar com o servidor. Certifique-se de que o servidor Flask está rodando na porta 5000.';
-            console.error('Erro:', err);
+            
+            let errorMessage = 'Erro ao carregar informações da quest. ';
+            
+            if (err.name === 'AbortError') {
+                errorMessage += 'Timeout: O servidor Render pode estar "dormindo" (cold start). Aguarde alguns segundos e tente novamente clicando em "Ver Detalhes".';
+            } else if (err.message.includes('Failed to fetch') || err.message.includes('NetworkError') || err.message.includes('Network request failed')) {
+                errorMessage += `Não foi possível conectar com o servidor Render (${API_BASE_URL}). O servidor pode estar iniciando. Aguarde 30-60 segundos e tente novamente.`;
+            } else if (err.message.includes('HTTP')) {
+                errorMessage += err.message;
+            } else {
+                errorMessage += `Erro: ${err.message || 'Erro desconhecido'}`;
+            }
+            
+            error.textContent = errorMessage;
+            console.error('Erro ao carregar quest:', err);
+            console.error('URL tentada:', `${API_BASE_URL}/api/quest/${questUrl}`);
+            console.error('API_BASE_URL:', API_BASE_URL);
         });
 }
 
