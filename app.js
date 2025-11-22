@@ -3,10 +3,22 @@ let questsData = {};
 let currentNPC = null;
 let progress = {};
 
-// Detectar URL da API (produção no Render ou desenvolvimento local)
-const API_BASE_URL = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
-    ? 'http://localhost:5000'
-    : window.location.origin; // Usa a mesma origem quando hospedado
+// Configuração da URL da API
+// Se você hospedar o Flask no Render, coloque a URL aqui (ex: 'https://seu-app.onrender.com')
+const RENDER_API_URL = ''; // Deixe vazio se não tiver Render configurado ainda
+
+// Detectar URL da API automaticamente
+let API_BASE_URL;
+if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+    // Desenvolvimento local
+    API_BASE_URL = 'http://localhost:5000';
+} else if (window.location.hostname.includes('github.io')) {
+    // GitHub Pages - usar Render se configurado, senão desabilitar API
+    API_BASE_URL = RENDER_API_URL || null;
+} else {
+    // Render ou outro servidor - usar a mesma origem
+    API_BASE_URL = window.location.origin;
+}
 
 // URLs das imagens dos NPCs (portraits locais)
 const npcImages = {
@@ -355,6 +367,14 @@ function showQuestDetailsScreen(wikiUrl) {
     document.getElementById('objectivesSection').style.display = 'none';
     document.getElementById('guideSection').style.display = 'none';
     
+    // Verificar se a API está disponível
+    if (!API_BASE_URL) {
+        loading.style.display = 'none';
+        error.style.display = 'block';
+        error.textContent = 'API não configurada. Configure a URL do Render no app.js (RENDER_API_URL) ou use o Render para hospedar o backend.';
+        return;
+    }
+    
     // Carregar dados da quest
     // Se a URL já está completa, usar diretamente; caso contrário, codificar
     let questUrl = wikiUrl;
@@ -440,9 +460,14 @@ function showQuestDetailsScreen(wikiUrl) {
                         }
                     };
                     
-                    // Usar proxy para evitar problemas de CORS
-                    const proxyUrl = `${API_BASE_URL}/api/image-proxy?url=${encodeURIComponent(imgSrc)}`;
-                    img.src = proxyUrl;
+                    // Usar proxy para evitar problemas de CORS (se API disponível)
+                    if (API_BASE_URL) {
+                        const proxyUrl = `${API_BASE_URL}/api/image-proxy?url=${encodeURIComponent(imgSrc)}`;
+                        img.src = proxyUrl;
+                    } else {
+                        // Tentar carregar diretamente (pode falhar por CORS)
+                        img.src = imgSrc;
+                    }
                     
                     guideImages.appendChild(imgContainer);
                 });
@@ -496,8 +521,10 @@ function openImageModal(imgSrc, clickEvent) {
     loadingIndicator.textContent = 'Carregando imagem...';
     modalContainer.appendChild(loadingIndicator);
     
-    // Usar proxy sempre
-    let finalSrc = `${API_BASE_URL}/api/image-proxy?url=${encodeURIComponent(imgSrc)}`;
+    // Usar proxy se API disponível, senão tentar direto
+    let finalSrc = API_BASE_URL 
+        ? `${API_BASE_URL}/api/image-proxy?url=${encodeURIComponent(imgSrc)}`
+        : imgSrc;
     
     modalImg.onload = function() {
         this.style.opacity = '1';
