@@ -183,12 +183,39 @@ def image_proxy():
     
     try:
         img_url = unquote(img_url)
+        print(f"[IMAGE PROXY] Tentando carregar: {img_url}")
+        
+        # Se a URL retornar 404, tentar buscar a imagem na página do NPC
+        if 'Portrait.png' in img_url and '404' in str(img_url):
+            # Extrair nome do NPC da URL
+            npc_name = img_url.split('/')[-1].replace('Portrait.png', '').lower()
+            print(f"[IMAGE PROXY] Tentando buscar imagem do NPC: {npc_name}")
+            # Tentar buscar na página do NPC
+            npc_url = f'https://escapefromtarkov.fandom.com/wiki/{npc_name.capitalize()}'
+            try:
+                npc_page = requests.get(npc_url, headers={'User-Agent': 'Mozilla/5.0'}, timeout=10)
+                if npc_page.status_code == 200:
+                    from bs4 import BeautifulSoup
+                    soup = BeautifulSoup(npc_page.content, 'html.parser')
+                    # Procurar imagem de portrait
+                    portrait_img = soup.find('img', {'alt': lambda x: x and 'portrait' in x.lower()})
+                    if portrait_img and portrait_img.get('src'):
+                        img_url = portrait_img['src']
+                        print(f"[IMAGE PROXY] Imagem encontrada na página: {img_url}")
+            except:
+                pass
+        
         headers = {
-            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36',
-            'Referer': 'https://escapefromtarkov.fandom.com/'
+            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+            'Referer': 'https://escapefromtarkov.fandom.com/',
+            'Accept': 'image/webp,image/apng,image/*,*/*;q=0.8',
+            'Accept-Language': 'en-US,en;q=0.9'
         }
-        response = requests.get(img_url, headers=headers, timeout=10, stream=True)
+        
+        response = requests.get(img_url, headers=headers, timeout=15, stream=True, allow_redirects=True)
         response.raise_for_status()
+        
+        print(f"[IMAGE PROXY] Sucesso! Status: {response.status_code}, Tipo: {response.headers.get('Content-Type')}")
         
         from flask import Response
         return Response(
@@ -197,9 +224,60 @@ def image_proxy():
             headers={
                 'Cache-Control': 'public, max-age=86400',
                 'Access-Control-Allow-Origin': '*',
-                'Access-Control-Allow-Methods': 'GET'
+                'Access-Control-Allow-Methods': 'GET',
+                'Access-Control-Allow-Headers': 'Content-Type'
             }
         )
+    except requests.exceptions.RequestException as e:
+        print(f"[IMAGE PROXY] Erro na requisição: {str(e)}")
+        return jsonify({'error': f'Erro ao buscar imagem: {str(e)}'}), 500
+    except Exception as e:
+        print(f"[IMAGE PROXY] Erro geral: {str(e)}")
+        return jsonify({'error': str(e)}), 500
+
+@app.route('/api/npc-portrait/<npc_name>')
+def get_npc_portrait(npc_name):
+    """Buscar portrait do NPC na wiki"""
+    try:
+        npc_url = f'https://escapefromtarkov.fandom.com/wiki/{npc_name}'
+        headers = {
+            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
+        }
+        
+        page = requests.get(npc_url, headers=headers, timeout=10)
+        if page.status_code == 200:
+            from bs4 import BeautifulSoup
+            soup = BeautifulSoup(page.content, 'html.parser')
+            
+            # Procurar imagem de portrait de várias formas
+            portrait_img = None
+            
+            # Tentar encontrar por classe ou alt
+            for img in soup.find_all('img'):
+                src = img.get('src', '') or img.get('data-src', '')
+                alt = img.get('alt', '').lower()
+                if src and ('portrait' in alt or 'portrait' in src.lower()):
+                    portrait_img = src
+                    break
+            
+            # Se não encontrou, pegar primeira imagem grande
+            if not portrait_img:
+                for img in soup.find_all('img'):
+                    src = img.get('src', '') or img.get('data-src', '')
+                    if src and 'static.wikia' in src and ('png' in src or 'jpg' in src):
+                        # Verificar se não é um ícone pequeno
+                        if 'thumb' not in src.lower() and len(src) > 50:
+                            portrait_img = src
+                            break
+            
+            if portrait_img:
+                # Remover parâmetros de scale se houver
+                if '/scale-to-width-down/' in portrait_img:
+                    portrait_img = portrait_img.split('/scale-to-width-down/')[0]
+                
+                return jsonify({'url': portrait_img})
+        
+        return jsonify({'error': 'Portrait não encontrado'}), 404
     except Exception as e:
         return jsonify({'error': str(e)}), 500
 

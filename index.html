@@ -10,53 +10,61 @@
     <!-- Tela Principal -->
     <div id="mainScreen" class="screen active">
         <div class="container">
-            <header>
-                <h1>🎯 Tarkov Kappa Quest Tracker</h1>
-                <p class="subtitle">Acompanhe seu progresso para o Kappa Container</p>
-            </header>
-
-            <div class="npc-selector">
-                <h2>Escolha um NPC:</h2>
-                <div class="npc-buttons" id="npcButtons">
-                    <!-- NPCs serão inseridos via JavaScript -->
+            <div class="main-layout">
+                <div class="header-section">
+                    <header>
+                        <h1>🎯 Tarkov Kappa Quest Tracker</h1>
+                        <p class="subtitle">Acompanhe seu progresso para o Kappa Container</p>
+                    </header>
                 </div>
-            </div>
 
-            <div class="quest-display" id="questDisplay" style="display: none;">
-                <div class="quest-card last-quest">
-                    <div class="quest-header">
-                        <span class="quest-label">Última Missão Completada</span>
-                    </div>
-                    <div class="quest-content" id="lastQuest">
-                        <p class="no-quest">Nenhuma missão completada ainda</p>
+                <div class="traders-section">
+                    <div class="npc-selector">
+                        <h2>Escolha um NPC:</h2>
+                        <div class="npc-buttons" id="npcButtons">
+                            <!-- NPCs serão inseridos via JavaScript -->
+                        </div>
                     </div>
                 </div>
 
-                <div class="quest-card current-quest">
-                    <div class="quest-header">
-                        <span class="quest-label">Missão Atual</span>
-                    </div>
-                    <div class="quest-content" id="currentQuest">
-                        <p class="no-quest">Selecione um NPC para começar</p>
-                    </div>
-                </div>
+                <div class="quests-section">
+                    <div class="quest-display" id="questDisplay" style="display: none;">
+                        <div class="quest-card last-quest">
+                            <div class="quest-header">
+                                <span class="quest-label">Última Missão Completada</span>
+                            </div>
+                            <div class="quest-content" id="lastQuest">
+                                <p class="no-quest">Nenhuma missão completada ainda</p>
+                            </div>
+                        </div>
 
-                <div class="quest-card next-quest">
-                    <div class="quest-header">
-                        <span class="quest-label">Próxima Missão</span>
-                    </div>
-                    <div class="quest-content" id="nextQuest">
-                        <p class="no-quest">Complete a missão atual primeiro</p>
-                    </div>
-                </div>
+                        <div class="quest-card current-quest">
+                            <div class="quest-header">
+                                <span class="quest-label">Missão Atual</span>
+                            </div>
+                            <div class="quest-content" id="currentQuest">
+                                <p class="no-quest">Selecione um NPC para começar</p>
+                            </div>
+                        </div>
 
-                <div class="quest-actions">
-                    <button class="btn btn-complete" id="completeBtn" onclick="completeCurrentQuest()">
-                        ✅ Marcar como Completada
-                    </button>
-                    <button class="btn btn-reset" id="resetBtn" onclick="resetProgress()">
-                        🔄 Resetar Progresso
-                    </button>
+                        <div class="quest-card next-quest">
+                            <div class="quest-header">
+                                <span class="quest-label">Próxima Missão</span>
+                            </div>
+                            <div class="quest-content" id="nextQuest">
+                                <p class="no-quest">Complete a missão atual primeiro</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="quest-actions" id="questActions" style="display: none;">
+                        <button class="btn btn-complete" id="completeBtn" onclick="completeCurrentQuest()">
+                            ✅ Marcar como Completada
+                        </button>
+                        <button class="btn btn-reset" id="resetBtn" onclick="resetProgress()">
+                            🔄 Resetar Progresso
+                        </button>
+                    </div>
                 </div>
             </div>
 

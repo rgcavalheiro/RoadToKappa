@@ -3,6 +3,19 @@ let questsData = {};
 let currentNPC = null;
 let progress = {};
 
+// URLs das imagens dos NPCs (portraits locais)
+const npcImages = {
+    'prapor': 'traders/prapor.png',
+    'therapist': 'traders/therapist.png',
+    'skier': 'traders/skier.png',
+    'peacekeeper': 'traders/peacekeper.png', // Nota: arquivo tem typo "peacekeper"
+    'mechanic': 'traders/mechanic.png',
+    'ragman': 'traders/ragman.png',
+    'jaeger': 'traders/jaeger.png',
+    'fence': 'traders/fence.png',
+    'lightkeeper': 'traders/lightkeeper.png' // Se não existir, será ignorado
+};
+
 // Carregar progresso salvo
 function loadProgress() {
     const saved = localStorage.getItem('tarkovQuestProgress');
@@ -22,6 +35,8 @@ async function loadQuestData() {
         const response = await fetch('quests-data.json');
         questsData = await response.json();
         initializeNPCs();
+        // Atualizar checks verdes após inicializar
+        setTimeout(() => updateNPCButtons(), 100);
     } catch (error) {
         console.error('Erro ao carregar dados:', error);
     }
@@ -30,17 +45,53 @@ async function loadQuestData() {
 // Inicializar botões dos NPCs
 function initializeNPCs() {
     const npcButtons = document.getElementById('npcButtons');
+    if (!npcButtons) {
+        console.error('[INIT] Elemento npcButtons não encontrado!');
+        return;
+    }
+    
+    if (!questsData || !questsData.npcs) {
+        console.error('[INIT] Dados de quests não carregados ainda!');
+        return;
+    }
+    
+    console.log('[INIT] Inicializando', Object.keys(questsData.npcs).length, 'NPCs');
     npcButtons.innerHTML = '';
 
     Object.keys(questsData.npcs).forEach(npcId => {
         const npc = questsData.npcs[npcId];
         const button = document.createElement('button');
         button.className = 'npc-btn';
-        button.textContent = npc.name;
-        button.onclick = (e) => selectNPC(npcId, e.target);
+        button.setAttribute('data-npc-id', npcId);
+        
+        // Determinar nível do NPC (I ou II) - Peacekeeper é II, outros são I
+        const npcLevel = npcId === 'peacekeeper' ? 'II' : 'I';
+        
+        // Verificar se tem quests completadas para mostrar check verde
+        const npcProgress = progress[npcId] || { completed: [], current: null };
+        const hasCompletedQuests = npcProgress.completed && npcProgress.completed.length > 0;
+        
+        // Obter URL da imagem local
+        const npcImage = npcImages[npcId] || '';
+        
+        button.innerHTML = `
+            <div class="npc-btn-content">
+                <div class="npc-btn-level">${npcLevel}</div>
+                <div class="npc-btn-check ${hasCompletedQuests ? 'visible' : ''}"></div>
+                <div class="npc-btn-portrait">
+                    <img src="${npcImage}" alt="${npc.name}" class="npc-portrait-img" onerror="this.style.display='none'">
+                    <div class="npc-btn-question">?</div>
+                </div>
+                <div class="npc-btn-name">${npc.name}</div>
+            </div>
+        `;
+        
+        button.onclick = (e) => selectNPC(npcId, button);
         npcButtons.appendChild(button);
     });
 }
+
+// Funções de carregamento de imagens removidas - agora usando imagens locais diretamente
 
 // Selecionar NPC
 function selectNPC(npcId, buttonElement) {
@@ -65,7 +116,11 @@ function selectNPC(npcId, buttonElement) {
     updateQuestDisplay();
     updateQuestList();
     document.getElementById('questDisplay').style.display = 'grid';
+    document.getElementById('questActions').style.display = 'flex';
     document.getElementById('questList').style.display = 'block';
+    
+    // Atualizar check verde nos botões de NPC
+    updateNPCButtons();
 }
 
 // Atualizar exibição das missões
@@ -200,19 +255,48 @@ function displayQuest(elementId, quest, type) {
         return;
     }
 
-    // Botão de detalhes para todas as quests
+    // Botão principal: Ver Detalhes (destacado)
     const detailsButton = `
-        <button onclick="showQuestDetailsScreen('${quest.wikiUrl}')" class="quest-link quest-link-details" style="margin-top: 10px; display: block; width: 100%; text-align: center;">
+        <button onclick="showQuestDetailsScreen('${quest.wikiUrl}')" class="quest-btn-primary">
             📋 Ver Detalhes
         </button>
+    `;
+    
+    // Botão secundário: Ver na Wiki (mais oculto)
+    const wikiButton = `
+        <a href="${quest.wikiUrl}" target="_blank" class="quest-link-secondary">
+            📖 Wiki
+        </a>
     `;
 
     element.innerHTML = `
         <div class="quest-name">${quest.name}</div>
         <div class="quest-tier">Tier ${quest.tier}</div>
-        <a href="${quest.wikiUrl}" target="_blank" class="quest-link">📖 Ver na Wiki</a>
-        ${detailsButton}
+        <div class="quest-buttons-container">
+            ${detailsButton}
+            ${wikiButton}
+        </div>
     `;
+}
+
+// Atualizar botões de NPC (para mostrar checks verdes)
+function updateNPCButtons() {
+    document.querySelectorAll('.npc-btn').forEach(btn => {
+        const npcId = btn.getAttribute('data-npc-id');
+        if (!npcId) return;
+        
+        const npcProgress = progress[npcId] || { completed: [], current: null };
+        const hasCompletedQuests = npcProgress.completed && npcProgress.completed.length > 0;
+        
+        const checkElement = btn.querySelector('.npc-btn-check');
+        if (checkElement) {
+            if (hasCompletedQuests) {
+                checkElement.classList.add('visible');
+            } else {
+                checkElement.classList.remove('visible');
+            }
+        }
+    });
 }
 
 // Completar missão atual
@@ -241,6 +325,7 @@ function completeCurrentQuest() {
     // Atualizar exibição
     updateQuestDisplay();
     updateQuestList();
+    updateNPCButtons();
 }
 
 // Resetar progresso
@@ -252,6 +337,7 @@ function resetProgress() {
         saveProgress();
         updateQuestDisplay();
         updateQuestList();
+        updateNPCButtons();
     }
 }
 
@@ -305,9 +391,9 @@ function updateQuestList() {
                     <span class="status-badge status-${status}">${statusText}</span>
                 </div>
             </div>
-            <div style="display: flex; gap: 10px; margin-top: 10px; flex-wrap: wrap;">
-                <a href="${quest.wikiUrl}" target="_blank" class="quest-item-link">📖 Ver na Wiki →</a>
-                <a href="#" onclick="event.preventDefault(); showQuestDetailsScreen('${quest.wikiUrl}'); return false;" class="quest-item-link" style="color: var(--warning-color);">📋 Ver Detalhes →</a>
+            <div class="quest-item-buttons">
+                <a href="#" onclick="event.preventDefault(); showQuestDetailsScreen('${quest.wikiUrl}'); return false;" class="quest-item-link-primary">📋 Ver Detalhes</a>
+                <a href="${quest.wikiUrl}" target="_blank" class="quest-item-link-secondary">📖 Wiki</a>
             </div>
         `;
 
