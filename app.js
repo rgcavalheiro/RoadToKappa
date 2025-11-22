@@ -200,17 +200,12 @@ function displayQuest(elementId, quest, type) {
         return;
     }
 
-    // Verificar se é a quest "Delivery from the Past" para mostrar o botão de detalhes
-    const showDetailsButton = quest.id === 'delivery_from_the_past';
-    
-    let detailsButton = '';
-    if (showDetailsButton) {
-        detailsButton = `
-            <a href="quest-details.html?url=${encodeURIComponent(quest.wikiUrl)}" target="_blank" class="quest-link quest-link-details" style="margin-top: 10px; display: block;">
-                📋 Ver Detalhes
-            </a>
-        `;
-    }
+    // Botão de detalhes para todas as quests
+    const detailsButton = `
+        <a href="quest-details.html?url=${encodeURIComponent(quest.wikiUrl)}" target="_blank" class="quest-link quest-link-details" style="margin-top: 10px; display: block;">
+            📋 Ver Detalhes
+        </a>
+    `;
 
     element.innerHTML = `
         <div class="quest-name">${quest.name}</div>
@@ -310,7 +305,10 @@ function updateQuestList() {
                     <span class="status-badge status-${status}">${statusText}</span>
                 </div>
             </div>
-            <a href="${quest.wikiUrl}" target="_blank" class="quest-item-link">📖 Ver na Wiki →</a>
+            <div style="display: flex; gap: 10px; margin-top: 10px; flex-wrap: wrap;">
+                <a href="${quest.wikiUrl}" target="_blank" class="quest-item-link">📖 Ver na Wiki →</a>
+                <a href="quest-details.html?url=${encodeURIComponent(quest.wikiUrl)}" target="_blank" class="quest-item-link" style="color: var(--warning-color);">📋 Ver Detalhes →</a>
+            </div>
         `;
 
         questTree.appendChild(questItem);
