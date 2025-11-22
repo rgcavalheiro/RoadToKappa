@@ -67,20 +67,13 @@ function initializeNPCs() {
         // Determinar nível do NPC (I ou II) - Peacekeeper é II, outros são I
         const npcLevel = npcId === 'peacekeeper' ? 'II' : 'I';
         
-        // Verificar se tem quests completadas para mostrar check verde
-        const npcProgress = progress[npcId] || { completed: [], current: null };
-        const hasCompletedQuests = npcProgress.completed && npcProgress.completed.length > 0;
-        
         // Obter URL da imagem local
         const npcImage = npcImages[npcId] || '';
         
         button.innerHTML = `
             <div class="npc-btn-content">
-                <div class="npc-btn-level">${npcLevel}</div>
-                <div class="npc-btn-check ${hasCompletedQuests ? 'visible' : ''}"></div>
                 <div class="npc-btn-portrait">
                     <img src="${npcImage}" alt="${npc.name}" class="npc-portrait-img" onerror="this.style.display='none'">
-                    <div class="npc-btn-question">?</div>
                 </div>
                 <div class="npc-btn-name">${npc.name}</div>
             </div>
@@ -114,10 +107,8 @@ function selectNPC(npcId, buttonElement) {
     }
 
     updateQuestDisplay();
-    updateQuestList();
     document.getElementById('questDisplay').style.display = 'grid';
     document.getElementById('questActions').style.display = 'flex';
-    document.getElementById('questList').style.display = 'block';
     
     // Atualizar check verde nos botões de NPC
     updateNPCButtons();
@@ -271,7 +262,6 @@ function displayQuest(elementId, quest, type) {
 
     element.innerHTML = `
         <div class="quest-name">${quest.name}</div>
-        <div class="quest-tier">Tier ${quest.tier}</div>
         <div class="quest-buttons-container">
             ${detailsButton}
             ${wikiButton}
@@ -279,24 +269,10 @@ function displayQuest(elementId, quest, type) {
     `;
 }
 
-// Atualizar botões de NPC (para mostrar checks verdes)
+// Atualizar botões de NPC (check verde agora é controlado pelo CSS quando .active)
 function updateNPCButtons() {
-    document.querySelectorAll('.npc-btn').forEach(btn => {
-        const npcId = btn.getAttribute('data-npc-id');
-        if (!npcId) return;
-        
-        const npcProgress = progress[npcId] || { completed: [], current: null };
-        const hasCompletedQuests = npcProgress.completed && npcProgress.completed.length > 0;
-        
-        const checkElement = btn.querySelector('.npc-btn-check');
-        if (checkElement) {
-            if (hasCompletedQuests) {
-                checkElement.classList.add('visible');
-            } else {
-                checkElement.classList.remove('visible');
-            }
-        }
-    });
+    // Função mantida para compatibilidade, mas o check verde agora é controlado pelo CSS
+    // quando o botão tem a classe .active
 }
 
 // Completar missão atual
@@ -324,7 +300,6 @@ function completeCurrentQuest() {
 
     // Atualizar exibição
     updateQuestDisplay();
-    updateQuestList();
     updateNPCButtons();
 }
 
@@ -336,86 +311,11 @@ function resetProgress() {
         progress[currentNPC] = { completed: [], current: null };
         saveProgress();
         updateQuestDisplay();
-        updateQuestList();
         updateNPCButtons();
     }
 }
 
-// Atualizar lista de missões
-function updateQuestList() {
-    if (!currentNPC) return;
-
-    const npc = questsData.npcs[currentNPC];
-    const npcProgress = progress[currentNPC] || { completed: [], current: null };
-    const questTree = document.getElementById('questTree');
-    const npcName = document.getElementById('npcName');
-
-    npcName.textContent = npc.name;
-    questTree.innerHTML = '';
-
-    const completedIds = npcProgress.completed || [];
-    const currentQuestId = findCurrentQuest(npc, npcProgress)?.id;
-
-    npc.quests.forEach(quest => {
-        const questItem = document.createElement('div');
-        questItem.className = 'quest-item';
-
-        let status = 'locked';
-        let statusText = 'Bloqueada';
-        
-        if (completedIds.includes(quest.id)) {
-            questItem.classList.add('completed');
-            status = 'completed';
-            statusText = 'Completada';
-        } else if (quest.id === currentQuestId) {
-            questItem.classList.add('current');
-            status = 'current';
-            statusText = 'Atual';
-        } else {
-            const allPrerequisitesMet = quest.prerequisites.every(prereqId => 
-                completedIds.includes(prereqId)
-            );
-            
-            if (allPrerequisitesMet) {
-                questItem.classList.add('available');
-                status = 'available';
-                statusText = 'Disponível';
-            }
-        }
-
-        questItem.innerHTML = `
-            <div class="quest-item-header">
-                <span class="quest-item-name">${quest.name}</span>
-                <div>
-                    <span class="quest-item-tier">Tier ${quest.tier}</span>
-                    <span class="status-badge status-${status}">${statusText}</span>
-                </div>
-            </div>
-            <div class="quest-item-buttons">
-                <a href="#" onclick="event.preventDefault(); showQuestDetailsScreen('${quest.wikiUrl}'); return false;" class="quest-item-link-primary">📋 Ver Detalhes</a>
-                <a href="${quest.wikiUrl}" target="_blank" class="quest-item-link-secondary">📖 Wiki</a>
-            </div>
-        `;
-
-        questTree.appendChild(questItem);
-    });
-}
-
-// Alternar visualização da lista
-let showQuestList = false;
-function toggleQuestList() {
-    showQuestList = !showQuestList;
-    const questList = document.getElementById('questList');
-    const toggleBtn = document.getElementById('toggleViewBtn');
-    
-    if (showQuestList) {
-        questList.style.display = 'block';
-        toggleBtn.textContent = '👁️ Ocultar Lista de Missões';
-    } else {
-        questList.style.display = 'none';
-        toggleBtn.textContent = '📋 Ver Todas as Missões';
-    }
-}
+// Funções de lista de missões removidas - não são mais necessárias
 
 // Funções de navegação entre telas
 function showMainScreen() {
