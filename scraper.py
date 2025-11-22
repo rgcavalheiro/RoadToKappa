@@ -200,6 +200,16 @@ def quest_details_page():
     """Servir a página de detalhes da quest"""
     return send_from_directory('.', 'quest-details.html')
 
+@app.route('/')
+def index():
+    """Servir a página principal"""
+    return send_from_directory('.', 'index.html')
+
+@app.route('/<path:filename>')
+def serve_static(filename):
+    """Servir arquivos estáticos (CSS, JS, imagens, etc)"""
+    return send_from_directory('.', filename)
+
 @app.route('/api/image-proxy')
 def image_proxy():
     """Proxy para imagens, evitando problemas de CORS"""

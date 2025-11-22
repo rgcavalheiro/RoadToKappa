@@ -3,6 +3,11 @@ let questsData = {};
 let currentNPC = null;
 let progress = {};
 
+// Detectar URL da API (produção no Render ou desenvolvimento local)
+const API_BASE_URL = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
+    ? 'http://localhost:5000'
+    : window.location.origin; // Usa a mesma origem quando hospedado
+
 // URLs das imagens dos NPCs (portraits locais)
 const npcImages = {
     'prapor': 'traders/prapor.png',
@@ -360,7 +365,7 @@ function showQuestDetailsScreen(wikiUrl) {
         // URL parcial - codificar normalmente
         questUrl = encodeURIComponent(wikiUrl);
     }
-    fetch(`http://localhost:5000/api/quest/${questUrl}`)
+    fetch(`${API_BASE_URL}/api/quest/${questUrl}`)
         .then(response => response.json())
         .then(data => {
             loading.style.display = 'none';
@@ -436,7 +441,7 @@ function showQuestDetailsScreen(wikiUrl) {
                     };
                     
                     // Usar proxy para evitar problemas de CORS
-                    const proxyUrl = `http://localhost:5000/api/image-proxy?url=${encodeURIComponent(imgSrc)}`;
+                    const proxyUrl = `${API_BASE_URL}/api/image-proxy?url=${encodeURIComponent(imgSrc)}`;
                     img.src = proxyUrl;
                     
                     guideImages.appendChild(imgContainer);
@@ -492,7 +497,7 @@ function openImageModal(imgSrc, clickEvent) {
     modalContainer.appendChild(loadingIndicator);
     
     // Usar proxy sempre
-    let finalSrc = `http://localhost:5000/api/image-proxy?url=${encodeURIComponent(imgSrc)}`;
+    let finalSrc = `${API_BASE_URL}/api/image-proxy?url=${encodeURIComponent(imgSrc)}`;
     
     modalImg.onload = function() {
         this.style.opacity = '1';
