@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes da Quest</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            color: #ecf0f1;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: #2d2d2d;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        .header {
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            color: #3498db;
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+
+        .npc-badge {
+            display: inline-block;
+            background: #3498db;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            margin-top: 10px;
+        }
+
+        .section {
+            margin-bottom: 30px;
+        }
+
+        .section-title {
+            color: #3498db;
+            font-size: 1.5em;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #444;
+        }
+
+        .description {
+            line-height: 1.6;
+            color: #bdc3c7;
+            margin-bottom: 20px;
+        }
+
+        .objectives-list, .rewards-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .objectives-list li, .rewards-list li {
+            background: #3d3d3d;
+            padding: 12px 15px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            border-left: 4px solid #3498db;
+        }
+
+        .objectives-list li::before {
+            content: "✓ ";
+            color: #27ae60;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        .guide-images {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .guide-image-container {
+            background: #3d3d3d;
+            padding: 15px;
+            border-radius: 5px;
+            overflow: hidden;
+            min-height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .guide-image {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+            display: block;
+            max-width: 100%;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 40px;
+            color: #3498db;
+        }
+
+        .error {
+            background: #e74c3c;
+            color: white;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+
+        .back-button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background: #3498db;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+
+        .back-button:hover {
+            background: #2980b9;
+        }
+
+        /* Modal de imagem maximizada */
+        .image-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 10000;
+            cursor: zoom-in;
+            overflow: hidden;
+        }
+
+        .image-modal.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-image-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-image {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+            transform-origin: center center;
+            display: block;
+        }
+
+        .modal-image.zoomed {
+            cursor: move;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: rgba(231, 76, 60, 0.8);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            z-index: 10001;
+            transition: background 0.3s;
+        }
+
+        .modal-close:hover {
+            background: rgba(231, 76, 60, 1);
+        }
+
+        .zoom-info {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: rgba(52, 152, 219, 0.8);
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            font-size: 14px;
+            z-index: 10001;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="loading" class="loading">
+            <p>Carregando informações da quest...</p>
+        </div>
+
+        <div id="content" style="display: none;">
+            <div class="header">
+                <h1 id="questName"></h1>
+                <span id="questNPC" class="npc-badge"></span>
+            </div>
+
+            <div class="section" id="objectivesSection" style="display: none;">
+                <h2 class="section-title">Objetivos</h2>
+                <ul class="objectives-list" id="objectivesList"></ul>
+            </div>
+
+            <div class="section" id="guideSection" style="display: none;">
+                <h2 class="section-title">Guia</h2>
+                <div class="guide-images" id="guideImages"></div>
+            </div>
+
+            <a href="index.html" class="back-button">← Voltar</a>
+        </div>
+
+        <div id="error" style="display: none;" class="error"></div>
+    </div>
+
+    <!-- Modal para imagem maximizada -->
+    <div id="imageModal" class="image-modal">
+        <button class="modal-close" onclick="closeImageModal()">✕ Fechar</button>
+        <div class="zoom-info" id="zoomInfo">Clique esquerdo: Zoom | Direito: Reset | Clique: Fechar</div>
+        <div class="modal-image-container" id="modalImageContainer">
+            <img id="modalImage" class="modal-image" src="" alt="Imagem ampliada">
+        </div>
+    </div>
+
+    <script>
+        // Pegar parâmetros da URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const wikiUrl = urlParams.get('url');
+
+        if (!wikiUrl) {
+            document.getElementById('loading').style.display = 'none';
+            document.getElementById('error').style.display = 'block';
+            document.getElementById('error').textContent = 'URL da quest não fornecida.';
+        } else {
+            // Fazer requisição para o backend
+            fetch(`http://localhost:5000/api/quest/${encodeURIComponent(wikiUrl)}`)
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('loading').style.display = 'none';
+                    
+                    if (data.error) {
+                        document.getElementById('error').style.display = 'block';
+                        document.getElementById('error').textContent = 'Erro ao carregar informações: ' + data.error;
+                        return;
+                    }
+
+                    // Preencher informações
+                    if (data.name) {
+                        document.getElementById('questName').textContent = data.name;
+                    }
+
+                    if (data.npc) {
+                        document.getElementById('questNPC').textContent = data.npc;
+                    }
+
+                    if (data.objectives && data.objectives.length > 0) {
+                        const objectivesList = document.getElementById('objectivesList');
+                        data.objectives.forEach(objective => {
+                            const li = document.createElement('li');
+                            li.textContent = objective;
+                            objectivesList.appendChild(li);
+                        });
+                        document.getElementById('objectivesSection').style.display = 'block';
+                    }
+
+                    if (data.guide_images && data.guide_images.length > 0) {
+                        const guideImages = document.getElementById('guideImages');
+                        console.log('Carregando', data.guide_images.length, 'imagens do guia');
+                        
+                        data.guide_images.forEach((imgSrc, index) => {
+                            const imgContainer = document.createElement('div');
+                            imgContainer.className = 'guide-image-container';
+                            
+                            // Adicionar loading state
+                            const loadingDiv = document.createElement('div');
+                            loadingDiv.style.cssText = 'text-align:center;padding:20px;color:#7f8c8d;';
+                            loadingDiv.textContent = 'Carregando imagem...';
+                            loadingDiv.id = `loading-${index}`;
+                            imgContainer.appendChild(loadingDiv);
+                            
+                            const img = document.createElement('img');
+                            img.alt = `Guia da quest - Imagem ${index + 1}`;
+                            img.className = 'guide-image';
+                            img.style.display = 'none';
+                            
+                            img.onload = function() {
+                                console.log('Imagem carregada:', imgSrc);
+                                const loading = document.getElementById(`loading-${index}`);
+                                if (loading) {
+                                    loading.remove();
+                                }
+                                img.style.display = 'block';
+                                img.style.cursor = 'pointer';
+                                
+                                // Adicionar evento de clique para abrir modal
+                                img.addEventListener('click', function(e) {
+                                    e.stopPropagation();
+                                    // Usar a URL original da imagem, não a do proxy
+                                    openImageModal(imgSrc, e);
+                                });
+                                
+                                imgContainer.appendChild(img);
+                            };
+                            
+                            img.onerror = function() {
+                                console.error('Erro ao carregar imagem:', imgSrc);
+                                const loading = document.getElementById(`loading-${index}`);
+                                if (loading) {
+                                    loading.textContent = 'Erro ao carregar';
+                                    loading.style.color = '#e74c3c';
+                                }
+                            };
+                            
+                            // Usar proxy para evitar problemas de CORS
+                            const proxyUrl = `http://localhost:5000/api/image-proxy?url=${encodeURIComponent(imgSrc)}`;
+                            console.log('Carregando imagem via proxy:', proxyUrl);
+                            img.src = proxyUrl;
+                            
+                            guideImages.appendChild(imgContainer);
+                        });
+                        document.getElementById('guideSection').style.display = 'block';
+                    }
+
+                    document.getElementById('content').style.display = 'block';
+                })
+                .catch(error => {
+                    document.getElementById('loading').style.display = 'none';
+                    document.getElementById('error').style.display = 'block';
+                    document.getElementById('error').textContent = 'Erro ao conectar com o servidor. Certifique-se de que o servidor Flask está rodando na porta 5000.';
+                    console.error('Erro:', error);
+                });
+        }
+
+        // Funções do modal de imagem
+        let currentZoom = 1;
+        let isZoomed = false;
+        let zoomCenterX = 0;
+        let zoomCenterY = 0;
+
+        function openImageModal(imgSrc, clickEvent) {
+            const modal = document.getElementById('imageModal');
+            const modalImg = document.getElementById('modalImage');
+            const modalContainer = document.getElementById('modalImageContainer');
+            
+            // Resetar estado
+            currentZoom = 1;
+            isZoomed = false;
+            modalImg.style.transform = 'scale(1)';
+            modalImg.style.transformOrigin = 'center center';
+            modalImg.style.cursor = 'zoom-in';
+            modal.style.cursor = 'zoom-in';
+            modalImg.classList.remove('zoomed');
+            
+            // Limpar loading anterior se existir
+            const existingLoading = document.getElementById('modal-loading');
+            if (existingLoading) {
+                existingLoading.remove();
+            }
+            
+            // Resetar imagem
+            modalImg.src = '';
+            modalImg.style.opacity = '0';
+            modalImg.style.display = 'block';
+            
+            // Mostrar loading
+            const loadingIndicator = document.createElement('div');
+            loadingIndicator.id = 'modal-loading';
+            loadingIndicator.style.cssText = 'position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);color:#3498db;font-size:18px;z-index:10002;';
+            loadingIndicator.textContent = 'Carregando imagem...';
+            modalContainer.appendChild(loadingIndicator);
+            
+            // Usar proxy sempre (a URL original vem do imgSrc)
+            let finalSrc = `http://localhost:5000/api/image-proxy?url=${encodeURIComponent(imgSrc)}`;
+            
+            console.log('Abrindo modal com imagem:', finalSrc);
+            console.log('URL original:', imgSrc);
+            
+            modalImg.onload = function() {
+                console.log('Imagem carregada no modal com sucesso!');
+                this.style.opacity = '1';
+                const loading = document.getElementById('modal-loading');
+                if (loading) {
+                    loading.remove();
+                }
+            };
+            
+            modalImg.onerror = function() {
+                console.error('Erro ao carregar imagem no modal:', finalSrc);
+                const loading = document.getElementById('modal-loading');
+                if (loading) {
+                    loading.textContent = 'Erro ao carregar imagem';
+                    loading.style.color = '#e74c3c';
+                }
+            };
+            
+            // Abrir modal primeiro
+            modal.classList.add('active');
+            
+            // Depois carregar a imagem
+            modalImg.src = finalSrc;
+            
+            // Se foi um clique, usar a posição do clique como centro do zoom
+            if (clickEvent) {
+                const rect = clickEvent.target.getBoundingClientRect();
+                zoomCenterX = clickEvent.clientX - rect.left;
+                zoomCenterY = clickEvent.clientY - rect.top;
+            }
+        }
+
+        function closeImageModal() {
+            const modal = document.getElementById('imageModal');
+            const modalContainer = document.getElementById('modalImageContainer');
+            const loading = document.getElementById('modal-loading');
+            if (loading) {
+                loading.remove();
+            }
+            modal.classList.remove('active');
+            currentZoom = 1;
+            isZoomed = false;
+        }
+
+        // Event listeners do modal
+        document.addEventListener('DOMContentLoaded', function() {
+            const modal = document.getElementById('imageModal');
+            const modalImg = document.getElementById('modalImage');
+            const modalContainer = document.getElementById('modalImageContainer');
+
+            // Clique esquerdo: zoom in no ponto do mouse
+            modalContainer.addEventListener('click', function(e) {
+                if (e.button === 0 || !e.button) { // Botão esquerdo
+                    if (isZoomed) {
+                        // Se já está com zoom, fechar
+                        closeImageModal();
+                    } else {
+                        // Zoom in
+                        const rect = modalContainer.getBoundingClientRect();
+                        const x = e.clientX - rect.left;
+                        const y = e.clientY - rect.top;
+                        
+                        currentZoom = 2.5;
+                        isZoomed = true;
+                        modalImg.style.cursor = 'move';
+                        modal.style.cursor = 'move';
+                        modalImg.classList.add('zoomed');
+                        
+                        // Calcular transform origin baseado no ponto do clique
+                        const imgRect = modalImg.getBoundingClientRect();
+                        const imgX = e.clientX - imgRect.left;
+                        const imgY = e.clientY - imgRect.top;
+                        
+                        const originX = (imgX / imgRect.width) * 100;
+                        const originY = (imgY / imgRect.height) * 100;
+                        
+                        modalImg.style.transformOrigin = `${originX}% ${originY}%`;
+                        modalImg.style.transform = `scale(${currentZoom})`;
+                    }
+                }
+            });
+
+            // Clique direito: resetar zoom
+            modalContainer.addEventListener('contextmenu', function(e) {
+                e.preventDefault();
+                currentZoom = 1;
+                isZoomed = false;
+                modalImg.style.transform = 'scale(1)';
+                modalImg.style.transformOrigin = 'center center';
+                modalImg.style.cursor = 'zoom-in';
+                modal.style.cursor = 'zoom-in';
+                modalImg.classList.remove('zoomed');
+            });
+
+            // Fechar com ESC
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && modal.classList.contains('active')) {
+                    closeImageModal();
+                }
+            });
+
+            // Fechar clicando fora da imagem (no fundo escuro)
+            modal.addEventListener('click', function(e) {
+                if (e.target === modal || e.target === modalContainer) {
+                    closeImageModal();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+

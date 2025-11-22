@@ -200,10 +200,23 @@ function displayQuest(elementId, quest, type) {
         return;
     }
 
+    // Verificar se é a quest "Delivery from the Past" para mostrar o botão de detalhes
+    const showDetailsButton = quest.id === 'delivery_from_the_past';
+    
+    let detailsButton = '';
+    if (showDetailsButton) {
+        detailsButton = `
+            <a href="quest-details.html?url=${encodeURIComponent(quest.wikiUrl)}" target="_blank" class="quest-link quest-link-details" style="margin-top: 10px; display: block;">
+                📋 Ver Detalhes
+            </a>
+        `;
+    }
+
     element.innerHTML = `
         <div class="quest-name">${quest.name}</div>
         <div class="quest-tier">Tier ${quest.tier}</div>
         <a href="${quest.wikiUrl}" target="_blank" class="quest-link">📖 Ver na Wiki</a>
+        ${detailsButton}
     `;
 }
 

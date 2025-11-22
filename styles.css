@@ -183,6 +183,15 @@ h1 {
     box-shadow: 0 4px 8px rgba(52, 152, 219, 0.3);
 }
 
+.quest-link-details {
+    background: var(--warning-color) !important;
+}
+
+.quest-link-details:hover {
+    background: #d68910 !important;
+    box-shadow: 0 4px 8px rgba(243, 156, 18, 0.3);
+}
+
 .no-quest {
     color: #7f8c8d;
     font-style: italic;
