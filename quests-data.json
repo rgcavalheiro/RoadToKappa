@@ -142,6 +142,33 @@
             "punisher_6"
           ],
           "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Intimidator"
+        },
+        {
+          "id": "chemical_4",
+          "name": "Chemical - Part 4",
+          "tier": 6,
+          "prerequisites": [
+            "chemical_3"
+          ],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Chemical_-_Part_4"
+        },
+        {
+          "id": "polikhim_hobo",
+          "name": "Polikhim Hobo",
+          "tier": 7,
+          "prerequisites": [
+            "chemical_4"
+          ],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Polikhim_Hobo"
+        },
+        {
+          "id": "regulated_materials",
+          "name": "Regulated Materials",
+          "tier": 8,
+          "prerequisites": [
+            "safe_corridor"
+          ],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Regulated_Materials"
         }
       ]
     },
@@ -307,6 +334,15 @@
             "decontamination_service"
           ],
           "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Athlete"
+        },
+        {
+          "id": "all_is_revealed",
+          "name": "All Is Revealed",
+          "tier": 6,
+          "prerequisites": [
+            "capacity_check"
+          ],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/All_Is_Revealed"
         }
       ]
     },
@@ -393,15 +429,6 @@
           "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Vitamins_-_Part_2"
         },
         {
-          "id": "chemical_4",
-          "name": "Chemical - Part 4",
-          "tier": 6,
-          "prerequisites": [
-            "chemical_3"
-          ],
-          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Chemical_-_Part_4"
-        },
-        {
           "id": "safe_corridor",
           "name": "Safe Corridor",
           "tier": 7,
@@ -412,40 +439,47 @@
           "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Safe_Corridor"
         },
         {
-          "id": "polikhim_hobo",
-          "name": "Polikhim Hobo",
-          "tier": 7,
-          "prerequisites": [
-            "chemical_4"
-          ],
-          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Polikhim_Hobo"
-        },
-        {
-          "id": "regulated_materials",
-          "name": "Regulated Materials",
+          "id": "exit_here",
+          "name": "Exit Here",
           "tier": 8,
           "prerequisites": [
-            "safe_corridor"
+            "scout"
           ],
-          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Regulated_Materials"
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Exit_Here"
         },
         {
-          "id": "shady_business",
-          "name": "Shady Business",
-          "tier": 8,
-          "prerequisites": [
-            "polikhim_hobo"
-          ],
-          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Shady_Business"
-        },
-        {
-          "id": "ambulance",
-          "name": "Ambulance",
+          "id": "walls_have_eyes",
+          "name": "The Walls Have Eyes",
           "tier": 9,
           "prerequisites": [
-            "regulated_materials"
+            "exit_here"
           ],
-          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Ambulance"
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/The_Walls_Have_Eyes"
+        },
+        {
+          "id": "lend_lease_1",
+          "name": "Lend Lease - Part 1",
+          "tier": 1,
+          "prerequisites": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Lend_Lease_-_Part_1"
+        },
+        {
+          "id": "long_road",
+          "name": "Long Road",
+          "tier": 3,
+          "prerequisites": [
+            "revision_reserve"
+          ],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Long_Road"
+        },
+        {
+          "id": "missing_cargo",
+          "name": "Missing Cargo",
+          "tier": 4,
+          "prerequisites": [
+            "classified_technologies"
+          ],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Missing_Cargo"
         }
       ]
     },
@@ -692,6 +726,33 @@
             "peacekeeping_mission"
           ],
           "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Insomnia"
+        },
+        {
+          "id": "terragroup_employee",
+          "name": "TerraGroup Employee",
+          "tier": 5,
+          "prerequisites": [
+            "hot_delivery"
+          ],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/TerraGroup_Employee"
+        },
+        {
+          "id": "lend_lease_2",
+          "name": "Lend Lease - Part 2",
+          "tier": 2,
+          "prerequisites": [
+            "lend_lease_1"
+          ],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Lend_Lease_-_Part_2"
+        },
+        {
+          "id": "classified_technologies",
+          "name": "Classified Technologies",
+          "tier": 3,
+          "prerequisites": [
+            "lend_lease_2"
+          ],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Classified_Technologies"
         }
       ]
     },
@@ -812,15 +873,6 @@
           "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Capacity_Check"
         },
         {
-          "id": "all_is_revealed",
-          "name": "All Is Revealed",
-          "tier": 6,
-          "prerequisites": [
-            "capacity_check"
-          ],
-          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/All_Is_Revealed"
-        },
-        {
           "id": "gunsmith_3",
           "name": "Gunsmith - Part 3",
           "tier": 6,
@@ -844,168 +896,6 @@
           "tier": 1,
           "prerequisites": [],
           "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Introduction"
-        },
-        {
-          "id": "acquaintance",
-          "name": "Acquaintance",
-          "tier": 2,
-          "prerequisites": [
-            "introduction"
-          ],
-          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Acquaintance"
-        },
-        {
-          "id": "tarkov_shooter_1",
-          "name": "The Tarkov Shooter - Part 1",
-          "tier": 3,
-          "prerequisites": [
-            "acquaintance"
-          ],
-          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/The_Tarkov_Shooter_-_Part_1"
-        },
-        {
-          "id": "tarkov_shooter_2",
-          "name": "The Tarkov Shooter - Part 2",
-          "tier": 4,
-          "prerequisites": [
-            "tarkov_shooter_1"
-          ],
-          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/The_Tarkov_Shooter_-_Part_2"
-        },
-        {
-          "id": "tarkov_shooter_3",
-          "name": "The Tarkov Shooter - Part 3",
-          "tier": 5,
-          "prerequisites": [
-            "tarkov_shooter_2"
-          ],
-          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/The_Tarkov_Shooter_-_Part_3"
-        },
-        {
-          "id": "tarkov_shooter_4",
-          "name": "The Tarkov Shooter - Part 4",
-          "tier": 6,
-          "prerequisites": [
-            "tarkov_shooter_3"
-          ],
-          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/The_Tarkov_Shooter_-_Part_4"
-        },
-        {
-          "id": "tarkov_shooter_5",
-          "name": "The Tarkov Shooter - Part 5",
-          "tier": 7,
-          "prerequisites": [
-            "tarkov_shooter_4"
-          ],
-          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/The_Tarkov_Shooter_-_Part_5"
-        },
-        {
-          "id": "tarkov_shooter_6",
-          "name": "The Tarkov Shooter - Part 6",
-          "tier": 8,
-          "prerequisites": [
-            "tarkov_shooter_5"
-          ],
-          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/The_Tarkov_Shooter_-_Part_6"
-        },
-        {
-          "id": "tarkov_shooter_7",
-          "name": "The Tarkov Shooter - Part 7",
-          "tier": 9,
-          "prerequisites": [
-            "tarkov_shooter_6"
-          ],
-          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/The_Tarkov_Shooter_-_Part_7"
-        },
-        {
-          "id": "tarkov_shooter_8",
-          "name": "The Tarkov Shooter - Part 8",
-          "tier": 10,
-          "prerequisites": [
-            "tarkov_shooter_7"
-          ],
-          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/The_Tarkov_Shooter_-_Part_8"
-        },
-        {
-          "id": "huntsman_secured_perimeter",
-          "name": "The Huntsman Path - Secured Perimeter",
-          "tier": 9,
-          "prerequisites": [
-            "tarkov_shooter_7"
-          ],
-          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/The_Huntsman_Path_-_Secured_Perimeter"
-        },
-        {
-          "id": "huntsman_trophy",
-          "name": "The Huntsman Path - Trophy",
-          "tier": 10,
-          "prerequisites": [
-            "huntsman_secured_perimeter"
-          ],
-          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/The_Huntsman_Path_-_Trophy"
-        },
-        {
-          "id": "huntsman_justice",
-          "name": "The Huntsman Path - Justice",
-          "tier": 11,
-          "prerequisites": [
-            "huntsman_trophy"
-          ],
-          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/The_Huntsman_Path_-_Justice"
-        },
-        {
-          "id": "huntsman_forest_cleaning",
-          "name": "The Huntsman Path - Forest Cleaning",
-          "tier": 11,
-          "prerequisites": [
-            "huntsman_trophy"
-          ],
-          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/The_Huntsman_Path_-_Forest_Cleaning"
-        },
-        {
-          "id": "claustrophobia",
-          "name": "Claustrophobia",
-          "tier": 11,
-          "prerequisites": [
-            "huntsman_justice"
-          ],
-          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Claustrophobia"
-        },
-        {
-          "id": "huntsman_outcasts",
-          "name": "The Huntsman Path - Outcasts",
-          "tier": 12,
-          "prerequisites": [
-            "huntsman_forest_cleaning"
-          ],
-          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/The_Huntsman_Path_-_Outcasts"
-        },
-        {
-          "id": "huntsman_controller",
-          "name": "The Huntsman Path - Controller",
-          "tier": 12,
-          "prerequisites": [
-            "claustrophobia"
-          ],
-          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/The_Huntsman_Path_-_Controller"
-        },
-        {
-          "id": "huntsman_evil_watchman",
-          "name": "The Huntsman Path - Evil Watchman",
-          "tier": 13,
-          "prerequisites": [
-            "huntsman_outcasts"
-          ],
-          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/The_Huntsman_Path_-_Evil_Watchman"
-        },
-        {
-          "id": "huntsman_eraser_2",
-          "name": "The Huntsman Path - Eraser - Part 2",
-          "tier": 13,
-          "prerequisites": [
-            "huntsman_controller"
-          ],
-          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/The_Huntsman_Path_-_Eraser_-_Part_2"
         },
         {
           "id": "gunsmith_2",
@@ -1069,33 +959,6 @@
             "signal_4"
           ],
           "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Scout"
-        },
-        {
-          "id": "huntsman_factory_chief",
-          "name": "The Huntsman Path - Factory Chief",
-          "tier": 8,
-          "prerequisites": [
-            "scout"
-          ],
-          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/The_Huntsman_Path_-_Factory_Chief"
-        },
-        {
-          "id": "exit_here",
-          "name": "Exit Here",
-          "tier": 8,
-          "prerequisites": [
-            "scout"
-          ],
-          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Exit_Here"
-        },
-        {
-          "id": "walls_have_eyes",
-          "name": "The Walls Have Eyes",
-          "tier": 9,
-          "prerequisites": [
-            "exit_here"
-          ],
-          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/The_Walls_Have_Eyes"
         },
         {
           "id": "black_swan",
@@ -1201,15 +1064,6 @@
           "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Scavenger"
         },
         {
-          "id": "terragroup_employee",
-          "name": "TerraGroup Employee",
-          "tier": 5,
-          "prerequisites": [
-            "hot_delivery"
-          ],
-          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/TerraGroup_Employee"
-        },
-        {
           "id": "sales_night",
           "name": "Sales Night",
           "tier": 6,
@@ -1226,24 +1080,6 @@
             "terragroup_employee"
           ],
           "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Supervisor"
-        },
-        {
-          "id": "huntsman_sellout",
-          "name": "The Huntsman Path - Sellout",
-          "tier": 7,
-          "prerequisites": [
-            "sales_night"
-          ],
-          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/The_Huntsman_Path_-_Sellout"
-        },
-        {
-          "id": "stray_dogs",
-          "name": "Stray Dogs",
-          "tier": 7,
-          "prerequisites": [
-            "supervisor"
-          ],
-          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Stray_Dogs"
         },
         {
           "id": "blood_of_war_2",
@@ -1388,24 +1224,6 @@
             "sew_it_good_3"
           ],
           "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/No_Fuss_Needed"
-        },
-        {
-          "id": "huntsman_woods_keeper",
-          "name": "The Huntsman Path - Woods Keeper",
-          "tier": 13,
-          "prerequisites": [
-            "charisma_brings_success"
-          ],
-          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/The_Huntsman_Path_-_Woods_Keeper"
-        },
-        {
-          "id": "hunting_trip",
-          "name": "Hunting Trip",
-          "tier": 13,
-          "prerequisites": [
-            "no_fuss_needed"
-          ],
-          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Hunting_Trip"
         }
       ]
     },
@@ -1580,28 +1398,237 @@
             "rough_tarkov"
           ],
           "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Every_Hunter_Knows_This"
+        },
+        {
+          "id": "shady_business",
+          "name": "Shady Business",
+          "tier": 8,
+          "prerequisites": [
+            "polikhim_hobo"
+          ],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Shady_Business"
+        },
+        {
+          "id": "ambulance",
+          "name": "Ambulance",
+          "tier": 9,
+          "prerequisites": [
+            "regulated_materials"
+          ],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Ambulance"
+        },
+        {
+          "id": "acquaintance",
+          "name": "Acquaintance",
+          "tier": 2,
+          "prerequisites": [
+            "introduction"
+          ],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Acquaintance"
+        },
+        {
+          "id": "tarkov_shooter_1",
+          "name": "The Tarkov Shooter - Part 1",
+          "tier": 3,
+          "prerequisites": [
+            "acquaintance"
+          ],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/The_Tarkov_Shooter_-_Part_1"
+        },
+        {
+          "id": "tarkov_shooter_2",
+          "name": "The Tarkov Shooter - Part 2",
+          "tier": 4,
+          "prerequisites": [
+            "tarkov_shooter_1"
+          ],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/The_Tarkov_Shooter_-_Part_2"
+        },
+        {
+          "id": "tarkov_shooter_3",
+          "name": "The Tarkov Shooter - Part 3",
+          "tier": 5,
+          "prerequisites": [
+            "tarkov_shooter_2"
+          ],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/The_Tarkov_Shooter_-_Part_3"
+        },
+        {
+          "id": "tarkov_shooter_4",
+          "name": "The Tarkov Shooter - Part 4",
+          "tier": 6,
+          "prerequisites": [
+            "tarkov_shooter_3"
+          ],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/The_Tarkov_Shooter_-_Part_4"
+        },
+        {
+          "id": "tarkov_shooter_5",
+          "name": "The Tarkov Shooter - Part 5",
+          "tier": 7,
+          "prerequisites": [
+            "tarkov_shooter_4"
+          ],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/The_Tarkov_Shooter_-_Part_5"
+        },
+        {
+          "id": "tarkov_shooter_6",
+          "name": "The Tarkov Shooter - Part 6",
+          "tier": 8,
+          "prerequisites": [
+            "tarkov_shooter_5"
+          ],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/The_Tarkov_Shooter_-_Part_6"
+        },
+        {
+          "id": "tarkov_shooter_7",
+          "name": "The Tarkov Shooter - Part 7",
+          "tier": 9,
+          "prerequisites": [
+            "tarkov_shooter_6"
+          ],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/The_Tarkov_Shooter_-_Part_7"
+        },
+        {
+          "id": "tarkov_shooter_8",
+          "name": "The Tarkov Shooter - Part 8",
+          "tier": 10,
+          "prerequisites": [
+            "tarkov_shooter_7"
+          ],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/The_Tarkov_Shooter_-_Part_8"
+        },
+        {
+          "id": "huntsman_secured_perimeter",
+          "name": "The Huntsman Path - Secured Perimeter",
+          "tier": 9,
+          "prerequisites": [
+            "tarkov_shooter_7"
+          ],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/The_Huntsman_Path_-_Secured_Perimeter"
+        },
+        {
+          "id": "huntsman_trophy",
+          "name": "The Huntsman Path - Trophy",
+          "tier": 10,
+          "prerequisites": [
+            "huntsman_secured_perimeter"
+          ],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/The_Huntsman_Path_-_Trophy"
+        },
+        {
+          "id": "huntsman_justice",
+          "name": "The Huntsman Path - Justice",
+          "tier": 11,
+          "prerequisites": [
+            "huntsman_trophy"
+          ],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/The_Huntsman_Path_-_Justice"
+        },
+        {
+          "id": "huntsman_forest_cleaning",
+          "name": "The Huntsman Path - Forest Cleaning",
+          "tier": 11,
+          "prerequisites": [
+            "huntsman_trophy"
+          ],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/The_Huntsman_Path_-_Forest_Cleaning"
+        },
+        {
+          "id": "claustrophobia",
+          "name": "Claustrophobia",
+          "tier": 11,
+          "prerequisites": [
+            "huntsman_justice"
+          ],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Claustrophobia"
+        },
+        {
+          "id": "huntsman_outcasts",
+          "name": "The Huntsman Path - Outcasts",
+          "tier": 12,
+          "prerequisites": [
+            "huntsman_forest_cleaning"
+          ],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/The_Huntsman_Path_-_Outcasts"
+        },
+        {
+          "id": "huntsman_controller",
+          "name": "The Huntsman Path - Controller",
+          "tier": 12,
+          "prerequisites": [
+            "claustrophobia"
+          ],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/The_Huntsman_Path_-_Controller"
+        },
+        {
+          "id": "huntsman_evil_watchman",
+          "name": "The Huntsman Path - Evil Watchman",
+          "tier": 13,
+          "prerequisites": [
+            "huntsman_outcasts"
+          ],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/The_Huntsman_Path_-_Evil_Watchman"
+        },
+        {
+          "id": "huntsman_eraser_2",
+          "name": "The Huntsman Path - Eraser - Part 2",
+          "tier": 13,
+          "prerequisites": [
+            "huntsman_controller"
+          ],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/The_Huntsman_Path_-_Eraser_-_Part_2"
+        },
+        {
+          "id": "huntsman_factory_chief",
+          "name": "The Huntsman Path - Factory Chief",
+          "tier": 8,
+          "prerequisites": [
+            "scout"
+          ],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/The_Huntsman_Path_-_Factory_Chief"
+        },
+        {
+          "id": "huntsman_sellout",
+          "name": "The Huntsman Path - Sellout",
+          "tier": 7,
+          "prerequisites": [
+            "sales_night"
+          ],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/The_Huntsman_Path_-_Sellout"
+        },
+        {
+          "id": "stray_dogs",
+          "name": "Stray Dogs",
+          "tier": 7,
+          "prerequisites": [
+            "supervisor"
+          ],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Stray_Dogs"
+        },
+        {
+          "id": "huntsman_woods_keeper",
+          "name": "The Huntsman Path - Woods Keeper",
+          "tier": 13,
+          "prerequisites": [
+            "charisma_brings_success"
+          ],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/The_Huntsman_Path_-_Woods_Keeper"
+        },
+        {
+          "id": "hunting_trip",
+          "name": "Hunting Trip",
+          "tier": 13,
+          "prerequisites": [
+            "no_fuss_needed"
+          ],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Hunting_Trip"
         }
       ]
     },
     "lightkeeper": {
       "name": "Lightkeeper",
       "quests": [
-        {
-          "id": "lend_lease_1",
-          "name": "Lend Lease - Part 1",
-          "tier": 1,
-          "prerequisites": [],
-          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Lend_Lease_-_Part_1"
-        },
-        {
-          "id": "lend_lease_2",
-          "name": "Lend Lease - Part 2",
-          "tier": 2,
-          "prerequisites": [
-            "lend_lease_1"
-          ],
-          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Lend_Lease_-_Part_2"
-        },
         {
           "id": "revision_reserve",
           "name": "Revision Reserve",
@@ -1610,33 +1637,6 @@
             "lend_lease_1"
           ],
           "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Revision_Reserve"
-        },
-        {
-          "id": "classified_technologies",
-          "name": "Classified Technologies",
-          "tier": 3,
-          "prerequisites": [
-            "lend_lease_2"
-          ],
-          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Classified_Technologies"
-        },
-        {
-          "id": "long_road",
-          "name": "Long Road",
-          "tier": 3,
-          "prerequisites": [
-            "revision_reserve"
-          ],
-          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Long_Road"
-        },
-        {
-          "id": "missing_cargo",
-          "name": "Missing Cargo",
-          "tier": 4,
-          "prerequisites": [
-            "classified_technologies"
-          ],
-          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Missing_Cargo"
         }
       ]
     }
