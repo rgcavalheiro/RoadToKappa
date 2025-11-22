@@ -7,68 +7,113 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>🎯 Tarkov Kappa Quest Tracker</h1>
-            <p class="subtitle">Acompanhe seu progresso para o Kappa Container</p>
-        </header>
+    <!-- Tela Principal -->
+    <div id="mainScreen" class="screen active">
+        <div class="container">
+            <header>
+                <h1>🎯 Tarkov Kappa Quest Tracker</h1>
+                <p class="subtitle">Acompanhe seu progresso para o Kappa Container</p>
+            </header>
 
-        <div class="npc-selector">
-            <h2>Escolha um NPC:</h2>
-            <div class="npc-buttons" id="npcButtons">
-                <!-- NPCs serão inseridos via JavaScript -->
-            </div>
-        </div>
-
-        <div class="quest-display" id="questDisplay" style="display: none;">
-            <div class="quest-card last-quest">
-                <div class="quest-header">
-                    <span class="quest-label">Última Missão Completada</span>
-                </div>
-                <div class="quest-content" id="lastQuest">
-                    <p class="no-quest">Nenhuma missão completada ainda</p>
+            <div class="npc-selector">
+                <h2>Escolha um NPC:</h2>
+                <div class="npc-buttons" id="npcButtons">
+                    <!-- NPCs serão inseridos via JavaScript -->
                 </div>
             </div>
 
-            <div class="quest-card current-quest">
-                <div class="quest-header">
-                    <span class="quest-label">Missão Atual</span>
+            <div class="quest-display" id="questDisplay" style="display: none;">
+                <div class="quest-card last-quest">
+                    <div class="quest-header">
+                        <span class="quest-label">Última Missão Completada</span>
+                    </div>
+                    <div class="quest-content" id="lastQuest">
+                        <p class="no-quest">Nenhuma missão completada ainda</p>
+                    </div>
                 </div>
-                <div class="quest-content" id="currentQuest">
-                    <p class="no-quest">Selecione um NPC para começar</p>
+
+                <div class="quest-card current-quest">
+                    <div class="quest-header">
+                        <span class="quest-label">Missão Atual</span>
+                    </div>
+                    <div class="quest-content" id="currentQuest">
+                        <p class="no-quest">Selecione um NPC para começar</p>
+                    </div>
+                </div>
+
+                <div class="quest-card next-quest">
+                    <div class="quest-header">
+                        <span class="quest-label">Próxima Missão</span>
+                    </div>
+                    <div class="quest-content" id="nextQuest">
+                        <p class="no-quest">Complete a missão atual primeiro</p>
+                    </div>
+                </div>
+
+                <div class="quest-actions">
+                    <button class="btn btn-complete" id="completeBtn" onclick="completeCurrentQuest()">
+                        ✅ Marcar como Completada
+                    </button>
+                    <button class="btn btn-reset" id="resetBtn" onclick="resetProgress()">
+                        🔄 Resetar Progresso
+                    </button>
                 </div>
             </div>
 
-            <div class="quest-card next-quest">
-                <div class="quest-header">
-                    <span class="quest-label">Próxima Missão</span>
-                </div>
-                <div class="quest-content" id="nextQuest">
-                    <p class="no-quest">Complete a missão atual primeiro</p>
+            <div class="quest-list" id="questList" style="display: none;">
+                <h2>Todas as Missões de <span id="npcName"></span></h2>
+                <div class="quest-tree" id="questTree">
+                    <!-- Árvore de missões será inserida via JavaScript -->
                 </div>
             </div>
 
-            <div class="quest-actions">
-                <button class="btn btn-complete" id="completeBtn" onclick="completeCurrentQuest()">
-                    ✅ Marcar como Completada
+            <div class="toggle-view">
+                <button class="btn btn-toggle" id="toggleViewBtn" onclick="toggleQuestList()">
+                    📋 Ver Todas as Missões
                 </button>
-                <button class="btn btn-reset" id="resetBtn" onclick="resetProgress()">
-                    🔄 Resetar Progresso
-                </button>
             </div>
         </div>
+    </div>
 
-        <div class="quest-list" id="questList" style="display: none;">
-            <h2>Todas as Missões de <span id="npcName"></span></h2>
-            <div class="quest-tree" id="questTree">
-                <!-- Árvore de missões será inserida via JavaScript -->
+    <!-- Tela de Detalhes da Quest -->
+    <div id="questDetailsScreen" class="screen">
+        <div class="container">
+            <button class="back-to-main-btn" onclick="showMainScreen()">← Voltar</button>
+            
+            <div id="questDetailsLoading" class="quest-details-loading">
+                <p>Carregando informações da quest...</p>
             </div>
+            
+            <div id="questDetailsContent" style="display: none;">
+                <div class="quest-details-header">
+                    <h1 id="questDetailsName"></h1>
+                    <span id="questDetailsNPC" class="npc-badge"></span>
+                </div>
+                
+                <div class="quest-details-body">
+                    <div class="quest-details-section" id="objectivesSection" style="display: none;">
+                        <h2 class="section-title">Objetivos</h2>
+                        <ul class="objectives-list" id="objectivesList"></ul>
+                    </div>
+                    
+                    <div class="quest-details-section" id="guideSection" style="display: none;">
+                        <h2 class="section-title">Guia</h2>
+                        <div class="guide-images" id="guideImages"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="questDetailsError" style="display: none;" class="quest-details-error"></div>
         </div>
+    </div>
 
-        <div class="toggle-view">
-            <button class="btn btn-toggle" id="toggleViewBtn" onclick="toggleQuestList()">
-                📋 Ver Todas as Missões
-            </button>
+
+    <!-- Modal para imagem maximizada com zoom -->
+    <div id="imageModal" class="image-modal">
+        <button class="modal-close" onclick="closeImageModal()">✕ Fechar</button>
+        <div class="zoom-info" id="zoomInfo">Clique esquerdo: Zoom | Direito: Reset | Clique: Fechar</div>
+        <div class="modal-image-container" id="modalImageContainer">
+            <img id="modalImage" class="modal-image" src="" alt="Imagem ampliada">
         </div>
     </div>
 

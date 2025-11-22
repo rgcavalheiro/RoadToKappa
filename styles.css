@@ -23,6 +23,8 @@ body {
     color: var(--text-color);
     min-height: 100vh;
     padding: 20px;
+    margin: 0;
+    overflow-x: hidden;
 }
 
 .container {
@@ -185,6 +187,9 @@ h1 {
 
 .quest-link-details {
     background: var(--warning-color) !important;
+    border: none;
+    color: white !important;
+    font-weight: 600;
 }
 
 .quest-link-details:hover {
@@ -359,6 +364,199 @@ h1 {
     color: white;
 }
 
+/* Sistema de telas (views) */
+.screen {
+    display: none;
+    width: 100%;
+    min-height: 100vh;
+    animation: fadeIn 0.3s ease;
+}
+
+.screen.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.back-to-main-btn {
+    background: var(--secondary-color);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 600;
+    margin-bottom: 30px;
+    transition: all 0.3s ease;
+}
+
+.back-to-main-btn:hover {
+    background: #2980b9;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(52, 152, 219, 0.3);
+}
+
+.quest-details-header {
+    border-bottom: 2px solid var(--secondary-color);
+    padding-bottom: 20px;
+    margin-bottom: 30px;
+}
+
+.quest-details-header h1 {
+    color: var(--secondary-color);
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.quest-details-body {
+    margin-top: 30px;
+}
+
+.quest-details-section {
+    margin-bottom: 40px;
+    background: var(--card-bg);
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.quest-details-section .section-title {
+    color: var(--secondary-color);
+    font-size: 1.8em;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid var(--border-color);
+}
+
+.quest-details-loading {
+    text-align: center;
+    padding: 40px;
+    color: var(--secondary-color);
+}
+
+.quest-details-error {
+    background: var(--danger-color);
+    color: white;
+    padding: 15px;
+    border-radius: 5px;
+    margin: 20px 0;
+}
+
+/* Modal de imagem maximizada */
+.image-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.95);
+    z-index: 20000;
+    cursor: zoom-in;
+    overflow: hidden;
+}
+
+.image-modal.active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-image-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-image {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    transform-origin: center center;
+    display: block;
+}
+
+.modal-image.zoomed {
+    cursor: move;
+}
+
+.modal-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: rgba(231, 76, 60, 0.8);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    z-index: 20001;
+    transition: background 0.3s;
+}
+
+.modal-close:hover {
+    background: rgba(231, 76, 60, 1);
+}
+
+.zoom-info {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background: rgba(52, 152, 219, 0.8);
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 14px;
+    z-index: 20001;
+}
+
+.guide-images {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.guide-image-container {
+    background: var(--primary-color);
+    padding: 15px;
+    border-radius: 5px;
+    overflow: hidden;
+    min-height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.guide-image {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    display: block;
+    max-width: 100%;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.guide-image:hover {
+    transform: scale(1.02);
+}
+
 @media (max-width: 768px) {
     .quest-display {
         grid-template-columns: 1fr;
@@ -370,6 +568,15 @@ h1 {
 
     h1 {
         font-size: 2em;
+    }
+
+    .quest-details-content {
+        margin: 10px;
+        padding: 20px;
+    }
+
+    .guide-images {
+        grid-template-columns: 1fr;
     }
 }
 
