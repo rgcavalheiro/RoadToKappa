@@ -150,10 +150,10 @@
           "id": "polikhim_hobo_1",
           "name": "Polikhim Hobo",
           "tier": null,
-          "prerequisites": [
+          "prerequisites": [],
+          "prerequisitesExternal": [
             "chemical_part_1"
           ],
-          "prerequisitesExternal": [],
           "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Polikhim_Hobo",
           "kappaRequired": true
         },
