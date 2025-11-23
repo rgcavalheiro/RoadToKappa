@@ -29,7 +29,6 @@
                         <!-- Lista de Quests à Esquerda -->
                         <div class="quest-list-panel">
                             <div class="quest-list-header">
-                                <h2>COMPLETE</h2>
                                 <div class="quest-list-controls">
                                     <label class="checkbox-label">
                                         <input type="checkbox" id="showCompleted" onchange="updateQuestList()">
@@ -39,8 +38,8 @@
                                         <input type="checkbox" id="showLocked" onchange="updateQuestList()">
                                         <span>Show locked</span>
                                     </label>
+                                    <div class="quest-progress" id="questProgress">0/0</div>
                                 </div>
-                                <div class="quest-progress" id="questProgress">0/0</div>
                             </div>
                             <div class="quest-list-container" id="questListContainer">
                                 <!-- Quests serão inseridas aqui via JavaScript -->

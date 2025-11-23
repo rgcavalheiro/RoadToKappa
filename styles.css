@@ -310,23 +310,24 @@ h1 {
 }
 
 .quest-list-header {
-    padding: 12px;
+    padding: 6px 12px;
     border-bottom: 2px solid var(--border-color);
     background: var(--primary-color);
 }
 
 .quest-list-header h2 {
     color: var(--secondary-color);
-    font-size: 1.2em;
-    margin-bottom: 10px;
+    font-size: 1.1em;
+    margin-bottom: 6px;
     text-transform: uppercase;
 }
 
 .quest-list-controls {
     display: flex;
-    flex-direction: column;
-    gap: 6px;
-    margin-bottom: 8px;
+    flex-direction: row;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 0;
 }
 
 .checkbox-label {
@@ -346,15 +347,15 @@ h1 {
     color: var(--text-color);
     font-size: 0.9em;
     font-weight: 600;
-    margin-top: 8px;
-    text-align: center;
+    margin-left: auto;
+    text-align: right;
 }
 
 .quest-list-container {
     flex: 1;
     overflow-y: auto;
     overflow-x: hidden;
-    padding: 8px;
+    padding: 6px;
     min-height: 0;
     scrollbar-width: thin;
     scrollbar-color: #5A5A5A #1A1A1A;
@@ -381,11 +382,12 @@ h1 {
     background: var(--primary-color);
     border: 1px solid var(--border-color);
     border-radius: 4px;
-    padding: 10px;
-    margin-bottom: 8px;
+    padding: 6px 10px;
+    margin-bottom: 4px;
     cursor: pointer;
     transition: all 0.2s ease;
     position: relative;
+    min-height: 50px;
 }
 
 .quest-list-item:hover {
@@ -415,7 +417,34 @@ h1 {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    margin-bottom: 8px;
+    margin-bottom: 4px;
+    gap: 8px;
+}
+
+.quest-list-item-drag-handle {
+    cursor: grab;
+    color: #888;
+    font-size: 1.2em;
+    line-height: 1;
+    padding: 2px 4px;
+    user-select: none;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+}
+
+.quest-list-item-drag-handle:active {
+    cursor: grabbing;
+}
+
+.quest-list-item.dragging {
+    opacity: 0.5;
+    cursor: grabbing;
+}
+
+.quest-list-item.drag-over {
+    border-top: 2px solid var(--secondary-color);
+    margin-top: 2px;
 }
 
 .quest-list-item-name {
@@ -452,17 +481,18 @@ h1 {
 }
 
 .quest-list-item-complete-btn {
-    width: 100%;
-    padding: 6px 12px;
+    padding: 2px 8px;
     background: var(--success-color);
     color: white;
     border: none;
-    border-radius: 4px;
+    border-radius: 10px;
     cursor: pointer;
-    font-size: 0.85em;
+    font-size: 0.75em;
     font-weight: 600;
     transition: all 0.2s ease;
-    margin-top: 8px;
+    margin-left: 8px;
+    flex-shrink: 0;
+    text-transform: uppercase;
 }
 
 .quest-list-item-complete-btn:hover {
@@ -474,6 +504,26 @@ h1 {
     background: var(--border-color);
     cursor: not-allowed;
     opacity: 0.5;
+}
+
+.quest-list-item-undo-btn {
+    padding: 2px 8px;
+    background: var(--warning-color);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 0.75em;
+    font-weight: 600;
+    transition: all 0.2s ease;
+    margin-left: 8px;
+    flex-shrink: 0;
+    text-transform: uppercase;
+}
+
+.quest-list-item-undo-btn:hover {
+    background: #e67e22;
+    transform: translateY(-1px);
 }
 
 .quest-details-panel {

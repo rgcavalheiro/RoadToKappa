@@ -150,7 +150,9 @@
           "id": "polikhim_hobo_1",
           "name": "Polikhim Hobo",
           "tier": null,
-          "prerequisites": [],
+          "prerequisites": [
+            "chemical_part_1"
+          ],
           "prerequisitesExternal": [],
           "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Polikhim_Hobo",
           "kappaRequired": true
@@ -343,7 +345,9 @@
           "name": "Green Corridor",
           "tier": null,
           "prerequisites": [],
-          "prerequisitesExternal": [],
+          "prerequisitesExternal": [
+            "spa_tour_part_7"
+          ],
           "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Green_Corridor",
           "kappaRequired": false
         },
@@ -374,7 +378,9 @@
           "name": "Shipping Delay - Part 1",
           "tier": null,
           "prerequisites": [],
-          "prerequisitesExternal": [],
+          "prerequisitesExternal": [
+            "a_helping_hand"
+          ],
           "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Shipping_Delay_-_Part_1",
           "kappaRequired": false
         },
@@ -558,7 +564,9 @@
           "name": "The Good Times - Part 2",
           "tier": null,
           "prerequisites": [],
-          "prerequisitesExternal": [],
+          "prerequisitesExternal": [
+            "airmail"
+          ],
           "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/The_Good_Times_-_Part_2",
           "kappaRequired": false
         },
@@ -567,7 +575,9 @@
           "name": "Viewer",
           "tier": null,
           "prerequisites": [],
-          "prerequisitesExternal": [],
+          "prerequisitesExternal": [
+            "minute_of_fame"
+          ],
           "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Viewer",
           "kappaRequired": false
         },
@@ -575,9 +585,7 @@
           "id": "test_drive_part_1_1",
           "name": "Test Drive - Part 1",
           "tier": null,
-          "prerequisites": [
-            "grenadier_1"
-          ],
+          "prerequisites": [],
           "prerequisitesExternal": [],
           "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Test_Drive_-_Part_1",
           "kappaRequired": true

@@ -2,6 +2,7 @@
 let questsData = {};
 let currentNPC = null;
 let progress = {};
+let questOrder = {}; // Armazenar ordem personalizada das quests por NPC
 
 // NPCs que precisam ser desbloqueados por quests de outros NPCs
 // Formato: { npcId: { questId: 'id_da_quest', npcId: 'npc_que_tem_a_quest' } }
@@ -64,11 +65,22 @@ function loadProgress() {
     if (saved) {
         progress = JSON.parse(saved);
     }
+    
+    // Carregar ordem personalizada das quests
+    const savedOrder = localStorage.getItem('tarkovQuestOrder');
+    if (savedOrder) {
+        questOrder = JSON.parse(savedOrder);
+    }
 }
 
 // Salvar progresso
 function saveProgress() {
     localStorage.setItem('tarkovQuestProgress', JSON.stringify(progress));
+}
+
+// Salvar ordem personalizada das quests
+function saveQuestOrder() {
+    localStorage.setItem('tarkovQuestOrder', JSON.stringify(questOrder));
 }
 
 // Carregar dados do JSON
@@ -308,7 +320,12 @@ function updateQuestList() {
     let availableCount = 0;
     let completedCount = 0;
     
+    // Filtrar e preparar quests
+    const filteredQuests = [];
     npc.quests.forEach(quest => {
+        // Filtrar apenas quests necessárias para o Kappa
+        if (!quest.kappaRequired) return;
+        
         const isCompleted = completedIds.includes(quest.id);
         const allPrerequisitesMet = areAllPrerequisitesMet(quest, currentNPC, progress);
         const isLocked = !allPrerequisitesMet && !isCompleted;
@@ -324,8 +341,37 @@ function updateQuestList() {
             completedCount++;
         }
         
+        filteredQuests.push({
+            quest: quest,
+            isCompleted: isCompleted,
+            isLocked: isLocked
+        });
+    });
+    
+    // Aplicar ordem personalizada se existir
+    const npcOrder = questOrder[currentNPC] || [];
+    if (npcOrder.length > 0) {
+        // Criar mapa de IDs para ordenação
+        const orderMap = new Map();
+        npcOrder.forEach((id, index) => {
+            orderMap.set(id, index);
+        });
+        
+        // Ordenar: primeiro as que têm ordem personalizada, depois as outras
+        filteredQuests.sort((a, b) => {
+            const aOrder = orderMap.has(a.quest.id) ? orderMap.get(a.quest.id) : Infinity;
+            const bOrder = orderMap.has(b.quest.id) ? orderMap.get(b.quest.id) : Infinity;
+            return aOrder - bOrder;
+        });
+    }
+    
+    // Criar elementos das quests
+    filteredQuests.forEach(({quest, isCompleted, isLocked}) => {
         const questItem = document.createElement('div');
         questItem.className = 'quest-list-item';
+        questItem.draggable = true;
+        questItem.dataset.questId = quest.id;
+        
         if (isCompleted) {
             questItem.classList.add('completed');
         }
@@ -333,26 +379,37 @@ function updateQuestList() {
             questItem.classList.add('locked');
         }
         
-        const statusClass = isCompleted ? 'completed' : (isLocked ? 'locked' : 'active');
-        const statusText = isCompleted ? 'Completed' : (isLocked ? 'Locked' : 'Active!');
-        
         questItem.innerHTML = `
             <div class="quest-list-item-header">
+                <div class="quest-list-item-drag-handle">⋮⋮</div>
                 <div class="quest-list-item-name">${quest.name}</div>
-                <span class="quest-list-item-status ${statusClass}">${statusText}</span>
+                ${!isCompleted && !isLocked ? `
+                    <button class="quest-list-item-complete-btn" onclick="completeQuest('${quest.id}'); event.stopPropagation();">
+                        ✓ Complete
+                    </button>
+                ` : isCompleted ? `
+                    <button class="quest-list-item-undo-btn" onclick="undoCompleteQuest('${quest.id}'); event.stopPropagation();">
+                        ↶ Desfazer
+                    </button>
+                ` : isLocked ? `
+                    <span class="quest-list-item-status locked">Locked</span>
+                ` : ''}
             </div>
-            ${!isCompleted && !isLocked ? `
-                <button class="quest-list-item-complete-btn" onclick="completeQuest('${quest.id}')">
-                    ✅ Complete
-                </button>
-            ` : ''}
         `;
+        
+        // Adicionar eventos de drag and drop
+        questItem.addEventListener('dragstart', handleDragStart);
+        questItem.addEventListener('dragover', handleDragOver);
+        questItem.addEventListener('drop', handleDrop);
+        questItem.addEventListener('dragend', handleDragEnd);
         
         // Adicionar evento de clique para selecionar quest
         if (!isLocked) {
             questItem.addEventListener('click', (e) => {
-                // Não selecionar se clicou no botão de completar
-                if (e.target.classList.contains('quest-list-item-complete-btn')) {
+                // Não selecionar se clicou no botão de completar, desfazer ou no handle de drag
+                if (e.target.classList.contains('quest-list-item-complete-btn') || 
+                    e.target.classList.contains('quest-list-item-undo-btn') ||
+                    e.target.classList.contains('quest-list-item-drag-handle')) {
                     return;
                 }
                 selectQuest(quest);
@@ -365,6 +422,91 @@ function updateQuestList() {
     // Atualizar progresso
     const totalAvailable = availableCount + completedCount;
     document.getElementById('questProgress').textContent = `${completedCount}/${totalAvailable}`;
+}
+
+// Variáveis para drag and drop
+let draggedElement = null;
+let draggedOverElement = null;
+
+// Handlers de drag and drop
+function handleDragStart(e) {
+    draggedElement = this;
+    this.classList.add('dragging');
+    e.dataTransfer.effectAllowed = 'move';
+    e.dataTransfer.setData('text/html', this.innerHTML);
+}
+
+function handleDragOver(e) {
+    if (e.preventDefault) {
+        e.preventDefault();
+    }
+    e.dataTransfer.dropEffect = 'move';
+    
+    // Remover highlight anterior
+    if (draggedOverElement && draggedOverElement !== this) {
+        draggedOverElement.classList.remove('drag-over');
+    }
+    
+    // Adicionar highlight
+    if (this !== draggedElement) {
+        this.classList.add('drag-over');
+        draggedOverElement = this;
+    }
+    
+    return false;
+}
+
+function handleDrop(e) {
+    if (e.stopPropagation) {
+        e.stopPropagation();
+    }
+    
+    if (draggedElement !== this) {
+        const container = document.getElementById('questListContainer');
+        const allItems = Array.from(container.querySelectorAll('.quest-list-item'));
+        const draggedIndex = allItems.indexOf(draggedElement);
+        const targetIndex = allItems.indexOf(this);
+        
+        // Reordenar no DOM
+        if (draggedIndex < targetIndex) {
+            container.insertBefore(draggedElement, this.nextSibling);
+        } else {
+            container.insertBefore(draggedElement, this);
+        }
+        
+        // Salvar nova ordem
+        saveCurrentOrder();
+    }
+    
+    this.classList.remove('drag-over');
+    return false;
+}
+
+function handleDragEnd(e) {
+    this.classList.remove('dragging');
+    
+    // Remover todos os highlights
+    document.querySelectorAll('.quest-list-item').forEach(item => {
+        item.classList.remove('drag-over');
+    });
+    
+    draggedElement = null;
+    draggedOverElement = null;
+}
+
+// Salvar ordem atual das quests
+function saveCurrentOrder() {
+    if (!currentNPC) return;
+    
+    const container = document.getElementById('questListContainer');
+    const items = Array.from(container.querySelectorAll('.quest-list-item'));
+    const order = items.map(item => item.dataset.questId);
+    
+    if (!questOrder[currentNPC]) {
+        questOrder[currentNPC] = [];
+    }
+    questOrder[currentNPC] = order;
+    saveQuestOrder();
 }
 
 // Selecionar quest para mostrar detalhes
@@ -753,6 +895,43 @@ function completeQuest(questId) {
     }
     
     // Verificar se alguma quest completada desbloqueou um NPC
+    checkNPCUnlocks();
+    
+    updateNPCButtons();
+}
+
+// Desfazer conclusão de quest
+function undoCompleteQuest(questId) {
+    if (!currentNPC) return;
+    
+    // Prevenir seleção da quest ao clicar no botão
+    if (event) {
+        event.stopPropagation();
+    }
+    
+    const npc = questsData.npcs[currentNPC];
+    const npcProgress = progress[currentNPC] || { completed: [], current: null };
+    
+    // Verificar se a quest existe
+    const quest = npc.quests.find(q => q.id === questId);
+    if (!quest) return;
+    
+    // Verificar se está na lista de completadas
+    if (!npcProgress.completed || !npcProgress.completed.includes(questId)) {
+        return;
+    }
+    
+    // Remover da lista de completadas
+    npcProgress.completed = npcProgress.completed.filter(id => id !== questId);
+    
+    // Salvar progresso
+    progress[currentNPC] = npcProgress;
+    saveProgress();
+    
+    // Atualizar lista (isso fará com que a quest volte a aparecer como disponível)
+    updateQuestList();
+    
+    // Verificar se alguma quest desfeita bloqueou um NPC
     checkNPCUnlocks();
     
     updateNPCButtons();
