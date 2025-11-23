@@ -423,8 +423,81 @@ function showQuestDetailsInPanel(quest) {
     loadQuestDetailsForPanel(quest.wikiUrl, content);
 }
 
+// ==================== SISTEMA DE CACHE DE DETALHES ====================
+
+// Carregar cache de detalhes das quests
+let questDetailsCache = {};
+
+function loadQuestDetailsCache() {
+    try {
+        const cached = localStorage.getItem('questDetailsCache');
+        if (cached) {
+            questDetailsCache = JSON.parse(cached);
+            console.log('[CACHE] Cache carregado:', Object.keys(questDetailsCache).length, 'quests em cache');
+        }
+    } catch (error) {
+        console.error('[CACHE] Erro ao carregar cache:', error);
+        questDetailsCache = {};
+    }
+}
+
+// Salvar cache de detalhes das quests
+function saveQuestDetailsCache() {
+    try {
+        localStorage.setItem('questDetailsCache', JSON.stringify(questDetailsCache));
+        console.log('[CACHE] Cache salvo:', Object.keys(questDetailsCache).length, 'quests');
+    } catch (error) {
+        console.error('[CACHE] Erro ao salvar cache:', error);
+        // Se o localStorage estiver cheio, limpar cache antigo
+        if (error.name === 'QuotaExceededError') {
+            console.warn('[CACHE] localStorage cheio, limpando cache antigo...');
+            const keys = Object.keys(questDetailsCache);
+            // Remover metade das entradas mais antigas (assumindo ordem de inserção)
+            const keysToRemove = keys.slice(0, Math.floor(keys.length / 2));
+            keysToRemove.forEach(key => delete questDetailsCache[key]);
+            try {
+                localStorage.setItem('questDetailsCache', JSON.stringify(questDetailsCache));
+                console.log('[CACHE] Cache limpo e salvo novamente');
+            } catch (e) {
+                console.error('[CACHE] Erro ao salvar cache após limpeza:', e);
+            }
+        }
+    }
+}
+
+// Verificar se os detalhes estão em cache
+function getCachedQuestDetails(wikiUrl) {
+    if (questDetailsCache[wikiUrl]) {
+        console.log('[CACHE] Detalhes encontrados em cache para:', wikiUrl);
+        return questDetailsCache[wikiUrl];
+    }
+    return null;
+}
+
+// Salvar detalhes no cache
+function setCachedQuestDetails(wikiUrl, details) {
+    questDetailsCache[wikiUrl] = {
+        ...details,
+        cachedAt: new Date().toISOString()
+    };
+    saveQuestDetailsCache();
+}
+
+// ==================== FIM DO SISTEMA DE CACHE ====================
+
 // Carregar detalhes da quest para o painel
 function loadQuestDetailsForPanel(wikiUrl, contentElement) {
+    // Primeiro, verificar se está em cache
+    const cachedDetails = getCachedQuestDetails(wikiUrl);
+    if (cachedDetails) {
+        console.log('[CACHE] Usando dados do cache');
+        displayQuestDetails(cachedDetails, contentElement);
+        return;
+    }
+    
+    // Se não está em cache, fazer requisição à API
+    console.log('[CACHE] Dados não encontrados em cache, fazendo requisição à API');
+    
     // Verificar se a API está disponível
     if (!API_BASE_URL) {
         contentElement.innerHTML = `
@@ -474,117 +547,143 @@ function loadQuestDetailsForPanel(wikiUrl, contentElement) {
                 return;
             }
             
-            // Preencher informações
-            let html = `
-                <div class="quest-details-header">
-                    <h1>${data.name || 'Quest'}</h1>
-                    <span class="npc-badge">${data.npc || currentNPC}</span>
-                </div>
-                <div class="quest-details-body">
-            `;
+            // Salvar no cache antes de exibir
+            setCachedQuestDetails(wikiUrl, data);
             
-            if (data.objectives && data.objectives.length > 0) {
-                html += `
-                    <div class="quest-details-section">
-                        <h2 class="section-title">Objetivos</h2>
-                        <ul class="objectives-list">
-                `;
-                data.objectives.forEach(objective => {
-                    html += `<li>${objective}</li>`;
-                });
-                html += `
-                        </ul>
-                    </div>
-                `;
-            }
-            
-            if (data.guide_images && data.guide_images.length > 0) {
-                html += `
-                    <div class="quest-details-section">
-                        <h2 class="section-title">Guia</h2>
-                        <div class="guide-images">
-                `;
-                
-                data.guide_images.forEach((imgSrc, index) => {
-                    html += `
-                        <div class="guide-image-container">
-                            <div style="text-align:center;padding:20px;color:#7f8c8d;" id="guide-loading-${index}">
-                                Carregando imagem...
-                            </div>
-                            <img 
-                                class="guide-image" 
-                                style="display:none;" 
-                                alt="Guia da quest - Imagem ${index + 1}"
-                                data-src="${imgSrc}"
-                                data-index="${index}"
-                            >
-                        </div>
-                    `;
-                });
-                
-                html += `
-                        </div>
-                    </div>
-                `;
-            }
-            
-            html += `
-                </div>
-            `;
-            
-            contentElement.innerHTML = html;
-            
-            // Carregar imagens
-            if (data.guide_images && data.guide_images.length > 0) {
-                const images = contentElement.querySelectorAll('.guide-image');
-                images.forEach(img => {
-                    const imgSrc = img.getAttribute('data-src');
-                    const index = img.getAttribute('data-index');
-                    
-                    img.onload = function() {
-                        const loading = document.getElementById(`guide-loading-${index}`);
-                        if (loading) {
-                            loading.remove();
-                        }
-                        img.style.display = 'block';
-                        img.style.cursor = 'pointer';
-                        
-                        img.addEventListener('click', function(e) {
-                            e.stopPropagation();
-                            openImageModal(imgSrc, e);
-                        });
-                    };
-                    
-                    img.onerror = function() {
-                        const loading = document.getElementById(`guide-loading-${index}`);
-                        if (loading) {
-                            loading.textContent = 'Erro ao carregar';
-                            loading.style.color = '#e74c3c';
-                        }
-                    };
-                    
-                    // Usar proxy se API disponível
-                    if (API_BASE_URL) {
-                        const proxyUrl = `${API_BASE_URL}/api/image-proxy?url=${encodeURIComponent(imgSrc)}`;
-                        img.src = proxyUrl;
-                    } else {
-                        img.src = imgSrc;
-                    }
-                });
-            }
+            // Exibir os detalhes
+            displayQuestDetails(data, contentElement);
         })
         .catch(err => {
             clearTimeout(timeoutId);
             console.error('[DEBUG] Erro ao carregar quest:', err);
             console.error('[DEBUG] API_BASE_URL:', API_BASE_URL);
             console.error('[DEBUG] URL completa:', `${API_BASE_URL}/api/quest/${questUrl}`);
-            contentElement.innerHTML = `
-                <div class="quest-details-error">
-                    Erro ao carregar informações da quest. ${err.message}
-                    <br><small>Verifique o console (F12) para mais detalhes.</small>
+            
+            if (err.name === 'AbortError') {
+                contentElement.innerHTML = `
+                    <div class="quest-details-error">
+                        Timeout ao carregar informações. O servidor pode estar lento ou indisponível.
+                    </div>
+                `;
+            } else {
+                contentElement.innerHTML = `
+                    <div class="quest-details-error">
+                        Erro ao carregar informações: ${err.message}
+                    </div>
+                `;
+            }
+        });
+}
+
+// Função auxiliar para exibir os detalhes da quest (reutilizada para cache e API)
+function displayQuestDetails(data, contentElement) {
+    if (data.error) {
+        contentElement.innerHTML = `
+            <div class="quest-details-error">
+                Erro ao carregar informações: ${data.error}
+            </div>
+        `;
+        return;
+    }
+    
+    // Preencher informações
+    let html = `
+        <div class="quest-details-header">
+            <h1>${data.name || 'Quest'}</h1>
+            <span class="npc-badge">${data.npc || currentNPC}</span>
+        </div>
+        <div class="quest-details-body">
+    `;
+    
+    if (data.objectives && data.objectives.length > 0) {
+        html += `
+            <div class="quest-details-section">
+                <h2 class="section-title">Objetivos</h2>
+                <ul class="objectives-list">
+        `;
+        data.objectives.forEach(objective => {
+            html += `<li>${objective}</li>`;
+        });
+        html += `
+                </ul>
+            </div>
+        `;
+    }
+    
+    if (data.guide_images && data.guide_images.length > 0) {
+        html += `
+            <div class="quest-details-section">
+                <h2 class="section-title">Guia</h2>
+                <div class="guide-images">
+        `;
+        
+        data.guide_images.forEach((imgSrc, index) => {
+            html += `
+                <div class="guide-image-container">
+                    <div style="text-align:center;padding:20px;color:#7f8c8d;" id="guide-loading-${index}">
+                        Carregando imagem...
+                    </div>
+                    <img 
+                        class="guide-image" 
+                        style="display:none;" 
+                        alt="Guia da quest - Imagem ${index + 1}"
+                        data-src="${imgSrc}"
+                        data-index="${index}"
+                    >
                 </div>
             `;
         });
+        
+        html += `
+                </div>
+            </div>
+        `;
+    }
+    
+    html += `
+        </div>
+    `;
+    
+    contentElement.innerHTML = html;
+    
+    // Carregar imagens
+    if (data.guide_images && data.guide_images.length > 0) {
+        const images = contentElement.querySelectorAll('.guide-image');
+        images.forEach(img => {
+            const imgSrc = img.getAttribute('data-src');
+            const index = img.getAttribute('data-index');
+            
+            img.onload = function() {
+                const loading = document.getElementById(`guide-loading-${index}`);
+                if (loading) {
+                    loading.remove();
+                }
+                img.style.display = 'block';
+                img.style.cursor = 'pointer';
+                
+                img.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    openImageModal(imgSrc, e);
+                });
+            };
+            
+            img.onerror = function() {
+                const loading = document.getElementById(`guide-loading-${index}`);
+                if (loading) {
+                    loading.textContent = 'Erro ao carregar';
+                    loading.style.color = '#e74c3c';
+                }
+            };
+            
+            // Usar proxy se API disponível
+            if (API_BASE_URL) {
+                const proxyUrl = `${API_BASE_URL}/api/image-proxy?url=${encodeURIComponent(imgSrc)}`;
+                img.src = proxyUrl;
+            } else {
+                img.src = imgSrc;
+            }
+        });
+    }
 }
 
 // Limpar detalhes da quest
@@ -1437,5 +1536,6 @@ document.addEventListener('keydown', function(e) {
 
 // Inicializar aplicação
 loadProgress();
+loadQuestDetailsCache(); // Carregar cache de detalhes das quests
 loadQuestData();
 
