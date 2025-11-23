@@ -74,79 +74,46 @@ function saveProgress() {
 // Carregar dados do JSON
 async function loadQuestData() {
     try {
-        // Carregar ambos os arquivos
-        const [orderResponse, detailsResponse] = await Promise.all([
-            fetch('questdata2025.json'),
-            fetch('quests-data.json')
-        ]);
+        // Carregar apenas o quests-database.json (novo banco de dados)
+        const response = await fetch('quests-database.json');
         
-        const orderData = await orderResponse.json(); // Array com tier, npc, quest
-        const detailsData = await detailsResponse.json(); // Estrutura completa com npcs
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
         
-        // Criar um mapa para buscar detalhes por nome da quest e NPC
-        const questDetailsMap = {};
-        Object.keys(detailsData.npcs).forEach(npcId => {
-            const npc = detailsData.npcs[npcId];
-            npc.quests.forEach(quest => {
-                const key = `${npc.name}|${quest.name}`;
-                questDetailsMap[key] = {
-                    ...quest,
-                    npcId: npcId,
-                    npcName: npc.name
-                };
-            });
+        const databaseData = await response.json();
+        
+        // A estrutura já está no formato correto, apenas precisamos garantir compatibilidade
+        // Remover campos auxiliares se existirem
+        const cleanData = {
+            npcs: {}
+        };
+        
+        // Processar cada NPC
+        Object.keys(databaseData.npcs).forEach(npcId => {
+            const npc = databaseData.npcs[npcId];
+            cleanData.npcs[npcId] = {
+                name: npc.name,
+                quests: npc.quests.map(quest => {
+                    // Combinar prerequisites e prerequisitesExternal se existirem
+                    const allPrerequisites = [
+                        ...(quest.prerequisites || []),
+                        ...(quest.prerequisitesExternal || [])
+                    ];
+                    
+                    return {
+                        id: quest.id,
+                        name: quest.name,
+                        tier: quest.tier || null, // Tier pode ser null
+                        prerequisites: allPrerequisites,
+                        wikiUrl: quest.wikiUrl || '',
+                        kappaRequired: quest.kappaRequired || false
+                    };
+                })
+            };
         });
         
-        // Reorganizar dados usando a ordem do questdata2025.json
-        const reorganizedData = { npcs: {} };
-        
-        orderData.forEach(orderQuest => {
-            const npcName = orderQuest.npc;
-            const questName = orderQuest.quest;
-            const key = `${npcName}|${questName}`;
-            
-            // Buscar detalhes da quest
-            const questDetails = questDetailsMap[key];
-            
-            if (questDetails) {
-                // Encontrar ou criar o NPC
-                const npcId = questDetails.npcId;
-                if (!reorganizedData.npcs[npcId]) {
-                    reorganizedData.npcs[npcId] = {
-                        name: npcName,
-                        quests: []
-                    };
-                }
-                
-                // Adicionar quest na ordem correta (já está ordenada por tier no array)
-                reorganizedData.npcs[npcId].quests.push({
-                    id: questDetails.id,
-                    name: questDetails.name,
-                    tier: orderQuest.tier, // Usar tier do questdata2025.json
-                    prerequisites: questDetails.prerequisites || [],
-                    wikiUrl: questDetails.wikiUrl
-                });
-            } else {
-                // Quest não encontrada nos detalhes - criar entrada básica
-                console.warn(`Quest não encontrada nos detalhes: ${npcName} - ${questName}`);
-                const npcId = npcName.toLowerCase().replace(/\s+/g, '');
-                if (!reorganizedData.npcs[npcId]) {
-                    reorganizedData.npcs[npcId] = {
-                        name: npcName,
-                        quests: []
-                    };
-                }
-                reorganizedData.npcs[npcId].quests.push({
-                    id: questName.toLowerCase().replace(/\s+/g, '_').replace(/[^a-z0-9_]/g, ''),
-                    name: questName,
-                    tier: orderQuest.tier,
-                    prerequisites: [],
-                    wikiUrl: `https://escapefromtarkov.fandom.com/wiki/${encodeURIComponent(questName.replace(/\s+/g, '_'))}`
-                });
-            }
-        });
-        
-        questsData = reorganizedData;
+        questsData = cleanData;
         initializeNPCs();
         // Atualizar checks verdes e NPCs bloqueados após inicializar
         setTimeout(() => {
@@ -155,6 +122,28 @@ async function loadQuestData() {
         }, 100);
     } catch (error) {
         console.error('Erro ao carregar dados:', error);
+        console.error('Detalhes do erro:', error.message);
+        
+        // Tentar carregar quests-data.json como fallback
+        try {
+            console.log('Tentando carregar quests-data.json como fallback...');
+            const fallbackResponse = await fetch('quests-data.json');
+            if (fallbackResponse.ok) {
+                const fallbackData = await fallbackResponse.json();
+                questsData = fallbackData;
+                initializeNPCs();
+                setTimeout(() => {
+                    updateNPCButtons();
+                    checkNPCUnlocks();
+                }, 100);
+                console.log('Fallback carregado com sucesso!');
+                return;
+            }
+        } catch (fallbackError) {
+            console.error('Erro no fallback:', fallbackError);
+        }
+        
+        alert(`Erro ao carregar dados das quests.\n\nErro: ${error.message}\n\nVerifique se o arquivo quests-database.json existe e está acessível.`);
     }
 }
 
@@ -1386,13 +1375,30 @@ function updateRawData2Table() {
                 
                 // Pré-requisitos
                 const prereqCell = document.createElement('td');
-                if (quest.prerequisites && quest.prerequisites.length > 0) {
-                    quest.prerequisites.forEach(prereq => {
-                        const badge = document.createElement('span');
-                        badge.className = 'prereq-badge';
-                        badge.textContent = prereq;
-                        prereqCell.appendChild(badge);
-                    });
+                const hasPrereqs = quest.prerequisites && quest.prerequisites.length > 0;
+                const hasExternalPrereqs = quest.prerequisitesExternal && quest.prerequisitesExternal.length > 0;
+                
+                if (hasPrereqs || hasExternalPrereqs) {
+                    // Pré-requisitos do mesmo NPC
+                    if (hasPrereqs) {
+                        quest.prerequisites.forEach(prereq => {
+                            const badge = document.createElement('span');
+                            badge.className = 'prereq-badge';
+                            badge.textContent = prereq;
+                            prereqCell.appendChild(badge);
+                        });
+                    }
+                    
+                    // Pré-requisitos externos (outros NPCs)
+                    if (hasExternalPrereqs) {
+                        quest.prerequisitesExternal.forEach(prereq => {
+                            const badge = document.createElement('span');
+                            badge.className = 'prereq-badge prereq-external';
+                            badge.textContent = prereq;
+                            badge.title = 'Pré-requisito de outro NPC';
+                            prereqCell.appendChild(badge);
+                        });
+                    }
                 } else {
                     prereqCell.textContent = '-';
                 }

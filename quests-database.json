@@ -1,636 +1,5098 @@
 {
   "version": "1.0.0",
-  "last_updated": "2025-11-23T15:10:19.252764",
+  "last_updated": "2025-11-23T18:53:24.596836",
   "npcs": {
     "prapor": {
       "name": "Prapor",
       "quests": [
         {
-          "id": "shooting_cans",
+          "id": "shooting_cans_1",
           "name": "Shooting Cans",
           "tier": null,
           "prerequisites": [],
+          "prerequisitesExternal": [],
           "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Shooting_Cans",
           "kappaRequired": true
         },
         {
-          "id": "debut",
+          "id": "debut_1",
           "name": "Debut",
           "tier": null,
           "prerequisites": [
-            "shooting_cans"
+            "shooting_cans_1"
           ],
+          "prerequisitesExternal": [],
           "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Debut",
           "kappaRequired": true
         },
         {
-          "id": "luxurious_life",
+          "id": "luxurious_life_1",
           "name": "Luxurious Life",
           "tier": null,
           "prerequisites": [
-            "debut"
+            "debut_1"
           ],
+          "prerequisitesExternal": [],
           "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Luxurious_Life",
           "kappaRequired": true
         },
         {
-          "id": "background_check",
+          "id": "background_check_1",
           "name": "Background Check",
           "tier": null,
           "prerequisites": [
-            "luxurious_life"
+            "luxurious_life_1"
           ],
+          "prerequisitesExternal": [],
           "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Background_Check",
           "kappaRequired": true
         },
         {
-          "id": "shootout_picnic",
+          "id": "shootout_picnic_1",
           "name": "Shootout Picnic",
           "tier": null,
           "prerequisites": [
-            "background_check"
+            "background_check_1"
           ],
+          "prerequisitesExternal": [],
           "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Shootout_Picnic",
           "kappaRequired": true
         },
         {
-          "id": "search_mission",
+          "id": "search_mission_1",
           "name": "Search Mission",
           "tier": null,
           "prerequisites": [
-            "debut"
+            "debut_1"
           ],
+          "prerequisitesExternal": [],
           "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Search_Mission",
           "kappaRequired": true
         },
         {
-          "id": "delivery_from_the_past",
+          "id": "delivery_from_the_past_1",
           "name": "Delivery From the Past",
           "tier": null,
           "prerequisites": [
-            "background_check"
+            "background_check_1"
           ],
+          "prerequisitesExternal": [],
           "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Delivery_From_the_Past",
           "kappaRequired": true
         },
         {
-          "id": "bp_depot",
+          "id": "bp_depot_1",
           "name": "BP Depot",
           "tier": null,
           "prerequisites": [
-            "delivery_from_the_past"
+            "delivery_from_the_past_1"
           ],
+          "prerequisitesExternal": [],
           "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/BP_Depot",
           "kappaRequired": true
         },
         {
-          "id": "belka_and_strelka",
+          "id": "belka_and_strelka_1",
           "name": "Belka and Strelka",
           "tier": null,
           "prerequisites": [
-            "bp_depot"
+            "bp_depot_1"
           ],
+          "prerequisitesExternal": [],
           "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Belka_and_Strelka",
           "kappaRequired": true
         },
         {
-          "id": "bad_rep_evidence",
+          "id": "bad_rep_evidence_1",
           "name": "Bad Rep Evidence",
           "tier": null,
           "prerequisites": [
-            "bp_depot"
+            "bp_depot_1"
           ],
+          "prerequisitesExternal": [],
           "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Bad_Rep_Evidence",
           "kappaRequired": true
         },
         {
-          "id": "ice_cream_cones",
+          "id": "ice_cream_cones_1",
           "name": "Ice Cream Cones",
           "tier": null,
           "prerequisites": [
-            "bad_rep_evidence"
+            "bad_rep_evidence_1"
           ],
+          "prerequisitesExternal": [],
           "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Ice_Cream_Cones",
           "kappaRequired": true
         },
         {
-          "id": "the_bunker_part_1",
+          "id": "the_bunker_part_1_1",
           "name": "The Bunker - Part 1",
           "tier": null,
           "prerequisites": [
-            "bp_depot"
+            "bp_depot_1"
           ],
+          "prerequisitesExternal": [],
           "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/The_Bunker_-_Part_1",
           "kappaRequired": true
         },
         {
-          "id": "postman_pat_part_1",
+          "id": "postman_pat_part_1_1",
           "name": "Postman Pat - Part 1",
           "tier": null,
           "prerequisites": [
-            "ice_cream_cones"
+            "ice_cream_cones_1"
           ],
+          "prerequisitesExternal": [],
           "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Postman_Pat_-_Part_1",
           "kappaRequired": true
         },
         {
-          "id": "polikhim_hobo",
+          "id": "polikhim_hobo_1",
           "name": "Polikhim Hobo",
           "tier": null,
-          "prerequisites": [
-            "chemical_part_1"
-          ],
+          "prerequisites": [],
+          "prerequisitesExternal": [],
           "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Polikhim_Hobo",
           "kappaRequired": true
         },
         {
-          "id": "possessor",
+          "id": "possessor_1",
           "name": "Possessor",
           "tier": null,
           "prerequisites": [
-            "postman_pat_part_1"
+            "postman_pat_part_1_1"
           ],
+          "prerequisitesExternal": [],
           "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Possessor",
           "kappaRequired": true
         },
         {
-          "id": "big_customer",
+          "id": "big_customer_1",
           "name": "Big Customer",
           "tier": null,
-          "prerequisites": [
-            "chemical_part_4"
-          ],
+          "prerequisites": [],
+          "prerequisitesExternal": [],
           "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Big_Customer",
           "kappaRequired": true
         },
         {
-          "id": "no_offence",
+          "id": "no_offence_1",
           "name": "No Offence",
           "tier": null,
           "prerequisites": [
-            "big_customer"
+            "big_customer_1"
           ],
+          "prerequisitesExternal": [],
           "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/No_Offence",
           "kappaRequired": false
         },
         {
-          "id": "shaking_up_the_teller",
+          "id": "shaking_up_the_teller_1",
           "name": "Shaking Up the Teller",
           "tier": null,
           "prerequisites": [
-            "ice_cream_cones"
+            "ice_cream_cones_1"
           ],
+          "prerequisitesExternal": [],
           "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Shaking_Up_the_Teller",
           "kappaRequired": true
         },
         {
-          "id": "the_bunker_part_2",
+          "id": "the_bunker_part_2_1",
           "name": "The Bunker - Part 2",
           "tier": null,
           "prerequisites": [
-            "the_bunker_part_1"
+            "the_bunker_part_1_1"
           ],
+          "prerequisitesExternal": [],
           "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/The_Bunker_-_Part_2",
           "kappaRequired": true
         },
         {
-          "id": "youve_got_mail",
+          "id": "youve_got_mail_1",
           "name": "You've Got Mail",
           "tier": null,
           "prerequisites": [
-            "postman_pat_part_1"
+            "postman_pat_part_1_1"
           ],
+          "prerequisitesExternal": [],
           "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/You've_Got_Mail",
           "kappaRequired": false
         },
         {
-          "id": "the_punisher_part_1",
+          "id": "the_punisher_part_1_1",
           "name": "The Punisher - Part 1",
           "tier": null,
           "prerequisites": [
-            "shaking_up_the_teller"
+            "shaking_up_the_teller_1"
           ],
+          "prerequisitesExternal": [],
           "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/The_Punisher_-_Part_1",
           "kappaRequired": true
         },
         {
-          "id": "no_place_for_renegades",
+          "id": "no_place_for_renegades_1",
           "name": "No Place for Renegades",
           "tier": null,
           "prerequisites": [
-            "the_bunker_part_2"
+            "the_bunker_part_2_1"
           ],
+          "prerequisitesExternal": [],
           "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/No_Place_for_Renegades",
           "kappaRequired": true
         },
         {
-          "id": "glory_to_cpsu_part_1",
+          "id": "glory_to_cpsu_part_1_1",
           "name": "Glory to CPSU - Part 1",
           "tier": null,
           "prerequisites": [
-            "youve_got_mail"
+            "youve_got_mail_1"
           ],
+          "prerequisitesExternal": [],
           "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Glory_to_CPSU_-_Part_1",
           "kappaRequired": false
         },
         {
-          "id": "the_punisher_part_2",
+          "id": "the_punisher_part_2_1",
           "name": "The Punisher - Part 2",
           "tier": null,
           "prerequisites": [
-            "the_punisher_part_1"
+            "the_punisher_part_1_1"
           ],
+          "prerequisitesExternal": [],
           "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/The_Punisher_-_Part_2",
           "kappaRequired": true
         },
         {
-          "id": "easy_job_part_1",
+          "id": "easy_job_part_1_1",
           "name": "Easy Job - Part 1",
           "tier": null,
           "prerequisites": [
-            "the_punisher_part_2"
+            "the_punisher_part_2_1"
           ],
+          "prerequisitesExternal": [],
           "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Easy_Job_-_Part_1",
           "kappaRequired": true
         },
         {
-          "id": "easy_job_part_2",
+          "id": "easy_job_part_2_1",
           "name": "Easy Job - Part 2",
           "tier": null,
           "prerequisites": [
-            "easy_job_part_1"
+            "easy_job_part_1_1"
           ],
+          "prerequisitesExternal": [],
           "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Easy_Job_-_Part_2",
           "kappaRequired": true
         },
         {
-          "id": "reconnaissance",
+          "id": "reconnaissance_1",
           "name": "Reconnaissance",
           "tier": null,
           "prerequisites": [
-            "easy_job_part_1"
+            "easy_job_part_1_1"
           ],
+          "prerequisitesExternal": [],
           "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Reconnaissance",
           "kappaRequired": true
         },
         {
-          "id": "documents",
+          "id": "documents_1",
           "name": "Documents",
           "tier": null,
           "prerequisites": [
-            "no_place_for_renegades"
+            "no_place_for_renegades_1"
           ],
+          "prerequisitesExternal": [],
           "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Documents",
           "kappaRequired": true
         },
         {
-          "id": "the_punisher_part_3",
+          "id": "the_punisher_part_3_1",
           "name": "The Punisher - Part 3",
           "tier": null,
           "prerequisites": [
-            "the_punisher_part_2"
+            "the_punisher_part_2_1"
           ],
+          "prerequisitesExternal": [],
           "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/The_Punisher_-_Part_3",
           "kappaRequired": true
         },
         {
-          "id": "special_comms",
+          "id": "special_comms_1",
           "name": "Special Comms",
           "tier": null,
           "prerequisites": [
-            "documents"
+            "documents_1"
           ],
+          "prerequisitesExternal": [],
           "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Special_Comms",
           "kappaRequired": false
         },
         {
-          "id": "grenadier",
+          "id": "grenadier_1",
           "name": "Grenadier",
           "tier": null,
           "prerequisites": [],
+          "prerequisitesExternal": [],
           "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Grenadier",
           "kappaRequired": true
         },
         {
-          "id": "the_punisher_part_4",
+          "id": "green_corridor",
+          "name": "Green Corridor",
+          "tier": null,
+          "prerequisites": [],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Green_Corridor",
+          "kappaRequired": false
+        },
+        {
+          "id": "the_punisher_part_4_1",
           "name": "The Punisher - Part 4",
           "tier": null,
           "prerequisites": [
-            "the_punisher_part_3"
+            "the_punisher_part_3_1"
           ],
+          "prerequisitesExternal": [],
           "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/The_Punisher_-_Part_4",
           "kappaRequired": true
         },
         {
-          "id": "the_punisher_part_5",
+          "id": "the_punisher_part_5_1",
           "name": "The Punisher - Part 5",
           "tier": null,
           "prerequisites": [
-            "the_punisher_part_4"
+            "the_punisher_part_4_1"
           ],
+          "prerequisitesExternal": [],
           "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/The_Punisher_-_Part_5",
           "kappaRequired": true
         },
         {
-          "id": "shipping_delay_part_1",
+          "id": "shipping_delay_part_1_1",
           "name": "Shipping Delay - Part 1",
           "tier": null,
-          "prerequisites": [
-            "a_helping_hand"
-          ],
+          "prerequisites": [],
+          "prerequisitesExternal": [],
           "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Shipping_Delay_-_Part_1",
           "kappaRequired": false
         },
         {
-          "id": "half_empty",
+          "id": "half_empty_1",
           "name": "Half-Empty",
           "tier": null,
           "prerequisites": [
-            "forge_a_friendship"
+            "forge_a_friendship_1"
           ],
+          "prerequisitesExternal": [],
           "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Half-Empty",
           "kappaRequired": false
         },
         {
-          "id": "stick_in_the_wheel",
+          "id": "stick_in_the_wheel_1",
           "name": "Stick in the Wheel",
           "tier": null,
           "prerequisites": [
-            "half_empty"
+            "half_empty_1"
           ],
+          "prerequisitesExternal": [],
           "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Stick_in_the_Wheel",
           "kappaRequired": false
         },
         {
-          "id": "forge_a_friendship",
+          "id": "forge_a_friendship_1",
           "name": "Forge a Friendship",
           "tier": null,
-          "prerequisites": [
-            "swift_retribution",
-            "natural_exchange"
-          ],
+          "prerequisites": [],
+          "prerequisitesExternal": [],
           "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Forge_a_Friendship",
           "kappaRequired": false
         },
         {
-          "id": "anesthesia",
+          "id": "anesthesia_1",
           "name": "Anesthesia",
           "tier": null,
           "prerequisites": [
-            "shaking_up_the_teller"
+            "shaking_up_the_teller_1"
           ],
+          "prerequisitesExternal": [],
           "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Anesthesia",
           "kappaRequired": true
         },
         {
-          "id": "the_punisher_part_6",
+          "id": "the_punisher_part_6_1",
           "name": "The Punisher - Part 6",
           "tier": null,
           "prerequisites": [
-            "the_punisher_part_5"
+            "the_punisher_part_5_1"
           ],
+          "prerequisitesExternal": [],
           "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/The_Punisher_-_Part_6",
           "kappaRequired": true
         },
         {
-          "id": "gendarmerie_mall_cop",
+          "id": "gendarmerie_mall_cop_1",
           "name": "Gendarmerie - Mall Cop",
           "tier": null,
           "prerequisites": [
-            "the_punisher_part_6"
+            "the_punisher_part_6_1"
           ],
+          "prerequisitesExternal": [],
           "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Gendarmerie_-_Mall_Cop",
           "kappaRequired": false
         },
         {
-          "id": "gendarmerie_tickets_please",
+          "id": "gendarmerie_tickets_please_1",
           "name": "Gendarmerie - Tickets, Please",
           "tier": null,
           "prerequisites": [
-            "gendarmerie_mall_cop"
+            "gendarmerie_mall_cop_1"
           ],
+          "prerequisitesExternal": [],
           "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Gendarmerie_-_Tickets%2C_Please",
           "kappaRequired": false
         },
         {
-          "id": "gendarmerie_district_patrol",
+          "id": "gendarmerie_district_patrol_1",
           "name": "Gendarmerie - District Patrol",
           "tier": null,
           "prerequisites": [
-            "gendarmerie_tickets_please"
+            "gendarmerie_tickets_please_1"
           ],
+          "prerequisitesExternal": [],
           "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Gendarmerie_-_District_Patrol",
           "kappaRequired": false
         },
         {
-          "id": "glory_to_cpsu_part_2",
+          "id": "glory_to_cpsu_part_2_1",
           "name": "Glory to CPSU - Part 2",
           "tier": null,
           "prerequisites": [
-            "glory_to_cpsu_part_1"
+            "glory_to_cpsu_part_1_1"
           ],
+          "prerequisitesExternal": [],
           "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Glory_to_CPSU_-_Part_2",
           "kappaRequired": false
         },
         {
-          "id": "kings_of_the_rooftops",
+          "id": "kings_of_the_rooftops_1",
           "name": "Kings of the Rooftops",
           "tier": null,
           "prerequisites": [
-            "the_punisher_part_4"
+            "the_punisher_part_4_1"
           ],
+          "prerequisitesExternal": [],
           "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Kings_of_the_Rooftops",
           "kappaRequired": false
         },
         {
-          "id": "properties_all_around",
+          "id": "properties_all_around_1",
           "name": "Properties All Around",
           "tier": null,
           "prerequisites": [
-            "glory_to_cpsu_part_2"
+            "glory_to_cpsu_part_2_1"
           ],
+          "prerequisitesExternal": [],
           "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Properties_All_Around",
           "kappaRequired": false
         },
         {
-          "id": "regulated_materials",
+          "id": "regulated_materials_1",
           "name": "Regulated Materials",
           "tier": null,
           "prerequisites": [
-            "polikhim_hobo"
+            "polikhim_hobo_1"
           ],
+          "prerequisitesExternal": [],
           "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Regulated_Materials",
           "kappaRequired": true
         },
         {
-          "id": "best_job_in_the_world",
+          "id": "best_job_in_the_world_1",
           "name": "Best Job in the World",
           "tier": null,
           "prerequisites": [
-            "the_punisher_part_6",
-            "kings_of_the_rooftops"
+            "the_punisher_part_6_1",
+            "kings_of_the_rooftops_1"
           ],
+          "prerequisitesExternal": [],
           "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Best_Job_in_the_World",
           "kappaRequired": false
         },
         {
-          "id": "the_good_times_part_1",
+          "id": "the_good_times_part_1_1",
           "name": "The Good Times - Part 1",
           "tier": null,
           "prerequisites": [
-            "shooting_cans"
+            "shooting_cans_1"
           ],
+          "prerequisitesExternal": [],
           "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/The_Good_Times_-_Part_1",
           "kappaRequired": false
         },
         {
-          "id": "hell_on_earth_part_1",
+          "id": "hell_on_earth_part_1_1",
           "name": "Hell on Earth - Part 1",
           "tier": null,
           "prerequisites": [
-            "the_good_times_part_1"
+            "the_good_times_part_1_1"
           ],
+          "prerequisitesExternal": [],
           "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Hell_on_Earth_-_Part_1",
           "kappaRequired": false
         },
         {
-          "id": "hell_on_earth_part_2",
+          "id": "hell_on_earth_part_2_1",
           "name": "Hell on Earth - Part 2",
           "tier": null,
           "prerequisites": [
-            "hell_on_earth_part_1"
+            "hell_on_earth_part_1_1"
           ],
+          "prerequisitesExternal": [],
           "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Hell_on_Earth_-_Part_2",
           "kappaRequired": false
         },
         {
-          "id": "the_good_times_part_2",
+          "id": "the_good_times_part_2_1",
           "name": "The Good Times - Part 2",
           "tier": null,
-          "prerequisites": [
-            "airmail"
-          ],
+          "prerequisites": [],
+          "prerequisitesExternal": [],
           "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/The_Good_Times_-_Part_2",
           "kappaRequired": false
         },
         {
-          "id": "viewer",
+          "id": "viewer_1",
           "name": "Viewer",
           "tier": null,
-          "prerequisites": [
-            "minute_of_fame"
-          ],
+          "prerequisites": [],
+          "prerequisitesExternal": [],
           "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Viewer",
           "kappaRequired": false
         },
         {
-          "id": "test_drive_part_1",
+          "id": "test_drive_part_1_1",
           "name": "Test Drive - Part 1",
           "tier": null,
           "prerequisites": [
-            "grenadier"
+            "grenadier_1"
           ],
+          "prerequisitesExternal": [],
           "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Test_Drive_-_Part_1",
           "kappaRequired": true
         },
         {
-          "id": "test_drive_part_2",
+          "id": "our_own_land",
+          "name": "Our Own Land",
+          "tier": null,
+          "prerequisites": [
+            "the_punisher_part_5_1"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Our_Own_Land",
+          "kappaRequired": false
+        },
+        {
+          "id": "test_drive_part_2_1",
           "name": "Test Drive - Part 2",
           "tier": null,
           "prerequisites": [
-            "test_drive_part_1"
+            "test_drive_part_1_1"
           ],
+          "prerequisitesExternal": [],
           "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Test_Drive_-_Part_2",
           "kappaRequired": true
         },
         {
-          "id": "test_drive_part_3",
+          "id": "test_drive_part_3_1",
           "name": "Test Drive - Part 3",
           "tier": null,
           "prerequisites": [
-            "test_drive_part_2"
+            "test_drive_part_2_1"
           ],
+          "prerequisitesExternal": [],
           "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Test_Drive_-_Part_3",
           "kappaRequired": true
         },
         {
-          "id": "the_art_of_explosion",
+          "id": "the_art_of_explosion_1",
           "name": "The Art of Explosion",
           "tier": null,
           "prerequisites": [
-            "grenadier"
+            "grenadier_1"
           ],
+          "prerequisitesExternal": [],
           "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/The_Art_of_Explosion",
           "kappaRequired": false
         },
         {
-          "id": "perfect_mediator",
+          "id": "perfect_mediator_1",
           "name": "Perfect Mediator",
           "tier": null,
           "prerequisites": [
-            "shaking_up_the_teller"
+            "shaking_up_the_teller_1"
           ],
+          "prerequisitesExternal": [],
           "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Perfect_Mediator",
           "kappaRequired": true
         },
         {
-          "id": "test_drive_part_4",
+          "id": "test_drive_part_4_1",
           "name": "Test Drive - Part 4",
           "tier": null,
           "prerequisites": [
-            "test_drive_part_3"
+            "test_drive_part_3_1"
           ],
+          "prerequisitesExternal": [],
           "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Test_Drive_-_Part_4",
           "kappaRequired": true
         },
         {
-          "id": "test_drive_part_5",
+          "id": "test_drive_part_5_1",
           "name": "Test Drive - Part 5",
           "tier": null,
           "prerequisites": [
-            "test_drive_part_4"
+            "test_drive_part_4_1"
           ],
+          "prerequisitesExternal": [],
           "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Test_Drive_-_Part_5",
           "kappaRequired": true
         },
         {
-          "id": "test_drive_part_6",
+          "id": "test_drive_part_6_1",
           "name": "Test Drive - Part 6",
           "tier": null,
           "prerequisites": [
-            "test_drive_part_5"
+            "test_drive_part_5_1"
           ],
+          "prerequisitesExternal": [],
           "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Test_Drive_-_Part_6",
           "kappaRequired": true
         },
         {
-          "id": "capturing_outposts",
+          "id": "capturing_outposts_1",
           "name": "Capturing Outposts",
           "tier": null,
           "prerequisites": [
-            "the_punisher_part_6"
+            "the_punisher_part_6_1"
           ],
+          "prerequisitesExternal": [],
           "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Capturing_Outposts",
           "kappaRequired": false
         },
         {
-          "id": "intimidator",
+          "id": "intimidator_1",
           "name": "Intimidator",
           "tier": null,
           "prerequisites": [
-            "the_punisher_part_6"
+            "the_punisher_part_6_1"
           ],
+          "prerequisitesExternal": [],
           "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Intimidator",
           "kappaRequired": true
         },
         {
-          "id": "escort",
+          "id": "escort_1",
           "name": "Escort",
           "tier": null,
           "prerequisites": [
-            "the_punisher_part_6"
+            "the_punisher_part_6_1"
           ],
+          "prerequisitesExternal": [],
           "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Escort",
+          "kappaRequired": false
+        }
+      ]
+    },
+    "therapist": {
+      "name": "Therapist",
+      "quests": [
+        {
+          "id": "first_in_line",
+          "name": "First in Line",
+          "tier": null,
+          "prerequisites": [],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/First_in_Line",
+          "kappaRequired": true
+        },
+        {
+          "id": "shortage",
+          "name": "Shortage",
+          "tier": null,
+          "prerequisites": [
+            "first_in_line"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Shortage",
+          "kappaRequired": true
+        },
+        {
+          "id": "sanitary_standards_part_1",
+          "name": "Sanitary Standards - Part 1",
+          "tier": null,
+          "prerequisites": [
+            "shortage"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Sanitary_Standards_-_Part_1",
+          "kappaRequired": true
+        },
+        {
+          "id": "operation_aquarius_part_1",
+          "name": "Operation Aquarius - Part 1",
+          "tier": null,
+          "prerequisites": [
+            "shortage"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Operation_Aquarius_-_Part_1",
+          "kappaRequired": true
+        },
+        {
+          "id": "operation_aquarius_part_2",
+          "name": "Operation Aquarius - Part 2",
+          "tier": null,
+          "prerequisites": [
+            "operation_aquarius_part_1"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Operation_Aquarius_-_Part_2",
+          "kappaRequired": true
+        },
+        {
+          "id": "sanitary_standards_part_2",
+          "name": "Sanitary Standards - Part 2",
+          "tier": null,
+          "prerequisites": [
+            "sanitary_standards_part_1"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Sanitary_Standards_-_Part_2",
+          "kappaRequired": true
+        },
+        {
+          "id": "painkiller",
+          "name": "Painkiller",
+          "tier": null,
+          "prerequisites": [
+            "sanitary_standards_part_2"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Painkiller",
+          "kappaRequired": true
+        },
+        {
+          "id": "pharmacist",
+          "name": "Pharmacist",
+          "tier": null,
+          "prerequisites": [
+            "painkiller"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Pharmacist",
+          "kappaRequired": true
+        },
+        {
+          "id": "postman_pat_part_2",
+          "name": "Postman Pat - Part 2",
+          "tier": null,
+          "prerequisites": [],
+          "prerequisitesExternal": [
+            "postman_pat_part_1_1"
+          ],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Postman_Pat_-_Part_2",
+          "kappaRequired": true
+        },
+        {
+          "id": "general_wares",
+          "name": "General Wares",
+          "tier": null,
+          "prerequisites": [
+            "pharmacist"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/General_Wares",
+          "kappaRequired": true
+        },
+        {
+          "id": "car_repair",
+          "name": "Car Repair",
+          "tier": null,
+          "prerequisites": [
+            "pharmacist"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Car_Repair",
+          "kappaRequired": true
+        },
+        {
+          "id": "out_of_curiosity",
+          "name": "Out of Curiosity",
+          "tier": null,
+          "prerequisites": [],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Out_of_Curiosity",
+          "kappaRequired": true
+        },
+        {
+          "id": "trust_regain",
+          "name": "Trust Regain",
+          "tier": null,
+          "prerequisites": [
+            "out_of_curiosity"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Trust_Regain",
+          "kappaRequired": false
+        },
+        {
+          "id": "population_census",
+          "name": "Population Census",
+          "tier": null,
+          "prerequisites": [
+            "pharmacist"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Population_Census",
+          "kappaRequired": false
+        },
+        {
+          "id": "pets_wont_need_it_part_1",
+          "name": "Pets Won't Need It - Part 1",
+          "tier": null,
+          "prerequisites": [
+            "population_census"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Pets_Won't_Need_It_-_Part_1",
+          "kappaRequired": false
+        },
+        {
+          "id": "pets_wont_need_it_part_2",
+          "name": "Pets Won't Need It - Part 2",
+          "tier": null,
+          "prerequisites": [
+            "pets_wont_need_it_part_1"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Pets_Won't_Need_It_-_Part_2",
+          "kappaRequired": false
+        },
+        {
+          "id": "all_is_revealed",
+          "name": "All Is Revealed",
+          "tier": null,
+          "prerequisites": [],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/All_Is_Revealed",
+          "kappaRequired": true
+        },
+        {
+          "id": "beneath_the_streets",
+          "name": "Beneath The Streets",
+          "tier": null,
+          "prerequisites": [
+            "pets_wont_need_it_part_2"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Beneath_The_Streets",
+          "kappaRequired": false
+        },
+        {
+          "id": "supply_plans",
+          "name": "Supply Plans",
+          "tier": null,
+          "prerequisites": [
+            "pharmacist"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Supply_Plans",
+          "kappaRequired": true
+        },
+        {
+          "id": "disease_history",
+          "name": "Disease History",
+          "tier": null,
+          "prerequisites": [
+            "pharmacist"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Disease_History",
+          "kappaRequired": true
+        },
+        {
+          "id": "dangerous_road",
+          "name": "Dangerous Road",
+          "tier": null,
+          "prerequisites": [
+            "supply_plans"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Dangerous_Road",
+          "kappaRequired": false
+        },
+        {
+          "id": "thirsty_echo",
+          "name": "Thirsty - Echo",
+          "tier": null,
+          "prerequisites": [],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Thirsty_-_Echo",
+          "kappaRequired": false
+        },
+        {
+          "id": "thirsty_secrets",
+          "name": "Thirsty - Secrets",
+          "tier": null,
+          "prerequisites": [
+            "thirsty_echo"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Thirsty_-_Secrets",
+          "kappaRequired": false
+        },
+        {
+          "id": "a_healthy_alternative",
+          "name": "A Healthy Alternative",
+          "tier": null,
+          "prerequisites": [],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/A_Healthy_Alternative",
+          "kappaRequired": true
+        },
+        {
+          "id": "the_tarkov_butcher",
+          "name": "The Tarkov Butcher",
+          "tier": null,
+          "prerequisites": [],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/The_Tarkov_Butcher",
+          "kappaRequired": false
+        },
+        {
+          "id": "this_tape_sucks",
+          "name": "This Tape Sucks",
+          "tier": null,
+          "prerequisites": [],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/This_Tape_Sucks",
+          "kappaRequired": false
+        },
+        {
+          "id": "urban_medicine",
+          "name": "Urban Medicine",
+          "tier": null,
+          "prerequisites": [
+            "population_census"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Urban_Medicine",
+          "kappaRequired": false
+        },
+        {
+          "id": "seaside_vacation",
+          "name": "Seaside Vacation",
+          "tier": null,
+          "prerequisites": [
+            "disease_history"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Seaside_Vacation",
+          "kappaRequired": true
+        },
+        {
+          "id": "abandoned_cargo",
+          "name": "Abandoned Cargo",
+          "tier": null,
+          "prerequisites": [
+            "seaside_vacation"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Abandoned_Cargo",
+          "kappaRequired": true
+        },
+        {
+          "id": "shipment_tracking",
+          "name": "Shipment Tracking",
+          "tier": null,
+          "prerequisites": [
+            "abandoned_cargo"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Shipment_Tracking",
+          "kappaRequired": true
+        },
+        {
+          "id": "closer_to_the_people",
+          "name": "Closer to the People",
+          "tier": null,
+          "prerequisites": [
+            "shipment_tracking"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Closer_to_the_People",
+          "kappaRequired": true
+        },
+        {
+          "id": "ambulances_again",
+          "name": "Ambulances Again",
+          "tier": null,
+          "prerequisites": [
+            "urban_medicine"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Ambulances_Again",
+          "kappaRequired": false
+        },
+        {
+          "id": "health_care_privacy_part_1",
+          "name": "Health Care Privacy - Part 1",
+          "tier": null,
+          "prerequisites": [
+            "pharmacist"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Health_Care_Privacy_-_Part_1",
+          "kappaRequired": true
+        },
+        {
+          "id": "health_care_privacy_part_2",
+          "name": "Health Care Privacy - Part 2",
+          "tier": null,
+          "prerequisites": [
+            "health_care_privacy_part_1"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Health_Care_Privacy_-_Part_2",
+          "kappaRequired": true
+        },
+        {
+          "id": "health_care_privacy_part_3",
+          "name": "Health Care Privacy - Part 3",
+          "tier": null,
+          "prerequisites": [
+            "health_care_privacy_part_2"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Health_Care_Privacy_-_Part_3",
+          "kappaRequired": true
+        },
+        {
+          "id": "health_care_privacy_part_4",
+          "name": "Health Care Privacy - Part 4",
+          "tier": null,
+          "prerequisites": [
+            "health_care_privacy_part_3"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Health_Care_Privacy_-_Part_4",
+          "kappaRequired": true
+        },
+        {
+          "id": "health_care_privacy_part_5",
+          "name": "Health Care Privacy - Part 5",
+          "tier": null,
+          "prerequisites": [
+            "health_care_privacy_part_4"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Health_Care_Privacy_-_Part_5",
+          "kappaRequired": true
+        },
+        {
+          "id": "an_apple_a_day_keeps_the_doctor_away",
+          "name": "An Apple a Day Keeps the Doctor Away",
+          "tier": null,
+          "prerequisites": [
+            "health_care_privacy_part_4"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/An_Apple_a_Day_Keeps_the_Doctor_Away",
+          "kappaRequired": false
+        },
+        {
+          "id": "health_care_privacy_part_6",
+          "name": "Health Care Privacy - Part 6",
+          "tier": null,
+          "prerequisites": [
+            "health_care_privacy_part_5"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Health_Care_Privacy_-_Part_6",
+          "kappaRequired": true
+        },
+        {
+          "id": "colleagues_part_1",
+          "name": "Colleagues - Part 1",
+          "tier": null,
+          "prerequisites": [
+            "general_wares"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Colleagues_-_Part_1",
+          "kappaRequired": true
+        },
+        {
+          "id": "colleagues_part_2",
+          "name": "Colleagues - Part 2",
+          "tier": null,
+          "prerequisites": [
+            "colleagues_part_1"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Colleagues_-_Part_2",
+          "kappaRequired": true
+        },
+        {
+          "id": "colleagues_part_3",
+          "name": "Colleagues - Part 3",
+          "tier": null,
+          "prerequisites": [],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Colleagues_-_Part_3",
+          "kappaRequired": true
+        },
+        {
+          "id": "lost_contact",
+          "name": "Lost Contact",
+          "tier": null,
+          "prerequisites": [
+            "health_care_privacy_part_2"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Lost_Contact",
+          "kappaRequired": true
+        },
+        {
+          "id": "drug_trafficking",
+          "name": "Drug Trafficking",
+          "tier": null,
+          "prerequisites": [
+            "lost_contact"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Drug_Trafficking",
+          "kappaRequired": true
+        },
+        {
+          "id": "quality_standard",
+          "name": "Quality Standard",
+          "tier": null,
+          "prerequisites": [],
+          "prerequisitesExternal": [
+            "the_good_times_part_1_1"
+          ],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Quality_Standard",
+          "kappaRequired": false
+        },
+        {
+          "id": "athlete",
+          "name": "Athlete",
+          "tier": null,
+          "prerequisites": [
+            "health_care_privacy_part_4"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Athlete",
+          "kappaRequired": true
+        },
+        {
+          "id": "private_clinic",
+          "name": "Private Clinic",
+          "tier": null,
+          "prerequisites": [
+            "health_care_privacy_part_4"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Private_Clinic",
+          "kappaRequired": true
+        },
+        {
+          "id": "decontamination_service",
+          "name": "Decontamination Service",
+          "tier": null,
+          "prerequisites": [
+            "health_care_privacy_part_5",
+            "private_clinic"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Decontamination_Service",
+          "kappaRequired": true
+        },
+        {
+          "id": "crisis",
+          "name": "Crisis",
+          "tier": null,
+          "prerequisites": [
+            "athlete"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Crisis",
+          "kappaRequired": true
+        }
+      ]
+    },
+    "skier": {
+      "name": "Skier",
+      "quests": [
+        {
+          "id": "burning_rubber",
+          "name": "Burning Rubber",
+          "tier": null,
+          "prerequisites": [],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Burning_Rubber",
+          "kappaRequired": true
+        },
+        {
+          "id": "supplier",
+          "name": "Supplier",
+          "tier": null,
+          "prerequisites": [
+            "burning_rubber"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Supplier",
+          "kappaRequired": true
+        },
+        {
+          "id": "the_extortionist",
+          "name": "The Extortionist",
+          "tier": null,
+          "prerequisites": [
+            "supplier"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/The_Extortionist",
+          "kappaRequired": true
+        },
+        {
+          "id": "stirrup",
+          "name": "Stirrup",
+          "tier": null,
+          "prerequisites": [
+            "supplier"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Stirrup",
+          "kappaRequired": true
+        },
+        {
+          "id": "whats_on_the_flash_drive",
+          "name": "What’s on the Flash Drive?",
+          "tier": null,
+          "prerequisites": [
+            "the_extortionist"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/What%E2%80%99s_on_the_Flash_Drive%3F",
+          "kappaRequired": true
+        },
+        {
+          "id": "golden_swag",
+          "name": "Golden Swag",
+          "tier": null,
+          "prerequisites": [
+            "whats_on_the_flash_drive"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Golden_Swag",
+          "kappaRequired": true
+        },
+        {
+          "id": "friend_from_the_west_part_1",
+          "name": "Friend From the West - Part 1",
+          "tier": null,
+          "prerequisites": [
+            "supplier"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Friend_From_the_West_-_Part_1",
+          "kappaRequired": true
+        },
+        {
+          "id": "friend_from_the_west_part_2",
+          "name": "Friend From the West - Part 2",
+          "tier": null,
+          "prerequisites": [
+            "friend_from_the_west_part_1"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Friend_From_the_West_-_Part_2",
+          "kappaRequired": true
+        },
+        {
+          "id": "chemical_part_1",
+          "name": "Chemical - Part 1",
+          "tier": null,
+          "prerequisites": [
+            "golden_swag"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Chemical_-_Part_1",
+          "kappaRequired": true
+        },
+        {
+          "id": "chemical_part_2",
+          "name": "Chemical - Part 2",
+          "tier": null,
+          "prerequisites": [
+            "chemical_part_1"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Chemical_-_Part_2",
+          "kappaRequired": true
+        },
+        {
+          "id": "chemical_part_3",
+          "name": "Chemical - Part 3",
+          "tier": null,
+          "prerequisites": [
+            "chemical_part_2"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Chemical_-_Part_3",
+          "kappaRequired": true
+        },
+        {
+          "id": "chemical_part_4",
+          "name": "Chemical - Part 4",
+          "tier": null,
+          "prerequisites": [
+            "chemical_part_3"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Chemical_-_Part_4",
+          "kappaRequired": true
+        },
+        {
+          "id": "loyalty_buyout",
+          "name": "Loyalty Buyout",
+          "tier": null,
+          "prerequisites": [
+            "chemical_part_4"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Loyalty_Buyout",
+          "kappaRequired": false
+        },
+        {
+          "id": "exit_here",
+          "name": "Exit Here",
+          "tier": null,
+          "prerequisites": [],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Exit_Here",
+          "kappaRequired": true
+        },
+        {
+          "id": "the_walls_have_eyes",
+          "name": "The Walls Have Eyes",
+          "tier": null,
+          "prerequisites": [
+            "exit_here"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/The_Walls_Have_Eyes",
+          "kappaRequired": true
+        },
+        {
+          "id": "kind_of_sabotage",
+          "name": "Kind of Sabotage",
+          "tier": null,
+          "prerequisites": [],
+          "prerequisitesExternal": [
+            "supply_plans"
+          ],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Kind_of_Sabotage",
+          "kappaRequired": true
+        },
+        {
+          "id": "safe_corridor",
+          "name": "Safe Corridor",
+          "tier": null,
+          "prerequisites": [
+            "chemical_part_4"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Safe_Corridor",
+          "kappaRequired": true
+        },
+        {
+          "id": "thirsty_breadwinner",
+          "name": "Thirsty - Breadwinner",
+          "tier": null,
+          "prerequisites": [],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Thirsty_-_Breadwinner",
+          "kappaRequired": false
+        },
+        {
+          "id": "thirsty_delivery",
+          "name": "Thirsty - Delivery",
+          "tier": null,
+          "prerequisites": [
+            "thirsty_breadwinner"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Thirsty_-_Delivery",
+          "kappaRequired": false
+        },
+        {
+          "id": "indisputable_authority",
+          "name": "Indisputable Authority",
+          "tier": null,
+          "prerequisites": [],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Indisputable_Authority",
+          "kappaRequired": false
+        },
+        {
+          "id": "setup",
+          "name": "Setup",
+          "tier": null,
+          "prerequisites": [
+            "friend_from_the_west_part_2"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Setup",
+          "kappaRequired": true
+        },
+        {
+          "id": "easy_money_part_1_pvp_zone",
+          "name": "Easy Money - Part 1 [PVP ZONE]",
+          "tier": null,
+          "prerequisites": [
+            "burning_rubber"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Easy_Money_-_Part_1",
+          "kappaRequired": false
+        },
+        {
+          "id": "long_road",
+          "name": "Long Road",
+          "tier": null,
+          "prerequisites": [
+            "friend_from_the_west_part_2"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Long_Road",
+          "kappaRequired": true
+        },
+        {
+          "id": "the_higher_they_fly",
+          "name": "The Higher They Fly",
+          "tier": null,
+          "prerequisites": [],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/The_Higher_They_Fly",
+          "kappaRequired": false
+        },
+        {
+          "id": "route_deviation",
+          "name": "Route Deviation",
+          "tier": null,
+          "prerequisites": [
+            "the_higher_they_fly"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Route_Deviation",
+          "kappaRequired": false
+        },
+        {
+          "id": "hindsight_2020",
+          "name": "Hindsight 20/20",
+          "tier": null,
+          "prerequisites": [
+            "route_deviation"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Hindsight_20%2F20",
+          "kappaRequired": false
+        },
+        {
+          "id": "key_partner",
+          "name": "Key Partner",
+          "tier": null,
+          "prerequisites": [
+            "hindsight_2020"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Key_Partner",
+          "kappaRequired": false
+        },
+        {
+          "id": "killer_argument",
+          "name": "Killer Argument",
+          "tier": null,
+          "prerequisites": [
+            "key_partner"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Killer_Argument",
+          "kappaRequired": false
+        },
+        {
+          "id": "choose_your_friends_wisely",
+          "name": "Choose Your Friends Wisely",
+          "tier": null,
+          "prerequisites": [
+            "killer_argument"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Choose_Your_Friends_Wisely",
+          "kappaRequired": false
+        },
+        {
+          "id": "rigged_game",
+          "name": "Rigged Game",
+          "tier": null,
+          "prerequisites": [],
+          "prerequisitesExternal": [
+            "anesthesia_1"
+          ],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Rigged_Game",
+          "kappaRequired": true
+        },
+        {
+          "id": "vitamins_part_1",
+          "name": "Vitamins - Part 1",
+          "tier": null,
+          "prerequisites": [
+            "chemical_part_3"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Vitamins_-_Part_1",
+          "kappaRequired": true
+        },
+        {
+          "id": "vitamins_part_2",
+          "name": "Vitamins - Part 2",
+          "tier": null,
+          "prerequisites": [
+            "vitamins_part_1"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Vitamins_-_Part_2",
+          "kappaRequired": true
+        },
+        {
+          "id": "beyond_the_red_meat_part_1",
+          "name": "Beyond the Red Meat - Part 1",
+          "tier": null,
+          "prerequisites": [
+            "vitamins_part_2"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Beyond_the_Red_Meat_-_Part_1",
+          "kappaRequired": false
+        },
+        {
+          "id": "beyond_the_red_meat_part_2",
+          "name": "Beyond the Red Meat - Part 2",
+          "tier": null,
+          "prerequisites": [
+            "beyond_the_red_meat_part_1"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Beyond_the_Red_Meat_-_Part_2",
+          "kappaRequired": false
+        },
+        {
+          "id": "informed_means_armed",
+          "name": "Informed Means Armed",
+          "tier": null,
+          "prerequisites": [
+            "setup"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Informed_Means_Armed",
+          "kappaRequired": true
+        },
+        {
+          "id": "chumming",
+          "name": "Chumming",
+          "tier": null,
+          "prerequisites": [
+            "informed_means_armed"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Chumming",
+          "kappaRequired": true
+        },
+        {
+          "id": "no_swiping",
+          "name": "No Swiping",
+          "tier": null,
+          "prerequisites": [
+            "chumming"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/No_Swiping",
+          "kappaRequired": false
+        },
+        {
+          "id": "private_club",
+          "name": "Private Club",
+          "tier": null,
+          "prerequisites": [
+            "chumming"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Private_Club",
+          "kappaRequired": true
+        },
+        {
+          "id": "lend_lease_part_1",
+          "name": "Lend-Lease - Part 1",
+          "tier": null,
+          "prerequisites": [
+            "friend_from_the_west_part_2"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Lend-Lease_-_Part_1",
+          "kappaRequired": true
+        },
+        {
+          "id": "bullshit",
+          "name": "Bullshit",
+          "tier": null,
+          "prerequisites": [
+            "chumming"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Bullshit",
+          "kappaRequired": false
+        },
+        {
+          "id": "minute_of_fame",
+          "name": "Minute of Fame",
+          "tier": null,
+          "prerequisites": [],
+          "prerequisitesExternal": [
+            "the_good_times_part_2_1"
+          ],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Minute_of_Fame",
+          "kappaRequired": false
+        },
+        {
+          "id": "serious_allegations",
+          "name": "Serious Allegations",
+          "tier": null,
+          "prerequisites": [],
+          "prerequisitesExternal": [
+            "viewer_1"
+          ],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Serious_Allegations",
+          "kappaRequired": false
+        },
+        {
+          "id": "proper_comeback",
+          "name": "Proper Comeback",
+          "tier": null,
+          "prerequisites": [],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Proper_Comeback",
+          "kappaRequired": false
+        },
+        {
+          "id": "pyramid_scheme",
+          "name": "Pyramid Scheme",
+          "tier": null,
+          "prerequisites": [
+            "vitamins_part_2"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Pyramid_Scheme",
+          "kappaRequired": false
+        },
+        {
+          "id": "missing_cargo",
+          "name": "Missing Cargo",
+          "tier": null,
+          "prerequisites": [
+            "long_road"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Missing_Cargo",
+          "kappaRequired": true
+        },
+        {
+          "id": "silent_caliber",
+          "name": "Silent Caliber",
+          "tier": null,
+          "prerequisites": [
+            "bullshit"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Silent_Caliber",
+          "kappaRequired": false
+        },
+        {
+          "id": "debtor",
+          "name": "Debtor",
+          "tier": null,
+          "prerequisites": [
+            "chumming"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Debtor",
+          "kappaRequired": false
+        },
+        {
+          "id": "house_arrest_part_1",
+          "name": "House Arrest - Part 1",
+          "tier": null,
+          "prerequisites": [
+            "debtor"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/House_Arrest_-_Part_1",
+          "kappaRequired": false
+        },
+        {
+          "id": "house_arrest_part_2",
+          "name": "House Arrest - Part 2",
+          "tier": null,
+          "prerequisites": [
+            "house_arrest_part_1"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/House_Arrest_-_Part_2",
+          "kappaRequired": false
+        },
+        {
+          "id": "top_secret",
+          "name": "Top Secret",
+          "tier": null,
+          "prerequisites": [
+            "missing_cargo"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Top_Secret",
+          "kappaRequired": false
+        },
+        {
+          "id": "connections_up_north",
+          "name": "Connections Up North",
+          "tier": null,
+          "prerequisites": [
+            "silent_caliber"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Connections_Up_North",
+          "kappaRequired": false
+        },
+        {
+          "id": "flint",
+          "name": "Flint",
+          "tier": null,
+          "prerequisites": [
+            "chumming"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Flint",
+          "kappaRequired": true
+        },
+        {
+          "id": "irresistible",
+          "name": "Irresistible",
+          "tier": null,
+          "prerequisites": [
+            "flint"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Irresistible",
+          "kappaRequired": false
+        },
+        {
+          "id": "dangerous_props",
+          "name": "Dangerous Props",
+          "tier": null,
+          "prerequisites": [
+            "irresistible"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Dangerous_Props",
+          "kappaRequired": false
+        },
+        {
+          "id": "fair_price_part_1",
+          "name": "Fair Price - Part 1",
+          "tier": null,
+          "prerequisites": [],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Fair_Price_-_Part_1",
+          "kappaRequired": false
+        },
+        {
+          "id": "fair_price_part_2",
+          "name": "Fair Price - Part 2",
+          "tier": null,
+          "prerequisites": [
+            "fair_price_part_1"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Fair_Price_-_Part_2",
+          "kappaRequired": false
+        },
+        {
+          "id": "night_sweep",
+          "name": "Night Sweep",
+          "tier": null,
+          "prerequisites": [
+            "rigged_game"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Night_Sweep",
+          "kappaRequired": false
+        },
+        {
+          "id": "profitable_venture",
+          "name": "Profitable Venture",
+          "tier": null,
+          "prerequisites": [],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Profitable_Venture",
+          "kappaRequired": false
+        },
+        {
+          "id": "safety_guarantee",
+          "name": "Safety Guarantee",
+          "tier": null,
+          "prerequisites": [
+            "profitable_venture"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Safety_Guarantee",
+          "kappaRequired": false
+        },
+        {
+          "id": "never_too_late_to_learn",
+          "name": "Never Too Late To Learn",
+          "tier": null,
+          "prerequisites": [
+            "safety_guarantee"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Never_Too_Late_To_Learn",
+          "kappaRequired": false
+        },
+        {
+          "id": "get_a_foothold",
+          "name": "Get a Foothold",
+          "tier": null,
+          "prerequisites": [
+            "never_too_late_to_learn"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Get_a_Foothold",
+          "kappaRequired": false
+        },
+        {
+          "id": "profit_retention",
+          "name": "Profit Retention",
+          "tier": null,
+          "prerequisites": [
+            "get_a_foothold"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Profit_Retention",
+          "kappaRequired": false
+        },
+        {
+          "id": "a_life_lesson",
+          "name": "A Life Lesson",
+          "tier": null,
+          "prerequisites": [
+            "profit_retention"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/A_Life_Lesson",
+          "kappaRequired": false
+        },
+        {
+          "id": "consolation_prize",
+          "name": "Consolation Prize",
+          "tier": null,
+          "prerequisites": [
+            "a_life_lesson"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Consolation_Prize",
+          "kappaRequired": false
+        }
+      ]
+    },
+    "peacekeeper": {
+      "name": "Peacekeeper",
+      "quests": [
+        {
+          "id": "fishing_gear",
+          "name": "Fishing Gear",
+          "tier": null,
+          "prerequisites": [],
+          "prerequisitesExternal": [
+            "friend_from_the_west_part_2"
+          ],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Fishing_Gear",
+          "kappaRequired": true
+        },
+        {
+          "id": "tigr_safari",
+          "name": "Tigr Safari",
+          "tier": null,
+          "prerequisites": [
+            "fishing_gear"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Tigr_Safari",
+          "kappaRequired": true
+        },
+        {
+          "id": "scrap_metal",
+          "name": "Scrap Metal",
+          "tier": null,
+          "prerequisites": [
+            "tigr_safari"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Scrap_Metal",
+          "kappaRequired": true
+        },
+        {
+          "id": "eagle_eye",
+          "name": "Eagle Eye",
+          "tier": null,
+          "prerequisites": [
+            "scrap_metal"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Eagle_Eye",
+          "kappaRequired": true
+        },
+        {
+          "id": "humanitarian_supplies",
+          "name": "Humanitarian Supplies",
+          "tier": null,
+          "prerequisites": [
+            "eagle_eye"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Humanitarian_Supplies",
+          "kappaRequired": true
+        },
+        {
+          "id": "seizing_the_initiative",
+          "name": "Seizing the Initiative",
+          "tier": null,
+          "prerequisites": [
+            "humanitarian_supplies"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Seizing_the_Initiative",
+          "kappaRequired": false
+        },
+        {
+          "id": "spa_tour_part_1",
+          "name": "Spa Tour - Part 1",
+          "tier": null,
+          "prerequisites": [
+            "humanitarian_supplies"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Spa_Tour_-_Part_1",
+          "kappaRequired": true
+        },
+        {
+          "id": "the_cult_part_1",
+          "name": "The Cult - Part 1",
+          "tier": null,
+          "prerequisites": [
+            "humanitarian_supplies"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/The_Cult_-_Part_1",
+          "kappaRequired": true
+        },
+        {
+          "id": "spa_tour_part_2",
+          "name": "Spa Tour - Part 2",
+          "tier": null,
+          "prerequisites": [
+            "spa_tour_part_1"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Spa_Tour_-_Part_2",
+          "kappaRequired": true
+        },
+        {
+          "id": "spa_tour_part_3",
+          "name": "Spa Tour - Part 3",
+          "tier": null,
+          "prerequisites": [
+            "spa_tour_part_2"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Spa_Tour_-_Part_3",
+          "kappaRequired": true
+        },
+        {
+          "id": "spa_tour_part_4",
+          "name": "Spa Tour - Part 4",
+          "tier": null,
+          "prerequisites": [
+            "spa_tour_part_3"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Spa_Tour_-_Part_4",
+          "kappaRequired": true
+        },
+        {
+          "id": "spa_tour_part_5",
+          "name": "Spa Tour - Part 5",
+          "tier": null,
+          "prerequisites": [
+            "spa_tour_part_4"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Spa_Tour_-_Part_5",
+          "kappaRequired": true
+        },
+        {
+          "id": "spa_tour_part_6",
+          "name": "Spa Tour - Part 6",
+          "tier": null,
+          "prerequisites": [
+            "spa_tour_part_5"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Spa_Tour_-_Part_6",
+          "kappaRequired": true
+        },
+        {
+          "id": "spa_tour_part_7",
+          "name": "Spa Tour - Part 7",
+          "tier": null,
+          "prerequisites": [
+            "spa_tour_part_6"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Spa_Tour_-_Part_7",
+          "kappaRequired": true
+        },
+        {
+          "id": "cargo_x_part_1",
+          "name": "Cargo X - Part 1",
+          "tier": null,
+          "prerequisites": [
+            "spa_tour_part_7"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Cargo_X_-_Part_1",
+          "kappaRequired": true
+        },
+        {
+          "id": "cargo_x_part_2",
+          "name": "Cargo X - Part 2",
+          "tier": null,
+          "prerequisites": [
+            "cargo_x_part_1"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Cargo_X_-_Part_2",
+          "kappaRequired": true
+        },
+        {
+          "id": "cargo_x_part_3",
+          "name": "Cargo X - Part 3",
+          "tier": null,
+          "prerequisites": [
+            "cargo_x_part_2"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Cargo_X_-_Part_3",
+          "kappaRequired": true
+        },
+        {
+          "id": "cargo_x_part_4",
+          "name": "Cargo X - Part 4",
+          "tier": null,
+          "prerequisites": [
+            "cargo_x_part_3"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Cargo_X_-_Part_4",
+          "kappaRequired": true
+        },
+        {
+          "id": "revision_reserve",
+          "name": "Revision - Reserve",
+          "tier": null,
+          "prerequisites": [
+            "humanitarian_supplies"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Revision_-_Reserve",
+          "kappaRequired": true
+        },
+        {
+          "id": "wet_job_part_1",
+          "name": "Wet Job - Part 1",
+          "tier": null,
+          "prerequisites": [
+            "spa_tour_part_7"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Wet_Job_-_Part_1",
+          "kappaRequired": true
+        },
+        {
+          "id": "wet_job_part_2",
+          "name": "Wet Job - Part 2",
+          "tier": null,
+          "prerequisites": [
+            "wet_job_part_1"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Wet_Job_-_Part_2",
+          "kappaRequired": true
+        },
+        {
+          "id": "wet_job_part_3",
+          "name": "Wet Job - Part 3",
+          "tier": null,
+          "prerequisites": [
+            "wet_job_part_2"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Wet_Job_-_Part_3",
+          "kappaRequired": true
+        },
+        {
+          "id": "wet_job_part_4",
+          "name": "Wet Job - Part 4",
+          "tier": null,
+          "prerequisites": [
+            "wet_job_part_3"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Wet_Job_-_Part_4",
+          "kappaRequired": true
+        },
+        {
+          "id": "wet_job_part_5",
+          "name": "Wet Job - Part 5",
+          "tier": null,
+          "prerequisites": [
+            "wet_job_part_4"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Wet_Job_-_Part_5",
+          "kappaRequired": true
+        },
+        {
+          "id": "wet_job_part_6",
+          "name": "Wet Job - Part 6",
+          "tier": null,
+          "prerequisites": [
+            "wet_job_part_5"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Wet_Job_-_Part_6",
+          "kappaRequired": true
+        },
+        {
+          "id": "mentor",
+          "name": "Mentor",
+          "tier": null,
+          "prerequisites": [
+            "wet_job_part_5"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Mentor",
+          "kappaRequired": false
+        },
+        {
+          "id": "classified_technologies",
+          "name": "Classified Technologies",
+          "tier": null,
+          "prerequisites": [
+            "revision_reserve"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Classified_Technologies",
+          "kappaRequired": true
+        },
+        {
+          "id": "revision_lighthouse",
+          "name": "Revision - Lighthouse",
+          "tier": null,
+          "prerequisites": [
+            "revision_reserve"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Revision_-_Lighthouse",
+          "kappaRequired": true
+        },
+        {
+          "id": "overpopulation",
+          "name": "Overpopulation",
+          "tier": null,
+          "prerequisites": [
+            "spa_tour_part_1"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Overpopulation",
+          "kappaRequired": true
+        },
+        {
+          "id": "one_less_loose_end",
+          "name": "One Less Loose End",
+          "tier": null,
+          "prerequisites": [
+            "overpopulation"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/One_Less_Loose_End",
+          "kappaRequired": true
+        },
+        {
+          "id": "confidential_info",
+          "name": "Confidential Info",
+          "tier": null,
+          "prerequisites": [],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Confidential_Info",
+          "kappaRequired": false
+        },
+        {
+          "id": "revision_streets_of_tarkov",
+          "name": "Revision - Streets of Tarkov",
+          "tier": null,
+          "prerequisites": [
+            "revision_reserve"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Revision_-_Streets_of_Tarkov",
+          "kappaRequired": false
+        },
+        {
+          "id": "new_day_new_paths",
+          "name": "New Day, New Paths",
+          "tier": null,
+          "prerequisites": [
+            "revision_streets_of_tarkov"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/New_Day%2C_New_Paths",
+          "kappaRequired": false
+        },
+        {
+          "id": "the_cult_part_2",
+          "name": "The Cult - Part 2",
+          "tier": null,
+          "prerequisites": [
+            "the_cult_part_1"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/The_Cult_-_Part_2",
+          "kappaRequired": true
+        },
+        {
+          "id": "road_closed",
+          "name": "Road Closed",
+          "tier": null,
+          "prerequisites": [
+            "spa_tour_part_7"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Road_Closed",
+          "kappaRequired": false
+        },
+        {
+          "id": "samples",
+          "name": "Samples",
+          "tier": null,
+          "prerequisites": [
+            "fishing_gear"
+          ],
+          "prerequisitesExternal": [
+            "anesthesia_1"
+          ],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Samples",
+          "kappaRequired": true
+        },
+        {
+          "id": "terragroup_employee",
+          "name": "TerraGroup Employee",
+          "tier": null,
+          "prerequisites": [
+            "samples"
+          ],
+          "prerequisitesExternal": [
+            "colleagues_part_3"
+          ],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/TerraGroup_Employee",
+          "kappaRequired": true
+        },
+        {
+          "id": "insomnia",
+          "name": "Insomnia",
+          "tier": null,
+          "prerequisites": [
+            "cargo_x_part_4"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Insomnia",
+          "kappaRequired": true
+        },
+        {
+          "id": "worst_job_in_the_world",
+          "name": "Worst Job in the World",
+          "tier": null,
+          "prerequisites": [
+            "wet_job_part_5",
+            "revision_streets_of_tarkov"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Worst_Job_in_the_World",
+          "kappaRequired": false
+        },
+        {
+          "id": "counteraction",
+          "name": "Counteraction",
+          "tier": null,
+          "prerequisites": [
+            "spa_tour_part_3"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Counteraction",
+          "kappaRequired": false
+        },
+        {
+          "id": "lend_lease_part_2",
+          "name": "Lend-Lease - Part 2",
+          "tier": null,
+          "prerequisites": [],
+          "prerequisitesExternal": [
+            "lend_lease_part_1"
+          ],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Lend-Lease_-_Part_2",
+          "kappaRequired": true
+        },
+        {
+          "id": "peacekeeping_mission",
+          "name": "Peacekeeping Mission",
+          "tier": null,
+          "prerequisites": [
+            "lend_lease_part_2"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Peacekeeping_Mission",
+          "kappaRequired": true
+        },
+        {
+          "id": "your_car_needs_a_service",
+          "name": "Your Car Needs a Service",
+          "tier": null,
+          "prerequisites": [
+            "cargo_x_part_4"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Your_Car_Needs_a_Service",
+          "kappaRequired": false
+        },
+        {
+          "id": "the_guide",
+          "name": "The Guide",
+          "tier": null,
+          "prerequisites": [
+            "wet_job_part_6"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/The_Guide",
+          "kappaRequired": true
+        },
+        {
+          "id": "the_cleaner",
+          "name": "The Cleaner",
+          "tier": null,
+          "prerequisites": [
+            "the_guide"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/The_Cleaner",
+          "kappaRequired": false
+        },
+        {
+          "id": "trophies",
+          "name": "Trophies",
+          "tier": null,
+          "prerequisites": [
+            "fishing_gear"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Trophies",
+          "kappaRequired": false
+        },
+        {
+          "id": "special_equipment",
+          "name": "Special Equipment",
+          "tier": null,
+          "prerequisites": [
+            "trophies"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Special_Equipment",
+          "kappaRequired": false
+        }
+      ]
+    },
+    "mechanic": {
+      "name": "Mechanic",
+      "quests": [
+        {
+          "id": "saving_the_mole",
+          "name": "Saving the Mole",
+          "tier": null,
+          "prerequisites": [],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Saving_the_Mole",
+          "kappaRequired": true
+        },
+        {
+          "id": "gunsmith_part_1",
+          "name": "Gunsmith - Part 1",
+          "tier": null,
+          "prerequisites": [
+            "saving_the_mole"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Gunsmith_-_Part_1",
+          "kappaRequired": true
+        },
+        {
+          "id": "introduction",
+          "name": "Introduction",
+          "tier": null,
+          "prerequisites": [
+            "gunsmith_part_1"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Introduction",
+          "kappaRequired": true
+        },
+        {
+          "id": "gunsmith_part_2",
+          "name": "Gunsmith - Part 2",
+          "tier": null,
+          "prerequisites": [
+            "gunsmith_part_1"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Gunsmith_-_Part_2",
+          "kappaRequired": true
+        },
+        {
+          "id": "friend_from_norvinsk_part_1",
+          "name": "Friend from Norvinsk - Part 1",
+          "tier": null,
+          "prerequisites": [
+            "introduction"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Friend_from_Norvinsk_-_Part_1",
+          "kappaRequired": false
+        },
+        {
+          "id": "friend_from_norvinsk_part_2",
+          "name": "Friend from Norvinsk - Part 2",
+          "tier": null,
+          "prerequisites": [
+            "friend_from_norvinsk_part_1"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Friend_from_Norvinsk_-_Part_2",
+          "kappaRequired": false
+        },
+        {
+          "id": "friend_from_norvinsk_part_3",
+          "name": "Friend from Norvinsk - Part 3",
+          "tier": null,
+          "prerequisites": [
+            "friend_from_norvinsk_part_2"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Friend_from_Norvinsk_-_Part_3",
+          "kappaRequired": false
+        },
+        {
+          "id": "friend_from_norvinsk_part_4",
+          "name": "Friend from Norvinsk - Part 4",
+          "tier": null,
+          "prerequisites": [
+            "friend_from_norvinsk_part_3"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Friend_from_Norvinsk_-_Part_4",
+          "kappaRequired": false
+        },
+        {
+          "id": "friend_from_norvinsk_part_5",
+          "name": "Friend from Norvinsk - Part 5",
+          "tier": null,
+          "prerequisites": [
+            "friend_from_norvinsk_part_4"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Friend_from_Norvinsk_-_Part_5",
+          "kappaRequired": false
+        },
+        {
+          "id": "breathing_room",
+          "name": "Breathing Room",
+          "tier": null,
+          "prerequisites": [
+            "friend_from_norvinsk_part_5"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Breathing_Room",
+          "kappaRequired": false
+        },
+        {
+          "id": "progression_difficulties_part_1",
+          "name": "Progression Difficulties - Part 1",
+          "tier": null,
+          "prerequisites": [
+            "game_review_part_1"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Progression_Difficulties_-_Part_1",
+          "kappaRequired": false
+        },
+        {
+          "id": "progression_difficulties_part_2",
+          "name": "Progression Difficulties - Part 2",
+          "tier": null,
+          "prerequisites": [
+            "progression_difficulties_part_1"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Progression_Difficulties_-_Part_2",
+          "kappaRequired": false
+        },
+        {
+          "id": "last_spurt_pioneer",
+          "name": "Last Spurt - Pioneer",
+          "tier": null,
+          "prerequisites": [
+            "game_review_part_2"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Last_Spurt_-_Pioneer",
+          "kappaRequired": false
+        },
+        {
+          "id": "friend_from_norvinsk_alternative_solution",
+          "name": "Friend from Norvinsk - Alternative Solution",
+          "tier": null,
+          "prerequisites": [
+            "friend_from_norvinsk_part_3"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Friend_from_Norvinsk_-_Alternative_Solution",
+          "kappaRequired": false
+        },
+        {
+          "id": "game_review_part_1",
+          "name": "Game Review - Part 1",
+          "tier": null,
+          "prerequisites": [
+            "breathing_room"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Game_Review_-_Part_1",
+          "kappaRequired": false
+        },
+        {
+          "id": "game_review_part_2",
+          "name": "Game Review - Part 2",
+          "tier": null,
+          "prerequisites": [
+            "progression_difficulties_part_2"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Game_Review_-_Part_2",
+          "kappaRequired": false
+        },
+        {
+          "id": "game_review_part_3",
+          "name": "Game Review - Part 3",
+          "tier": null,
+          "prerequisites": [
+            "last_spurt_pioneer"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Game_Review_-_Part_3",
+          "kappaRequired": false
+        },
+        {
+          "id": "gunsmith_part_3",
+          "name": "Gunsmith - Part 3",
+          "tier": null,
+          "prerequisites": [
+            "gunsmith_part_1"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Gunsmith_-_Part_3",
+          "kappaRequired": true
+        },
+        {
+          "id": "gunsmith_part_4",
+          "name": "Gunsmith - Part 4",
+          "tier": null,
+          "prerequisites": [
+            "gunsmith_part_2",
+            "gunsmith_part_3"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Gunsmith_-_Part_4",
+          "kappaRequired": true
+        },
+        {
+          "id": "gunsmith_part_5",
+          "name": "Gunsmith - Part 5",
+          "tier": null,
+          "prerequisites": [
+            "gunsmith_part_4"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Gunsmith_-_Part_5",
+          "kappaRequired": true
+        },
+        {
+          "id": "farming_part_1",
+          "name": "Farming - Part 1",
+          "tier": null,
+          "prerequisites": [
+            "gunsmith_part_1"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Farming_-_Part_1",
+          "kappaRequired": true
+        },
+        {
+          "id": "signal_part_1",
+          "name": "Signal - Part 1",
+          "tier": null,
+          "prerequisites": [
+            "gunsmith_part_2"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Signal_-_Part_1",
+          "kappaRequired": true
+        },
+        {
+          "id": "farming_part_2",
+          "name": "Farming - Part 2",
+          "tier": null,
+          "prerequisites": [
+            "farming_part_1"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Farming_-_Part_2",
+          "kappaRequired": true
+        },
+        {
+          "id": "signal_part_2",
+          "name": "Signal - Part 2",
+          "tier": null,
+          "prerequisites": [
+            "signal_part_1"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Signal_-_Part_2",
+          "kappaRequired": true
+        },
+        {
+          "id": "bad_habit",
+          "name": "Bad Habit",
+          "tier": null,
+          "prerequisites": [
+            "farming_part_2"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Bad_Habit",
+          "kappaRequired": true
+        },
+        {
+          "id": "scout",
+          "name": "Scout",
+          "tier": null,
+          "prerequisites": [
+            "signal_part_2"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Scout",
+          "kappaRequired": true
+        },
+        {
+          "id": "broadcast_part_1",
+          "name": "Broadcast - Part 1",
+          "tier": null,
+          "prerequisites": [
+            "farming_part_2"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Broadcast_-_Part_1",
+          "kappaRequired": true
+        },
+        {
+          "id": "forklift_certified",
+          "name": "Forklift Certified",
+          "tier": null,
+          "prerequisites": [
+            "black_swan"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Forklift_Certified",
+          "kappaRequired": true
+        },
+        {
+          "id": "black_swan",
+          "name": "Black Swan",
+          "tier": null,
+          "prerequisites": [
+            "scout"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Black_Swan",
+          "kappaRequired": true
+        },
+        {
+          "id": "secrets_of_polikhim",
+          "name": "Secrets of Polikhim",
+          "tier": null,
+          "prerequisites": [
+            "capacity_check"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Secrets_of_Polikhim",
+          "kappaRequired": false
+        },
+        {
+          "id": "passion_for_ergonomics",
+          "name": "Passion for Ergonomics",
+          "tier": null,
+          "prerequisites": [
+            "farming_part_2"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Passion_for_Ergonomics",
+          "kappaRequired": true
+        },
+        {
+          "id": "insider",
+          "name": "Insider",
+          "tier": null,
+          "prerequisites": [
+            "gunsmith_part_3",
+            "signal_part_1"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Insider",
+          "kappaRequired": true
+        },
+        {
+          "id": "capacity_check",
+          "name": "Capacity Check",
+          "tier": null,
+          "prerequisites": [
+            "forklift_certified",
+            "farming_part_1"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Capacity_Check",
+          "kappaRequired": true
+        },
+        {
+          "id": "gunsmith_part_6",
+          "name": "Gunsmith - Part 6",
+          "tier": null,
+          "prerequisites": [
+            "gunsmith_part_5"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Gunsmith_-_Part_6",
+          "kappaRequired": true
+        },
+        {
+          "id": "farming_part_3",
+          "name": "Farming - Part 3",
+          "tier": null,
+          "prerequisites": [
+            "farming_part_2"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Farming_-_Part_3",
+          "kappaRequired": true
+        },
+        {
+          "id": "back_door",
+          "name": "Back Door",
+          "tier": null,
+          "prerequisites": [
+            "scout"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Back_Door",
+          "kappaRequired": true
+        },
+        {
+          "id": "farming_part_4",
+          "name": "Farming - Part 4",
+          "tier": null,
+          "prerequisites": [
+            "farming_part_3"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Farming_-_Part_4",
+          "kappaRequired": true
+        },
+        {
+          "id": "a_shooter_born_in_heaven",
+          "name": "A Shooter Born in Heaven",
+          "tier": null,
+          "prerequisites": [
+            "farming_part_3"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/A_Shooter_Born_in_Heaven",
+          "kappaRequired": true
+        },
+        {
+          "id": "surplus_goods",
+          "name": "Surplus Goods",
+          "tier": null,
+          "prerequisites": [
+            "back_door"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Surplus_Goods",
+          "kappaRequired": true
+        },
+        {
+          "id": "shady_contractor",
+          "name": "Shady Contractor",
+          "tier": null,
+          "prerequisites": [
+            "saving_the_mole"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Shady_Contractor",
+          "kappaRequired": false
+        },
+        {
+          "id": "signal_part_3",
+          "name": "Signal - Part 3",
+          "tier": null,
+          "prerequisites": [
+            "signal_part_2"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Signal_-_Part_3",
+          "kappaRequired": true
+        },
+        {
+          "id": "broadcast_part_2",
+          "name": "Broadcast - Part 2",
+          "tier": null,
+          "prerequisites": [
+            "broadcast_part_1"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Broadcast_-_Part_2",
+          "kappaRequired": false
+        },
+        {
+          "id": "gunsmith_part_7",
+          "name": "Gunsmith - Part 7",
+          "tier": null,
+          "prerequisites": [
+            "gunsmith_part_6"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Gunsmith_-_Part_7",
+          "kappaRequired": true
+        },
+        {
+          "id": "signal_part_4",
+          "name": "Signal - Part 4",
+          "tier": null,
+          "prerequisites": [
+            "signal_part_3"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Signal_-_Part_4",
+          "kappaRequired": true
+        },
+        {
+          "id": "the_door",
+          "name": "The Door",
+          "tier": null,
+          "prerequisites": [
+            "signal_part_3"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/The_Door",
+          "kappaRequired": false
+        },
+        {
+          "id": "steady_signal",
+          "name": "Steady Signal",
+          "tier": null,
+          "prerequisites": [
+            "signal_part_4"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Steady_Signal",
+          "kappaRequired": false
+        },
+        {
+          "id": "needle_in_a_haystack",
+          "name": "Needle in a Haystack",
+          "tier": null,
+          "prerequisites": [
+            "shady_contractor"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Needle_in_a_Haystack",
+          "kappaRequired": false
+        },
+        {
+          "id": "hidden_layer",
+          "name": "Hidden Layer",
+          "tier": null,
+          "prerequisites": [
+            "needle_in_a_haystack"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Hidden_Layer",
+          "kappaRequired": false
+        },
+        {
+          "id": "forced_alliance",
+          "name": "Forced Alliance",
+          "tier": null,
+          "prerequisites": [
+            "hidden_layer"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Forced_Alliance",
+          "kappaRequired": false
+        },
+        {
+          "id": "offensive_reconnaissance",
+          "name": "Offensive Reconnaissance",
+          "tier": null,
+          "prerequisites": [
+            "forced_alliance"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Offensive_Reconnaissance",
+          "kappaRequired": false
+        },
+        {
+          "id": "hypotheses_testing",
+          "name": "Hypotheses Testing",
+          "tier": null,
+          "prerequisites": [
+            "offensive_reconnaissance"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Hypotheses_Testing",
+          "kappaRequired": false
+        },
+        {
+          "id": "corporate_secrets",
+          "name": "Corporate Secrets",
+          "tier": null,
+          "prerequisites": [
+            "farming_part_3"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Corporate_Secrets",
+          "kappaRequired": true
+        },
+        {
+          "id": "gunsmith_part_8",
+          "name": "Gunsmith - Part 8",
+          "tier": null,
+          "prerequisites": [
+            "gunsmith_part_7"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Gunsmith_-_Part_8",
+          "kappaRequired": true
+        },
+        {
+          "id": "gunsmith_old_friends_request",
+          "name": "Gunsmith - Old Friend's Request",
+          "tier": null,
+          "prerequisites": [
+            "gunsmith_part_7"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Gunsmith_-_Old_Friend's_Request",
+          "kappaRequired": false
+        },
+        {
+          "id": "gunsmith_part_9",
+          "name": "Gunsmith - Part 9",
+          "tier": null,
+          "prerequisites": [
+            "gunsmith_part_8"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Gunsmith_-_Part_9",
+          "kappaRequired": true
+        },
+        {
+          "id": "a_helping_hand",
+          "name": "A Helping Hand",
+          "tier": null,
+          "prerequisites": [
+            "saving_the_mole"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/A_Helping_Hand",
+          "kappaRequired": false
+        },
+        {
+          "id": "watching_you",
+          "name": "Watching You",
+          "tier": null,
+          "prerequisites": [
+            "broadcast_part_2"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Watching_You",
+          "kappaRequired": false
+        },
+        {
+          "id": "gunsmith_part_10",
+          "name": "Gunsmith - Part 10",
+          "tier": null,
+          "prerequisites": [
+            "gunsmith_part_9"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Gunsmith_-_Part_10",
+          "kappaRequired": true
+        },
+        {
+          "id": "gunsmith_part_11",
+          "name": "Gunsmith - Part 11",
+          "tier": null,
+          "prerequisites": [
+            "gunsmith_part_10"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Gunsmith_-_Part_11",
+          "kappaRequired": true
+        },
+        {
+          "id": "chemistry_closet",
+          "name": "Chemistry Closet",
+          "tier": null,
+          "prerequisites": [],
+          "prerequisitesExternal": [
+            "anesthesia_1",
+            "colleagues_part_1"
+          ],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Chemistry_Closet",
+          "kappaRequired": true
+        },
+        {
+          "id": "gunsmith_part_12",
+          "name": "Gunsmith - Part 12",
+          "tier": null,
+          "prerequisites": [
+            "gunsmith_part_11"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Gunsmith_-_Part_12",
+          "kappaRequired": true
+        },
+        {
+          "id": "energy_crisis",
+          "name": "Energy Crisis",
+          "tier": null,
+          "prerequisites": [
+            "farming_part_4"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Energy_Crisis",
+          "kappaRequired": true
+        },
+        {
+          "id": "gunsmith_part_13",
+          "name": "Gunsmith - Part 13",
+          "tier": null,
+          "prerequisites": [
+            "gunsmith_part_12"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Gunsmith_-_Part_13",
+          "kappaRequired": true
+        },
+        {
+          "id": "developers_secrets_part_1",
+          "name": "Developer's Secrets - Part 1",
+          "tier": null,
+          "prerequisites": [
+            "surveillance"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Developer's_Secrets_-_Part_1",
+          "kappaRequired": false
+        },
+        {
+          "id": "developers_secrets_part_2",
+          "name": "Developer's Secrets - Part 2",
+          "tier": null,
+          "prerequisites": [
+            "developers_secrets_part_1"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Developer's_Secrets_-_Part_2",
+          "kappaRequired": false
+        },
+        {
+          "id": "surveillance",
+          "name": "Surveillance",
+          "tier": null,
+          "prerequisites": [
+            "broadcast_part_2",
+            "corporate_secrets"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Surveillance",
+          "kappaRequired": false
+        },
+        {
+          "id": "gunsmith_part_14",
+          "name": "Gunsmith - Part 14",
+          "tier": null,
+          "prerequisites": [
+            "gunsmith_part_13"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Gunsmith_-_Part_14",
+          "kappaRequired": true
+        },
+        {
+          "id": "airmail",
+          "name": "Airmail",
+          "tier": null,
+          "prerequisites": [],
+          "prerequisitesExternal": [
+            "quality_standard"
+          ],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Airmail",
+          "kappaRequired": false
+        },
+        {
+          "id": "camera_action",
+          "name": "Camera, Action!",
+          "tier": null,
+          "prerequisites": [],
+          "prerequisitesExternal": [
+            "serious_allegations"
+          ],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Camera%2C_Action!",
+          "kappaRequired": false
+        },
+        {
+          "id": "gunsmith_part_15",
+          "name": "Gunsmith - Part 15",
+          "tier": null,
+          "prerequisites": [
+            "gunsmith_part_14"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Gunsmith_-_Part_15",
+          "kappaRequired": true
+        },
+        {
+          "id": "fertilizers",
+          "name": "Fertilizers",
+          "tier": null,
+          "prerequisites": [
+            "farming_part_4"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Fertilizers",
+          "kappaRequired": true
+        },
+        {
+          "id": "gunsmith_part_16",
+          "name": "Gunsmith - Part 16",
+          "tier": null,
+          "prerequisites": [
+            "gunsmith_part_15"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Gunsmith_-_Part_16",
+          "kappaRequired": true
+        },
+        {
+          "id": "gunsmith_part_17",
+          "name": "Gunsmith - Part 17",
+          "tier": null,
+          "prerequisites": [
+            "gunsmith_part_16"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Gunsmith_-_Part_17",
+          "kappaRequired": true
+        },
+        {
+          "id": "gunsmith_part_18",
+          "name": "Gunsmith - Part 18",
+          "tier": null,
+          "prerequisites": [
+            "gunsmith_part_17"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Gunsmith_-_Part_18",
+          "kappaRequired": true
+        },
+        {
+          "id": "network_provider_part_2",
+          "name": "Network Provider - Part 2",
+          "tier": null,
+          "prerequisites": [
+            "network_provider_part_1"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Network_Provider_-_Part_2",
+          "kappaRequired": false
+        },
+        {
+          "id": "assessment_part_1",
+          "name": "Assessment - Part 1",
+          "tier": null,
+          "prerequisites": [
+            "network_provider_part_2"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Assessment_-_Part_1",
+          "kappaRequired": false
+        },
+        {
+          "id": "assessment_part_2",
+          "name": "Assessment - Part 2",
+          "tier": null,
+          "prerequisites": [
+            "assessment_part_1"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Assessment_-_Part_2",
+          "kappaRequired": false
+        },
+        {
+          "id": "assessment_part_3",
+          "name": "Assessment - Part 3",
+          "tier": null,
+          "prerequisites": [
+            "assessment_part_2"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Assessment_-_Part_3",
+          "kappaRequired": false
+        },
+        {
+          "id": "key_to_the_tower",
+          "name": "Key to the Tower",
+          "tier": null,
+          "prerequisites": [
+            "assessment_part_3"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Key_to_the_Tower",
+          "kappaRequired": false
+        },
+        {
+          "id": "knock_knock",
+          "name": "Knock-Knock",
+          "tier": null,
+          "prerequisites": [
+            "key_to_the_tower"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Knock-Knock",
+          "kappaRequired": false
+        },
+        {
+          "id": "getting_acquainted",
+          "name": "Getting Acquainted",
+          "tier": null,
+          "prerequisites": [
+            "knock_knock"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Getting_Acquainted",
+          "kappaRequired": false
+        },
+        {
+          "id": "make_amends_buyout",
+          "name": "Make Amends - Buyout",
+          "tier": null,
+          "prerequisites": [
+            "getting_acquainted"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Make_Amends_-_Buyout",
+          "kappaRequired": false
+        },
+        {
+          "id": "make_amends_equipment",
+          "name": "Make Amends - Equipment",
+          "tier": null,
+          "prerequisites": [
+            "make_amends_buyout"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Make_Amends_-_Equipment",
+          "kappaRequired": false
+        },
+        {
+          "id": "make_amends",
+          "name": "Make Amends",
+          "tier": null,
+          "prerequisites": [
+            "make_amends_equipment"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Make_Amends",
+          "kappaRequired": false
+        },
+        {
+          "id": "make_amends_security",
+          "name": "Make Amends - Security",
+          "tier": null,
+          "prerequisites": [
+            "make_amends"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Make_Amends_-_Security",
+          "kappaRequired": false
+        },
+        {
+          "id": "make_amends_sweep_up",
+          "name": "Make Amends - Sweep Up",
+          "tier": null,
+          "prerequisites": [
+            "make_amends_security"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Make_Amends_-_Sweep_Up",
+          "kappaRequired": false
+        },
+        {
+          "id": "make_amends_1",
+          "name": "Make Amends",
+          "tier": null,
+          "prerequisites": [
+            "make_amends_sweep_up"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Make_Amends",
+          "kappaRequired": false
+        },
+        {
+          "id": "make_amends_software",
+          "name": "Make Amends - Software",
+          "tier": null,
+          "prerequisites": [
+            "make_amends_1"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Make_Amends_-_Software",
+          "kappaRequired": false
+        },
+        {
+          "id": "make_amends_quarantine",
+          "name": "Make Amends - Quarantine",
+          "tier": null,
+          "prerequisites": [
+            "make_amends_software"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Make_Amends_-_Quarantine",
+          "kappaRequired": false
+        },
+        {
+          "id": "make_amends_2",
+          "name": "Make Amends",
+          "tier": null,
+          "prerequisites": [
+            "make_amends_quarantine"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Make_Amends",
+          "kappaRequired": false
+        },
+        {
+          "id": "network_provider_part_1",
+          "name": "Network Provider - Part 1",
+          "tier": null,
+          "prerequisites": [
+            "broadcast_part_2",
+            "gunsmith_part_10"
+          ],
+          "prerequisitesExternal": [
+            "chemical_part_4",
+            "cargo_x_part_4",
+            "seaside_vacation",
+            "the_cult_part_2",
+            "the_punisher_part_4_1",
+            "lost_contact",
+            "house_arrest_part_1"
+          ],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Network_Provider_-_Part_1",
+          "kappaRequired": false
+        },
+        {
+          "id": "psycho_sniper",
+          "name": "Psycho Sniper",
+          "tier": null,
+          "prerequisites": [],
+          "prerequisitesExternal": [
+            "wet_job_part_6"
+          ],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Psycho_Sniper",
+          "kappaRequired": true
+        },
+        {
+          "id": "import",
+          "name": "Import",
+          "tier": null,
+          "prerequisites": [
+            "farming_part_4"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Import",
+          "kappaRequired": true
+        },
+        {
+          "id": "gunsmith_part_19",
+          "name": "Gunsmith - Part 19",
+          "tier": null,
+          "prerequisites": [
+            "gunsmith_part_18"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Gunsmith_-_Part_19",
+          "kappaRequired": true
+        },
+        {
+          "id": "gunsmith_part_20",
+          "name": "Gunsmith - Part 20",
+          "tier": null,
+          "prerequisites": [
+            "gunsmith_part_19"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Gunsmith_-_Part_20",
+          "kappaRequired": true
+        },
+        {
+          "id": "gunsmith_part_21",
+          "name": "Gunsmith - Part 21",
+          "tier": null,
+          "prerequisites": [
+            "gunsmith_part_20"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Gunsmith_-_Part_21",
+          "kappaRequired": true
+        },
+        {
+          "id": "gunsmith_part_22",
+          "name": "Gunsmith - Part 22",
+          "tier": null,
+          "prerequisites": [
+            "gunsmith_part_21"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Gunsmith_-_Part_22",
+          "kappaRequired": true
+        },
+        {
+          "id": "gunsmith_part_23",
+          "name": "Gunsmith - Part 23",
+          "tier": null,
+          "prerequisites": [
+            "gunsmith_part_22"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Gunsmith_-_Part_23",
+          "kappaRequired": false
+        },
+        {
+          "id": "gunsmith_part_24",
+          "name": "Gunsmith - Part 24",
+          "tier": null,
+          "prerequisites": [
+            "gunsmith_part_23"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Gunsmith_-_Part_24",
+          "kappaRequired": false
+        },
+        {
+          "id": "gunsmith_part_25",
+          "name": "Gunsmith - Part 25",
+          "tier": null,
+          "prerequisites": [
+            "gunsmith_part_24"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Gunsmith_-_Part_25",
+          "kappaRequired": false
+        },
+        {
+          "id": "hobby_club",
+          "name": "Hobby Club",
+          "tier": null,
+          "prerequisites": [
+            "saving_the_mole"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Hobby_Club",
+          "kappaRequired": false
+        },
+        {
+          "id": "calibration",
+          "name": "Calibration",
+          "tier": null,
+          "prerequisites": [
+            "chemistry_closet"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Calibration",
+          "kappaRequired": false
+        },
+        {
+          "id": "the_courier",
+          "name": "The Courier",
+          "tier": null,
+          "prerequisites": [
+            "calibration"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/The_Courier",
+          "kappaRequired": false
+        }
+      ]
+    },
+    "ragman": {
+      "name": "Ragman",
+      "quests": [
+        {
+          "id": "only_business",
+          "name": "Only Business",
+          "tier": null,
+          "prerequisites": [],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Only_Business",
+          "kappaRequired": true
+        },
+        {
+          "id": "sensory_analysis_part_1",
+          "name": "Sensory Analysis - Part 1",
+          "tier": null,
+          "prerequisites": [],
+          "prerequisitesExternal": [
+            "hidden_layer"
+          ],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Sensory_Analysis_-_Part_1",
+          "kappaRequired": false
+        },
+        {
+          "id": "hot_zone",
+          "name": "Hot Zone",
+          "tier": null,
+          "prerequisites": [
+            "sensory_analysis_part_1"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Hot_Zone",
+          "kappaRequired": false
+        },
+        {
+          "id": "vacate_the_premises",
+          "name": "Vacate the Premises",
+          "tier": null,
+          "prerequisites": [],
+          "prerequisitesExternal": [
+            "offensive_reconnaissance"
+          ],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Vacate_the_Premises",
+          "kappaRequired": false
+        },
+        {
+          "id": "make_ultra_great_again",
+          "name": "Make ULTRA Great Again",
+          "tier": null,
+          "prerequisites": [
+            "only_business"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Make_ULTRA_Great_Again",
+          "kappaRequired": true
+        },
+        {
+          "id": "big_sale",
+          "name": "Big Sale",
+          "tier": null,
+          "prerequisites": [
+            "only_business"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Big_Sale",
+          "kappaRequired": true
+        },
+        {
+          "id": "audit",
+          "name": "Audit",
+          "tier": null,
+          "prerequisites": [
+            "only_business"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Audit",
+          "kappaRequired": false
+        },
+        {
+          "id": "dressed_to_kill",
+          "name": "Dressed to Kill",
+          "tier": null,
+          "prerequisites": [
+            "the_blood_of_war_part_1"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Dressed_to_Kill",
+          "kappaRequired": true
+        },
+        {
+          "id": "database_part_2",
+          "name": "Database - Part 2",
+          "tier": null,
+          "prerequisites": [
+            "database_part_1"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Database_-_Part_2",
+          "kappaRequired": true
+        },
+        {
+          "id": "inventory_check",
+          "name": "Inventory Check",
+          "tier": null,
+          "prerequisites": [
+            "a_fuel_matter"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Inventory_Check",
+          "kappaRequired": true
+        },
+        {
+          "id": "a_fuel_matter",
+          "name": "A Fuel Matter",
+          "tier": null,
+          "prerequisites": [
+            "the_blood_of_war_part_1"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/A_Fuel_Matter",
+          "kappaRequired": true
+        },
+        {
+          "id": "nothing_fishy_about_this",
+          "name": "Nothing Fishy About This",
+          "tier": null,
+          "prerequisites": [
+            "big_sale"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Nothing_Fishy_About_This",
+          "kappaRequired": false
+        },
+        {
+          "id": "break_the_deal",
+          "name": "Break the Deal",
+          "tier": null,
+          "prerequisites": [
+            "make_ultra_great_again"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Break_the_Deal",
+          "kappaRequired": true
+        },
+        {
+          "id": "the_blood_of_war_part_1",
+          "name": "The Blood of War - Part 1",
+          "tier": null,
+          "prerequisites": [
+            "big_sale",
+            "make_ultra_great_again"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/The_Blood_of_War_-_Part_1",
+          "kappaRequired": true
+        },
+        {
+          "id": "database_part_1",
+          "name": "Database - Part 1",
+          "tier": null,
+          "prerequisites": [
+            "big_sale",
+            "make_ultra_great_again"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Database_-_Part_1",
+          "kappaRequired": true
+        },
+        {
+          "id": "gratitude",
+          "name": "Gratitude",
+          "tier": null,
+          "prerequisites": [
+            "dressed_to_kill",
+            "database_part_2"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Gratitude",
+          "kappaRequired": true
+        },
+        {
+          "id": "ballet_lover",
+          "name": "Ballet Lover",
+          "tier": null,
+          "prerequisites": [
+            "audit"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Ballet_Lover",
+          "kappaRequired": false
+        },
+        {
+          "id": "stabilize_business",
+          "name": "Stabilize Business",
+          "tier": null,
+          "prerequisites": [],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Stabilize_Business",
+          "kappaRequired": false
+        },
+        {
+          "id": "another_shipping_delay",
+          "name": "Another Shipping Delay",
+          "tier": null,
+          "prerequisites": [],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Another_Shipping_Delay",
+          "kappaRequired": false
+        },
+        {
+          "id": "minibus",
+          "name": "Minibus",
+          "tier": null,
+          "prerequisites": [
+            "database_part_2"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Minibus",
+          "kappaRequired": true
+        },
+        {
+          "id": "drip_out_part_1",
+          "name": "Drip-Out - Part 1",
+          "tier": null,
+          "prerequisites": [
+            "minibus"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Drip-Out_-_Part_1",
+          "kappaRequired": false
+        },
+        {
+          "id": "drip_out_part_1_1",
+          "name": "Drip-Out - Part 1",
+          "tier": null,
+          "prerequisites": [
+            "minibus"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Drip-Out_-_Part_1",
+          "kappaRequired": false
+        },
+        {
+          "id": "sew_it_good_part_1",
+          "name": "Sew it Good - Part 1",
+          "tier": null,
+          "prerequisites": [
+            "database_part_2"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Sew_it_Good_-_Part_1",
+          "kappaRequired": true
+        },
+        {
+          "id": "sew_it_good_part_2",
+          "name": "Sew it Good - Part 2",
+          "tier": null,
+          "prerequisites": [
+            "sew_it_good_part_1"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Sew_it_Good_-_Part_2",
+          "kappaRequired": true
+        },
+        {
+          "id": "sew_it_good_part_3",
+          "name": "Sew it Good - Part 3",
+          "tier": null,
+          "prerequisites": [
+            "sew_it_good_part_2"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Sew_it_Good_-_Part_3",
+          "kappaRequired": true
+        },
+        {
+          "id": "sew_it_good_part_4",
+          "name": "Sew it Good - Part 4",
+          "tier": null,
+          "prerequisites": [
+            "sew_it_good_part_3"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Sew_it_Good_-_Part_4",
+          "kappaRequired": true
+        },
+        {
+          "id": "charisma_brings_success",
+          "name": "Charisma Brings Success",
+          "tier": null,
+          "prerequisites": [
+            "the_blood_of_war_part_1",
+            "sew_it_good_part_4"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Charisma_Brings_Success",
+          "kappaRequired": true
+        },
+        {
+          "id": "the_blood_of_war_part_2",
+          "name": "The Blood of War - Part 2",
+          "tier": null,
+          "prerequisites": [
+            "the_blood_of_war_part_1",
+            "sew_it_good_part_1"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/The_Blood_of_War_-_Part_2",
+          "kappaRequired": true
+        },
+        {
+          "id": "audiophile",
+          "name": "Audiophile",
+          "tier": null,
+          "prerequisites": [
+            "ballet_lover",
+            "minibus"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Audiophile",
+          "kappaRequired": false
+        },
+        {
+          "id": "the_key_to_success",
+          "name": "The Key to Success",
+          "tier": null,
+          "prerequisites": [
+            "sew_it_good_part_2"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/The_Key_to_Success",
+          "kappaRequired": true
+        },
+        {
+          "id": "no_fuss_needed",
+          "name": "No Fuss Needed",
+          "tier": null,
+          "prerequisites": [
+            "the_key_to_success"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/No_Fuss_Needed",
+          "kappaRequired": true
+        },
+        {
+          "id": "key_to_the_city",
+          "name": "Key to the City",
+          "tier": null,
+          "prerequisites": [],
+          "prerequisitesExternal": [
+            "proper_comeback"
+          ],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Key_to_the_City",
+          "kappaRequired": false
+        },
+        {
+          "id": "living_high_is_not_a_crime_part_1",
+          "name": "Living High is Not a Crime - Part 1",
+          "tier": null,
+          "prerequisites": [
+            "the_blood_of_war_part_1",
+            "sew_it_good_part_3"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Living_High_is_Not_a_Crime_-_Part_1",
+          "kappaRequired": true
+        },
+        {
+          "id": "hot_delivery",
+          "name": "Hot Delivery",
+          "tier": null,
+          "prerequisites": [
+            "gratitude"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Hot_Delivery",
+          "kappaRequired": true
+        },
+        {
+          "id": "scavenger",
+          "name": "Scavenger",
+          "tier": null,
+          "prerequisites": [
+            "hot_delivery"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Scavenger",
+          "kappaRequired": true
+        },
+        {
+          "id": "sales_night",
+          "name": "Sales Night",
+          "tier": null,
+          "prerequisites": [
+            "gratitude"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Sales_Night",
+          "kappaRequired": true
+        },
+        {
+          "id": "the_blood_of_war_part_3",
+          "name": "The Blood of War - Part 3",
+          "tier": null,
+          "prerequisites": [
+            "the_blood_of_war_part_2"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/The_Blood_of_War_-_Part_3",
+          "kappaRequired": true
+        },
+        {
+          "id": "know_your_place",
+          "name": "Know Your Place!",
+          "tier": null,
+          "prerequisites": [
+            "the_blood_of_war_part_3"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Know_Your_Place!",
+          "kappaRequired": false
+        },
+        {
+          "id": "living_high_is_not_a_crime_part_2",
+          "name": "Living High is Not a Crime - Part 2",
+          "tier": null,
+          "prerequisites": [
+            "living_high_is_not_a_crime_part_1",
+            "the_blood_of_war_part_3"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Living_High_is_Not_a_Crime_-_Part_2",
+          "kappaRequired": true
+        },
+        {
+          "id": "dandies",
+          "name": "Dandies",
+          "tier": null,
+          "prerequisites": [
+            "ballet_lover"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Dandies",
+          "kappaRequired": false
+        },
+        {
+          "id": "drip_out_part_2",
+          "name": "Drip-Out - Part 2",
+          "tier": null,
+          "prerequisites": [
+            "dandies"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Drip-Out_-_Part_2",
+          "kappaRequired": false
+        },
+        {
+          "id": "drip_out_part_2_1",
+          "name": "Drip-Out - Part 2",
+          "tier": null,
+          "prerequisites": [
+            "dandies"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Drip-Out_-_Part_2",
+          "kappaRequired": false
+        },
+        {
+          "id": "the_invisible_hand",
+          "name": "The Invisible Hand",
+          "tier": null,
+          "prerequisites": [
+            "only_business"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/The_Invisible_Hand",
+          "kappaRequired": false
+        },
+        {
+          "id": "circulate",
+          "name": "Circulate",
+          "tier": null,
+          "prerequisites": [
+            "the_invisible_hand"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Circulate",
+          "kappaRequired": false
+        },
+        {
+          "id": "special_offer",
+          "name": "Special Offer",
+          "tier": null,
+          "prerequisites": [
+            "circulate"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Special_Offer",
+          "kappaRequired": false
+        },
+        {
+          "id": "combat_proven",
+          "name": "Combat Proven",
+          "tier": null,
+          "prerequisites": [
+            "special_offer"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Combat_Proven",
+          "kappaRequired": false
+        },
+        {
+          "id": "old_patterns",
+          "name": "Old Patterns",
+          "tier": null,
+          "prerequisites": [
+            "combat_proven"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Old_Patterns",
+          "kappaRequired": false
+        },
+        {
+          "id": "supervisor",
+          "name": "Supervisor",
+          "tier": null,
+          "prerequisites": [
+            "the_key_to_success",
+            "sales_night"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Supervisor",
+          "kappaRequired": true
+        },
+        {
+          "id": "textile_part_1",
+          "name": "Textile - Part 1",
+          "tier": null,
+          "prerequisites": [
+            "sew_it_good_part_4"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Textile_-_Part_1",
+          "kappaRequired": false
+        },
+        {
+          "id": "textile_part_1_1",
+          "name": "Textile - Part 1",
+          "tier": null,
+          "prerequisites": [
+            "sew_it_good_part_4"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Textile_-_Part_1",
+          "kappaRequired": false
+        },
+        {
+          "id": "textile_part_2",
+          "name": "Textile - Part 2",
+          "tier": null,
+          "prerequisites": [
+            "textile_part_1"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Textile_-_Part_2",
+          "kappaRequired": false
+        },
+        {
+          "id": "textile_part_2_1",
+          "name": "Textile - Part 2",
+          "tier": null,
+          "prerequisites": [
+            "textile_part_1_1"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Textile_-_Part_2",
+          "kappaRequired": false
+        },
+        {
+          "id": "long_line",
+          "name": "Long Line",
+          "tier": null,
+          "prerequisites": [
+            "supervisor"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Long_Line",
+          "kappaRequired": false
+        },
+        {
+          "id": "booze",
+          "name": "Booze",
+          "tier": null,
+          "prerequisites": [
+            "long_line"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Booze",
+          "kappaRequired": false
+        },
+        {
+          "id": "new_beginning",
+          "name": "New Beginning",
+          "tier": null,
+          "prerequisites": [],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/New_Beginning",
+          "kappaRequired": false
+        },
+        {
+          "id": "new_beginning_1",
+          "name": "New Beginning",
+          "tier": null,
+          "prerequisites": [],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/New_Beginning",
+          "kappaRequired": false
+        },
+        {
+          "id": "new_beginning_2",
+          "name": "New Beginning",
+          "tier": null,
+          "prerequisites": [],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/New_Beginning",
+          "kappaRequired": false
+        },
+        {
+          "id": "new_beginning_3",
+          "name": "New Beginning",
+          "tier": null,
+          "prerequisites": [],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/New_Beginning",
+          "kappaRequired": false
+        }
+      ]
+    },
+    "jaeger": {
+      "name": "Jaeger",
+      "quests": [
+        {
+          "id": "the_tarkov_shooter_part_1",
+          "name": "The Tarkov Shooter - Part 1",
+          "tier": null,
+          "prerequisites": [
+            "acquaintance"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/The_Tarkov_Shooter_-_Part_1",
+          "kappaRequired": true
+        },
+        {
+          "id": "the_tarkov_shooter_part_2",
+          "name": "The Tarkov Shooter - Part 2",
+          "tier": null,
+          "prerequisites": [
+            "the_tarkov_shooter_part_1"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/The_Tarkov_Shooter_-_Part_2",
+          "kappaRequired": true
+        },
+        {
+          "id": "the_tarkov_shooter_part_3",
+          "name": "The Tarkov Shooter - Part 3",
+          "tier": null,
+          "prerequisites": [
+            "the_tarkov_shooter_part_2"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/The_Tarkov_Shooter_-_Part_3",
+          "kappaRequired": true
+        },
+        {
+          "id": "the_tarkov_shooter_part_4",
+          "name": "The Tarkov Shooter - Part 4",
+          "tier": null,
+          "prerequisites": [
+            "the_tarkov_shooter_part_3"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/The_Tarkov_Shooter_-_Part_4",
+          "kappaRequired": true
+        },
+        {
+          "id": "the_tarkov_shooter_part_5",
+          "name": "The Tarkov Shooter - Part 5",
+          "tier": null,
+          "prerequisites": [
+            "the_tarkov_shooter_part_4"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/The_Tarkov_Shooter_-_Part_5",
+          "kappaRequired": true
+        },
+        {
+          "id": "the_tarkov_shooter_part_6",
+          "name": "The Tarkov Shooter - Part 6",
+          "tier": null,
+          "prerequisites": [
+            "the_tarkov_shooter_part_5"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/The_Tarkov_Shooter_-_Part_6",
+          "kappaRequired": true
+        },
+        {
+          "id": "the_tarkov_shooter_part_7",
+          "name": "The Tarkov Shooter - Part 7",
+          "tier": null,
+          "prerequisites": [
+            "the_tarkov_shooter_part_6"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/The_Tarkov_Shooter_-_Part_7",
+          "kappaRequired": true
+        },
+        {
+          "id": "the_tarkov_shooter_part_8",
+          "name": "The Tarkov Shooter - Part 8",
+          "tier": null,
+          "prerequisites": [
+            "the_tarkov_shooter_part_7"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/The_Tarkov_Shooter_-_Part_8",
+          "kappaRequired": true
+        },
+        {
+          "id": "acquaintance",
+          "name": "Acquaintance",
+          "tier": null,
+          "prerequisites": [],
+          "prerequisitesExternal": [
+            "introduction"
+          ],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Acquaintance",
+          "kappaRequired": true
+        },
+        {
+          "id": "the_survivalist_path_unprotected_but_dangerous",
+          "name": "The Survivalist Path - Unprotected but Dangerous",
+          "tier": null,
+          "prerequisites": [
+            "acquaintance"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/The_Survivalist_Path_-_Unprotected_but_Dangerous",
+          "kappaRequired": true
+        },
+        {
+          "id": "the_survivalist_path_thrifty",
+          "name": "The Survivalist Path - Thrifty",
+          "tier": null,
+          "prerequisites": [
+            "the_survivalist_path_unprotected_but_dangerous"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/The_Survivalist_Path_-_Thrifty",
+          "kappaRequired": true
+        },
+        {
+          "id": "the_survivalist_path_zhivchik",
+          "name": "The Survivalist Path - Zhivchik",
+          "tier": null,
+          "prerequisites": [
+            "the_survivalist_path_thrifty"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/The_Survivalist_Path_-_Zhivchik",
+          "kappaRequired": true
+        },
+        {
+          "id": "the_survivalist_path_wounded_beast",
+          "name": "The Survivalist Path - Wounded Beast",
+          "tier": null,
+          "prerequisites": [
+            "the_survivalist_path_zhivchik"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/The_Survivalist_Path_-_Wounded_Beast",
+          "kappaRequired": true
+        },
+        {
+          "id": "the_survivalist_path_tough_guy",
+          "name": "The Survivalist Path - Tough Guy",
+          "tier": null,
+          "prerequisites": [
+            "the_survivalist_path_wounded_beast"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/The_Survivalist_Path_-_Tough_Guy",
+          "kappaRequired": true
+        },
+        {
+          "id": "the_survivalist_path_cold_blooded",
+          "name": "The Survivalist Path - Cold Blooded",
+          "tier": null,
+          "prerequisites": [
+            "the_survivalist_path_wounded_beast"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/The_Survivalist_Path_-_Cold_Blooded",
+          "kappaRequired": false
+        },
+        {
+          "id": "the_survivalist_path_eagle_owl",
+          "name": "The Survivalist Path - Eagle-Owl",
+          "tier": null,
+          "prerequisites": [
+            "the_survivalist_path_tough_guy"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/The_Survivalist_Path_-_Eagle-Owl",
+          "kappaRequired": true
+        },
+        {
+          "id": "the_survivalist_path_combat_medic",
+          "name": "The Survivalist Path - Combat Medic",
+          "tier": null,
+          "prerequisites": [
+            "the_survivalist_path_eagle_owl"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/The_Survivalist_Path_-_Combat_Medic",
+          "kappaRequired": true
+        },
+        {
+          "id": "the_huntsman_path_trophy",
+          "name": "The Huntsman Path - Trophy",
+          "tier": null,
+          "prerequisites": [
+            "the_huntsman_path_secured_perimeter"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/The_Huntsman_Path_-_Trophy",
+          "kappaRequired": true
+        },
+        {
+          "id": "the_huntsman_path_forest_cleaning",
+          "name": "The Huntsman Path - Forest Cleaning",
+          "tier": null,
+          "prerequisites": [
+            "the_huntsman_path_secured_perimeter"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/The_Huntsman_Path_-_Forest_Cleaning",
+          "kappaRequired": true
+        },
+        {
+          "id": "the_huntsman_path_controller",
+          "name": "The Huntsman Path - Controller",
+          "tier": null,
+          "prerequisites": [
+            "the_huntsman_path_forest_cleaning"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/The_Huntsman_Path_-_Controller",
+          "kappaRequired": true
+        },
+        {
+          "id": "the_huntsman_path_justice",
+          "name": "The Huntsman Path - Justice",
+          "tier": null,
+          "prerequisites": [
+            "the_huntsman_path_trophy"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/The_Huntsman_Path_-_Justice",
+          "kappaRequired": true
+        },
+        {
+          "id": "the_huntsman_path_evil_watchman",
+          "name": "The Huntsman Path - Evil Watchman",
+          "tier": null,
+          "prerequisites": [
+            "the_huntsman_path_forest_cleaning"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/The_Huntsman_Path_-_Evil_Watchman",
+          "kappaRequired": true
+        },
+        {
+          "id": "the_survivalist_path_junkie",
+          "name": "The Survivalist Path - Junkie",
+          "tier": null,
+          "prerequisites": [
+            "the_survivalist_path_combat_medic"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/The_Survivalist_Path_-_Junkie",
+          "kappaRequired": true
+        },
+        {
+          "id": "claustrophobia",
+          "name": "Claustrophobia",
+          "tier": null,
+          "prerequisites": [
+            "the_huntsman_path_forest_cleaning"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Claustrophobia",
+          "kappaRequired": true
+        },
+        {
+          "id": "rough_tarkov",
+          "name": "Rough Tarkov",
+          "tier": null,
+          "prerequisites": [
+            "acquaintance"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Rough_Tarkov",
+          "kappaRequired": true
+        },
+        {
+          "id": "every_hunter_knows_this",
+          "name": "Every Hunter Knows This",
+          "tier": null,
+          "prerequisites": [
+            "rough_tarkov"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Every_Hunter_Knows_This",
+          "kappaRequired": true
+        },
+        {
+          "id": "work_smarter",
+          "name": "Work Smarter",
+          "tier": null,
+          "prerequisites": [
+            "acquaintance"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Work_Smarter",
+          "kappaRequired": true
+        },
+        {
+          "id": "rite_of_passage",
+          "name": "Rite of Passage",
+          "tier": null,
+          "prerequisites": [
+            "work_smarter"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Rite_of_Passage",
+          "kappaRequired": true
+        },
+        {
+          "id": "the_huntsman_path_secured_perimeter",
+          "name": "The Huntsman Path - Secured Perimeter",
+          "tier": null,
+          "prerequisites": [
+            "the_tarkov_shooter_part_3",
+            "the_survivalist_path_tough_guy"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/The_Huntsman_Path_-_Secured_Perimeter",
+          "kappaRequired": true
+        },
+        {
+          "id": "the_delicious_sausage",
+          "name": "The Delicious Sausage",
+          "tier": null,
+          "prerequisites": [
+            "the_survivalist_path_thrifty"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/The_Delicious_Sausage",
+          "kappaRequired": true
+        },
+        {
+          "id": "cease_fire",
+          "name": "Cease Fire!",
+          "tier": null,
+          "prerequisites": [
+            "the_delicious_sausage"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Cease_Fire!",
+          "kappaRequired": false
+        },
+        {
+          "id": "the_huntsman_path_factory_chief",
+          "name": "The Huntsman Path - Factory Chief",
+          "tier": null,
+          "prerequisites": [
+            "the_huntsman_path_forest_cleaning"
+          ],
+          "prerequisitesExternal": [
+            "scout"
+          ],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/The_Huntsman_Path_-_Factory_Chief",
+          "kappaRequired": true
+        },
+        {
+          "id": "the_huntsman_path_woods_keeper",
+          "name": "The Huntsman Path - Woods Keeper",
+          "tier": null,
+          "prerequisites": [
+            "the_huntsman_path_secured_perimeter"
+          ],
+          "prerequisitesExternal": [
+            "supply_plans"
+          ],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/The_Huntsman_Path_-_Woods_Keeper",
+          "kappaRequired": true
+        },
+        {
+          "id": "thirsty_hounds",
+          "name": "Thirsty - Hounds",
+          "tier": null,
+          "prerequisites": [
+            "the_delicious_sausage"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Thirsty_-_Hounds",
+          "kappaRequired": false
+        },
+        {
+          "id": "dragnet",
+          "name": "Dragnet",
+          "tier": null,
+          "prerequisites": [],
+          "prerequisitesExternal": [
+            "one_less_loose_end"
+          ],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Dragnet",
+          "kappaRequired": true
+        },
+        {
+          "id": "the_huntsman_path_big_game",
+          "name": "The Huntsman Path - Big Game",
+          "tier": null,
+          "prerequisites": [
+            "the_huntsman_path_forest_cleaning"
+          ],
+          "prerequisitesExternal": [
+            "urban_medicine"
+          ],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/The_Huntsman_Path_-_Big_Game",
+          "kappaRequired": false
+        },
+        {
+          "id": "courtesy_visit",
+          "name": "Courtesy Visit",
+          "tier": null,
+          "prerequisites": [
+            "the_survivalist_path_tough_guy"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Courtesy_Visit",
+          "kappaRequired": true
+        },
+        {
+          "id": "the_hermit",
+          "name": "The Hermit",
+          "tier": null,
+          "prerequisites": [
+            "the_survivalist_path_tough_guy"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/The_Hermit",
+          "kappaRequired": true
+        },
+        {
+          "id": "reserve",
+          "name": "Reserve",
+          "tier": null,
+          "prerequisites": [
+            "the_delicious_sausage"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Reserve_(quest)",
+          "kappaRequired": true
+        },
+        {
+          "id": "shady_business",
+          "name": "Shady Business",
+          "tier": null,
+          "prerequisites": [
+            "acquaintance"
+          ],
+          "prerequisitesExternal": [
+            "whats_on_the_flash_drive"
+          ],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Shady_Business",
+          "kappaRequired": true
+        },
+        {
+          "id": "broadcast_part_3",
+          "name": "Broadcast - Part 3",
+          "tier": null,
+          "prerequisites": [],
+          "prerequisitesExternal": [
+            "broadcast_part_2"
+          ],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Broadcast_-_Part_3",
+          "kappaRequired": false
+        },
+        {
+          "id": "the_huntsman_path_eraser_part_1",
+          "name": "The Huntsman Path - Eraser - Part 1",
+          "tier": null,
+          "prerequisites": [
+            "pest_control"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/The_Huntsman_Path_-_Eraser_-_Part_1",
+          "kappaRequired": true
+        },
+        {
+          "id": "pest_control",
+          "name": "Pest Control",
+          "tier": null,
+          "prerequisites": [
+            "reserve"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Pest_Control",
+          "kappaRequired": true
+        },
+        {
+          "id": "the_huntsman_path_outcasts",
+          "name": "The Huntsman Path - Outcasts",
+          "tier": null,
+          "prerequisites": [
+            "the_huntsman_path_forest_cleaning"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/The_Huntsman_Path_-_Outcasts",
+          "kappaRequired": true
+        },
+        {
+          "id": "the_huntsman_path_sadist",
+          "name": "The Huntsman Path - Sadist",
+          "tier": null,
+          "prerequisites": [],
+          "prerequisitesExternal": [
+            "rigged_game",
+            "colleagues_part_2",
+            "chemistry_closet"
+          ],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/The_Huntsman_Path_-_Sadist",
+          "kappaRequired": true
+        },
+        {
+          "id": "the_huntsman_path_administrator",
+          "name": "The Huntsman Path - Administrator",
+          "tier": null,
+          "prerequisites": [
+            "the_huntsman_path_forest_cleaning"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/The_Huntsman_Path_-_Administrator",
+          "kappaRequired": false
+        },
+        {
+          "id": "the_huntsman_path_crooked_cop",
+          "name": "The Huntsman Path - Crooked Cop",
+          "tier": null,
+          "prerequisites": [
+            "the_huntsman_path_administrator"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/The_Huntsman_Path_-_Crooked_Cop",
+          "kappaRequired": false
+        },
+        {
+          "id": "ambulance",
+          "name": "Ambulance",
+          "tier": null,
+          "prerequisites": [
+            "shady_business"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Ambulance",
+          "kappaRequired": true
+        },
+        {
+          "id": "broadcast_part_4",
+          "name": "Broadcast - Part 4",
+          "tier": null,
+          "prerequisites": [
+            "broadcast_part_3"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Broadcast_-_Part_4",
+          "kappaRequired": false
+        },
+        {
+          "id": "broadcast_part_5",
+          "name": "Broadcast - Part 5",
+          "tier": null,
+          "prerequisites": [
+            "broadcast_part_4"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Broadcast_-_Part_5",
+          "kappaRequired": false
+        },
+        {
+          "id": "nostalgia",
+          "name": "Nostalgia",
+          "tier": null,
+          "prerequisites": [
+            "courtesy_visit"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Nostalgia",
+          "kappaRequired": true
+        },
+        {
+          "id": "fishing_place",
+          "name": "Fishing Place",
+          "tier": null,
+          "prerequisites": [
+            "nostalgia"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Fishing_Place",
+          "kappaRequired": true
+        },
+        {
+          "id": "foresters_duty",
+          "name": "Forester's Duty",
+          "tier": null,
+          "prerequisites": [
+            "nostalgia"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Forester's_Duty",
+          "kappaRequired": false
+        },
+        {
+          "id": "the_huntsman_path_eraser_part_2",
+          "name": "The Huntsman Path - Eraser - Part 2",
+          "tier": null,
+          "prerequisites": [
+            "the_huntsman_path_secured_perimeter",
+            "the_huntsman_path_eraser_part_1"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/The_Huntsman_Path_-_Eraser_-_Part_2",
+          "kappaRequired": true
+        },
+        {
+          "id": "the_huntsman_path_sellout",
+          "name": "The Huntsman Path - Sellout",
+          "tier": null,
+          "prerequisites": [
+            "the_huntsman_path_forest_cleaning"
+          ],
+          "prerequisitesExternal": [
+            "sales_night"
+          ],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/The_Huntsman_Path_-_Sellout",
+          "kappaRequired": true
+        },
+        {
+          "id": "hunting_trip",
+          "name": "Hunting Trip",
+          "tier": null,
+          "prerequisites": [
+            "the_huntsman_path_woods_keeper"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Hunting_Trip",
+          "kappaRequired": true
+        },
+        {
+          "id": "hunter",
+          "name": "Hunter",
+          "tier": null,
+          "prerequisites": [
+            "the_huntsman_path_woods_keeper"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Hunter",
+          "kappaRequired": false
+        },
+        {
+          "id": "stray_dogs",
+          "name": "Stray Dogs",
+          "tier": null,
+          "prerequisites": [
+            "the_huntsman_path_trophy",
+            "the_huntsman_path_woods_keeper",
+            "the_huntsman_path_sellout"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Stray_Dogs",
+          "kappaRequired": true
+        },
+        {
+          "id": "slaughterhouse",
+          "name": "Slaughterhouse",
+          "tier": null,
+          "prerequisites": [
+            "the_huntsman_path_administrator",
+            "broadcast_part_4"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Slaughterhouse",
+          "kappaRequired": false
+        },
+        {
+          "id": "swift_one",
+          "name": "Swift One",
+          "tier": null,
+          "prerequisites": [
+            "the_huntsman_path_sadist"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Swift_One",
+          "kappaRequired": false
+        },
+        {
+          "id": "the_huntsman_path_relentless",
+          "name": "The Huntsman Path - Relentless",
+          "tier": null,
+          "prerequisites": [
+            "the_huntsman_path_trophy",
+            "the_huntsman_path_factory_chief",
+            "the_huntsman_path_woods_keeper",
+            "the_huntsman_path_eraser_part_1",
+            "the_huntsman_path_sadist",
+            "the_huntsman_path_sellout"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/The_Huntsman_Path_-_Relentless",
+          "kappaRequired": false
+        }
+      ]
+    },
+    "lightkeeper": {
+      "name": "Lightkeeper",
+      "quests": [
+        {
+          "id": "keepers_word",
+          "name": "Keeper's Word",
+          "tier": null,
+          "prerequisites": [],
+          "prerequisitesExternal": [
+            "hot_zone",
+            "the_tarkov_butcher",
+            "hypotheses_testing",
+            "vacate_the_premises",
+            "confidential_info",
+            "indisputable_authority",
+            "this_tape_sucks"
+          ],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Keeper's_Word",
+          "kappaRequired": false
+        },
+        {
+          "id": "order_from_outside",
+          "name": "Order From Outside",
+          "tier": null,
+          "prerequisites": [],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Order_From_Outside",
+          "kappaRequired": false
+        },
+        {
+          "id": "simple_side_job",
+          "name": "Simple Side Job",
+          "tier": null,
+          "prerequisites": [],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Simple_Side_Job",
+          "kappaRequired": false
+        },
+        {
+          "id": "information_source",
+          "name": "Information Source",
+          "tier": null,
+          "prerequisites": [],
+          "prerequisitesExternal": [
+            "knock_knock"
+          ],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Information_Source",
+          "kappaRequired": false
+        },
+        {
+          "id": "missing_informant",
+          "name": "Missing Informant",
+          "tier": null,
+          "prerequisites": [
+            "information_source"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Missing_Informant",
+          "kappaRequired": false
+        },
+        {
+          "id": "snatch",
+          "name": "Snatch",
+          "tier": null,
+          "prerequisites": [
+            "missing_informant"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Snatch",
+          "kappaRequired": false
+        },
+        {
+          "id": "payback",
+          "name": "Payback",
+          "tier": null,
+          "prerequisites": [
+            "return_the_favor"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Payback",
+          "kappaRequired": false
+        },
+        {
+          "id": "return_the_favor",
+          "name": "Return the Favor",
+          "tier": null,
+          "prerequisites": [
+            "snatch"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Return_the_Favor",
+          "kappaRequired": false
+        },
+        {
+          "id": "provocation",
+          "name": "Provocation",
+          "tier": null,
+          "prerequisites": [
+            "payback"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Provocation",
+          "kappaRequired": false
+        },
+        {
+          "id": "following_the_bread_crumbs",
+          "name": "Following the Bread Crumbs",
+          "tier": null,
+          "prerequisites": [
+            "provocation"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Following_the_Bread_Crumbs",
+          "kappaRequired": false
+        },
+        {
+          "id": "spotter",
+          "name": "Spotter",
+          "tier": null,
+          "prerequisites": [
+            "following_the_bread_crumbs"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Spotter",
+          "kappaRequired": false
+        },
+        {
+          "id": "make_an_impression",
+          "name": "Make an Impression",
+          "tier": null,
+          "prerequisites": [
+            "spotter"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Make_an_Impression",
+          "kappaRequired": false
+        },
+        {
+          "id": "trouble_in_the_big_city",
+          "name": "Trouble in the Big City",
+          "tier": null,
+          "prerequisites": [
+            "make_an_impression"
+          ],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Trouble_in_the_Big_City",
+          "kappaRequired": false
+        },
+        {
+          "id": "surprise_gift_pvp_zone",
+          "name": "Surprise Gift [PVP ZONE]",
+          "tier": null,
+          "prerequisites": [],
+          "prerequisitesExternal": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Surprise_Gift",
           "kappaRequired": false
         }
       ]
