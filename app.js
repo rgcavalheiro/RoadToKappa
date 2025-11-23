@@ -49,8 +49,79 @@ function saveProgress() {
 // Carregar dados do JSON
 async function loadQuestData() {
     try {
-        const response = await fetch('quests-data.json');
-        questsData = await response.json();
+        // Carregar ambos os arquivos
+        const [orderResponse, detailsResponse] = await Promise.all([
+            fetch('questdata2025.json'),
+            fetch('quests-data.json')
+        ]);
+        
+        const orderData = await orderResponse.json(); // Array com tier, npc, quest
+        const detailsData = await detailsResponse.json(); // Estrutura completa com npcs
+        
+        // Criar um mapa para buscar detalhes por nome da quest e NPC
+        const questDetailsMap = {};
+        Object.keys(detailsData.npcs).forEach(npcId => {
+            const npc = detailsData.npcs[npcId];
+            npc.quests.forEach(quest => {
+                const key = `${npc.name}|${quest.name}`;
+                questDetailsMap[key] = {
+                    ...quest,
+                    npcId: npcId,
+                    npcName: npc.name
+                };
+            });
+        });
+        
+        // Reorganizar dados usando a ordem do questdata2025.json
+        const reorganizedData = { npcs: {} };
+        
+        orderData.forEach(orderQuest => {
+            const npcName = orderQuest.npc;
+            const questName = orderQuest.quest;
+            const key = `${npcName}|${questName}`;
+            
+            // Buscar detalhes da quest
+            const questDetails = questDetailsMap[key];
+            
+            if (questDetails) {
+                // Encontrar ou criar o NPC
+                const npcId = questDetails.npcId;
+                if (!reorganizedData.npcs[npcId]) {
+                    reorganizedData.npcs[npcId] = {
+                        name: npcName,
+                        quests: []
+                    };
+                }
+                
+                // Adicionar quest na ordem correta (já está ordenada por tier no array)
+                reorganizedData.npcs[npcId].quests.push({
+                    id: questDetails.id,
+                    name: questDetails.name,
+                    tier: orderQuest.tier, // Usar tier do questdata2025.json
+                    prerequisites: questDetails.prerequisites || [],
+                    wikiUrl: questDetails.wikiUrl
+                });
+            } else {
+                // Quest não encontrada nos detalhes - criar entrada básica
+                console.warn(`Quest não encontrada nos detalhes: ${npcName} - ${questName}`);
+                const npcId = npcName.toLowerCase().replace(/\s+/g, '');
+                if (!reorganizedData.npcs[npcId]) {
+                    reorganizedData.npcs[npcId] = {
+                        name: npcName,
+                        quests: []
+                    };
+                }
+                reorganizedData.npcs[npcId].quests.push({
+                    id: questName.toLowerCase().replace(/\s+/g, '_').replace(/[^a-z0-9_]/g, ''),
+                    name: questName,
+                    tier: orderQuest.tier,
+                    prerequisites: [],
+                    wikiUrl: `https://escapefromtarkov.fandom.com/wiki/${encodeURIComponent(questName.replace(/\s+/g, '_'))}`
+                });
+            }
+        });
+        
+        questsData = reorganizedData;
         initializeNPCs();
         // Atualizar checks verdes após inicializar
         setTimeout(() => updateNPCButtons(), 100);
