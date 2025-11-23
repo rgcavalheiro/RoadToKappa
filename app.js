@@ -1539,3 +1539,16 @@ loadProgress();
 loadQuestDetailsCache(); // Carregar cache de detalhes das quests
 loadQuestData();
 
+// Esconder botão de configurações se não estiver em localhost
+(function() {
+    const isLocalhost = window.location.hostname === 'localhost' || 
+                       window.location.hostname === '127.0.0.1' ||
+                       window.location.hostname === '';
+    const settingsBtn = document.getElementById('settingsBtn');
+    if (settingsBtn) {
+        if (!isLocalhost) {
+            settingsBtn.style.display = 'none';
+        }
+    }
+})();
+
