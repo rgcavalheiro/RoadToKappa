@@ -194,168 +194,381 @@ function selectNPC(npcId, buttonElement) {
         };
     }
 
-    updateQuestDisplay();
-    document.getElementById('questDisplay').style.display = 'grid';
+    updateQuestList();
+    document.getElementById('questLayout').style.display = 'grid';
     document.getElementById('questActions').style.display = 'flex';
+    
+    // Limpar detalhes ao trocar de NPC
+    clearQuestDetails();
     
     // Atualizar check verde nos botões de NPC
     updateNPCButtons();
 }
 
-// Atualizar exibição das missões
-function updateQuestDisplay() {
+// Atualizar lista de quests disponíveis
+function updateQuestList() {
     if (!currentNPC) return;
 
     const npc = questsData.npcs[currentNPC];
     const npcProgress = progress[currentNPC] || { completed: [], current: null };
-    
-    // Encontrar última missão completada
-    const lastQuest = findLastCompletedQuest(npc, npcProgress);
-    displayQuest('lastQuest', lastQuest, 'last');
-
-    // Encontrar missão atual
-    const currentQuest = findCurrentQuest(npc, npcProgress);
-    displayQuest('currentQuest', currentQuest, 'current');
-
-    // Encontrar próxima missão
-    const nextQuest = findNextQuest(npc, npcProgress, currentQuest);
-    displayQuest('nextQuest', nextQuest, 'next');
-
-    // Atualizar botão de completar
-    const completeBtn = document.getElementById('completeBtn');
-    if (currentQuest) {
-        completeBtn.style.display = 'inline-block';
-    } else {
-        completeBtn.style.display = 'none';
-    }
-}
-
-// Encontrar última missão completada
-function findLastCompletedQuest(npc, npcProgress) {
-    if (!npcProgress.completed || npcProgress.completed.length === 0) {
-        return null;
-    }
-
-    const completedIds = npcProgress.completed;
-    let lastQuest = null;
-    let highestTier = -1;
-
-    completedIds.forEach(questId => {
-        const quest = npc.quests.find(q => q.id === questId);
-        if (quest && quest.tier > highestTier) {
-            highestTier = quest.tier;
-            lastQuest = quest;
-        }
-    });
-
-    return lastQuest;
-}
-
-// Encontrar missão atual
-function findCurrentQuest(npc, npcProgress) {
-    // Se há uma missão atual definida, retorná-la
-    if (npcProgress.current) {
-        const quest = npc.quests.find(q => q.id === npcProgress.current);
-        if (quest && !npcProgress.completed.includes(quest.id)) {
-            return quest;
-        }
-    }
-
-    // Caso contrário, encontrar a primeira missão disponível
     const completedIds = npcProgress.completed || [];
     
-    for (const quest of npc.quests) {
-        // Se já foi completada, pular
-        if (completedIds.includes(quest.id)) {
-            continue;
-        }
-
-        // Verificar se todos os pré-requisitos foram completados
+    const showCompleted = document.getElementById('showCompleted').checked;
+    const showLocked = document.getElementById('showLocked').checked;
+    
+    const container = document.getElementById('questListContainer');
+    container.innerHTML = '';
+    
+    let availableCount = 0;
+    let completedCount = 0;
+    
+    npc.quests.forEach(quest => {
+        const isCompleted = completedIds.includes(quest.id);
         const allPrerequisitesMet = quest.prerequisites.every(prereqId => 
             completedIds.includes(prereqId)
         );
-
-        if (allPrerequisitesMet) {
-            return quest;
-        }
-    }
-
-    return null;
-}
-
-// Encontrar próxima missão
-function findNextQuest(npc, npcProgress, currentQuest) {
-    if (!currentQuest) return null;
-
-    const completedIds = npcProgress.completed || [];
-    const currentQuestId = currentQuest.id;
-
-    // Encontrar missões que dependem da missão atual
-    const nextQuests = npc.quests.filter(quest => {
-        if (completedIds.includes(quest.id)) return false;
-        return quest.prerequisites.includes(currentQuestId);
-    });
-
-    if (nextQuests.length > 0) {
-        // Retornar a missão com menor tier
-        return nextQuests.sort((a, b) => a.tier - b.tier)[0];
-    }
-
-    // Se não há dependentes diretos, procurar a próxima missão disponível após completar a atual
-    const allCompleted = [...completedIds, currentQuestId];
-    
-    for (const quest of npc.quests) {
-        if (allCompleted.includes(quest.id)) continue;
+        const isLocked = !allPrerequisitesMet && !isCompleted;
         
-        const allPrerequisitesMet = quest.prerequisites.every(prereqId => 
-            allCompleted.includes(prereqId)
-        );
-
-        if (allPrerequisitesMet) {
-            return quest;
+        // Filtrar quests baseado nas opções
+        if (isCompleted && !showCompleted) return;
+        if (isLocked && !showLocked) return;
+        
+        if (!isCompleted && allPrerequisitesMet) {
+            availableCount++;
         }
-    }
-
-    return null;
+        if (isCompleted) {
+            completedCount++;
+        }
+        
+        const questItem = document.createElement('div');
+        questItem.className = 'quest-list-item';
+        if (isCompleted) {
+            questItem.classList.add('completed');
+        }
+        if (isLocked) {
+            questItem.classList.add('locked');
+        }
+        
+        const statusClass = isCompleted ? 'completed' : (isLocked ? 'locked' : 'active');
+        const statusText = isCompleted ? 'Completed' : (isLocked ? 'Locked' : 'Active!');
+        
+        questItem.innerHTML = `
+            <div class="quest-list-item-header">
+                <div class="quest-list-item-name">${quest.name}</div>
+                <span class="quest-list-item-status ${statusClass}">${statusText}</span>
+            </div>
+            ${!isCompleted && !isLocked ? `
+                <button class="quest-list-item-complete-btn" onclick="completeQuest('${quest.id}')">
+                    ✅ Complete
+                </button>
+            ` : ''}
+        `;
+        
+        // Adicionar evento de clique para selecionar quest
+        if (!isLocked) {
+            questItem.addEventListener('click', (e) => {
+                // Não selecionar se clicou no botão de completar
+                if (e.target.classList.contains('quest-list-item-complete-btn')) {
+                    return;
+                }
+                selectQuest(quest);
+            });
+        }
+        
+        container.appendChild(questItem);
+    });
+    
+    // Atualizar progresso
+    const totalAvailable = availableCount + completedCount;
+    document.getElementById('questProgress').textContent = `${completedCount}/${totalAvailable}`;
 }
 
-// Exibir missão
-function displayQuest(elementId, quest, type) {
-    const element = document.getElementById(elementId);
+// Selecionar quest para mostrar detalhes
+let selectedQuest = null;
+
+function selectQuest(quest) {
+    selectedQuest = quest;
     
-    if (!quest) {
-        if (type === 'last') {
-            element.innerHTML = '<p class="no-quest">Nenhuma missão completada ainda</p>';
-        } else if (type === 'current') {
-            element.innerHTML = '<p class="no-quest">Todas as missões foram completadas! 🎉</p>';
-        } else {
-            element.innerHTML = '<p class="no-quest">Complete a missão atual primeiro</p>';
+    // Atualizar seleção visual
+    document.querySelectorAll('.quest-list-item').forEach(item => {
+        item.classList.remove('selected');
+    });
+    
+    // Encontrar o item correspondente e marcar como selecionado
+    const items = document.querySelectorAll('.quest-list-item');
+    items.forEach(item => {
+        const questName = item.querySelector('.quest-list-item-name').textContent;
+        if (questName === quest.name) {
+            item.classList.add('selected');
         }
-        return;
-    }
-
-    // Botão principal: Ver Detalhes (destacado)
-    const detailsButton = `
-        <button onclick="showQuestDetailsScreen('${quest.wikiUrl}')" class="quest-btn-primary">
-            📋 Ver Detalhes
-        </button>
-    `;
+    });
     
-    // Botão secundário: Ver na Wiki (mais oculto)
-    const wikiButton = `
-        <a href="${quest.wikiUrl}" target="_blank" class="quest-link-secondary">
-            📖 Wiki
-        </a>
-    `;
+    // Mostrar detalhes na direita
+    showQuestDetailsInPanel(quest);
+}
 
-    element.innerHTML = `
-        <div class="quest-name">${quest.name}</div>
-        <div class="quest-buttons-container">
-            ${detailsButton}
-            ${wikiButton}
+// Mostrar detalhes da quest no painel direito
+function showQuestDetailsInPanel(quest) {
+    const panel = document.getElementById('questDetailsPanel');
+    const placeholder = panel.querySelector('.quest-details-placeholder');
+    
+    // Remover conteúdo anterior se existir
+    const existingContent = panel.querySelector('.quest-details-content');
+    if (existingContent) {
+        existingContent.remove();
+    }
+    
+    // Criar novo conteúdo
+    const content = document.createElement('div');
+    content.className = 'quest-details-content';
+    content.id = 'questDetailsContentPanel';
+    
+    // Mostrar loading
+    content.innerHTML = `
+        <div class="quest-details-loading">
+            <p>Carregando informações da quest...</p>
         </div>
     `;
+    
+    placeholder.style.display = 'none';
+    content.style.display = 'flex';
+    content.classList.add('active');
+    panel.appendChild(content);
+    
+    // Carregar dados da quest
+    loadQuestDetailsForPanel(quest.wikiUrl, content);
 }
+
+// Carregar detalhes da quest para o painel
+function loadQuestDetailsForPanel(wikiUrl, contentElement) {
+    // Verificar se a API está disponível
+    if (!API_BASE_URL) {
+        contentElement.innerHTML = `
+            <div class="quest-details-error">
+                API não configurada. Configure a URL do Render no app.js (RENDER_API_URL) ou use o Render para hospedar o backend.
+            </div>
+        `;
+        return;
+    }
+    
+    // Codificar URL
+    let questUrl = wikiUrl;
+    if (wikiUrl.startsWith('http://') || wikiUrl.startsWith('https://')) {
+        questUrl = encodeURIComponent(wikiUrl);
+    } else {
+        questUrl = encodeURIComponent(wikiUrl);
+    }
+    
+    // Criar AbortController para timeout
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 60000);
+    
+    fetch(`${API_BASE_URL}/api/quest/${questUrl}`, {
+        signal: controller.signal,
+        headers: {
+            'Accept': 'application/json'
+        }
+    })
+        .then(response => {
+            clearTimeout(timeoutId);
+            if (!response.ok) {
+                throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+            }
+            return response.json();
+        })
+        .then(data => {
+            if (data.error) {
+                contentElement.innerHTML = `
+                    <div class="quest-details-error">
+                        Erro ao carregar informações: ${data.error}
+                    </div>
+                `;
+                return;
+            }
+            
+            // Preencher informações
+            let html = `
+                <div class="quest-details-header">
+                    <h1>${data.name || 'Quest'}</h1>
+                    <span class="npc-badge">${data.npc || currentNPC}</span>
+                </div>
+                <div class="quest-details-body">
+            `;
+            
+            if (data.objectives && data.objectives.length > 0) {
+                html += `
+                    <div class="quest-details-section">
+                        <h2 class="section-title">Objetivos</h2>
+                        <ul class="objectives-list">
+                `;
+                data.objectives.forEach(objective => {
+                    html += `<li>${objective}</li>`;
+                });
+                html += `
+                        </ul>
+                    </div>
+                `;
+            }
+            
+            if (data.guide_images && data.guide_images.length > 0) {
+                html += `
+                    <div class="quest-details-section">
+                        <h2 class="section-title">Guia</h2>
+                        <div class="guide-images">
+                `;
+                
+                data.guide_images.forEach((imgSrc, index) => {
+                    html += `
+                        <div class="guide-image-container">
+                            <div style="text-align:center;padding:20px;color:#7f8c8d;" id="guide-loading-${index}">
+                                Carregando imagem...
+                            </div>
+                            <img 
+                                class="guide-image" 
+                                style="display:none;" 
+                                alt="Guia da quest - Imagem ${index + 1}"
+                                data-src="${imgSrc}"
+                                data-index="${index}"
+                            >
+                        </div>
+                    `;
+                });
+                
+                html += `
+                        </div>
+                    </div>
+                `;
+            }
+            
+            html += `
+                </div>
+            `;
+            
+            contentElement.innerHTML = html;
+            
+            // Carregar imagens
+            if (data.guide_images && data.guide_images.length > 0) {
+                const images = contentElement.querySelectorAll('.guide-image');
+                images.forEach(img => {
+                    const imgSrc = img.getAttribute('data-src');
+                    const index = img.getAttribute('data-index');
+                    
+                    img.onload = function() {
+                        const loading = document.getElementById(`guide-loading-${index}`);
+                        if (loading) {
+                            loading.remove();
+                        }
+                        img.style.display = 'block';
+                        img.style.cursor = 'pointer';
+                        
+                        img.addEventListener('click', function(e) {
+                            e.stopPropagation();
+                            openImageModal(imgSrc, e);
+                        });
+                    };
+                    
+                    img.onerror = function() {
+                        const loading = document.getElementById(`guide-loading-${index}`);
+                        if (loading) {
+                            loading.textContent = 'Erro ao carregar';
+                            loading.style.color = '#e74c3c';
+                        }
+                    };
+                    
+                    // Usar proxy se API disponível
+                    if (API_BASE_URL) {
+                        const proxyUrl = `${API_BASE_URL}/api/image-proxy?url=${encodeURIComponent(imgSrc)}`;
+                        img.src = proxyUrl;
+                    } else {
+                        img.src = imgSrc;
+                    }
+                });
+            }
+        })
+        .catch(err => {
+            clearTimeout(timeoutId);
+            contentElement.innerHTML = `
+                <div class="quest-details-error">
+                    Erro ao carregar informações da quest. ${err.message}
+                </div>
+            `;
+            console.error('Erro ao carregar quest:', err);
+        });
+}
+
+// Limpar detalhes da quest
+function clearQuestDetails() {
+    const panel = document.getElementById('questDetailsPanel');
+    const placeholder = panel.querySelector('.quest-details-placeholder');
+    const existingContent = panel.querySelector('.quest-details-content');
+    
+    if (existingContent) {
+        existingContent.remove();
+    }
+    
+    placeholder.style.display = 'flex';
+    selectedQuest = null;
+}
+
+// Completar quest específica
+function completeQuest(questId) {
+    if (!currentNPC) return;
+    
+    // Prevenir seleção da quest ao clicar no botão
+    if (event) {
+        event.stopPropagation();
+    }
+    
+    const npc = questsData.npcs[currentNPC];
+    const npcProgress = progress[currentNPC] || { completed: [], current: null };
+    
+    // Verificar se a quest existe
+    const quest = npc.quests.find(q => q.id === questId);
+    if (!quest) return;
+    
+    // Verificar se já foi completada
+    if (npcProgress.completed && npcProgress.completed.includes(questId)) {
+        return;
+    }
+    
+    // Verificar pré-requisitos
+    const completedIds = npcProgress.completed || [];
+    const allPrerequisitesMet = quest.prerequisites.every(prereqId => 
+        completedIds.includes(prereqId)
+    );
+    
+    if (!allPrerequisitesMet) {
+        alert('Você precisa completar os pré-requisitos primeiro!');
+        return;
+    }
+    
+    // Adicionar à lista de completadas
+    if (!npcProgress.completed) {
+        npcProgress.completed = [];
+    }
+    npcProgress.completed.push(questId);
+    
+    // Limpar missão atual se for a mesma
+    if (npcProgress.current === questId) {
+        npcProgress.current = null;
+    }
+    
+    // Salvar progresso
+    progress[currentNPC] = npcProgress;
+    saveProgress();
+    
+    // Atualizar lista (isso fará com que novas quests liberadas apareçam)
+    updateQuestList();
+    
+    // Se a quest completada estava selecionada, limpar detalhes
+    if (selectedQuest && selectedQuest.id === questId) {
+        clearQuestDetails();
+    }
+    
+    updateNPCButtons();
+}
+
+// Funções antigas removidas - não são mais necessárias com o novo layout
 
 // Atualizar botões de NPC (check verde agora é controlado pelo CSS quando .active)
 function updateNPCButtons() {
@@ -363,32 +576,10 @@ function updateNPCButtons() {
     // quando o botão tem a classe .active
 }
 
-// Completar missão atual
+// Função mantida para compatibilidade (não é mais usada, mas pode ser chamada de outros lugares)
 function completeCurrentQuest() {
-    if (!currentNPC) return;
-
-    const npc = questsData.npcs[currentNPC];
-    const npcProgress = progress[currentNPC] || { completed: [], current: null };
-    
-    const currentQuest = findCurrentQuest(npc, npcProgress);
-    if (!currentQuest) return;
-
-    // Adicionar à lista de completadas
-    if (!npcProgress.completed) {
-        npcProgress.completed = [];
-    }
-    npcProgress.completed.push(currentQuest.id);
-
-    // Limpar missão atual
-    npcProgress.current = null;
-
-    // Salvar progresso
-    progress[currentNPC] = npcProgress;
-    saveProgress();
-
-    // Atualizar exibição
-    updateQuestDisplay();
-    updateNPCButtons();
+    // Esta função não é mais usada, mas mantida para compatibilidade
+    // Use completeQuest(questId) em vez disso
 }
 
 // Resetar progresso
@@ -398,7 +589,8 @@ function resetProgress() {
     if (confirm('Tem certeza que deseja resetar o progresso deste NPC?')) {
         progress[currentNPC] = { completed: [], current: null };
         saveProgress();
-        updateQuestDisplay();
+        updateQuestList();
+        clearQuestDetails();
         updateNPCButtons();
     }
 }

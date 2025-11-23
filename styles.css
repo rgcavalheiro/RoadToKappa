@@ -40,23 +40,23 @@ body {
     display: flex;
     flex-direction: column;
     height: 100%;
-    gap: 8px;
+    gap: 4px;
 }
 
 .header-section {
-    flex: 0 0 20%;
+    flex: 0 0 5%;
     min-height: 0;
     display: flex;
     flex-direction: column;
 }
 
 .traders-section {
-    flex: 0 0 auto;
+    flex: 0 0 15%;
     min-height: 0;
     display: flex;
     flex-direction: column;
     overflow: hidden;
-    padding: 10px 0;
+    padding: 5px 0;
 }
 
 .quests-section {
@@ -69,10 +69,11 @@ body {
 
 header {
     text-align: center;
-    padding: 8px;
+    padding: 4px;
+    margin: 0;
     background: var(--card-bg);
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -80,14 +81,19 @@ header {
 }
 
 h1 {
-    font-size: 1.8em;
+    font-size: 1.4em;
     color: var(--secondary-color);
-    margin-bottom: 5px;
+    margin: 0;
+    padding: 0;
+    line-height: 1.2;
 }
 
 .subtitle {
     color: #bdc3c7;
-    font-size: 0.9em;
+    font-size: 0.75em;
+    margin: 2px 0 0 0;
+    padding: 0;
+    line-height: 1.2;
 }
 
 /* .npc-selector removido - não é mais necessário */
@@ -133,7 +139,7 @@ h1 {
     position: relative;
     overflow: hidden;
     flex: 0 0 auto;
-    width: 108px;
+    width: 90px;
     height: auto;
     display: flex;
     flex-direction: column;
@@ -151,28 +157,28 @@ h1 {
 
 .npc-btn-level {
     position: absolute;
-    top: 4px;
-    left: 4px;
+    top: 3px;
+    left: 3px;
     background: #FFFFFF;
     color: #000000;
-    padding: 3px 6px;
+    padding: 2px 5px;
     border: none;
     border-radius: 0;
-    font-size: 0.7em;
+    font-size: 0.65em;
     font-weight: 700;
     z-index: 3;
     font-family: 'Times New Roman', serif;
     box-shadow: none;
-    min-width: 18px;
+    min-width: 16px;
     text-align: center;
 }
 
 .npc-btn-check {
     position: absolute;
-    top: 4px;
-    right: 4px;
-    width: 18px;
-    height: 18px;
+    top: 3px;
+    right: 3px;
+    width: 16px;
+    height: 16px;
     background: #37FF4D;
     border-radius: 50%;
     display: none;
@@ -195,7 +201,7 @@ h1 {
 
 .npc-btn-portrait {
     width: 100%;
-    height: 108px;
+    height: 90px;
     overflow: hidden;
     background: #000;
     display: flex;
@@ -214,17 +220,17 @@ h1 {
 
 .npc-btn-question {
     position: absolute;
-    bottom: 4px;
-    right: 4px;
-    width: 16px;
-    height: 16px;
+    bottom: 3px;
+    right: 3px;
+    width: 14px;
+    height: 14px;
     background: #5A5A5A;
     border: 1px solid #C0C0C0;
     border-radius: 2px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 0.65em;
+    font-size: 0.6em;
     color: #C0C0C0;
     font-weight: bold;
     z-index: 3;
@@ -235,16 +241,17 @@ h1 {
     flex: 0 0 auto;
     background: #1A1A1A;
     color: #C0C0C0;
-    font-size: 0.7em;
+    font-size: 0.65em;
     font-weight: 400;
     text-align: center;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 4px 2px;
+    padding: 3px 2px;
     font-family: 'Segoe UI', sans-serif;
     border-top: 1px solid #5A5A5A;
-    min-height: 20px;
+    min-height: 18px;
+    line-height: 1.1;
 }
 
 .npc-btn:hover {
@@ -256,6 +263,247 @@ h1 {
     border: 2px solid #E3C400;
     box-shadow: 0 0 8px rgba(227, 196, 0, 0.5), inset 0 0 10px rgba(227, 196, 0, 0.1);
     background: #1A1A1A;
+}
+
+/* Layout de duas colunas para quests */
+.quest-layout {
+    display: grid;
+    grid-template-columns: 350px 1fr;
+    gap: 10px;
+    flex: 1;
+    min-height: 0;
+    overflow: hidden;
+}
+
+.quest-list-panel {
+    background: var(--card-bg);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border: 2px solid var(--border-color);
+}
+
+.quest-list-header {
+    padding: 12px;
+    border-bottom: 2px solid var(--border-color);
+    background: var(--primary-color);
+}
+
+.quest-list-header h2 {
+    color: var(--secondary-color);
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.quest-list-controls {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 8px;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--text-color);
+    font-size: 0.85em;
+    cursor: pointer;
+}
+
+.checkbox-label input[type="checkbox"] {
+    cursor: pointer;
+}
+
+.quest-progress {
+    color: var(--text-color);
+    font-size: 0.9em;
+    font-weight: 600;
+    margin-top: 8px;
+    text-align: center;
+}
+
+.quest-list-container {
+    flex: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 8px;
+    min-height: 0;
+    scrollbar-width: thin;
+    scrollbar-color: #5A5A5A #1A1A1A;
+}
+
+.quest-list-container::-webkit-scrollbar {
+    width: 6px;
+}
+
+.quest-list-container::-webkit-scrollbar-track {
+    background: #1A1A1A;
+}
+
+.quest-list-container::-webkit-scrollbar-thumb {
+    background: #5A5A5A;
+    border-radius: 3px;
+}
+
+.quest-list-container::-webkit-scrollbar-thumb:hover {
+    background: #7A7A7A;
+}
+
+.quest-list-item {
+    background: var(--primary-color);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    padding: 10px;
+    margin-bottom: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    position: relative;
+}
+
+.quest-list-item:hover {
+    border-color: var(--secondary-color);
+    background: var(--hover-color);
+}
+
+.quest-list-item.selected {
+    border-color: var(--secondary-color);
+    border-width: 2px;
+    box-shadow: 0 0 10px rgba(52, 152, 219, 0.3);
+    background: var(--hover-color);
+}
+
+.quest-list-item.completed {
+    opacity: 0.6;
+    border-color: var(--success-color);
+}
+
+.quest-list-item.locked {
+    opacity: 0.4;
+    cursor: not-allowed;
+    border-color: var(--danger-color);
+}
+
+.quest-list-item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 8px;
+}
+
+.quest-list-item-name {
+    font-weight: 600;
+    font-size: 0.9em;
+    color: var(--text-color);
+    flex: 1;
+    line-height: 1.3;
+}
+
+.quest-list-item-status {
+    font-size: 0.75em;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-left: 8px;
+    flex-shrink: 0;
+}
+
+.quest-list-item-status.active {
+    background: var(--secondary-color);
+    color: white;
+}
+
+.quest-list-item-status.completed {
+    background: var(--success-color);
+    color: white;
+}
+
+.quest-list-item-status.locked {
+    background: var(--danger-color);
+    color: white;
+}
+
+.quest-list-item-complete-btn {
+    width: 100%;
+    padding: 6px 12px;
+    background: var(--success-color);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.85em;
+    font-weight: 600;
+    transition: all 0.2s ease;
+    margin-top: 8px;
+}
+
+.quest-list-item-complete-btn:hover {
+    background: #229954;
+    transform: translateY(-1px);
+}
+
+.quest-list-item-complete-btn:disabled {
+    background: var(--border-color);
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
+.quest-details-panel {
+    background: var(--card-bg);
+    border-radius: 8px;
+    border: 2px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    min-height: 0;
+    max-height: 100%;
+}
+
+.quest-details-placeholder {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #7f8c8d;
+    font-style: italic;
+    padding: 20px;
+    font-size: 0.9em;
+}
+
+.quest-details-content {
+    flex: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 10px;
+    min-height: 0;
+    display: none;
+    flex-direction: column;
+    scrollbar-width: thin;
+    scrollbar-color: #5A5A5A #1A1A1A;
+}
+
+.quest-details-content::-webkit-scrollbar {
+    width: 6px;
+}
+
+.quest-details-content::-webkit-scrollbar-track {
+    background: #1A1A1A;
+}
+
+.quest-details-content::-webkit-scrollbar-thumb {
+    background: #5A5A5A;
+    border-radius: 3px;
+}
+
+.quest-details-content::-webkit-scrollbar-thumb:hover {
+    background: #7A7A7A;
+}
+
+.quest-details-content.active {
+    display: flex;
 }
 
 .quest-display {
@@ -462,14 +710,11 @@ h1 {
 
 .quest-actions {
     display: flex;
-    gap: 10px;
-    margin-top: 10px;
-    justify-content: center;
-    display: flex;
     gap: 15px;
     justify-content: center;
-    margin-top: 20px;
+    margin-top: 10px;
     flex-wrap: wrap;
+    flex-shrink: 0;
 }
 
 .btn {
@@ -679,8 +924,8 @@ h1 {
 
 .quest-details-header {
     border-bottom: 2px solid var(--secondary-color);
-    padding-bottom: 8px;
-    margin-bottom: 10px;
+    padding-bottom: 4px;
+    margin-bottom: 6px;
     width: 100%;
     flex-shrink: 0;
 }
@@ -689,27 +934,29 @@ h1 {
     display: inline-block;
     background: var(--secondary-color);
     color: white;
-    padding: 3px 10px;
-    border-radius: 15px;
-    font-size: 0.75em;
-    margin-top: 5px;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 0.7em;
+    margin-top: 3px;
 }
 
 .quest-details-header h1 {
     color: var(--secondary-color);
-    font-size: 1.5em;
-    margin-bottom: 5px;
+    font-size: 1.2em;
+    margin: 0;
+    padding: 0;
     line-height: 1.2;
 }
 
 .quest-details-body {
-    margin-top: 8px;
+    margin-top: 4px;
     width: 100%;
     flex: 1;
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 6px;
+    min-height: 0;
 }
 
 #questDetailsContent {
@@ -724,8 +971,8 @@ h1 {
 .quest-details-section {
     margin-bottom: 0;
     background: var(--card-bg);
-    padding: 12px;
-    border-radius: 8px;
+    padding: 8px;
+    border-radius: 6px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
     flex: 1;
     min-height: 0;
@@ -736,9 +983,9 @@ h1 {
 
 .quest-details-section .section-title {
     color: var(--secondary-color);
-    font-size: 1.1em;
-    margin-bottom: 8px;
-    padding-bottom: 6px;
+    font-size: 0.95em;
+    margin: 0 0 4px 0;
+    padding: 0 0 4px 0;
     border-bottom: 1px solid var(--border-color);
     flex-shrink: 0;
 }
@@ -753,12 +1000,12 @@ h1 {
 }
 
 .objectives-list li {
-    padding: 6px 0;
-    padding-left: 20px;
+    padding: 4px 0;
+    padding-left: 16px;
     position: relative;
     color: var(--text-color);
-    line-height: 1.4;
-    font-size: 0.85em;
+    line-height: 1.3;
+    font-size: 0.8em;
     border-bottom: 1px solid var(--border-color);
 }
 
@@ -777,22 +1024,23 @@ h1 {
 
 .quest-details-loading {
     text-align: center;
-    padding: 20px;
+    padding: 10px;
     color: var(--secondary-color);
     flex: 1;
     display: flex;
     align-items: center;
     justify-content: center;
+    font-size: 0.85em;
 }
 
 .quest-details-error {
     background: var(--danger-color);
     color: white;
-    padding: 10px;
-    border-radius: 5px;
-    margin: 10px 0;
+    padding: 8px;
+    border-radius: 4px;
+    margin: 6px 0;
     flex-shrink: 0;
-    font-size: 0.9em;
+    font-size: 0.8em;
 }
 
 /* Modal de imagem maximizada */
@@ -871,10 +1119,10 @@ h1 {
 
 .guide-images {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 8px;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 6px;
     width: 100%;
-    margin-top: 8px;
+    margin-top: 4px;
     overflow-y: auto;
     flex: 1;
     min-height: 0;
@@ -883,11 +1131,11 @@ h1 {
 
 .guide-image-container {
     background: var(--primary-color);
-    padding: 8px;
-    border-radius: 5px;
+    padding: 6px;
+    border-radius: 4px;
     overflow: hidden;
-    min-height: 120px;
-    max-height: 200px;
+    min-height: 100px;
+    max-height: 180px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -912,6 +1160,11 @@ h1 {
 }
 
 @media (max-width: 768px) {
+    .quest-layout {
+        grid-template-columns: 1fr;
+        grid-template-rows: 300px 1fr;
+    }
+
     .quest-display {
         grid-template-columns: 1fr;
     }
