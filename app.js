@@ -458,14 +458,18 @@ function loadQuestDetailsForPanel(wikiUrl, contentElement) {
     const controller = new AbortController();
     const timeoutId = setTimeout(() => controller.abort(), 60000);
     
+    console.log('[DEBUG] Fazendo requisição para:', `${API_BASE_URL}/api/quest/${questUrl}`);
+    
     fetch(`${API_BASE_URL}/api/quest/${questUrl}`, {
         signal: controller.signal,
         headers: {
             'Accept': 'application/json'
-        }
+        },
+        mode: 'cors'
     })
         .then(response => {
             clearTimeout(timeoutId);
+            console.log('[DEBUG] Resposta recebida:', response.status, response.statusText);
             if (!response.ok) {
                 throw new Error(`HTTP ${response.status}: ${response.statusText}`);
             }
@@ -582,12 +586,15 @@ function loadQuestDetailsForPanel(wikiUrl, contentElement) {
         })
         .catch(err => {
             clearTimeout(timeoutId);
+            console.error('[DEBUG] Erro ao carregar quest:', err);
+            console.error('[DEBUG] API_BASE_URL:', API_BASE_URL);
+            console.error('[DEBUG] URL completa:', `${API_BASE_URL}/api/quest/${questUrl}`);
             contentElement.innerHTML = `
                 <div class="quest-details-error">
                     Erro ao carregar informações da quest. ${err.message}
+                    <br><small>Verifique o console (F12) para mais detalhes.</small>
                 </div>
             `;
-            console.error('Erro ao carregar quest:', err);
         });
 }
 
@@ -1079,6 +1086,347 @@ document.addEventListener('DOMContentLoaded', function() {
             closeImageModal();
         }
     });
+});
+
+// ==================== CONFIGURAÇÕES ====================
+
+// Variáveis para dados brutos
+let rawQuestData = null;
+let rawQuestData2 = null;
+
+// Mostrar tela de configurações
+function showSettings() {
+    const settingsScreen = document.getElementById('settingsScreen');
+    settingsScreen.classList.add('active');
+    
+    // Carregar dados brutos se ainda não foram carregados
+    if (!rawQuestData) {
+        loadRawQuestData();
+    } else {
+        updateRawDataTable();
+    }
+    
+    // Carregar dados brutos 2 se ainda não foram carregados
+    if (!rawQuestData2) {
+        loadRawQuestData2();
+    } else {
+        updateRawData2Table();
+    }
+}
+
+// Esconder tela de configurações
+function hideSettings() {
+    const settingsScreen = document.getElementById('settingsScreen');
+    settingsScreen.classList.remove('active');
+}
+
+// Mostrar seção específica nas configurações
+function showSettingsSection(sectionId, buttonElement) {
+    // Remover active de todas as seções
+    document.querySelectorAll('.settings-section').forEach(section => {
+        section.classList.remove('active');
+    });
+    document.querySelectorAll('.settings-menu-item').forEach(item => {
+        item.classList.remove('active');
+    });
+    
+    // Adicionar active na seção e menu selecionados
+    document.getElementById(sectionId + '-section').classList.add('active');
+    if (buttonElement) {
+        buttonElement.classList.add('active');
+    }
+}
+
+// Carregar dados brutos das quests
+async function loadRawQuestData() {
+    try {
+        const response = await fetch('quests-data.json');
+        rawQuestData = await response.json();
+        
+        // Popular dropdown de NPCs
+        populateNPCsDropdown();
+        
+        // Atualizar tabela
+        updateRawDataTable();
+    } catch (error) {
+        console.error('Erro ao carregar dados brutos:', error);
+    }
+}
+
+// Popular dropdown de NPCs
+function populateNPCsDropdown() {
+    const npcSelect = document.getElementById('rawDataNPC');
+    const npcs = Object.keys(rawQuestData.npcs);
+    
+    // Limpar opções existentes (exceto "Todos")
+    while (npcSelect.children.length > 1) {
+        npcSelect.removeChild(npcSelect.lastChild);
+    }
+    
+    // Adicionar NPCs
+    npcs.forEach(npcId => {
+        const npc = rawQuestData.npcs[npcId];
+        const option = document.createElement('option');
+        option.value = npcId;
+        option.textContent = npc.name;
+        npcSelect.appendChild(option);
+    });
+}
+
+// Atualizar tabela de dados brutos
+function updateRawDataTable() {
+    if (!rawQuestData) return;
+    
+    const npcSelect = document.getElementById('rawDataNPC');
+    const searchInput = document.getElementById('rawDataSearch');
+    const tableBody = document.getElementById('rawDataTableBody');
+    
+    const selectedNPC = npcSelect.value;
+    const searchTerm = searchInput.value.toLowerCase();
+    
+    // Limpar tabela
+    tableBody.innerHTML = '';
+    
+    // Filtrar e popular dados
+    Object.keys(rawQuestData.npcs).forEach(npcId => {
+        const npc = rawQuestData.npcs[npcId];
+        
+        // Filtrar por NPC
+        if (selectedNPC !== 'all' && npcId !== selectedNPC) {
+            return;
+        }
+        
+        // Filtrar quests
+        npc.quests.forEach(quest => {
+            // Filtrar por termo de busca
+            if (searchTerm) {
+                const searchableText = `${npc.name} ${quest.name} ${quest.id} ${quest.tier}`.toLowerCase();
+                if (!searchableText.includes(searchTerm)) {
+                    return;
+                }
+            }
+            
+            // Criar linha da tabela
+            const row = document.createElement('tr');
+            
+            // NPC
+            const npcCell = document.createElement('td');
+            npcCell.textContent = npc.name;
+            row.appendChild(npcCell);
+            
+            // ID
+            const idCell = document.createElement('td');
+            idCell.textContent = quest.id;
+            row.appendChild(idCell);
+            
+            // Nome
+            const nameCell = document.createElement('td');
+            nameCell.textContent = quest.name;
+            row.appendChild(nameCell);
+            
+            // Tier
+            const tierCell = document.createElement('td');
+            tierCell.textContent = quest.tier || '-';
+            row.appendChild(tierCell);
+            
+            // Pré-requisitos
+            const prereqCell = document.createElement('td');
+            if (quest.prerequisites && quest.prerequisites.length > 0) {
+                quest.prerequisites.forEach(prereq => {
+                    const badge = document.createElement('span');
+                    badge.className = 'prereq-badge';
+                    badge.textContent = prereq;
+                    prereqCell.appendChild(badge);
+                });
+            } else {
+                prereqCell.textContent = '-';
+            }
+            row.appendChild(prereqCell);
+            
+            // Wiki URL
+            const urlCell = document.createElement('td');
+            if (quest.wikiUrl) {
+                const link = document.createElement('a');
+                link.href = quest.wikiUrl;
+                link.target = '_blank';
+                link.textContent = '🔗 Wiki';
+                link.style.color = 'var(--accent-color)';
+                urlCell.appendChild(link);
+            } else {
+                urlCell.textContent = '-';
+            }
+            row.appendChild(urlCell);
+            
+            tableBody.appendChild(row);
+        });
+    });
+}
+
+// ==================== RAW DATA QUESTS 2 ====================
+
+// Carregar dados brutos 2 (arquivo limpo)
+async function loadRawQuestData2() {
+    try {
+        const response = await fetch('quests-database.json');
+        rawQuestData2 = await response.json();
+        
+        // Popular dropdown de NPCs
+        populateNPCsDropdown2();
+        
+        // Atualizar tabela
+        updateRawData2Table();
+    } catch (error) {
+        console.error('Erro ao carregar dados brutos 2:', error);
+        // Se o arquivo não existir, criar estrutura vazia
+        rawQuestData2 = {
+            "version": "1.0.0",
+            "last_updated": new Date().toISOString(),
+            "npcs": {}
+        };
+        populateNPCsDropdown2();
+        updateRawData2Table();
+    }
+}
+
+// Popular dropdown de NPCs 2
+function populateNPCsDropdown2() {
+    const npcSelect = document.getElementById('rawData2NPC');
+    const npcs = Object.keys(rawQuestData2.npcs || {});
+    
+    // Limpar opções existentes (exceto "Todos")
+    while (npcSelect.children.length > 1) {
+        npcSelect.removeChild(npcSelect.lastChild);
+    }
+    
+    // Adicionar NPCs
+    npcs.forEach(npcId => {
+        const npc = rawQuestData2.npcs[npcId];
+        const option = document.createElement('option');
+        option.value = npcId;
+        option.textContent = npc.name || npcId;
+        npcSelect.appendChild(option);
+    });
+}
+
+// Atualizar tabela de dados brutos 2
+function updateRawData2Table() {
+    if (!rawQuestData2) return;
+    
+    const npcSelect = document.getElementById('rawData2NPC');
+    const searchInput = document.getElementById('rawData2Search');
+    const tableBody = document.getElementById('rawData2TableBody');
+    
+    const selectedNPC = npcSelect.value;
+    const searchTerm = searchInput.value.toLowerCase();
+    
+    // Limpar tabela
+    tableBody.innerHTML = '';
+    
+    // Verificar se há dados
+    if (!rawQuestData2.npcs || Object.keys(rawQuestData2.npcs).length === 0) {
+        tableBody.innerHTML = `
+            <tr>
+                <td colspan="6" style="text-align: center; padding: 40px; color: var(--text-color); opacity: 0.6;">
+                    📭 Nenhuma quest cadastrada ainda.<br>
+                    <small>Execute: python import_tarkov_api.py para importar dados.</small>
+                </td>
+            </tr>
+        `;
+        return;
+    }
+    
+    // Filtrar e popular dados
+    Object.keys(rawQuestData2.npcs).forEach(npcId => {
+        const npc = rawQuestData2.npcs[npcId];
+        
+        // Filtrar por NPC
+        if (selectedNPC !== 'all' && npcId !== selectedNPC) {
+            return;
+        }
+        
+        // Filtrar quests
+        if (npc.quests && npc.quests.length > 0) {
+            npc.quests.forEach(quest => {
+                // Filtrar por termo de busca
+                if (searchTerm) {
+                    const kappaText = quest.kappaRequired ? 'kappa sim' : 'kappa não';
+                    const searchableText = `${npc.name || npcId} ${quest.name} ${quest.id} ${kappaText}`.toLowerCase();
+                    if (!searchableText.includes(searchTerm)) {
+                        return;
+                    }
+                }
+                
+                // Criar linha da tabela
+                const row = document.createElement('tr');
+                
+                // NPC
+                const npcCell = document.createElement('td');
+                npcCell.textContent = npc.name || npcId;
+                row.appendChild(npcCell);
+                
+                // ID
+                const idCell = document.createElement('td');
+                idCell.textContent = quest.id || '-';
+                row.appendChild(idCell);
+                
+                // Nome
+                const nameCell = document.createElement('td');
+                nameCell.textContent = quest.name || '-';
+                row.appendChild(nameCell);
+                
+                // Kappa Required
+                const kappaCell = document.createElement('td');
+                const kappaRequired = quest.kappaRequired === true || quest.kappaRequired === 'true';
+                if (kappaRequired) {
+                    kappaCell.innerHTML = '<span style="color: #f39c12; font-weight: bold;">✓ Sim</span>';
+                } else {
+                    kappaCell.textContent = 'Não';
+                }
+                row.appendChild(kappaCell);
+                
+                // Pré-requisitos
+                const prereqCell = document.createElement('td');
+                if (quest.prerequisites && quest.prerequisites.length > 0) {
+                    quest.prerequisites.forEach(prereq => {
+                        const badge = document.createElement('span');
+                        badge.className = 'prereq-badge';
+                        badge.textContent = prereq;
+                        prereqCell.appendChild(badge);
+                    });
+                } else {
+                    prereqCell.textContent = '-';
+                }
+                row.appendChild(prereqCell);
+                
+                // Wiki URL
+                const urlCell = document.createElement('td');
+                if (quest.wikiUrl) {
+                    const link = document.createElement('a');
+                    link.href = quest.wikiUrl;
+                    link.target = '_blank';
+                    link.textContent = '🔗 Wiki';
+                    link.style.color = 'var(--accent-color)';
+                    urlCell.appendChild(link);
+                } else {
+                    urlCell.textContent = '-';
+                }
+                row.appendChild(urlCell);
+                
+                tableBody.appendChild(row);
+            });
+        }
+    });
+}
+
+
+// Fechar configurações com ESC
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+        const settingsScreen = document.getElementById('settingsScreen');
+        if (settingsScreen && settingsScreen.classList.contains('active')) {
+            hideSettings();
+        }
+    }
 });
 
 // Inicializar aplicação

@@ -52,3 +52,6 @@ Onde:
 - `app` = nome da variável Flask no arquivo
 - `$PORT` = porta fornecida pelo Render (variável de ambiente)
 
+
+
+

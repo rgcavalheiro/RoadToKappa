@@ -1,0 +1,10 @@
+Iniciando validacao de NPCs das quests...
+
+
+Verificando Prapor (19 quests)...
+  [ ] Debut... OK (Prapor)
+  [ ] Search Mission... OK (Prapor)
+  [ ] Delivery from the Past... OK (Prapor)
+  [ ] BP Depot... OK (Prapor)
+  [ ] Bad Rep Evidence... OK (Prapor)
+  [ ] Ice Cream Cones... OK (Prapor)

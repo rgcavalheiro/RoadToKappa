@@ -108,8 +108,94 @@
         </div>
     </div>
 
-    <!-- Versão do App -->
-    <div id="appVersion" class="app-version"></div>
+    <!-- Versão do App e Botão de Configurações -->
+    <div class="app-footer">
+        <div id="appVersion" class="app-version"></div>
+        <button id="settingsBtn" class="settings-btn" onclick="showSettings()" title="Configurações">
+            ⚙️
+        </button>
+    </div>
+
+    <!-- Tela de Configurações -->
+    <div id="settingsScreen" class="screen settings-screen">
+        <div class="settings-container">
+            <div class="settings-header">
+                <h2>⚙️ Configurações</h2>
+                <button class="settings-close-btn" onclick="hideSettings()">✕</button>
+            </div>
+            
+            <div class="settings-content">
+                <div class="settings-sidebar">
+                    <button class="settings-menu-item active" onclick="showSettingsSection('raw-data', this)">
+                        📊 Raw Data Quests
+                    </button>
+                    <button class="settings-menu-item" onclick="showSettingsSection('raw-data-2', this)">
+                        📋 Raw Data Quests 2
+                    </button>
+                    <!-- Adicione mais itens de menu aqui no futuro -->
+                </div>
+                
+                <div class="settings-main">
+                    <!-- Seção Raw Data Quests -->
+                    <div id="raw-data-section" class="settings-section active">
+                        <h3>Raw Data Quests</h3>
+                        <div class="raw-data-controls">
+                            <select id="rawDataNPC" onchange="updateRawDataTable()">
+                                <option value="all">Todos os NPCs</option>
+                            </select>
+                            <input type="text" id="rawDataSearch" placeholder="Buscar quest..." onkeyup="updateRawDataTable()">
+                        </div>
+                        <div class="raw-data-table-container">
+                            <table id="rawDataTable" class="raw-data-table">
+                                <thead>
+                                    <tr>
+                                        <th>NPC</th>
+                                        <th>ID</th>
+                                        <th>Nome</th>
+                                        <th>Tier</th>
+                                        <th>Pré-requisitos</th>
+                                        <th>Wiki URL</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="rawDataTableBody">
+                                    <!-- Dados serão inseridos via JavaScript -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    
+                    <!-- Seção Raw Data Quests 2 -->
+                    <div id="raw-data-2-section" class="settings-section">
+                        <h3>Raw Data Quests 2</h3>
+                        <p class="settings-info">Arquivo limpo para popular com nova estrutura. Dados podem ser importados da API tarkov.dev</p>
+                        <div class="raw-data-controls">
+                            <select id="rawData2NPC" onchange="updateRawData2Table()">
+                                <option value="all">Todos os NPCs</option>
+                            </select>
+                            <input type="text" id="rawData2Search" placeholder="Buscar quest..." onkeyup="updateRawData2Table()">
+                        </div>
+                        <div class="raw-data-table-container">
+                            <table id="rawData2Table" class="raw-data-table">
+                                <thead>
+                                    <tr>
+                                        <th>NPC</th>
+                                        <th>ID</th>
+                                        <th>Nome</th>
+                                        <th>Kappa</th>
+                                        <th>Pré-requisitos</th>
+                                        <th>Wiki URL</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="rawData2TableBody">
+                                    <!-- Dados serão inseridos via JavaScript -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script src="app.js"></script>
     <script src="version.js"></script>

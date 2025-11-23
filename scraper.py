@@ -3,9 +3,23 @@ from flask_cors import CORS
 import requests
 from bs4 import BeautifulSoup
 import re
+import sys
+import io
+
+# Corrigir encoding no Windows
+if sys.platform == 'win32':
+    sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
+    sys.stderr = io.TextIOWrapper(sys.stderr.buffer, encoding='utf-8')
 
 app = Flask(__name__)
-CORS(app)
+# Configurar CORS para permitir requisições de localhost:8000
+CORS(app, resources={
+    r"/api/*": {
+        "origins": ["http://localhost:8000", "http://127.0.0.1:8000"],
+        "methods": ["GET", "POST", "OPTIONS"],
+        "allow_headers": ["Content-Type", "Accept"]
+    }
+})
 
 def scrape_quest_info(wiki_url):
     """Faz scraping das informações da quest na wiki"""
@@ -178,9 +192,29 @@ def get_quest_info(wiki_url):
     # Substituir em-dash e outros caracteres especiais por hífen
     path_decoded = path_decoded.replace('–', '-').replace('—', '-')
     
-    # Recodificar o path corretamente
-    path_encoded = quote(path_decoded, safe='/')
-    corrected_url = urlunparse((parsed.scheme, parsed.netloc, path_encoded, parsed.params, parsed.query, parsed.fragment))
+    # IMPORTANTE: Preservar "the" na URL - não remover ou alterar
+    # Garantir que o path está correto sem alterar o conteúdo
+    if not path_decoded.startswith('/wiki/'):
+        if path_decoded.startswith('wiki/'):
+            path_decoded = '/' + path_decoded
+        else:
+            path_decoded = '/wiki/' + path_decoded
+    
+    # Usar urlunparse sem recodificar para preservar o path original
+    # Isso mantém "the" e outros componentes da URL intactos
+    corrected_url = urlunparse((parsed.scheme, parsed.netloc, path_decoded, parsed.params, parsed.query, parsed.fragment))
+    
+    # Log para debug
+    print(f"[QUEST API] URL recebida do Flask: {wiki_url}")
+    print(f"[QUEST API] URL após unquote: {full_url}")
+    print(f"[QUEST API] Path decodificado: {path_decoded}")
+    print(f"[QUEST API] URL final que será usada: {corrected_url}")
+    
+    # Verificar se "the" está presente
+    if 'the' in path_decoded.lower() or 'the' in corrected_url.lower():
+        print(f"[QUEST API] ✓ 'the' está presente na URL")
+    else:
+        print(f"[QUEST API] ✗ 'the' NÃO está presente na URL - PROBLEMA!")
     
     # Tentar fazer a requisição com a URL corrigida
     try:
@@ -321,5 +355,5 @@ def get_npc_portrait(npc_name):
         return jsonify({'error': str(e)}), 500
 
 if __name__ == '__main__':
-    app.run(port=5000, debug=True)
+    app.run(host='0.0.0.0', port=5000, debug=True)
 

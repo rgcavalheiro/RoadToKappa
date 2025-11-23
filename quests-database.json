@@ -1,0 +1,639 @@
+{
+  "version": "1.0.0",
+  "last_updated": "2025-11-23T15:10:19.252764",
+  "npcs": {
+    "prapor": {
+      "name": "Prapor",
+      "quests": [
+        {
+          "id": "shooting_cans",
+          "name": "Shooting Cans",
+          "tier": null,
+          "prerequisites": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Shooting_Cans",
+          "kappaRequired": true
+        },
+        {
+          "id": "debut",
+          "name": "Debut",
+          "tier": null,
+          "prerequisites": [
+            "shooting_cans"
+          ],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Debut",
+          "kappaRequired": true
+        },
+        {
+          "id": "luxurious_life",
+          "name": "Luxurious Life",
+          "tier": null,
+          "prerequisites": [
+            "debut"
+          ],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Luxurious_Life",
+          "kappaRequired": true
+        },
+        {
+          "id": "background_check",
+          "name": "Background Check",
+          "tier": null,
+          "prerequisites": [
+            "luxurious_life"
+          ],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Background_Check",
+          "kappaRequired": true
+        },
+        {
+          "id": "shootout_picnic",
+          "name": "Shootout Picnic",
+          "tier": null,
+          "prerequisites": [
+            "background_check"
+          ],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Shootout_Picnic",
+          "kappaRequired": true
+        },
+        {
+          "id": "search_mission",
+          "name": "Search Mission",
+          "tier": null,
+          "prerequisites": [
+            "debut"
+          ],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Search_Mission",
+          "kappaRequired": true
+        },
+        {
+          "id": "delivery_from_the_past",
+          "name": "Delivery From the Past",
+          "tier": null,
+          "prerequisites": [
+            "background_check"
+          ],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Delivery_From_the_Past",
+          "kappaRequired": true
+        },
+        {
+          "id": "bp_depot",
+          "name": "BP Depot",
+          "tier": null,
+          "prerequisites": [
+            "delivery_from_the_past"
+          ],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/BP_Depot",
+          "kappaRequired": true
+        },
+        {
+          "id": "belka_and_strelka",
+          "name": "Belka and Strelka",
+          "tier": null,
+          "prerequisites": [
+            "bp_depot"
+          ],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Belka_and_Strelka",
+          "kappaRequired": true
+        },
+        {
+          "id": "bad_rep_evidence",
+          "name": "Bad Rep Evidence",
+          "tier": null,
+          "prerequisites": [
+            "bp_depot"
+          ],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Bad_Rep_Evidence",
+          "kappaRequired": true
+        },
+        {
+          "id": "ice_cream_cones",
+          "name": "Ice Cream Cones",
+          "tier": null,
+          "prerequisites": [
+            "bad_rep_evidence"
+          ],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Ice_Cream_Cones",
+          "kappaRequired": true
+        },
+        {
+          "id": "the_bunker_part_1",
+          "name": "The Bunker - Part 1",
+          "tier": null,
+          "prerequisites": [
+            "bp_depot"
+          ],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/The_Bunker_-_Part_1",
+          "kappaRequired": true
+        },
+        {
+          "id": "postman_pat_part_1",
+          "name": "Postman Pat - Part 1",
+          "tier": null,
+          "prerequisites": [
+            "ice_cream_cones"
+          ],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Postman_Pat_-_Part_1",
+          "kappaRequired": true
+        },
+        {
+          "id": "polikhim_hobo",
+          "name": "Polikhim Hobo",
+          "tier": null,
+          "prerequisites": [
+            "chemical_part_1"
+          ],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Polikhim_Hobo",
+          "kappaRequired": true
+        },
+        {
+          "id": "possessor",
+          "name": "Possessor",
+          "tier": null,
+          "prerequisites": [
+            "postman_pat_part_1"
+          ],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Possessor",
+          "kappaRequired": true
+        },
+        {
+          "id": "big_customer",
+          "name": "Big Customer",
+          "tier": null,
+          "prerequisites": [
+            "chemical_part_4"
+          ],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Big_Customer",
+          "kappaRequired": true
+        },
+        {
+          "id": "no_offence",
+          "name": "No Offence",
+          "tier": null,
+          "prerequisites": [
+            "big_customer"
+          ],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/No_Offence",
+          "kappaRequired": false
+        },
+        {
+          "id": "shaking_up_the_teller",
+          "name": "Shaking Up the Teller",
+          "tier": null,
+          "prerequisites": [
+            "ice_cream_cones"
+          ],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Shaking_Up_the_Teller",
+          "kappaRequired": true
+        },
+        {
+          "id": "the_bunker_part_2",
+          "name": "The Bunker - Part 2",
+          "tier": null,
+          "prerequisites": [
+            "the_bunker_part_1"
+          ],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/The_Bunker_-_Part_2",
+          "kappaRequired": true
+        },
+        {
+          "id": "youve_got_mail",
+          "name": "You've Got Mail",
+          "tier": null,
+          "prerequisites": [
+            "postman_pat_part_1"
+          ],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/You've_Got_Mail",
+          "kappaRequired": false
+        },
+        {
+          "id": "the_punisher_part_1",
+          "name": "The Punisher - Part 1",
+          "tier": null,
+          "prerequisites": [
+            "shaking_up_the_teller"
+          ],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/The_Punisher_-_Part_1",
+          "kappaRequired": true
+        },
+        {
+          "id": "no_place_for_renegades",
+          "name": "No Place for Renegades",
+          "tier": null,
+          "prerequisites": [
+            "the_bunker_part_2"
+          ],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/No_Place_for_Renegades",
+          "kappaRequired": true
+        },
+        {
+          "id": "glory_to_cpsu_part_1",
+          "name": "Glory to CPSU - Part 1",
+          "tier": null,
+          "prerequisites": [
+            "youve_got_mail"
+          ],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Glory_to_CPSU_-_Part_1",
+          "kappaRequired": false
+        },
+        {
+          "id": "the_punisher_part_2",
+          "name": "The Punisher - Part 2",
+          "tier": null,
+          "prerequisites": [
+            "the_punisher_part_1"
+          ],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/The_Punisher_-_Part_2",
+          "kappaRequired": true
+        },
+        {
+          "id": "easy_job_part_1",
+          "name": "Easy Job - Part 1",
+          "tier": null,
+          "prerequisites": [
+            "the_punisher_part_2"
+          ],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Easy_Job_-_Part_1",
+          "kappaRequired": true
+        },
+        {
+          "id": "easy_job_part_2",
+          "name": "Easy Job - Part 2",
+          "tier": null,
+          "prerequisites": [
+            "easy_job_part_1"
+          ],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Easy_Job_-_Part_2",
+          "kappaRequired": true
+        },
+        {
+          "id": "reconnaissance",
+          "name": "Reconnaissance",
+          "tier": null,
+          "prerequisites": [
+            "easy_job_part_1"
+          ],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Reconnaissance",
+          "kappaRequired": true
+        },
+        {
+          "id": "documents",
+          "name": "Documents",
+          "tier": null,
+          "prerequisites": [
+            "no_place_for_renegades"
+          ],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Documents",
+          "kappaRequired": true
+        },
+        {
+          "id": "the_punisher_part_3",
+          "name": "The Punisher - Part 3",
+          "tier": null,
+          "prerequisites": [
+            "the_punisher_part_2"
+          ],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/The_Punisher_-_Part_3",
+          "kappaRequired": true
+        },
+        {
+          "id": "special_comms",
+          "name": "Special Comms",
+          "tier": null,
+          "prerequisites": [
+            "documents"
+          ],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Special_Comms",
+          "kappaRequired": false
+        },
+        {
+          "id": "grenadier",
+          "name": "Grenadier",
+          "tier": null,
+          "prerequisites": [],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Grenadier",
+          "kappaRequired": true
+        },
+        {
+          "id": "the_punisher_part_4",
+          "name": "The Punisher - Part 4",
+          "tier": null,
+          "prerequisites": [
+            "the_punisher_part_3"
+          ],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/The_Punisher_-_Part_4",
+          "kappaRequired": true
+        },
+        {
+          "id": "the_punisher_part_5",
+          "name": "The Punisher - Part 5",
+          "tier": null,
+          "prerequisites": [
+            "the_punisher_part_4"
+          ],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/The_Punisher_-_Part_5",
+          "kappaRequired": true
+        },
+        {
+          "id": "shipping_delay_part_1",
+          "name": "Shipping Delay - Part 1",
+          "tier": null,
+          "prerequisites": [
+            "a_helping_hand"
+          ],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Shipping_Delay_-_Part_1",
+          "kappaRequired": false
+        },
+        {
+          "id": "half_empty",
+          "name": "Half-Empty",
+          "tier": null,
+          "prerequisites": [
+            "forge_a_friendship"
+          ],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Half-Empty",
+          "kappaRequired": false
+        },
+        {
+          "id": "stick_in_the_wheel",
+          "name": "Stick in the Wheel",
+          "tier": null,
+          "prerequisites": [
+            "half_empty"
+          ],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Stick_in_the_Wheel",
+          "kappaRequired": false
+        },
+        {
+          "id": "forge_a_friendship",
+          "name": "Forge a Friendship",
+          "tier": null,
+          "prerequisites": [
+            "swift_retribution",
+            "natural_exchange"
+          ],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Forge_a_Friendship",
+          "kappaRequired": false
+        },
+        {
+          "id": "anesthesia",
+          "name": "Anesthesia",
+          "tier": null,
+          "prerequisites": [
+            "shaking_up_the_teller"
+          ],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Anesthesia",
+          "kappaRequired": true
+        },
+        {
+          "id": "the_punisher_part_6",
+          "name": "The Punisher - Part 6",
+          "tier": null,
+          "prerequisites": [
+            "the_punisher_part_5"
+          ],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/The_Punisher_-_Part_6",
+          "kappaRequired": true
+        },
+        {
+          "id": "gendarmerie_mall_cop",
+          "name": "Gendarmerie - Mall Cop",
+          "tier": null,
+          "prerequisites": [
+            "the_punisher_part_6"
+          ],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Gendarmerie_-_Mall_Cop",
+          "kappaRequired": false
+        },
+        {
+          "id": "gendarmerie_tickets_please",
+          "name": "Gendarmerie - Tickets, Please",
+          "tier": null,
+          "prerequisites": [
+            "gendarmerie_mall_cop"
+          ],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Gendarmerie_-_Tickets%2C_Please",
+          "kappaRequired": false
+        },
+        {
+          "id": "gendarmerie_district_patrol",
+          "name": "Gendarmerie - District Patrol",
+          "tier": null,
+          "prerequisites": [
+            "gendarmerie_tickets_please"
+          ],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Gendarmerie_-_District_Patrol",
+          "kappaRequired": false
+        },
+        {
+          "id": "glory_to_cpsu_part_2",
+          "name": "Glory to CPSU - Part 2",
+          "tier": null,
+          "prerequisites": [
+            "glory_to_cpsu_part_1"
+          ],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Glory_to_CPSU_-_Part_2",
+          "kappaRequired": false
+        },
+        {
+          "id": "kings_of_the_rooftops",
+          "name": "Kings of the Rooftops",
+          "tier": null,
+          "prerequisites": [
+            "the_punisher_part_4"
+          ],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Kings_of_the_Rooftops",
+          "kappaRequired": false
+        },
+        {
+          "id": "properties_all_around",
+          "name": "Properties All Around",
+          "tier": null,
+          "prerequisites": [
+            "glory_to_cpsu_part_2"
+          ],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Properties_All_Around",
+          "kappaRequired": false
+        },
+        {
+          "id": "regulated_materials",
+          "name": "Regulated Materials",
+          "tier": null,
+          "prerequisites": [
+            "polikhim_hobo"
+          ],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Regulated_Materials",
+          "kappaRequired": true
+        },
+        {
+          "id": "best_job_in_the_world",
+          "name": "Best Job in the World",
+          "tier": null,
+          "prerequisites": [
+            "the_punisher_part_6",
+            "kings_of_the_rooftops"
+          ],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Best_Job_in_the_World",
+          "kappaRequired": false
+        },
+        {
+          "id": "the_good_times_part_1",
+          "name": "The Good Times - Part 1",
+          "tier": null,
+          "prerequisites": [
+            "shooting_cans"
+          ],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/The_Good_Times_-_Part_1",
+          "kappaRequired": false
+        },
+        {
+          "id": "hell_on_earth_part_1",
+          "name": "Hell on Earth - Part 1",
+          "tier": null,
+          "prerequisites": [
+            "the_good_times_part_1"
+          ],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Hell_on_Earth_-_Part_1",
+          "kappaRequired": false
+        },
+        {
+          "id": "hell_on_earth_part_2",
+          "name": "Hell on Earth - Part 2",
+          "tier": null,
+          "prerequisites": [
+            "hell_on_earth_part_1"
+          ],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Hell_on_Earth_-_Part_2",
+          "kappaRequired": false
+        },
+        {
+          "id": "the_good_times_part_2",
+          "name": "The Good Times - Part 2",
+          "tier": null,
+          "prerequisites": [
+            "airmail"
+          ],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/The_Good_Times_-_Part_2",
+          "kappaRequired": false
+        },
+        {
+          "id": "viewer",
+          "name": "Viewer",
+          "tier": null,
+          "prerequisites": [
+            "minute_of_fame"
+          ],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Viewer",
+          "kappaRequired": false
+        },
+        {
+          "id": "test_drive_part_1",
+          "name": "Test Drive - Part 1",
+          "tier": null,
+          "prerequisites": [
+            "grenadier"
+          ],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Test_Drive_-_Part_1",
+          "kappaRequired": true
+        },
+        {
+          "id": "test_drive_part_2",
+          "name": "Test Drive - Part 2",
+          "tier": null,
+          "prerequisites": [
+            "test_drive_part_1"
+          ],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Test_Drive_-_Part_2",
+          "kappaRequired": true
+        },
+        {
+          "id": "test_drive_part_3",
+          "name": "Test Drive - Part 3",
+          "tier": null,
+          "prerequisites": [
+            "test_drive_part_2"
+          ],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Test_Drive_-_Part_3",
+          "kappaRequired": true
+        },
+        {
+          "id": "the_art_of_explosion",
+          "name": "The Art of Explosion",
+          "tier": null,
+          "prerequisites": [
+            "grenadier"
+          ],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/The_Art_of_Explosion",
+          "kappaRequired": false
+        },
+        {
+          "id": "perfect_mediator",
+          "name": "Perfect Mediator",
+          "tier": null,
+          "prerequisites": [
+            "shaking_up_the_teller"
+          ],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Perfect_Mediator",
+          "kappaRequired": true
+        },
+        {
+          "id": "test_drive_part_4",
+          "name": "Test Drive - Part 4",
+          "tier": null,
+          "prerequisites": [
+            "test_drive_part_3"
+          ],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Test_Drive_-_Part_4",
+          "kappaRequired": true
+        },
+        {
+          "id": "test_drive_part_5",
+          "name": "Test Drive - Part 5",
+          "tier": null,
+          "prerequisites": [
+            "test_drive_part_4"
+          ],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Test_Drive_-_Part_5",
+          "kappaRequired": true
+        },
+        {
+          "id": "test_drive_part_6",
+          "name": "Test Drive - Part 6",
+          "tier": null,
+          "prerequisites": [
+            "test_drive_part_5"
+          ],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Test_Drive_-_Part_6",
+          "kappaRequired": true
+        },
+        {
+          "id": "capturing_outposts",
+          "name": "Capturing Outposts",
+          "tier": null,
+          "prerequisites": [
+            "the_punisher_part_6"
+          ],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Capturing_Outposts",
+          "kappaRequired": false
+        },
+        {
+          "id": "intimidator",
+          "name": "Intimidator",
+          "tier": null,
+          "prerequisites": [
+            "the_punisher_part_6"
+          ],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Intimidator",
+          "kappaRequired": true
+        },
+        {
+          "id": "escort",
+          "name": "Escort",
+          "tier": null,
+          "prerequisites": [
+            "the_punisher_part_6"
+          ],
+          "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Escort",
+          "kappaRequired": false
+        }
+      ]
+    }
+  }
+}

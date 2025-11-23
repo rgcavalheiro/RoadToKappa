@@ -36,3 +36,6 @@ const RENDER_API_URL = 'https://tarkov-quest-tracker-api.onrender.com';
 4. Fazer commit e push
 5. Pronto! A API funcionará no GitHub Pages
 
+
+
+

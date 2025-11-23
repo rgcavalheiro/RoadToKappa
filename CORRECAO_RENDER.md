@@ -67,3 +67,6 @@ Se não encontrar o campo "Start Command", pode estar em:
 - **Settings** → **Environment** → **Start Command**
 - Ou em **Settings** → **Deploy** → **Start Command**
 
+
+
+

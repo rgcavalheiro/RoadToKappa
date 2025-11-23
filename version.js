@@ -21,3 +21,6 @@ async function loadVersion() {
 // Carregar versão quando a página carregar
 document.addEventListener('DOMContentLoaded', loadVersion);
 
+
+
+
