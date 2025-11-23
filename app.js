@@ -3,6 +3,31 @@ let questsData = {};
 let currentNPC = null;
 let progress = {};
 
+// NPCs que precisam ser desbloqueados por quests de outros NPCs
+// Formato: { npcId: { questId: 'id_da_quest', npcId: 'npc_que_tem_a_quest' } }
+const npcUnlockRequirements = {
+    'jaeger': {
+        questId: 'introduction',
+        npcId: 'mechanic'
+    }
+    // Adicione outros NPCs bloqueados aqui se necessário
+};
+
+// Verificar se um NPC está desbloqueado
+function isNPCUnlocked(npcId) {
+    // Se não há requisito de desbloqueio, está sempre desbloqueado
+    if (!npcUnlockRequirements[npcId]) {
+        return true;
+    }
+    
+    const requirement = npcUnlockRequirements[npcId];
+    const npcProgress = progress[requirement.npcId] || { completed: [], current: null };
+    const completedIds = npcProgress.completed || [];
+    
+    // Verificar se a quest que desbloqueia o NPC foi completada
+    return completedIds.includes(requirement.questId);
+}
+
 // Configuração da URL da API
 // Se você hospedar o Flask no Render, coloque a URL aqui (ex: 'https://seu-app.onrender.com')
 const RENDER_API_URL = 'https://roadtokappa.onrender.com';
@@ -123,12 +148,28 @@ async function loadQuestData() {
         
         questsData = reorganizedData;
         initializeNPCs();
-        // Atualizar checks verdes após inicializar
-        setTimeout(() => updateNPCButtons(), 100);
+        // Atualizar checks verdes e NPCs bloqueados após inicializar
+        setTimeout(() => {
+            updateNPCButtons();
+            checkNPCUnlocks();
+        }, 100);
     } catch (error) {
         console.error('Erro ao carregar dados:', error);
     }
 }
+
+// Ordem correta dos NPCs (conforme o jogo)
+const npcOrder = [
+    'prapor',
+    'therapist',
+    'fence',
+    'skier',
+    'peacekeeper',
+    'mechanic',
+    'ragman',
+    'jaeger',
+    'lightkeeper'
+];
 
 // Inicializar botões dos NPCs
 function initializeNPCs() {
@@ -146,11 +187,21 @@ function initializeNPCs() {
     console.log('[INIT] Inicializando', Object.keys(questsData.npcs).length, 'NPCs');
     npcButtons.innerHTML = '';
 
-    Object.keys(questsData.npcs).forEach(npcId => {
+    // Ordenar NPCs conforme a ordem definida
+    const orderedNPCs = npcOrder.filter(npcId => questsData.npcs[npcId]);
+    
+    orderedNPCs.forEach(npcId => {
         const npc = questsData.npcs[npcId];
         const button = document.createElement('button');
         button.className = 'npc-btn';
         button.setAttribute('data-npc-id', npcId);
+        
+        // Verificar se o NPC está desbloqueado
+        const isUnlocked = isNPCUnlocked(npcId);
+        if (!isUnlocked) {
+            button.classList.add('locked');
+            button.disabled = true;
+        }
         
         // Determinar nível do NPC (I ou II) - Peacekeeper é II, outros são I
         const npcLevel = npcId === 'peacekeeper' ? 'II' : 'I';
@@ -158,18 +209,35 @@ function initializeNPCs() {
         // Obter URL da imagem local
         const npcImage = npcImages[npcId] || '';
         
+        // Se bloqueado, adicionar overlay
+        const lockOverlay = !isUnlocked ? '<div class="npc-btn-lock-overlay">🔒</div>' : '';
+        
         button.innerHTML = `
             <div class="npc-btn-content">
                 <div class="npc-btn-portrait">
                     <img src="${npcImage}" alt="${npc.name}" class="npc-portrait-img" onerror="this.style.display='none'">
+                    ${lockOverlay}
                 </div>
                 <div class="npc-btn-name">${npc.name}</div>
             </div>
         `;
         
-        button.onclick = (e) => selectNPC(npcId, button);
+        if (isUnlocked) {
+            button.onclick = (e) => selectNPC(npcId, button);
+        } else {
+            button.onclick = (e) => {
+                const requirement = npcUnlockRequirements[npcId];
+                const unlockNPC = questsData.npcs[requirement.npcId];
+                const unlockQuest = unlockNPC.quests.find(q => q.id === requirement.questId);
+                alert(`${npc.name} está bloqueado!\n\nComplete a quest "${unlockQuest.name}" do ${unlockNPC.name} para desbloquear.`);
+            };
+        }
+        
         npcButtons.appendChild(button);
     });
+    
+    // Atualizar visual dos NPCs bloqueados
+    updateNPCButtons();
 }
 
 // Funções de carregamento de imagens removidas - agora usando imagens locais diretamente
@@ -205,6 +273,35 @@ function selectNPC(npcId, buttonElement) {
     updateNPCButtons();
 }
 
+// Verificar se todos os pré-requisitos de uma quest foram completados (incluindo cross-NPC)
+function areAllPrerequisitesMet(quest, npcId, allProgress) {
+    if (!quest.prerequisites || quest.prerequisites.length === 0) {
+        return true;
+    }
+    
+    // Verificar pré-requisitos do mesmo NPC
+    const npcProgress = allProgress[npcId] || { completed: [], current: null };
+    const completedIds = npcProgress.completed || [];
+    
+    // Verificar cada pré-requisito
+    return quest.prerequisites.every(prereqId => {
+        // Primeiro, verificar se está no mesmo NPC
+        if (completedIds.includes(prereqId)) {
+            return true;
+        }
+        
+        // Se não está no mesmo NPC, procurar em outros NPCs
+        for (const otherNpcId in allProgress) {
+            const otherProgress = allProgress[otherNpcId] || { completed: [], current: null };
+            if (otherProgress.completed && otherProgress.completed.includes(prereqId)) {
+                return true;
+            }
+        }
+        
+        return false;
+    });
+}
+
 // Atualizar lista de quests disponíveis
 function updateQuestList() {
     if (!currentNPC) return;
@@ -224,9 +321,7 @@ function updateQuestList() {
     
     npc.quests.forEach(quest => {
         const isCompleted = completedIds.includes(quest.id);
-        const allPrerequisitesMet = quest.prerequisites.every(prereqId => 
-            completedIds.includes(prereqId)
-        );
+        const allPrerequisitesMet = areAllPrerequisitesMet(quest, currentNPC, progress);
         const isLocked = !allPrerequisitesMet && !isCompleted;
         
         // Filtrar quests baseado nas opções
@@ -531,11 +626,8 @@ function completeQuest(questId) {
         return;
     }
     
-    // Verificar pré-requisitos
-    const completedIds = npcProgress.completed || [];
-    const allPrerequisitesMet = quest.prerequisites.every(prereqId => 
-        completedIds.includes(prereqId)
-    );
+    // Verificar pré-requisitos (incluindo cross-NPC)
+    const allPrerequisitesMet = areAllPrerequisitesMet(quest, currentNPC, progress);
     
     if (!allPrerequisitesMet) {
         alert('Você precisa completar os pré-requisitos primeiro!');
@@ -565,7 +657,37 @@ function completeQuest(questId) {
         clearQuestDetails();
     }
     
+    // Verificar se alguma quest completada desbloqueou um NPC
+    checkNPCUnlocks();
+    
     updateNPCButtons();
+}
+
+// Verificar se alguma quest completada desbloqueou um NPC
+function checkNPCUnlocks() {
+    Object.keys(npcUnlockRequirements).forEach(npcId => {
+        const requirement = npcUnlockRequirements[npcId];
+        const npcProgress = progress[requirement.npcId] || { completed: [], current: null };
+        const completedIds = npcProgress.completed || [];
+        
+        // Se a quest foi completada, desbloquear o NPC
+        if (completedIds.includes(requirement.questId)) {
+            const button = document.querySelector(`[data-npc-id="${npcId}"]`);
+            if (button && button.classList.contains('locked')) {
+                button.classList.remove('locked');
+                button.disabled = false;
+                
+                // Remover overlay de bloqueio
+                const lockOverlay = button.querySelector('.npc-btn-lock-overlay');
+                if (lockOverlay) {
+                    lockOverlay.remove();
+                }
+                
+                // Adicionar evento de clique
+                button.onclick = (e) => selectNPC(npcId, button);
+            }
+        }
+    });
 }
 
 // Funções antigas removidas - não são mais necessárias com o novo layout
