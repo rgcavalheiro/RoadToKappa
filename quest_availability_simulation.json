@@ -1,0 +1,5159 @@
+{
+  "available_quests": {
+    "prapor": [
+      {
+        "id": "shooting_cans_1",
+        "name": "Shooting Cans",
+        "reason": "Sem pre-requisitos"
+      },
+      {
+        "id": "big_customer_1",
+        "name": "Big Customer",
+        "reason": "Sem pre-requisitos"
+      },
+      {
+        "id": "grenadier_1",
+        "name": "Grenadier",
+        "reason": "Sem pre-requisitos"
+      },
+      {
+        "id": "forge_a_friendship_1",
+        "name": "Forge a Friendship",
+        "reason": "Sem pre-requisitos"
+      },
+      {
+        "id": "test_drive_part_1_1",
+        "name": "Test Drive - Part 1",
+        "reason": "Sem pre-requisitos"
+      }
+    ],
+    "therapist": [
+      {
+        "id": "first_in_line",
+        "name": "First in Line",
+        "reason": "Sem pre-requisitos"
+      },
+      {
+        "id": "out_of_curiosity",
+        "name": "Out of Curiosity",
+        "reason": "Sem pre-requisitos"
+      },
+      {
+        "id": "all_is_revealed",
+        "name": "All Is Revealed",
+        "reason": "Sem pre-requisitos"
+      },
+      {
+        "id": "thirsty_echo",
+        "name": "Thirsty - Echo",
+        "reason": "Sem pre-requisitos"
+      },
+      {
+        "id": "a_healthy_alternative",
+        "name": "A Healthy Alternative",
+        "reason": "Sem pre-requisitos"
+      },
+      {
+        "id": "the_tarkov_butcher",
+        "name": "The Tarkov Butcher",
+        "reason": "Sem pre-requisitos"
+      },
+      {
+        "id": "this_tape_sucks",
+        "name": "This Tape Sucks",
+        "reason": "Sem pre-requisitos"
+      },
+      {
+        "id": "colleagues_part_3",
+        "name": "Colleagues - Part 3",
+        "reason": "Sem pre-requisitos"
+      }
+    ],
+    "skier": [
+      {
+        "id": "burning_rubber",
+        "name": "Burning Rubber",
+        "reason": "Sem pre-requisitos"
+      },
+      {
+        "id": "exit_here",
+        "name": "Exit Here",
+        "reason": "Sem pre-requisitos"
+      },
+      {
+        "id": "thirsty_breadwinner",
+        "name": "Thirsty - Breadwinner",
+        "reason": "Sem pre-requisitos"
+      },
+      {
+        "id": "indisputable_authority",
+        "name": "Indisputable Authority",
+        "reason": "Sem pre-requisitos"
+      },
+      {
+        "id": "the_higher_they_fly",
+        "name": "The Higher They Fly",
+        "reason": "Sem pre-requisitos"
+      },
+      {
+        "id": "proper_comeback",
+        "name": "Proper Comeback",
+        "reason": "Sem pre-requisitos"
+      },
+      {
+        "id": "fair_price_part_1",
+        "name": "Fair Price - Part 1",
+        "reason": "Sem pre-requisitos"
+      },
+      {
+        "id": "profitable_venture",
+        "name": "Profitable Venture",
+        "reason": "Sem pre-requisitos"
+      }
+    ],
+    "peacekeeper": [
+      {
+        "id": "confidential_info",
+        "name": "Confidential Info",
+        "reason": "Sem pre-requisitos"
+      }
+    ],
+    "mechanic": [
+      {
+        "id": "saving_the_mole",
+        "name": "Saving the Mole",
+        "reason": "Sem pre-requisitos"
+      }
+    ],
+    "ragman": [
+      {
+        "id": "only_business",
+        "name": "Only Business",
+        "reason": "Sem pre-requisitos"
+      },
+      {
+        "id": "stabilize_business",
+        "name": "Stabilize Business",
+        "reason": "Sem pre-requisitos"
+      },
+      {
+        "id": "another_shipping_delay",
+        "name": "Another Shipping Delay",
+        "reason": "Sem pre-requisitos"
+      },
+      {
+        "id": "new_beginning",
+        "name": "New Beginning",
+        "reason": "Sem pre-requisitos"
+      },
+      {
+        "id": "new_beginning_1",
+        "name": "New Beginning",
+        "reason": "Sem pre-requisitos"
+      },
+      {
+        "id": "new_beginning_2",
+        "name": "New Beginning",
+        "reason": "Sem pre-requisitos"
+      },
+      {
+        "id": "new_beginning_3",
+        "name": "New Beginning",
+        "reason": "Sem pre-requisitos"
+      }
+    ],
+    "lightkeeper": [
+      {
+        "id": "order_from_outside",
+        "name": "Order From Outside",
+        "reason": "Sem pre-requisitos"
+      },
+      {
+        "id": "simple_side_job",
+        "name": "Simple Side Job",
+        "reason": "Sem pre-requisitos"
+      },
+      {
+        "id": "surprise_gift_pvp_zone",
+        "name": "Surprise Gift [PVP ZONE]",
+        "reason": "Sem pre-requisitos"
+      }
+    ]
+  },
+  "locked_quests": {
+    "prapor": [
+      {
+        "id": "debut_1",
+        "name": "Debut",
+        "missing_prerequisites": [
+          {
+            "id": "shooting_cans_1",
+            "name": "Shooting Cans",
+            "npc": "prapor"
+          }
+        ]
+      },
+      {
+        "id": "luxurious_life_1",
+        "name": "Luxurious Life",
+        "missing_prerequisites": [
+          {
+            "id": "debut_1",
+            "name": "Debut",
+            "npc": "prapor"
+          }
+        ]
+      },
+      {
+        "id": "background_check_1",
+        "name": "Background Check",
+        "missing_prerequisites": [
+          {
+            "id": "luxurious_life_1",
+            "name": "Luxurious Life",
+            "npc": "prapor"
+          }
+        ]
+      },
+      {
+        "id": "shootout_picnic_1",
+        "name": "Shootout Picnic",
+        "missing_prerequisites": [
+          {
+            "id": "background_check_1",
+            "name": "Background Check",
+            "npc": "prapor"
+          }
+        ]
+      },
+      {
+        "id": "search_mission_1",
+        "name": "Search Mission",
+        "missing_prerequisites": [
+          {
+            "id": "debut_1",
+            "name": "Debut",
+            "npc": "prapor"
+          }
+        ]
+      },
+      {
+        "id": "delivery_from_the_past_1",
+        "name": "Delivery From the Past",
+        "missing_prerequisites": [
+          {
+            "id": "background_check_1",
+            "name": "Background Check",
+            "npc": "prapor"
+          }
+        ]
+      },
+      {
+        "id": "bp_depot_1",
+        "name": "BP Depot",
+        "missing_prerequisites": [
+          {
+            "id": "delivery_from_the_past_1",
+            "name": "Delivery From the Past",
+            "npc": "prapor"
+          }
+        ]
+      },
+      {
+        "id": "belka_and_strelka_1",
+        "name": "Belka and Strelka",
+        "missing_prerequisites": [
+          {
+            "id": "bp_depot_1",
+            "name": "BP Depot",
+            "npc": "prapor"
+          }
+        ]
+      },
+      {
+        "id": "bad_rep_evidence_1",
+        "name": "Bad Rep Evidence",
+        "missing_prerequisites": [
+          {
+            "id": "bp_depot_1",
+            "name": "BP Depot",
+            "npc": "prapor"
+          }
+        ]
+      },
+      {
+        "id": "ice_cream_cones_1",
+        "name": "Ice Cream Cones",
+        "missing_prerequisites": [
+          {
+            "id": "bad_rep_evidence_1",
+            "name": "Bad Rep Evidence",
+            "npc": "prapor"
+          }
+        ]
+      },
+      {
+        "id": "the_bunker_part_1_1",
+        "name": "The Bunker - Part 1",
+        "missing_prerequisites": [
+          {
+            "id": "bp_depot_1",
+            "name": "BP Depot",
+            "npc": "prapor"
+          }
+        ]
+      },
+      {
+        "id": "postman_pat_part_1_1",
+        "name": "Postman Pat - Part 1",
+        "missing_prerequisites": [
+          {
+            "id": "ice_cream_cones_1",
+            "name": "Ice Cream Cones",
+            "npc": "prapor"
+          }
+        ]
+      },
+      {
+        "id": "polikhim_hobo_1",
+        "name": "Polikhim Hobo",
+        "missing_prerequisites": [
+          {
+            "id": "chemical_part_1",
+            "name": "Chemical - Part 1",
+            "npc": "skier"
+          }
+        ]
+      },
+      {
+        "id": "possessor_1",
+        "name": "Possessor",
+        "missing_prerequisites": [
+          {
+            "id": "postman_pat_part_1_1",
+            "name": "Postman Pat - Part 1",
+            "npc": "prapor"
+          }
+        ]
+      },
+      {
+        "id": "no_offence_1",
+        "name": "No Offence",
+        "missing_prerequisites": [
+          {
+            "id": "big_customer_1",
+            "name": "Big Customer",
+            "npc": "prapor"
+          }
+        ]
+      },
+      {
+        "id": "shaking_up_the_teller_1",
+        "name": "Shaking Up the Teller",
+        "missing_prerequisites": [
+          {
+            "id": "ice_cream_cones_1",
+            "name": "Ice Cream Cones",
+            "npc": "prapor"
+          }
+        ]
+      },
+      {
+        "id": "the_bunker_part_2_1",
+        "name": "The Bunker - Part 2",
+        "missing_prerequisites": [
+          {
+            "id": "the_bunker_part_1_1",
+            "name": "The Bunker - Part 1",
+            "npc": "prapor"
+          }
+        ]
+      },
+      {
+        "id": "youve_got_mail_1",
+        "name": "You've Got Mail",
+        "missing_prerequisites": [
+          {
+            "id": "postman_pat_part_1_1",
+            "name": "Postman Pat - Part 1",
+            "npc": "prapor"
+          }
+        ]
+      },
+      {
+        "id": "the_punisher_part_1_1",
+        "name": "The Punisher - Part 1",
+        "missing_prerequisites": [
+          {
+            "id": "shaking_up_the_teller_1",
+            "name": "Shaking Up the Teller",
+            "npc": "prapor"
+          }
+        ]
+      },
+      {
+        "id": "no_place_for_renegades_1",
+        "name": "No Place for Renegades",
+        "missing_prerequisites": [
+          {
+            "id": "the_bunker_part_2_1",
+            "name": "The Bunker - Part 2",
+            "npc": "prapor"
+          }
+        ]
+      },
+      {
+        "id": "glory_to_cpsu_part_1_1",
+        "name": "Glory to CPSU - Part 1",
+        "missing_prerequisites": [
+          {
+            "id": "youve_got_mail_1",
+            "name": "You've Got Mail",
+            "npc": "prapor"
+          }
+        ]
+      },
+      {
+        "id": "the_punisher_part_2_1",
+        "name": "The Punisher - Part 2",
+        "missing_prerequisites": [
+          {
+            "id": "the_punisher_part_1_1",
+            "name": "The Punisher - Part 1",
+            "npc": "prapor"
+          }
+        ]
+      },
+      {
+        "id": "easy_job_part_1_1",
+        "name": "Easy Job - Part 1",
+        "missing_prerequisites": [
+          {
+            "id": "the_punisher_part_2_1",
+            "name": "The Punisher - Part 2",
+            "npc": "prapor"
+          }
+        ]
+      },
+      {
+        "id": "easy_job_part_2_1",
+        "name": "Easy Job - Part 2",
+        "missing_prerequisites": [
+          {
+            "id": "easy_job_part_1_1",
+            "name": "Easy Job - Part 1",
+            "npc": "prapor"
+          }
+        ]
+      },
+      {
+        "id": "reconnaissance_1",
+        "name": "Reconnaissance",
+        "missing_prerequisites": [
+          {
+            "id": "easy_job_part_1_1",
+            "name": "Easy Job - Part 1",
+            "npc": "prapor"
+          }
+        ]
+      },
+      {
+        "id": "documents_1",
+        "name": "Documents",
+        "missing_prerequisites": [
+          {
+            "id": "no_place_for_renegades_1",
+            "name": "No Place for Renegades",
+            "npc": "prapor"
+          }
+        ]
+      },
+      {
+        "id": "the_punisher_part_3_1",
+        "name": "The Punisher - Part 3",
+        "missing_prerequisites": [
+          {
+            "id": "the_punisher_part_2_1",
+            "name": "The Punisher - Part 2",
+            "npc": "prapor"
+          }
+        ]
+      },
+      {
+        "id": "special_comms_1",
+        "name": "Special Comms",
+        "missing_prerequisites": [
+          {
+            "id": "documents_1",
+            "name": "Documents",
+            "npc": "prapor"
+          }
+        ]
+      },
+      {
+        "id": "green_corridor",
+        "name": "Green Corridor",
+        "missing_prerequisites": [
+          {
+            "id": "spa_tour_part_7",
+            "name": "Spa Tour - Part 7",
+            "npc": "peacekeeper"
+          }
+        ]
+      },
+      {
+        "id": "the_punisher_part_4_1",
+        "name": "The Punisher - Part 4",
+        "missing_prerequisites": [
+          {
+            "id": "the_punisher_part_3_1",
+            "name": "The Punisher - Part 3",
+            "npc": "prapor"
+          }
+        ]
+      },
+      {
+        "id": "the_punisher_part_5_1",
+        "name": "The Punisher - Part 5",
+        "missing_prerequisites": [
+          {
+            "id": "the_punisher_part_4_1",
+            "name": "The Punisher - Part 4",
+            "npc": "prapor"
+          }
+        ]
+      },
+      {
+        "id": "shipping_delay_part_1_1",
+        "name": "Shipping Delay - Part 1",
+        "missing_prerequisites": [
+          {
+            "id": "a_helping_hand",
+            "name": "A Helping Hand",
+            "npc": "mechanic"
+          }
+        ]
+      },
+      {
+        "id": "half_empty_1",
+        "name": "Half-Empty",
+        "missing_prerequisites": [
+          {
+            "id": "forge_a_friendship_1",
+            "name": "Forge a Friendship",
+            "npc": "prapor"
+          }
+        ]
+      },
+      {
+        "id": "stick_in_the_wheel_1",
+        "name": "Stick in the Wheel",
+        "missing_prerequisites": [
+          {
+            "id": "half_empty_1",
+            "name": "Half-Empty",
+            "npc": "prapor"
+          }
+        ]
+      },
+      {
+        "id": "anesthesia_1",
+        "name": "Anesthesia",
+        "missing_prerequisites": [
+          {
+            "id": "shaking_up_the_teller_1",
+            "name": "Shaking Up the Teller",
+            "npc": "prapor"
+          }
+        ]
+      },
+      {
+        "id": "the_punisher_part_6_1",
+        "name": "The Punisher - Part 6",
+        "missing_prerequisites": [
+          {
+            "id": "the_punisher_part_5_1",
+            "name": "The Punisher - Part 5",
+            "npc": "prapor"
+          }
+        ]
+      },
+      {
+        "id": "gendarmerie_mall_cop_1",
+        "name": "Gendarmerie - Mall Cop",
+        "missing_prerequisites": [
+          {
+            "id": "the_punisher_part_6_1",
+            "name": "The Punisher - Part 6",
+            "npc": "prapor"
+          }
+        ]
+      },
+      {
+        "id": "gendarmerie_tickets_please_1",
+        "name": "Gendarmerie - Tickets, Please",
+        "missing_prerequisites": [
+          {
+            "id": "gendarmerie_mall_cop_1",
+            "name": "Gendarmerie - Mall Cop",
+            "npc": "prapor"
+          }
+        ]
+      },
+      {
+        "id": "gendarmerie_district_patrol_1",
+        "name": "Gendarmerie - District Patrol",
+        "missing_prerequisites": [
+          {
+            "id": "gendarmerie_tickets_please_1",
+            "name": "Gendarmerie - Tickets, Please",
+            "npc": "prapor"
+          }
+        ]
+      },
+      {
+        "id": "glory_to_cpsu_part_2_1",
+        "name": "Glory to CPSU - Part 2",
+        "missing_prerequisites": [
+          {
+            "id": "glory_to_cpsu_part_1_1",
+            "name": "Glory to CPSU - Part 1",
+            "npc": "prapor"
+          }
+        ]
+      },
+      {
+        "id": "kings_of_the_rooftops_1",
+        "name": "Kings of the Rooftops",
+        "missing_prerequisites": [
+          {
+            "id": "the_punisher_part_4_1",
+            "name": "The Punisher - Part 4",
+            "npc": "prapor"
+          }
+        ]
+      },
+      {
+        "id": "properties_all_around_1",
+        "name": "Properties All Around",
+        "missing_prerequisites": [
+          {
+            "id": "glory_to_cpsu_part_2_1",
+            "name": "Glory to CPSU - Part 2",
+            "npc": "prapor"
+          }
+        ]
+      },
+      {
+        "id": "regulated_materials_1",
+        "name": "Regulated Materials",
+        "missing_prerequisites": [
+          {
+            "id": "polikhim_hobo_1",
+            "name": "Polikhim Hobo",
+            "npc": "prapor"
+          }
+        ]
+      },
+      {
+        "id": "best_job_in_the_world_1",
+        "name": "Best Job in the World",
+        "missing_prerequisites": [
+          {
+            "id": "the_punisher_part_6_1",
+            "name": "The Punisher - Part 6",
+            "npc": "prapor"
+          },
+          {
+            "id": "kings_of_the_rooftops_1",
+            "name": "Kings of the Rooftops",
+            "npc": "prapor"
+          }
+        ]
+      },
+      {
+        "id": "the_good_times_part_1_1",
+        "name": "The Good Times - Part 1",
+        "missing_prerequisites": [
+          {
+            "id": "shooting_cans_1",
+            "name": "Shooting Cans",
+            "npc": "prapor"
+          }
+        ]
+      },
+      {
+        "id": "hell_on_earth_part_1_1",
+        "name": "Hell on Earth - Part 1",
+        "missing_prerequisites": [
+          {
+            "id": "the_good_times_part_1_1",
+            "name": "The Good Times - Part 1",
+            "npc": "prapor"
+          }
+        ]
+      },
+      {
+        "id": "hell_on_earth_part_2_1",
+        "name": "Hell on Earth - Part 2",
+        "missing_prerequisites": [
+          {
+            "id": "hell_on_earth_part_1_1",
+            "name": "Hell on Earth - Part 1",
+            "npc": "prapor"
+          }
+        ]
+      },
+      {
+        "id": "the_good_times_part_2_1",
+        "name": "The Good Times - Part 2",
+        "missing_prerequisites": [
+          {
+            "id": "airmail",
+            "name": "Airmail",
+            "npc": "mechanic"
+          }
+        ]
+      },
+      {
+        "id": "viewer_1",
+        "name": "Viewer",
+        "missing_prerequisites": [
+          {
+            "id": "minute_of_fame",
+            "name": "Minute of Fame",
+            "npc": "skier"
+          }
+        ]
+      },
+      {
+        "id": "our_own_land",
+        "name": "Our Own Land",
+        "missing_prerequisites": [
+          {
+            "id": "the_punisher_part_5_1",
+            "name": "The Punisher - Part 5",
+            "npc": "prapor"
+          }
+        ]
+      },
+      {
+        "id": "test_drive_part_2_1",
+        "name": "Test Drive - Part 2",
+        "missing_prerequisites": [
+          {
+            "id": "test_drive_part_1_1",
+            "name": "Test Drive - Part 1",
+            "npc": "prapor"
+          }
+        ]
+      },
+      {
+        "id": "test_drive_part_3_1",
+        "name": "Test Drive - Part 3",
+        "missing_prerequisites": [
+          {
+            "id": "test_drive_part_2_1",
+            "name": "Test Drive - Part 2",
+            "npc": "prapor"
+          }
+        ]
+      },
+      {
+        "id": "the_art_of_explosion_1",
+        "name": "The Art of Explosion",
+        "missing_prerequisites": [
+          {
+            "id": "grenadier_1",
+            "name": "Grenadier",
+            "npc": "prapor"
+          }
+        ]
+      },
+      {
+        "id": "perfect_mediator_1",
+        "name": "Perfect Mediator",
+        "missing_prerequisites": [
+          {
+            "id": "shaking_up_the_teller_1",
+            "name": "Shaking Up the Teller",
+            "npc": "prapor"
+          }
+        ]
+      },
+      {
+        "id": "test_drive_part_4_1",
+        "name": "Test Drive - Part 4",
+        "missing_prerequisites": [
+          {
+            "id": "test_drive_part_3_1",
+            "name": "Test Drive - Part 3",
+            "npc": "prapor"
+          }
+        ]
+      },
+      {
+        "id": "test_drive_part_5_1",
+        "name": "Test Drive - Part 5",
+        "missing_prerequisites": [
+          {
+            "id": "test_drive_part_4_1",
+            "name": "Test Drive - Part 4",
+            "npc": "prapor"
+          }
+        ]
+      },
+      {
+        "id": "test_drive_part_6_1",
+        "name": "Test Drive - Part 6",
+        "missing_prerequisites": [
+          {
+            "id": "test_drive_part_5_1",
+            "name": "Test Drive - Part 5",
+            "npc": "prapor"
+          }
+        ]
+      },
+      {
+        "id": "capturing_outposts_1",
+        "name": "Capturing Outposts",
+        "missing_prerequisites": [
+          {
+            "id": "the_punisher_part_6_1",
+            "name": "The Punisher - Part 6",
+            "npc": "prapor"
+          }
+        ]
+      },
+      {
+        "id": "intimidator_1",
+        "name": "Intimidator",
+        "missing_prerequisites": [
+          {
+            "id": "the_punisher_part_6_1",
+            "name": "The Punisher - Part 6",
+            "npc": "prapor"
+          }
+        ]
+      },
+      {
+        "id": "escort_1",
+        "name": "Escort",
+        "missing_prerequisites": [
+          {
+            "id": "the_punisher_part_6_1",
+            "name": "The Punisher - Part 6",
+            "npc": "prapor"
+          }
+        ]
+      }
+    ],
+    "therapist": [
+      {
+        "id": "shortage",
+        "name": "Shortage",
+        "missing_prerequisites": [
+          {
+            "id": "first_in_line",
+            "name": "First in Line",
+            "npc": "therapist"
+          }
+        ]
+      },
+      {
+        "id": "sanitary_standards_part_1",
+        "name": "Sanitary Standards - Part 1",
+        "missing_prerequisites": [
+          {
+            "id": "shortage",
+            "name": "Shortage",
+            "npc": "therapist"
+          }
+        ]
+      },
+      {
+        "id": "operation_aquarius_part_1",
+        "name": "Operation Aquarius - Part 1",
+        "missing_prerequisites": [
+          {
+            "id": "shortage",
+            "name": "Shortage",
+            "npc": "therapist"
+          }
+        ]
+      },
+      {
+        "id": "operation_aquarius_part_2",
+        "name": "Operation Aquarius - Part 2",
+        "missing_prerequisites": [
+          {
+            "id": "operation_aquarius_part_1",
+            "name": "Operation Aquarius - Part 1",
+            "npc": "therapist"
+          }
+        ]
+      },
+      {
+        "id": "sanitary_standards_part_2",
+        "name": "Sanitary Standards - Part 2",
+        "missing_prerequisites": [
+          {
+            "id": "sanitary_standards_part_1",
+            "name": "Sanitary Standards - Part 1",
+            "npc": "therapist"
+          }
+        ]
+      },
+      {
+        "id": "painkiller",
+        "name": "Painkiller",
+        "missing_prerequisites": [
+          {
+            "id": "sanitary_standards_part_2",
+            "name": "Sanitary Standards - Part 2",
+            "npc": "therapist"
+          }
+        ]
+      },
+      {
+        "id": "pharmacist",
+        "name": "Pharmacist",
+        "missing_prerequisites": [
+          {
+            "id": "painkiller",
+            "name": "Painkiller",
+            "npc": "therapist"
+          }
+        ]
+      },
+      {
+        "id": "postman_pat_part_2",
+        "name": "Postman Pat - Part 2",
+        "missing_prerequisites": [
+          {
+            "id": "postman_pat_part_1_1",
+            "name": "Postman Pat - Part 1",
+            "npc": "prapor"
+          }
+        ]
+      },
+      {
+        "id": "general_wares",
+        "name": "General Wares",
+        "missing_prerequisites": [
+          {
+            "id": "pharmacist",
+            "name": "Pharmacist",
+            "npc": "therapist"
+          }
+        ]
+      },
+      {
+        "id": "car_repair",
+        "name": "Car Repair",
+        "missing_prerequisites": [
+          {
+            "id": "pharmacist",
+            "name": "Pharmacist",
+            "npc": "therapist"
+          }
+        ]
+      },
+      {
+        "id": "trust_regain",
+        "name": "Trust Regain",
+        "missing_prerequisites": [
+          {
+            "id": "out_of_curiosity",
+            "name": "Out of Curiosity",
+            "npc": "therapist"
+          }
+        ]
+      },
+      {
+        "id": "population_census",
+        "name": "Population Census",
+        "missing_prerequisites": [
+          {
+            "id": "pharmacist",
+            "name": "Pharmacist",
+            "npc": "therapist"
+          }
+        ]
+      },
+      {
+        "id": "pets_wont_need_it_part_1",
+        "name": "Pets Won't Need It - Part 1",
+        "missing_prerequisites": [
+          {
+            "id": "population_census",
+            "name": "Population Census",
+            "npc": "therapist"
+          }
+        ]
+      },
+      {
+        "id": "pets_wont_need_it_part_2",
+        "name": "Pets Won't Need It - Part 2",
+        "missing_prerequisites": [
+          {
+            "id": "pets_wont_need_it_part_1",
+            "name": "Pets Won't Need It - Part 1",
+            "npc": "therapist"
+          }
+        ]
+      },
+      {
+        "id": "beneath_the_streets",
+        "name": "Beneath The Streets",
+        "missing_prerequisites": [
+          {
+            "id": "pets_wont_need_it_part_2",
+            "name": "Pets Won't Need It - Part 2",
+            "npc": "therapist"
+          }
+        ]
+      },
+      {
+        "id": "supply_plans",
+        "name": "Supply Plans",
+        "missing_prerequisites": [
+          {
+            "id": "pharmacist",
+            "name": "Pharmacist",
+            "npc": "therapist"
+          }
+        ]
+      },
+      {
+        "id": "disease_history",
+        "name": "Disease History",
+        "missing_prerequisites": [
+          {
+            "id": "pharmacist",
+            "name": "Pharmacist",
+            "npc": "therapist"
+          }
+        ]
+      },
+      {
+        "id": "dangerous_road",
+        "name": "Dangerous Road",
+        "missing_prerequisites": [
+          {
+            "id": "supply_plans",
+            "name": "Supply Plans",
+            "npc": "therapist"
+          }
+        ]
+      },
+      {
+        "id": "thirsty_secrets",
+        "name": "Thirsty - Secrets",
+        "missing_prerequisites": [
+          {
+            "id": "thirsty_echo",
+            "name": "Thirsty - Echo",
+            "npc": "therapist"
+          }
+        ]
+      },
+      {
+        "id": "urban_medicine",
+        "name": "Urban Medicine",
+        "missing_prerequisites": [
+          {
+            "id": "population_census",
+            "name": "Population Census",
+            "npc": "therapist"
+          }
+        ]
+      },
+      {
+        "id": "seaside_vacation",
+        "name": "Seaside Vacation",
+        "missing_prerequisites": [
+          {
+            "id": "disease_history",
+            "name": "Disease History",
+            "npc": "therapist"
+          }
+        ]
+      },
+      {
+        "id": "abandoned_cargo",
+        "name": "Abandoned Cargo",
+        "missing_prerequisites": [
+          {
+            "id": "seaside_vacation",
+            "name": "Seaside Vacation",
+            "npc": "therapist"
+          }
+        ]
+      },
+      {
+        "id": "shipment_tracking",
+        "name": "Shipment Tracking",
+        "missing_prerequisites": [
+          {
+            "id": "abandoned_cargo",
+            "name": "Abandoned Cargo",
+            "npc": "therapist"
+          }
+        ]
+      },
+      {
+        "id": "closer_to_the_people",
+        "name": "Closer to the People",
+        "missing_prerequisites": [
+          {
+            "id": "shipment_tracking",
+            "name": "Shipment Tracking",
+            "npc": "therapist"
+          }
+        ]
+      },
+      {
+        "id": "ambulances_again",
+        "name": "Ambulances Again",
+        "missing_prerequisites": [
+          {
+            "id": "urban_medicine",
+            "name": "Urban Medicine",
+            "npc": "therapist"
+          }
+        ]
+      },
+      {
+        "id": "health_care_privacy_part_1",
+        "name": "Health Care Privacy - Part 1",
+        "missing_prerequisites": [
+          {
+            "id": "pharmacist",
+            "name": "Pharmacist",
+            "npc": "therapist"
+          }
+        ]
+      },
+      {
+        "id": "health_care_privacy_part_2",
+        "name": "Health Care Privacy - Part 2",
+        "missing_prerequisites": [
+          {
+            "id": "health_care_privacy_part_1",
+            "name": "Health Care Privacy - Part 1",
+            "npc": "therapist"
+          }
+        ]
+      },
+      {
+        "id": "health_care_privacy_part_3",
+        "name": "Health Care Privacy - Part 3",
+        "missing_prerequisites": [
+          {
+            "id": "health_care_privacy_part_2",
+            "name": "Health Care Privacy - Part 2",
+            "npc": "therapist"
+          }
+        ]
+      },
+      {
+        "id": "health_care_privacy_part_4",
+        "name": "Health Care Privacy - Part 4",
+        "missing_prerequisites": [
+          {
+            "id": "health_care_privacy_part_3",
+            "name": "Health Care Privacy - Part 3",
+            "npc": "therapist"
+          }
+        ]
+      },
+      {
+        "id": "health_care_privacy_part_5",
+        "name": "Health Care Privacy - Part 5",
+        "missing_prerequisites": [
+          {
+            "id": "health_care_privacy_part_4",
+            "name": "Health Care Privacy - Part 4",
+            "npc": "therapist"
+          }
+        ]
+      },
+      {
+        "id": "an_apple_a_day_keeps_the_doctor_away",
+        "name": "An Apple a Day Keeps the Doctor Away",
+        "missing_prerequisites": [
+          {
+            "id": "health_care_privacy_part_4",
+            "name": "Health Care Privacy - Part 4",
+            "npc": "therapist"
+          }
+        ]
+      },
+      {
+        "id": "health_care_privacy_part_6",
+        "name": "Health Care Privacy - Part 6",
+        "missing_prerequisites": [
+          {
+            "id": "health_care_privacy_part_5",
+            "name": "Health Care Privacy - Part 5",
+            "npc": "therapist"
+          }
+        ]
+      },
+      {
+        "id": "colleagues_part_1",
+        "name": "Colleagues - Part 1",
+        "missing_prerequisites": [
+          {
+            "id": "general_wares",
+            "name": "General Wares",
+            "npc": "therapist"
+          }
+        ]
+      },
+      {
+        "id": "colleagues_part_2",
+        "name": "Colleagues - Part 2",
+        "missing_prerequisites": [
+          {
+            "id": "colleagues_part_1",
+            "name": "Colleagues - Part 1",
+            "npc": "therapist"
+          }
+        ]
+      },
+      {
+        "id": "lost_contact",
+        "name": "Lost Contact",
+        "missing_prerequisites": [
+          {
+            "id": "health_care_privacy_part_2",
+            "name": "Health Care Privacy - Part 2",
+            "npc": "therapist"
+          }
+        ]
+      },
+      {
+        "id": "drug_trafficking",
+        "name": "Drug Trafficking",
+        "missing_prerequisites": [
+          {
+            "id": "lost_contact",
+            "name": "Lost Contact",
+            "npc": "therapist"
+          }
+        ]
+      },
+      {
+        "id": "quality_standard",
+        "name": "Quality Standard",
+        "missing_prerequisites": [
+          {
+            "id": "the_good_times_part_1_1",
+            "name": "The Good Times - Part 1",
+            "npc": "prapor"
+          }
+        ]
+      },
+      {
+        "id": "athlete",
+        "name": "Athlete",
+        "missing_prerequisites": [
+          {
+            "id": "health_care_privacy_part_4",
+            "name": "Health Care Privacy - Part 4",
+            "npc": "therapist"
+          }
+        ]
+      },
+      {
+        "id": "private_clinic",
+        "name": "Private Clinic",
+        "missing_prerequisites": [
+          {
+            "id": "health_care_privacy_part_4",
+            "name": "Health Care Privacy - Part 4",
+            "npc": "therapist"
+          }
+        ]
+      },
+      {
+        "id": "decontamination_service",
+        "name": "Decontamination Service",
+        "missing_prerequisites": [
+          {
+            "id": "health_care_privacy_part_5",
+            "name": "Health Care Privacy - Part 5",
+            "npc": "therapist"
+          },
+          {
+            "id": "private_clinic",
+            "name": "Private Clinic",
+            "npc": "therapist"
+          }
+        ]
+      },
+      {
+        "id": "crisis",
+        "name": "Crisis",
+        "missing_prerequisites": [
+          {
+            "id": "athlete",
+            "name": "Athlete",
+            "npc": "therapist"
+          }
+        ]
+      }
+    ],
+    "skier": [
+      {
+        "id": "supplier",
+        "name": "Supplier",
+        "missing_prerequisites": [
+          {
+            "id": "burning_rubber",
+            "name": "Burning Rubber",
+            "npc": "skier"
+          }
+        ]
+      },
+      {
+        "id": "the_extortionist",
+        "name": "The Extortionist",
+        "missing_prerequisites": [
+          {
+            "id": "supplier",
+            "name": "Supplier",
+            "npc": "skier"
+          }
+        ]
+      },
+      {
+        "id": "stirrup",
+        "name": "Stirrup",
+        "missing_prerequisites": [
+          {
+            "id": "supplier",
+            "name": "Supplier",
+            "npc": "skier"
+          }
+        ]
+      },
+      {
+        "id": "whats_on_the_flash_drive",
+        "name": "What’s on the Flash Drive?",
+        "missing_prerequisites": [
+          {
+            "id": "the_extortionist",
+            "name": "The Extortionist",
+            "npc": "skier"
+          }
+        ]
+      },
+      {
+        "id": "golden_swag",
+        "name": "Golden Swag",
+        "missing_prerequisites": [
+          {
+            "id": "whats_on_the_flash_drive",
+            "name": "What’s on the Flash Drive?",
+            "npc": "skier"
+          }
+        ]
+      },
+      {
+        "id": "friend_from_the_west_part_1",
+        "name": "Friend From the West - Part 1",
+        "missing_prerequisites": [
+          {
+            "id": "supplier",
+            "name": "Supplier",
+            "npc": "skier"
+          }
+        ]
+      },
+      {
+        "id": "friend_from_the_west_part_2",
+        "name": "Friend From the West - Part 2",
+        "missing_prerequisites": [
+          {
+            "id": "friend_from_the_west_part_1",
+            "name": "Friend From the West - Part 1",
+            "npc": "skier"
+          }
+        ]
+      },
+      {
+        "id": "chemical_part_1",
+        "name": "Chemical - Part 1",
+        "missing_prerequisites": [
+          {
+            "id": "golden_swag",
+            "name": "Golden Swag",
+            "npc": "skier"
+          }
+        ]
+      },
+      {
+        "id": "chemical_part_2",
+        "name": "Chemical - Part 2",
+        "missing_prerequisites": [
+          {
+            "id": "chemical_part_1",
+            "name": "Chemical - Part 1",
+            "npc": "skier"
+          }
+        ]
+      },
+      {
+        "id": "chemical_part_3",
+        "name": "Chemical - Part 3",
+        "missing_prerequisites": [
+          {
+            "id": "chemical_part_2",
+            "name": "Chemical - Part 2",
+            "npc": "skier"
+          }
+        ]
+      },
+      {
+        "id": "chemical_part_4",
+        "name": "Chemical - Part 4",
+        "missing_prerequisites": [
+          {
+            "id": "chemical_part_3",
+            "name": "Chemical - Part 3",
+            "npc": "skier"
+          }
+        ]
+      },
+      {
+        "id": "loyalty_buyout",
+        "name": "Loyalty Buyout",
+        "missing_prerequisites": [
+          {
+            "id": "chemical_part_4",
+            "name": "Chemical - Part 4",
+            "npc": "skier"
+          }
+        ]
+      },
+      {
+        "id": "the_walls_have_eyes",
+        "name": "The Walls Have Eyes",
+        "missing_prerequisites": [
+          {
+            "id": "exit_here",
+            "name": "Exit Here",
+            "npc": "skier"
+          }
+        ]
+      },
+      {
+        "id": "kind_of_sabotage",
+        "name": "Kind of Sabotage",
+        "missing_prerequisites": [
+          {
+            "id": "supply_plans",
+            "name": "Supply Plans",
+            "npc": "therapist"
+          }
+        ]
+      },
+      {
+        "id": "safe_corridor",
+        "name": "Safe Corridor",
+        "missing_prerequisites": [
+          {
+            "id": "chemical_part_4",
+            "name": "Chemical - Part 4",
+            "npc": "skier"
+          }
+        ]
+      },
+      {
+        "id": "thirsty_delivery",
+        "name": "Thirsty - Delivery",
+        "missing_prerequisites": [
+          {
+            "id": "thirsty_breadwinner",
+            "name": "Thirsty - Breadwinner",
+            "npc": "skier"
+          }
+        ]
+      },
+      {
+        "id": "setup",
+        "name": "Setup",
+        "missing_prerequisites": [
+          {
+            "id": "friend_from_the_west_part_2",
+            "name": "Friend From the West - Part 2",
+            "npc": "skier"
+          }
+        ]
+      },
+      {
+        "id": "easy_money_part_1_pvp_zone",
+        "name": "Easy Money - Part 1 [PVP ZONE]",
+        "missing_prerequisites": [
+          {
+            "id": "burning_rubber",
+            "name": "Burning Rubber",
+            "npc": "skier"
+          }
+        ]
+      },
+      {
+        "id": "long_road",
+        "name": "Long Road",
+        "missing_prerequisites": [
+          {
+            "id": "friend_from_the_west_part_2",
+            "name": "Friend From the West - Part 2",
+            "npc": "skier"
+          }
+        ]
+      },
+      {
+        "id": "route_deviation",
+        "name": "Route Deviation",
+        "missing_prerequisites": [
+          {
+            "id": "the_higher_they_fly",
+            "name": "The Higher They Fly",
+            "npc": "skier"
+          }
+        ]
+      },
+      {
+        "id": "hindsight_2020",
+        "name": "Hindsight 20/20",
+        "missing_prerequisites": [
+          {
+            "id": "route_deviation",
+            "name": "Route Deviation",
+            "npc": "skier"
+          }
+        ]
+      },
+      {
+        "id": "key_partner",
+        "name": "Key Partner",
+        "missing_prerequisites": [
+          {
+            "id": "hindsight_2020",
+            "name": "Hindsight 20/20",
+            "npc": "skier"
+          }
+        ]
+      },
+      {
+        "id": "killer_argument",
+        "name": "Killer Argument",
+        "missing_prerequisites": [
+          {
+            "id": "key_partner",
+            "name": "Key Partner",
+            "npc": "skier"
+          }
+        ]
+      },
+      {
+        "id": "choose_your_friends_wisely",
+        "name": "Choose Your Friends Wisely",
+        "missing_prerequisites": [
+          {
+            "id": "killer_argument",
+            "name": "Killer Argument",
+            "npc": "skier"
+          }
+        ]
+      },
+      {
+        "id": "rigged_game",
+        "name": "Rigged Game",
+        "missing_prerequisites": [
+          {
+            "id": "anesthesia_1",
+            "name": "Anesthesia",
+            "npc": "prapor"
+          }
+        ]
+      },
+      {
+        "id": "vitamins_part_1",
+        "name": "Vitamins - Part 1",
+        "missing_prerequisites": [
+          {
+            "id": "chemical_part_3",
+            "name": "Chemical - Part 3",
+            "npc": "skier"
+          }
+        ]
+      },
+      {
+        "id": "vitamins_part_2",
+        "name": "Vitamins - Part 2",
+        "missing_prerequisites": [
+          {
+            "id": "vitamins_part_1",
+            "name": "Vitamins - Part 1",
+            "npc": "skier"
+          }
+        ]
+      },
+      {
+        "id": "beyond_the_red_meat_part_1",
+        "name": "Beyond the Red Meat - Part 1",
+        "missing_prerequisites": [
+          {
+            "id": "vitamins_part_2",
+            "name": "Vitamins - Part 2",
+            "npc": "skier"
+          }
+        ]
+      },
+      {
+        "id": "beyond_the_red_meat_part_2",
+        "name": "Beyond the Red Meat - Part 2",
+        "missing_prerequisites": [
+          {
+            "id": "beyond_the_red_meat_part_1",
+            "name": "Beyond the Red Meat - Part 1",
+            "npc": "skier"
+          }
+        ]
+      },
+      {
+        "id": "informed_means_armed",
+        "name": "Informed Means Armed",
+        "missing_prerequisites": [
+          {
+            "id": "setup",
+            "name": "Setup",
+            "npc": "skier"
+          }
+        ]
+      },
+      {
+        "id": "chumming",
+        "name": "Chumming",
+        "missing_prerequisites": [
+          {
+            "id": "informed_means_armed",
+            "name": "Informed Means Armed",
+            "npc": "skier"
+          }
+        ]
+      },
+      {
+        "id": "no_swiping",
+        "name": "No Swiping",
+        "missing_prerequisites": [
+          {
+            "id": "chumming",
+            "name": "Chumming",
+            "npc": "skier"
+          }
+        ]
+      },
+      {
+        "id": "private_club",
+        "name": "Private Club",
+        "missing_prerequisites": [
+          {
+            "id": "chumming",
+            "name": "Chumming",
+            "npc": "skier"
+          }
+        ]
+      },
+      {
+        "id": "lend_lease_part_1",
+        "name": "Lend-Lease - Part 1",
+        "missing_prerequisites": [
+          {
+            "id": "friend_from_the_west_part_2",
+            "name": "Friend From the West - Part 2",
+            "npc": "skier"
+          }
+        ]
+      },
+      {
+        "id": "bullshit",
+        "name": "Bullshit",
+        "missing_prerequisites": [
+          {
+            "id": "chumming",
+            "name": "Chumming",
+            "npc": "skier"
+          }
+        ]
+      },
+      {
+        "id": "minute_of_fame",
+        "name": "Minute of Fame",
+        "missing_prerequisites": [
+          {
+            "id": "the_good_times_part_2_1",
+            "name": "The Good Times - Part 2",
+            "npc": "prapor"
+          }
+        ]
+      },
+      {
+        "id": "serious_allegations",
+        "name": "Serious Allegations",
+        "missing_prerequisites": [
+          {
+            "id": "viewer_1",
+            "name": "Viewer",
+            "npc": "prapor"
+          }
+        ]
+      },
+      {
+        "id": "pyramid_scheme",
+        "name": "Pyramid Scheme",
+        "missing_prerequisites": [
+          {
+            "id": "vitamins_part_2",
+            "name": "Vitamins - Part 2",
+            "npc": "skier"
+          }
+        ]
+      },
+      {
+        "id": "missing_cargo",
+        "name": "Missing Cargo",
+        "missing_prerequisites": [
+          {
+            "id": "long_road",
+            "name": "Long Road",
+            "npc": "skier"
+          }
+        ]
+      },
+      {
+        "id": "silent_caliber",
+        "name": "Silent Caliber",
+        "missing_prerequisites": [
+          {
+            "id": "bullshit",
+            "name": "Bullshit",
+            "npc": "skier"
+          }
+        ]
+      },
+      {
+        "id": "debtor",
+        "name": "Debtor",
+        "missing_prerequisites": [
+          {
+            "id": "chumming",
+            "name": "Chumming",
+            "npc": "skier"
+          }
+        ]
+      },
+      {
+        "id": "house_arrest_part_1",
+        "name": "House Arrest - Part 1",
+        "missing_prerequisites": [
+          {
+            "id": "debtor",
+            "name": "Debtor",
+            "npc": "skier"
+          }
+        ]
+      },
+      {
+        "id": "house_arrest_part_2",
+        "name": "House Arrest - Part 2",
+        "missing_prerequisites": [
+          {
+            "id": "house_arrest_part_1",
+            "name": "House Arrest - Part 1",
+            "npc": "skier"
+          }
+        ]
+      },
+      {
+        "id": "top_secret",
+        "name": "Top Secret",
+        "missing_prerequisites": [
+          {
+            "id": "missing_cargo",
+            "name": "Missing Cargo",
+            "npc": "skier"
+          }
+        ]
+      },
+      {
+        "id": "connections_up_north",
+        "name": "Connections Up North",
+        "missing_prerequisites": [
+          {
+            "id": "silent_caliber",
+            "name": "Silent Caliber",
+            "npc": "skier"
+          }
+        ]
+      },
+      {
+        "id": "flint",
+        "name": "Flint",
+        "missing_prerequisites": [
+          {
+            "id": "chumming",
+            "name": "Chumming",
+            "npc": "skier"
+          }
+        ]
+      },
+      {
+        "id": "irresistible",
+        "name": "Irresistible",
+        "missing_prerequisites": [
+          {
+            "id": "flint",
+            "name": "Flint",
+            "npc": "skier"
+          }
+        ]
+      },
+      {
+        "id": "dangerous_props",
+        "name": "Dangerous Props",
+        "missing_prerequisites": [
+          {
+            "id": "irresistible",
+            "name": "Irresistible",
+            "npc": "skier"
+          }
+        ]
+      },
+      {
+        "id": "fair_price_part_2",
+        "name": "Fair Price - Part 2",
+        "missing_prerequisites": [
+          {
+            "id": "fair_price_part_1",
+            "name": "Fair Price - Part 1",
+            "npc": "skier"
+          }
+        ]
+      },
+      {
+        "id": "night_sweep",
+        "name": "Night Sweep",
+        "missing_prerequisites": [
+          {
+            "id": "rigged_game",
+            "name": "Rigged Game",
+            "npc": "skier"
+          }
+        ]
+      },
+      {
+        "id": "safety_guarantee",
+        "name": "Safety Guarantee",
+        "missing_prerequisites": [
+          {
+            "id": "profitable_venture",
+            "name": "Profitable Venture",
+            "npc": "skier"
+          }
+        ]
+      },
+      {
+        "id": "never_too_late_to_learn",
+        "name": "Never Too Late To Learn",
+        "missing_prerequisites": [
+          {
+            "id": "safety_guarantee",
+            "name": "Safety Guarantee",
+            "npc": "skier"
+          }
+        ]
+      },
+      {
+        "id": "get_a_foothold",
+        "name": "Get a Foothold",
+        "missing_prerequisites": [
+          {
+            "id": "never_too_late_to_learn",
+            "name": "Never Too Late To Learn",
+            "npc": "skier"
+          }
+        ]
+      },
+      {
+        "id": "profit_retention",
+        "name": "Profit Retention",
+        "missing_prerequisites": [
+          {
+            "id": "get_a_foothold",
+            "name": "Get a Foothold",
+            "npc": "skier"
+          }
+        ]
+      },
+      {
+        "id": "a_life_lesson",
+        "name": "A Life Lesson",
+        "missing_prerequisites": [
+          {
+            "id": "profit_retention",
+            "name": "Profit Retention",
+            "npc": "skier"
+          }
+        ]
+      },
+      {
+        "id": "consolation_prize",
+        "name": "Consolation Prize",
+        "missing_prerequisites": [
+          {
+            "id": "a_life_lesson",
+            "name": "A Life Lesson",
+            "npc": "skier"
+          }
+        ]
+      }
+    ],
+    "peacekeeper": [
+      {
+        "id": "fishing_gear",
+        "name": "Fishing Gear",
+        "missing_prerequisites": [
+          {
+            "id": "friend_from_the_west_part_2",
+            "name": "Friend From the West - Part 2",
+            "npc": "skier"
+          }
+        ]
+      },
+      {
+        "id": "tigr_safari",
+        "name": "Tigr Safari",
+        "missing_prerequisites": [
+          {
+            "id": "fishing_gear",
+            "name": "Fishing Gear",
+            "npc": "peacekeeper"
+          }
+        ]
+      },
+      {
+        "id": "scrap_metal",
+        "name": "Scrap Metal",
+        "missing_prerequisites": [
+          {
+            "id": "tigr_safari",
+            "name": "Tigr Safari",
+            "npc": "peacekeeper"
+          }
+        ]
+      },
+      {
+        "id": "eagle_eye",
+        "name": "Eagle Eye",
+        "missing_prerequisites": [
+          {
+            "id": "scrap_metal",
+            "name": "Scrap Metal",
+            "npc": "peacekeeper"
+          }
+        ]
+      },
+      {
+        "id": "humanitarian_supplies",
+        "name": "Humanitarian Supplies",
+        "missing_prerequisites": [
+          {
+            "id": "eagle_eye",
+            "name": "Eagle Eye",
+            "npc": "peacekeeper"
+          }
+        ]
+      },
+      {
+        "id": "seizing_the_initiative",
+        "name": "Seizing the Initiative",
+        "missing_prerequisites": [
+          {
+            "id": "humanitarian_supplies",
+            "name": "Humanitarian Supplies",
+            "npc": "peacekeeper"
+          }
+        ]
+      },
+      {
+        "id": "spa_tour_part_1",
+        "name": "Spa Tour - Part 1",
+        "missing_prerequisites": [
+          {
+            "id": "humanitarian_supplies",
+            "name": "Humanitarian Supplies",
+            "npc": "peacekeeper"
+          }
+        ]
+      },
+      {
+        "id": "the_cult_part_1",
+        "name": "The Cult - Part 1",
+        "missing_prerequisites": [
+          {
+            "id": "humanitarian_supplies",
+            "name": "Humanitarian Supplies",
+            "npc": "peacekeeper"
+          }
+        ]
+      },
+      {
+        "id": "spa_tour_part_2",
+        "name": "Spa Tour - Part 2",
+        "missing_prerequisites": [
+          {
+            "id": "spa_tour_part_1",
+            "name": "Spa Tour - Part 1",
+            "npc": "peacekeeper"
+          }
+        ]
+      },
+      {
+        "id": "spa_tour_part_3",
+        "name": "Spa Tour - Part 3",
+        "missing_prerequisites": [
+          {
+            "id": "spa_tour_part_2",
+            "name": "Spa Tour - Part 2",
+            "npc": "peacekeeper"
+          }
+        ]
+      },
+      {
+        "id": "spa_tour_part_4",
+        "name": "Spa Tour - Part 4",
+        "missing_prerequisites": [
+          {
+            "id": "spa_tour_part_3",
+            "name": "Spa Tour - Part 3",
+            "npc": "peacekeeper"
+          }
+        ]
+      },
+      {
+        "id": "spa_tour_part_5",
+        "name": "Spa Tour - Part 5",
+        "missing_prerequisites": [
+          {
+            "id": "spa_tour_part_4",
+            "name": "Spa Tour - Part 4",
+            "npc": "peacekeeper"
+          }
+        ]
+      },
+      {
+        "id": "spa_tour_part_6",
+        "name": "Spa Tour - Part 6",
+        "missing_prerequisites": [
+          {
+            "id": "spa_tour_part_5",
+            "name": "Spa Tour - Part 5",
+            "npc": "peacekeeper"
+          }
+        ]
+      },
+      {
+        "id": "spa_tour_part_7",
+        "name": "Spa Tour - Part 7",
+        "missing_prerequisites": [
+          {
+            "id": "spa_tour_part_6",
+            "name": "Spa Tour - Part 6",
+            "npc": "peacekeeper"
+          }
+        ]
+      },
+      {
+        "id": "cargo_x_part_1",
+        "name": "Cargo X - Part 1",
+        "missing_prerequisites": [
+          {
+            "id": "spa_tour_part_7",
+            "name": "Spa Tour - Part 7",
+            "npc": "peacekeeper"
+          }
+        ]
+      },
+      {
+        "id": "cargo_x_part_2",
+        "name": "Cargo X - Part 2",
+        "missing_prerequisites": [
+          {
+            "id": "cargo_x_part_1",
+            "name": "Cargo X - Part 1",
+            "npc": "peacekeeper"
+          }
+        ]
+      },
+      {
+        "id": "cargo_x_part_3",
+        "name": "Cargo X - Part 3",
+        "missing_prerequisites": [
+          {
+            "id": "cargo_x_part_2",
+            "name": "Cargo X - Part 2",
+            "npc": "peacekeeper"
+          }
+        ]
+      },
+      {
+        "id": "cargo_x_part_4",
+        "name": "Cargo X - Part 4",
+        "missing_prerequisites": [
+          {
+            "id": "cargo_x_part_3",
+            "name": "Cargo X - Part 3",
+            "npc": "peacekeeper"
+          }
+        ]
+      },
+      {
+        "id": "revision_reserve",
+        "name": "Revision - Reserve",
+        "missing_prerequisites": [
+          {
+            "id": "humanitarian_supplies",
+            "name": "Humanitarian Supplies",
+            "npc": "peacekeeper"
+          }
+        ]
+      },
+      {
+        "id": "wet_job_part_1",
+        "name": "Wet Job - Part 1",
+        "missing_prerequisites": [
+          {
+            "id": "spa_tour_part_7",
+            "name": "Spa Tour - Part 7",
+            "npc": "peacekeeper"
+          }
+        ]
+      },
+      {
+        "id": "wet_job_part_2",
+        "name": "Wet Job - Part 2",
+        "missing_prerequisites": [
+          {
+            "id": "wet_job_part_1",
+            "name": "Wet Job - Part 1",
+            "npc": "peacekeeper"
+          }
+        ]
+      },
+      {
+        "id": "wet_job_part_3",
+        "name": "Wet Job - Part 3",
+        "missing_prerequisites": [
+          {
+            "id": "wet_job_part_2",
+            "name": "Wet Job - Part 2",
+            "npc": "peacekeeper"
+          }
+        ]
+      },
+      {
+        "id": "wet_job_part_4",
+        "name": "Wet Job - Part 4",
+        "missing_prerequisites": [
+          {
+            "id": "wet_job_part_3",
+            "name": "Wet Job - Part 3",
+            "npc": "peacekeeper"
+          }
+        ]
+      },
+      {
+        "id": "wet_job_part_5",
+        "name": "Wet Job - Part 5",
+        "missing_prerequisites": [
+          {
+            "id": "wet_job_part_4",
+            "name": "Wet Job - Part 4",
+            "npc": "peacekeeper"
+          }
+        ]
+      },
+      {
+        "id": "wet_job_part_6",
+        "name": "Wet Job - Part 6",
+        "missing_prerequisites": [
+          {
+            "id": "wet_job_part_5",
+            "name": "Wet Job - Part 5",
+            "npc": "peacekeeper"
+          }
+        ]
+      },
+      {
+        "id": "mentor",
+        "name": "Mentor",
+        "missing_prerequisites": [
+          {
+            "id": "wet_job_part_5",
+            "name": "Wet Job - Part 5",
+            "npc": "peacekeeper"
+          }
+        ]
+      },
+      {
+        "id": "classified_technologies",
+        "name": "Classified Technologies",
+        "missing_prerequisites": [
+          {
+            "id": "revision_reserve",
+            "name": "Revision - Reserve",
+            "npc": "peacekeeper"
+          }
+        ]
+      },
+      {
+        "id": "revision_lighthouse",
+        "name": "Revision - Lighthouse",
+        "missing_prerequisites": [
+          {
+            "id": "revision_reserve",
+            "name": "Revision - Reserve",
+            "npc": "peacekeeper"
+          }
+        ]
+      },
+      {
+        "id": "overpopulation",
+        "name": "Overpopulation",
+        "missing_prerequisites": [
+          {
+            "id": "spa_tour_part_1",
+            "name": "Spa Tour - Part 1",
+            "npc": "peacekeeper"
+          }
+        ]
+      },
+      {
+        "id": "one_less_loose_end",
+        "name": "One Less Loose End",
+        "missing_prerequisites": [
+          {
+            "id": "overpopulation",
+            "name": "Overpopulation",
+            "npc": "peacekeeper"
+          }
+        ]
+      },
+      {
+        "id": "revision_streets_of_tarkov",
+        "name": "Revision - Streets of Tarkov",
+        "missing_prerequisites": [
+          {
+            "id": "revision_reserve",
+            "name": "Revision - Reserve",
+            "npc": "peacekeeper"
+          }
+        ]
+      },
+      {
+        "id": "new_day_new_paths",
+        "name": "New Day, New Paths",
+        "missing_prerequisites": [
+          {
+            "id": "revision_streets_of_tarkov",
+            "name": "Revision - Streets of Tarkov",
+            "npc": "peacekeeper"
+          }
+        ]
+      },
+      {
+        "id": "the_cult_part_2",
+        "name": "The Cult - Part 2",
+        "missing_prerequisites": [
+          {
+            "id": "the_cult_part_1",
+            "name": "The Cult - Part 1",
+            "npc": "peacekeeper"
+          }
+        ]
+      },
+      {
+        "id": "road_closed",
+        "name": "Road Closed",
+        "missing_prerequisites": [
+          {
+            "id": "spa_tour_part_7",
+            "name": "Spa Tour - Part 7",
+            "npc": "peacekeeper"
+          }
+        ]
+      },
+      {
+        "id": "samples",
+        "name": "Samples",
+        "missing_prerequisites": [
+          {
+            "id": "fishing_gear",
+            "name": "Fishing Gear",
+            "npc": "peacekeeper"
+          },
+          {
+            "id": "anesthesia_1",
+            "name": "Anesthesia",
+            "npc": "prapor"
+          }
+        ]
+      },
+      {
+        "id": "terragroup_employee",
+        "name": "TerraGroup Employee",
+        "missing_prerequisites": [
+          {
+            "id": "samples",
+            "name": "Samples",
+            "npc": "peacekeeper"
+          },
+          {
+            "id": "colleagues_part_3",
+            "name": "Colleagues - Part 3",
+            "npc": "therapist"
+          }
+        ]
+      },
+      {
+        "id": "insomnia",
+        "name": "Insomnia",
+        "missing_prerequisites": [
+          {
+            "id": "cargo_x_part_4",
+            "name": "Cargo X - Part 4",
+            "npc": "peacekeeper"
+          }
+        ]
+      },
+      {
+        "id": "worst_job_in_the_world",
+        "name": "Worst Job in the World",
+        "missing_prerequisites": [
+          {
+            "id": "wet_job_part_5",
+            "name": "Wet Job - Part 5",
+            "npc": "peacekeeper"
+          },
+          {
+            "id": "revision_streets_of_tarkov",
+            "name": "Revision - Streets of Tarkov",
+            "npc": "peacekeeper"
+          }
+        ]
+      },
+      {
+        "id": "counteraction",
+        "name": "Counteraction",
+        "missing_prerequisites": [
+          {
+            "id": "spa_tour_part_3",
+            "name": "Spa Tour - Part 3",
+            "npc": "peacekeeper"
+          }
+        ]
+      },
+      {
+        "id": "lend_lease_part_2",
+        "name": "Lend-Lease - Part 2",
+        "missing_prerequisites": [
+          {
+            "id": "lend_lease_part_1",
+            "name": "Lend-Lease - Part 1",
+            "npc": "skier"
+          }
+        ]
+      },
+      {
+        "id": "peacekeeping_mission",
+        "name": "Peacekeeping Mission",
+        "missing_prerequisites": [
+          {
+            "id": "lend_lease_part_2",
+            "name": "Lend-Lease - Part 2",
+            "npc": "peacekeeper"
+          }
+        ]
+      },
+      {
+        "id": "your_car_needs_a_service",
+        "name": "Your Car Needs a Service",
+        "missing_prerequisites": [
+          {
+            "id": "cargo_x_part_4",
+            "name": "Cargo X - Part 4",
+            "npc": "peacekeeper"
+          }
+        ]
+      },
+      {
+        "id": "the_guide",
+        "name": "The Guide",
+        "missing_prerequisites": [
+          {
+            "id": "wet_job_part_6",
+            "name": "Wet Job - Part 6",
+            "npc": "peacekeeper"
+          }
+        ]
+      },
+      {
+        "id": "the_cleaner",
+        "name": "The Cleaner",
+        "missing_prerequisites": [
+          {
+            "id": "the_guide",
+            "name": "The Guide",
+            "npc": "peacekeeper"
+          }
+        ]
+      },
+      {
+        "id": "trophies",
+        "name": "Trophies",
+        "missing_prerequisites": [
+          {
+            "id": "fishing_gear",
+            "name": "Fishing Gear",
+            "npc": "peacekeeper"
+          }
+        ]
+      },
+      {
+        "id": "special_equipment",
+        "name": "Special Equipment",
+        "missing_prerequisites": [
+          {
+            "id": "trophies",
+            "name": "Trophies",
+            "npc": "peacekeeper"
+          }
+        ]
+      }
+    ],
+    "mechanic": [
+      {
+        "id": "gunsmith_part_1",
+        "name": "Gunsmith - Part 1",
+        "missing_prerequisites": [
+          {
+            "id": "saving_the_mole",
+            "name": "Saving the Mole",
+            "npc": "mechanic"
+          }
+        ]
+      },
+      {
+        "id": "introduction",
+        "name": "Introduction",
+        "missing_prerequisites": [
+          {
+            "id": "gunsmith_part_1",
+            "name": "Gunsmith - Part 1",
+            "npc": "mechanic"
+          }
+        ]
+      },
+      {
+        "id": "gunsmith_part_2",
+        "name": "Gunsmith - Part 2",
+        "missing_prerequisites": [
+          {
+            "id": "gunsmith_part_1",
+            "name": "Gunsmith - Part 1",
+            "npc": "mechanic"
+          }
+        ]
+      },
+      {
+        "id": "friend_from_norvinsk_part_1",
+        "name": "Friend from Norvinsk - Part 1",
+        "missing_prerequisites": [
+          {
+            "id": "introduction",
+            "name": "Introduction",
+            "npc": "mechanic"
+          }
+        ]
+      },
+      {
+        "id": "friend_from_norvinsk_part_2",
+        "name": "Friend from Norvinsk - Part 2",
+        "missing_prerequisites": [
+          {
+            "id": "friend_from_norvinsk_part_1",
+            "name": "Friend from Norvinsk - Part 1",
+            "npc": "mechanic"
+          }
+        ]
+      },
+      {
+        "id": "friend_from_norvinsk_part_3",
+        "name": "Friend from Norvinsk - Part 3",
+        "missing_prerequisites": [
+          {
+            "id": "friend_from_norvinsk_part_2",
+            "name": "Friend from Norvinsk - Part 2",
+            "npc": "mechanic"
+          }
+        ]
+      },
+      {
+        "id": "friend_from_norvinsk_part_4",
+        "name": "Friend from Norvinsk - Part 4",
+        "missing_prerequisites": [
+          {
+            "id": "friend_from_norvinsk_part_3",
+            "name": "Friend from Norvinsk - Part 3",
+            "npc": "mechanic"
+          }
+        ]
+      },
+      {
+        "id": "friend_from_norvinsk_part_5",
+        "name": "Friend from Norvinsk - Part 5",
+        "missing_prerequisites": [
+          {
+            "id": "friend_from_norvinsk_part_4",
+            "name": "Friend from Norvinsk - Part 4",
+            "npc": "mechanic"
+          }
+        ]
+      },
+      {
+        "id": "breathing_room",
+        "name": "Breathing Room",
+        "missing_prerequisites": [
+          {
+            "id": "friend_from_norvinsk_part_5",
+            "name": "Friend from Norvinsk - Part 5",
+            "npc": "mechanic"
+          }
+        ]
+      },
+      {
+        "id": "progression_difficulties_part_1",
+        "name": "Progression Difficulties - Part 1",
+        "missing_prerequisites": [
+          {
+            "id": "game_review_part_1",
+            "name": "Game Review - Part 1",
+            "npc": "mechanic"
+          }
+        ]
+      },
+      {
+        "id": "progression_difficulties_part_2",
+        "name": "Progression Difficulties - Part 2",
+        "missing_prerequisites": [
+          {
+            "id": "progression_difficulties_part_1",
+            "name": "Progression Difficulties - Part 1",
+            "npc": "mechanic"
+          }
+        ]
+      },
+      {
+        "id": "last_spurt_pioneer",
+        "name": "Last Spurt - Pioneer",
+        "missing_prerequisites": [
+          {
+            "id": "game_review_part_2",
+            "name": "Game Review - Part 2",
+            "npc": "mechanic"
+          }
+        ]
+      },
+      {
+        "id": "friend_from_norvinsk_alternative_solution",
+        "name": "Friend from Norvinsk - Alternative Solution",
+        "missing_prerequisites": [
+          {
+            "id": "friend_from_norvinsk_part_3",
+            "name": "Friend from Norvinsk - Part 3",
+            "npc": "mechanic"
+          }
+        ]
+      },
+      {
+        "id": "game_review_part_1",
+        "name": "Game Review - Part 1",
+        "missing_prerequisites": [
+          {
+            "id": "breathing_room",
+            "name": "Breathing Room",
+            "npc": "mechanic"
+          }
+        ]
+      },
+      {
+        "id": "game_review_part_2",
+        "name": "Game Review - Part 2",
+        "missing_prerequisites": [
+          {
+            "id": "progression_difficulties_part_2",
+            "name": "Progression Difficulties - Part 2",
+            "npc": "mechanic"
+          }
+        ]
+      },
+      {
+        "id": "game_review_part_3",
+        "name": "Game Review - Part 3",
+        "missing_prerequisites": [
+          {
+            "id": "last_spurt_pioneer",
+            "name": "Last Spurt - Pioneer",
+            "npc": "mechanic"
+          }
+        ]
+      },
+      {
+        "id": "gunsmith_part_3",
+        "name": "Gunsmith - Part 3",
+        "missing_prerequisites": [
+          {
+            "id": "gunsmith_part_1",
+            "name": "Gunsmith - Part 1",
+            "npc": "mechanic"
+          }
+        ]
+      },
+      {
+        "id": "gunsmith_part_4",
+        "name": "Gunsmith - Part 4",
+        "missing_prerequisites": [
+          {
+            "id": "gunsmith_part_2",
+            "name": "Gunsmith - Part 2",
+            "npc": "mechanic"
+          },
+          {
+            "id": "gunsmith_part_3",
+            "name": "Gunsmith - Part 3",
+            "npc": "mechanic"
+          }
+        ]
+      },
+      {
+        "id": "gunsmith_part_5",
+        "name": "Gunsmith - Part 5",
+        "missing_prerequisites": [
+          {
+            "id": "gunsmith_part_4",
+            "name": "Gunsmith - Part 4",
+            "npc": "mechanic"
+          }
+        ]
+      },
+      {
+        "id": "farming_part_1",
+        "name": "Farming - Part 1",
+        "missing_prerequisites": [
+          {
+            "id": "gunsmith_part_1",
+            "name": "Gunsmith - Part 1",
+            "npc": "mechanic"
+          }
+        ]
+      },
+      {
+        "id": "signal_part_1",
+        "name": "Signal - Part 1",
+        "missing_prerequisites": [
+          {
+            "id": "gunsmith_part_2",
+            "name": "Gunsmith - Part 2",
+            "npc": "mechanic"
+          }
+        ]
+      },
+      {
+        "id": "farming_part_2",
+        "name": "Farming - Part 2",
+        "missing_prerequisites": [
+          {
+            "id": "farming_part_1",
+            "name": "Farming - Part 1",
+            "npc": "mechanic"
+          }
+        ]
+      },
+      {
+        "id": "signal_part_2",
+        "name": "Signal - Part 2",
+        "missing_prerequisites": [
+          {
+            "id": "signal_part_1",
+            "name": "Signal - Part 1",
+            "npc": "mechanic"
+          }
+        ]
+      },
+      {
+        "id": "bad_habit",
+        "name": "Bad Habit",
+        "missing_prerequisites": [
+          {
+            "id": "farming_part_2",
+            "name": "Farming - Part 2",
+            "npc": "mechanic"
+          }
+        ]
+      },
+      {
+        "id": "scout",
+        "name": "Scout",
+        "missing_prerequisites": [
+          {
+            "id": "signal_part_2",
+            "name": "Signal - Part 2",
+            "npc": "mechanic"
+          }
+        ]
+      },
+      {
+        "id": "broadcast_part_1",
+        "name": "Broadcast - Part 1",
+        "missing_prerequisites": [
+          {
+            "id": "farming_part_2",
+            "name": "Farming - Part 2",
+            "npc": "mechanic"
+          }
+        ]
+      },
+      {
+        "id": "forklift_certified",
+        "name": "Forklift Certified",
+        "missing_prerequisites": [
+          {
+            "id": "black_swan",
+            "name": "Black Swan",
+            "npc": "mechanic"
+          }
+        ]
+      },
+      {
+        "id": "black_swan",
+        "name": "Black Swan",
+        "missing_prerequisites": [
+          {
+            "id": "scout",
+            "name": "Scout",
+            "npc": "mechanic"
+          }
+        ]
+      },
+      {
+        "id": "secrets_of_polikhim",
+        "name": "Secrets of Polikhim",
+        "missing_prerequisites": [
+          {
+            "id": "capacity_check",
+            "name": "Capacity Check",
+            "npc": "mechanic"
+          }
+        ]
+      },
+      {
+        "id": "passion_for_ergonomics",
+        "name": "Passion for Ergonomics",
+        "missing_prerequisites": [
+          {
+            "id": "farming_part_2",
+            "name": "Farming - Part 2",
+            "npc": "mechanic"
+          }
+        ]
+      },
+      {
+        "id": "insider",
+        "name": "Insider",
+        "missing_prerequisites": [
+          {
+            "id": "gunsmith_part_3",
+            "name": "Gunsmith - Part 3",
+            "npc": "mechanic"
+          },
+          {
+            "id": "signal_part_1",
+            "name": "Signal - Part 1",
+            "npc": "mechanic"
+          }
+        ]
+      },
+      {
+        "id": "capacity_check",
+        "name": "Capacity Check",
+        "missing_prerequisites": [
+          {
+            "id": "forklift_certified",
+            "name": "Forklift Certified",
+            "npc": "mechanic"
+          },
+          {
+            "id": "farming_part_1",
+            "name": "Farming - Part 1",
+            "npc": "mechanic"
+          }
+        ]
+      },
+      {
+        "id": "gunsmith_part_6",
+        "name": "Gunsmith - Part 6",
+        "missing_prerequisites": [
+          {
+            "id": "gunsmith_part_5",
+            "name": "Gunsmith - Part 5",
+            "npc": "mechanic"
+          }
+        ]
+      },
+      {
+        "id": "farming_part_3",
+        "name": "Farming - Part 3",
+        "missing_prerequisites": [
+          {
+            "id": "farming_part_2",
+            "name": "Farming - Part 2",
+            "npc": "mechanic"
+          }
+        ]
+      },
+      {
+        "id": "back_door",
+        "name": "Back Door",
+        "missing_prerequisites": [
+          {
+            "id": "scout",
+            "name": "Scout",
+            "npc": "mechanic"
+          }
+        ]
+      },
+      {
+        "id": "farming_part_4",
+        "name": "Farming - Part 4",
+        "missing_prerequisites": [
+          {
+            "id": "farming_part_3",
+            "name": "Farming - Part 3",
+            "npc": "mechanic"
+          }
+        ]
+      },
+      {
+        "id": "a_shooter_born_in_heaven",
+        "name": "A Shooter Born in Heaven",
+        "missing_prerequisites": [
+          {
+            "id": "farming_part_3",
+            "name": "Farming - Part 3",
+            "npc": "mechanic"
+          }
+        ]
+      },
+      {
+        "id": "surplus_goods",
+        "name": "Surplus Goods",
+        "missing_prerequisites": [
+          {
+            "id": "back_door",
+            "name": "Back Door",
+            "npc": "mechanic"
+          }
+        ]
+      },
+      {
+        "id": "shady_contractor",
+        "name": "Shady Contractor",
+        "missing_prerequisites": [
+          {
+            "id": "saving_the_mole",
+            "name": "Saving the Mole",
+            "npc": "mechanic"
+          }
+        ]
+      },
+      {
+        "id": "signal_part_3",
+        "name": "Signal - Part 3",
+        "missing_prerequisites": [
+          {
+            "id": "signal_part_2",
+            "name": "Signal - Part 2",
+            "npc": "mechanic"
+          }
+        ]
+      },
+      {
+        "id": "broadcast_part_2",
+        "name": "Broadcast - Part 2",
+        "missing_prerequisites": [
+          {
+            "id": "broadcast_part_1",
+            "name": "Broadcast - Part 1",
+            "npc": "mechanic"
+          }
+        ]
+      },
+      {
+        "id": "gunsmith_part_7",
+        "name": "Gunsmith - Part 7",
+        "missing_prerequisites": [
+          {
+            "id": "gunsmith_part_6",
+            "name": "Gunsmith - Part 6",
+            "npc": "mechanic"
+          }
+        ]
+      },
+      {
+        "id": "signal_part_4",
+        "name": "Signal - Part 4",
+        "missing_prerequisites": [
+          {
+            "id": "signal_part_3",
+            "name": "Signal - Part 3",
+            "npc": "mechanic"
+          }
+        ]
+      },
+      {
+        "id": "the_door",
+        "name": "The Door",
+        "missing_prerequisites": [
+          {
+            "id": "signal_part_3",
+            "name": "Signal - Part 3",
+            "npc": "mechanic"
+          }
+        ]
+      },
+      {
+        "id": "steady_signal",
+        "name": "Steady Signal",
+        "missing_prerequisites": [
+          {
+            "id": "signal_part_4",
+            "name": "Signal - Part 4",
+            "npc": "mechanic"
+          }
+        ]
+      },
+      {
+        "id": "needle_in_a_haystack",
+        "name": "Needle in a Haystack",
+        "missing_prerequisites": [
+          {
+            "id": "shady_contractor",
+            "name": "Shady Contractor",
+            "npc": "mechanic"
+          }
+        ]
+      },
+      {
+        "id": "hidden_layer",
+        "name": "Hidden Layer",
+        "missing_prerequisites": [
+          {
+            "id": "needle_in_a_haystack",
+            "name": "Needle in a Haystack",
+            "npc": "mechanic"
+          }
+        ]
+      },
+      {
+        "id": "forced_alliance",
+        "name": "Forced Alliance",
+        "missing_prerequisites": [
+          {
+            "id": "hidden_layer",
+            "name": "Hidden Layer",
+            "npc": "mechanic"
+          }
+        ]
+      },
+      {
+        "id": "offensive_reconnaissance",
+        "name": "Offensive Reconnaissance",
+        "missing_prerequisites": [
+          {
+            "id": "forced_alliance",
+            "name": "Forced Alliance",
+            "npc": "mechanic"
+          }
+        ]
+      },
+      {
+        "id": "hypotheses_testing",
+        "name": "Hypotheses Testing",
+        "missing_prerequisites": [
+          {
+            "id": "offensive_reconnaissance",
+            "name": "Offensive Reconnaissance",
+            "npc": "mechanic"
+          }
+        ]
+      },
+      {
+        "id": "corporate_secrets",
+        "name": "Corporate Secrets",
+        "missing_prerequisites": [
+          {
+            "id": "farming_part_3",
+            "name": "Farming - Part 3",
+            "npc": "mechanic"
+          }
+        ]
+      },
+      {
+        "id": "gunsmith_part_8",
+        "name": "Gunsmith - Part 8",
+        "missing_prerequisites": [
+          {
+            "id": "gunsmith_part_7",
+            "name": "Gunsmith - Part 7",
+            "npc": "mechanic"
+          }
+        ]
+      },
+      {
+        "id": "gunsmith_old_friends_request",
+        "name": "Gunsmith - Old Friend's Request",
+        "missing_prerequisites": [
+          {
+            "id": "gunsmith_part_7",
+            "name": "Gunsmith - Part 7",
+            "npc": "mechanic"
+          }
+        ]
+      },
+      {
+        "id": "gunsmith_part_9",
+        "name": "Gunsmith - Part 9",
+        "missing_prerequisites": [
+          {
+            "id": "gunsmith_part_8",
+            "name": "Gunsmith - Part 8",
+            "npc": "mechanic"
+          }
+        ]
+      },
+      {
+        "id": "a_helping_hand",
+        "name": "A Helping Hand",
+        "missing_prerequisites": [
+          {
+            "id": "saving_the_mole",
+            "name": "Saving the Mole",
+            "npc": "mechanic"
+          }
+        ]
+      },
+      {
+        "id": "watching_you",
+        "name": "Watching You",
+        "missing_prerequisites": [
+          {
+            "id": "broadcast_part_2",
+            "name": "Broadcast - Part 2",
+            "npc": "mechanic"
+          }
+        ]
+      },
+      {
+        "id": "gunsmith_part_10",
+        "name": "Gunsmith - Part 10",
+        "missing_prerequisites": [
+          {
+            "id": "gunsmith_part_9",
+            "name": "Gunsmith - Part 9",
+            "npc": "mechanic"
+          }
+        ]
+      },
+      {
+        "id": "gunsmith_part_11",
+        "name": "Gunsmith - Part 11",
+        "missing_prerequisites": [
+          {
+            "id": "gunsmith_part_10",
+            "name": "Gunsmith - Part 10",
+            "npc": "mechanic"
+          }
+        ]
+      },
+      {
+        "id": "chemistry_closet",
+        "name": "Chemistry Closet",
+        "missing_prerequisites": [
+          {
+            "id": "anesthesia_1",
+            "name": "Anesthesia",
+            "npc": "prapor"
+          },
+          {
+            "id": "colleagues_part_1",
+            "name": "Colleagues - Part 1",
+            "npc": "therapist"
+          }
+        ]
+      },
+      {
+        "id": "gunsmith_part_12",
+        "name": "Gunsmith - Part 12",
+        "missing_prerequisites": [
+          {
+            "id": "gunsmith_part_11",
+            "name": "Gunsmith - Part 11",
+            "npc": "mechanic"
+          }
+        ]
+      },
+      {
+        "id": "energy_crisis",
+        "name": "Energy Crisis",
+        "missing_prerequisites": [
+          {
+            "id": "farming_part_4",
+            "name": "Farming - Part 4",
+            "npc": "mechanic"
+          }
+        ]
+      },
+      {
+        "id": "gunsmith_part_13",
+        "name": "Gunsmith - Part 13",
+        "missing_prerequisites": [
+          {
+            "id": "gunsmith_part_12",
+            "name": "Gunsmith - Part 12",
+            "npc": "mechanic"
+          }
+        ]
+      },
+      {
+        "id": "developers_secrets_part_1",
+        "name": "Developer's Secrets - Part 1",
+        "missing_prerequisites": [
+          {
+            "id": "surveillance",
+            "name": "Surveillance",
+            "npc": "mechanic"
+          }
+        ]
+      },
+      {
+        "id": "developers_secrets_part_2",
+        "name": "Developer's Secrets - Part 2",
+        "missing_prerequisites": [
+          {
+            "id": "developers_secrets_part_1",
+            "name": "Developer's Secrets - Part 1",
+            "npc": "mechanic"
+          }
+        ]
+      },
+      {
+        "id": "surveillance",
+        "name": "Surveillance",
+        "missing_prerequisites": [
+          {
+            "id": "broadcast_part_2",
+            "name": "Broadcast - Part 2",
+            "npc": "mechanic"
+          },
+          {
+            "id": "corporate_secrets",
+            "name": "Corporate Secrets",
+            "npc": "mechanic"
+          }
+        ]
+      },
+      {
+        "id": "gunsmith_part_14",
+        "name": "Gunsmith - Part 14",
+        "missing_prerequisites": [
+          {
+            "id": "gunsmith_part_13",
+            "name": "Gunsmith - Part 13",
+            "npc": "mechanic"
+          }
+        ]
+      },
+      {
+        "id": "airmail",
+        "name": "Airmail",
+        "missing_prerequisites": [
+          {
+            "id": "quality_standard",
+            "name": "Quality Standard",
+            "npc": "therapist"
+          }
+        ]
+      },
+      {
+        "id": "camera_action",
+        "name": "Camera, Action!",
+        "missing_prerequisites": [
+          {
+            "id": "serious_allegations",
+            "name": "Serious Allegations",
+            "npc": "skier"
+          }
+        ]
+      },
+      {
+        "id": "gunsmith_part_15",
+        "name": "Gunsmith - Part 15",
+        "missing_prerequisites": [
+          {
+            "id": "gunsmith_part_14",
+            "name": "Gunsmith - Part 14",
+            "npc": "mechanic"
+          }
+        ]
+      },
+      {
+        "id": "fertilizers",
+        "name": "Fertilizers",
+        "missing_prerequisites": [
+          {
+            "id": "farming_part_4",
+            "name": "Farming - Part 4",
+            "npc": "mechanic"
+          }
+        ]
+      },
+      {
+        "id": "gunsmith_part_16",
+        "name": "Gunsmith - Part 16",
+        "missing_prerequisites": [
+          {
+            "id": "gunsmith_part_15",
+            "name": "Gunsmith - Part 15",
+            "npc": "mechanic"
+          }
+        ]
+      },
+      {
+        "id": "gunsmith_part_17",
+        "name": "Gunsmith - Part 17",
+        "missing_prerequisites": [
+          {
+            "id": "gunsmith_part_16",
+            "name": "Gunsmith - Part 16",
+            "npc": "mechanic"
+          }
+        ]
+      },
+      {
+        "id": "gunsmith_part_18",
+        "name": "Gunsmith - Part 18",
+        "missing_prerequisites": [
+          {
+            "id": "gunsmith_part_17",
+            "name": "Gunsmith - Part 17",
+            "npc": "mechanic"
+          }
+        ]
+      },
+      {
+        "id": "network_provider_part_2",
+        "name": "Network Provider - Part 2",
+        "missing_prerequisites": [
+          {
+            "id": "network_provider_part_1",
+            "name": "Network Provider - Part 1",
+            "npc": "mechanic"
+          }
+        ]
+      },
+      {
+        "id": "assessment_part_1",
+        "name": "Assessment - Part 1",
+        "missing_prerequisites": [
+          {
+            "id": "network_provider_part_2",
+            "name": "Network Provider - Part 2",
+            "npc": "mechanic"
+          }
+        ]
+      },
+      {
+        "id": "assessment_part_2",
+        "name": "Assessment - Part 2",
+        "missing_prerequisites": [
+          {
+            "id": "assessment_part_1",
+            "name": "Assessment - Part 1",
+            "npc": "mechanic"
+          }
+        ]
+      },
+      {
+        "id": "assessment_part_3",
+        "name": "Assessment - Part 3",
+        "missing_prerequisites": [
+          {
+            "id": "assessment_part_2",
+            "name": "Assessment - Part 2",
+            "npc": "mechanic"
+          }
+        ]
+      },
+      {
+        "id": "key_to_the_tower",
+        "name": "Key to the Tower",
+        "missing_prerequisites": [
+          {
+            "id": "assessment_part_3",
+            "name": "Assessment - Part 3",
+            "npc": "mechanic"
+          }
+        ]
+      },
+      {
+        "id": "knock_knock",
+        "name": "Knock-Knock",
+        "missing_prerequisites": [
+          {
+            "id": "key_to_the_tower",
+            "name": "Key to the Tower",
+            "npc": "mechanic"
+          }
+        ]
+      },
+      {
+        "id": "getting_acquainted",
+        "name": "Getting Acquainted",
+        "missing_prerequisites": [
+          {
+            "id": "knock_knock",
+            "name": "Knock-Knock",
+            "npc": "mechanic"
+          }
+        ]
+      },
+      {
+        "id": "make_amends_buyout",
+        "name": "Make Amends - Buyout",
+        "missing_prerequisites": [
+          {
+            "id": "getting_acquainted",
+            "name": "Getting Acquainted",
+            "npc": "mechanic"
+          }
+        ]
+      },
+      {
+        "id": "make_amends_equipment",
+        "name": "Make Amends - Equipment",
+        "missing_prerequisites": [
+          {
+            "id": "make_amends_buyout",
+            "name": "Make Amends - Buyout",
+            "npc": "mechanic"
+          }
+        ]
+      },
+      {
+        "id": "make_amends",
+        "name": "Make Amends",
+        "missing_prerequisites": [
+          {
+            "id": "make_amends_equipment",
+            "name": "Make Amends - Equipment",
+            "npc": "mechanic"
+          }
+        ]
+      },
+      {
+        "id": "make_amends_security",
+        "name": "Make Amends - Security",
+        "missing_prerequisites": [
+          {
+            "id": "make_amends",
+            "name": "Make Amends",
+            "npc": "mechanic"
+          }
+        ]
+      },
+      {
+        "id": "make_amends_sweep_up",
+        "name": "Make Amends - Sweep Up",
+        "missing_prerequisites": [
+          {
+            "id": "make_amends_security",
+            "name": "Make Amends - Security",
+            "npc": "mechanic"
+          }
+        ]
+      },
+      {
+        "id": "make_amends_1",
+        "name": "Make Amends",
+        "missing_prerequisites": [
+          {
+            "id": "make_amends_sweep_up",
+            "name": "Make Amends - Sweep Up",
+            "npc": "mechanic"
+          }
+        ]
+      },
+      {
+        "id": "make_amends_software",
+        "name": "Make Amends - Software",
+        "missing_prerequisites": [
+          {
+            "id": "make_amends_1",
+            "name": "Make Amends",
+            "npc": "mechanic"
+          }
+        ]
+      },
+      {
+        "id": "make_amends_quarantine",
+        "name": "Make Amends - Quarantine",
+        "missing_prerequisites": [
+          {
+            "id": "make_amends_software",
+            "name": "Make Amends - Software",
+            "npc": "mechanic"
+          }
+        ]
+      },
+      {
+        "id": "make_amends_2",
+        "name": "Make Amends",
+        "missing_prerequisites": [
+          {
+            "id": "make_amends_quarantine",
+            "name": "Make Amends - Quarantine",
+            "npc": "mechanic"
+          }
+        ]
+      },
+      {
+        "id": "network_provider_part_1",
+        "name": "Network Provider - Part 1",
+        "missing_prerequisites": [
+          {
+            "id": "broadcast_part_2",
+            "name": "Broadcast - Part 2",
+            "npc": "mechanic"
+          },
+          {
+            "id": "gunsmith_part_10",
+            "name": "Gunsmith - Part 10",
+            "npc": "mechanic"
+          },
+          {
+            "id": "chemical_part_4",
+            "name": "Chemical - Part 4",
+            "npc": "skier"
+          },
+          {
+            "id": "cargo_x_part_4",
+            "name": "Cargo X - Part 4",
+            "npc": "peacekeeper"
+          },
+          {
+            "id": "seaside_vacation",
+            "name": "Seaside Vacation",
+            "npc": "therapist"
+          },
+          {
+            "id": "the_cult_part_2",
+            "name": "The Cult - Part 2",
+            "npc": "peacekeeper"
+          },
+          {
+            "id": "the_punisher_part_4_1",
+            "name": "The Punisher - Part 4",
+            "npc": "prapor"
+          },
+          {
+            "id": "lost_contact",
+            "name": "Lost Contact",
+            "npc": "therapist"
+          },
+          {
+            "id": "house_arrest_part_1",
+            "name": "House Arrest - Part 1",
+            "npc": "skier"
+          }
+        ]
+      },
+      {
+        "id": "psycho_sniper",
+        "name": "Psycho Sniper",
+        "missing_prerequisites": [
+          {
+            "id": "wet_job_part_6",
+            "name": "Wet Job - Part 6",
+            "npc": "peacekeeper"
+          }
+        ]
+      },
+      {
+        "id": "import",
+        "name": "Import",
+        "missing_prerequisites": [
+          {
+            "id": "farming_part_4",
+            "name": "Farming - Part 4",
+            "npc": "mechanic"
+          }
+        ]
+      },
+      {
+        "id": "gunsmith_part_19",
+        "name": "Gunsmith - Part 19",
+        "missing_prerequisites": [
+          {
+            "id": "gunsmith_part_18",
+            "name": "Gunsmith - Part 18",
+            "npc": "mechanic"
+          }
+        ]
+      },
+      {
+        "id": "gunsmith_part_20",
+        "name": "Gunsmith - Part 20",
+        "missing_prerequisites": [
+          {
+            "id": "gunsmith_part_19",
+            "name": "Gunsmith - Part 19",
+            "npc": "mechanic"
+          }
+        ]
+      },
+      {
+        "id": "gunsmith_part_21",
+        "name": "Gunsmith - Part 21",
+        "missing_prerequisites": [
+          {
+            "id": "gunsmith_part_20",
+            "name": "Gunsmith - Part 20",
+            "npc": "mechanic"
+          }
+        ]
+      },
+      {
+        "id": "gunsmith_part_22",
+        "name": "Gunsmith - Part 22",
+        "missing_prerequisites": [
+          {
+            "id": "gunsmith_part_21",
+            "name": "Gunsmith - Part 21",
+            "npc": "mechanic"
+          }
+        ]
+      },
+      {
+        "id": "gunsmith_part_23",
+        "name": "Gunsmith - Part 23",
+        "missing_prerequisites": [
+          {
+            "id": "gunsmith_part_22",
+            "name": "Gunsmith - Part 22",
+            "npc": "mechanic"
+          }
+        ]
+      },
+      {
+        "id": "gunsmith_part_24",
+        "name": "Gunsmith - Part 24",
+        "missing_prerequisites": [
+          {
+            "id": "gunsmith_part_23",
+            "name": "Gunsmith - Part 23",
+            "npc": "mechanic"
+          }
+        ]
+      },
+      {
+        "id": "gunsmith_part_25",
+        "name": "Gunsmith - Part 25",
+        "missing_prerequisites": [
+          {
+            "id": "gunsmith_part_24",
+            "name": "Gunsmith - Part 24",
+            "npc": "mechanic"
+          }
+        ]
+      },
+      {
+        "id": "hobby_club",
+        "name": "Hobby Club",
+        "missing_prerequisites": [
+          {
+            "id": "saving_the_mole",
+            "name": "Saving the Mole",
+            "npc": "mechanic"
+          }
+        ]
+      },
+      {
+        "id": "calibration",
+        "name": "Calibration",
+        "missing_prerequisites": [
+          {
+            "id": "chemistry_closet",
+            "name": "Chemistry Closet",
+            "npc": "mechanic"
+          }
+        ]
+      },
+      {
+        "id": "the_courier",
+        "name": "The Courier",
+        "missing_prerequisites": [
+          {
+            "id": "calibration",
+            "name": "Calibration",
+            "npc": "mechanic"
+          }
+        ]
+      }
+    ],
+    "ragman": [
+      {
+        "id": "sensory_analysis_part_1",
+        "name": "Sensory Analysis - Part 1",
+        "missing_prerequisites": [
+          {
+            "id": "hidden_layer",
+            "name": "Hidden Layer",
+            "npc": "mechanic"
+          }
+        ]
+      },
+      {
+        "id": "hot_zone",
+        "name": "Hot Zone",
+        "missing_prerequisites": [
+          {
+            "id": "sensory_analysis_part_1",
+            "name": "Sensory Analysis - Part 1",
+            "npc": "ragman"
+          }
+        ]
+      },
+      {
+        "id": "vacate_the_premises",
+        "name": "Vacate the Premises",
+        "missing_prerequisites": [
+          {
+            "id": "offensive_reconnaissance",
+            "name": "Offensive Reconnaissance",
+            "npc": "mechanic"
+          }
+        ]
+      },
+      {
+        "id": "make_ultra_great_again",
+        "name": "Make ULTRA Great Again",
+        "missing_prerequisites": [
+          {
+            "id": "only_business",
+            "name": "Only Business",
+            "npc": "ragman"
+          }
+        ]
+      },
+      {
+        "id": "big_sale",
+        "name": "Big Sale",
+        "missing_prerequisites": [
+          {
+            "id": "only_business",
+            "name": "Only Business",
+            "npc": "ragman"
+          }
+        ]
+      },
+      {
+        "id": "audit",
+        "name": "Audit",
+        "missing_prerequisites": [
+          {
+            "id": "only_business",
+            "name": "Only Business",
+            "npc": "ragman"
+          }
+        ]
+      },
+      {
+        "id": "dressed_to_kill",
+        "name": "Dressed to Kill",
+        "missing_prerequisites": [
+          {
+            "id": "the_blood_of_war_part_1",
+            "name": "The Blood of War - Part 1",
+            "npc": "ragman"
+          }
+        ]
+      },
+      {
+        "id": "database_part_2",
+        "name": "Database - Part 2",
+        "missing_prerequisites": [
+          {
+            "id": "database_part_1",
+            "name": "Database - Part 1",
+            "npc": "ragman"
+          }
+        ]
+      },
+      {
+        "id": "inventory_check",
+        "name": "Inventory Check",
+        "missing_prerequisites": [
+          {
+            "id": "a_fuel_matter",
+            "name": "A Fuel Matter",
+            "npc": "ragman"
+          }
+        ]
+      },
+      {
+        "id": "a_fuel_matter",
+        "name": "A Fuel Matter",
+        "missing_prerequisites": [
+          {
+            "id": "the_blood_of_war_part_1",
+            "name": "The Blood of War - Part 1",
+            "npc": "ragman"
+          }
+        ]
+      },
+      {
+        "id": "nothing_fishy_about_this",
+        "name": "Nothing Fishy About This",
+        "missing_prerequisites": [
+          {
+            "id": "big_sale",
+            "name": "Big Sale",
+            "npc": "ragman"
+          }
+        ]
+      },
+      {
+        "id": "break_the_deal",
+        "name": "Break the Deal",
+        "missing_prerequisites": [
+          {
+            "id": "make_ultra_great_again",
+            "name": "Make ULTRA Great Again",
+            "npc": "ragman"
+          }
+        ]
+      },
+      {
+        "id": "the_blood_of_war_part_1",
+        "name": "The Blood of War - Part 1",
+        "missing_prerequisites": [
+          {
+            "id": "big_sale",
+            "name": "Big Sale",
+            "npc": "ragman"
+          },
+          {
+            "id": "make_ultra_great_again",
+            "name": "Make ULTRA Great Again",
+            "npc": "ragman"
+          }
+        ]
+      },
+      {
+        "id": "database_part_1",
+        "name": "Database - Part 1",
+        "missing_prerequisites": [
+          {
+            "id": "big_sale",
+            "name": "Big Sale",
+            "npc": "ragman"
+          },
+          {
+            "id": "make_ultra_great_again",
+            "name": "Make ULTRA Great Again",
+            "npc": "ragman"
+          }
+        ]
+      },
+      {
+        "id": "gratitude",
+        "name": "Gratitude",
+        "missing_prerequisites": [
+          {
+            "id": "dressed_to_kill",
+            "name": "Dressed to Kill",
+            "npc": "ragman"
+          },
+          {
+            "id": "database_part_2",
+            "name": "Database - Part 2",
+            "npc": "ragman"
+          }
+        ]
+      },
+      {
+        "id": "ballet_lover",
+        "name": "Ballet Lover",
+        "missing_prerequisites": [
+          {
+            "id": "audit",
+            "name": "Audit",
+            "npc": "ragman"
+          }
+        ]
+      },
+      {
+        "id": "minibus",
+        "name": "Minibus",
+        "missing_prerequisites": [
+          {
+            "id": "database_part_2",
+            "name": "Database - Part 2",
+            "npc": "ragman"
+          }
+        ]
+      },
+      {
+        "id": "drip_out_part_1",
+        "name": "Drip-Out - Part 1",
+        "missing_prerequisites": [
+          {
+            "id": "minibus",
+            "name": "Minibus",
+            "npc": "ragman"
+          }
+        ]
+      },
+      {
+        "id": "drip_out_part_1_1",
+        "name": "Drip-Out - Part 1",
+        "missing_prerequisites": [
+          {
+            "id": "minibus",
+            "name": "Minibus",
+            "npc": "ragman"
+          }
+        ]
+      },
+      {
+        "id": "sew_it_good_part_1",
+        "name": "Sew it Good - Part 1",
+        "missing_prerequisites": [
+          {
+            "id": "database_part_2",
+            "name": "Database - Part 2",
+            "npc": "ragman"
+          }
+        ]
+      },
+      {
+        "id": "sew_it_good_part_2",
+        "name": "Sew it Good - Part 2",
+        "missing_prerequisites": [
+          {
+            "id": "sew_it_good_part_1",
+            "name": "Sew it Good - Part 1",
+            "npc": "ragman"
+          }
+        ]
+      },
+      {
+        "id": "sew_it_good_part_3",
+        "name": "Sew it Good - Part 3",
+        "missing_prerequisites": [
+          {
+            "id": "sew_it_good_part_2",
+            "name": "Sew it Good - Part 2",
+            "npc": "ragman"
+          }
+        ]
+      },
+      {
+        "id": "sew_it_good_part_4",
+        "name": "Sew it Good - Part 4",
+        "missing_prerequisites": [
+          {
+            "id": "sew_it_good_part_3",
+            "name": "Sew it Good - Part 3",
+            "npc": "ragman"
+          }
+        ]
+      },
+      {
+        "id": "charisma_brings_success",
+        "name": "Charisma Brings Success",
+        "missing_prerequisites": [
+          {
+            "id": "the_blood_of_war_part_1",
+            "name": "The Blood of War - Part 1",
+            "npc": "ragman"
+          },
+          {
+            "id": "sew_it_good_part_4",
+            "name": "Sew it Good - Part 4",
+            "npc": "ragman"
+          }
+        ]
+      },
+      {
+        "id": "the_blood_of_war_part_2",
+        "name": "The Blood of War - Part 2",
+        "missing_prerequisites": [
+          {
+            "id": "the_blood_of_war_part_1",
+            "name": "The Blood of War - Part 1",
+            "npc": "ragman"
+          },
+          {
+            "id": "sew_it_good_part_1",
+            "name": "Sew it Good - Part 1",
+            "npc": "ragman"
+          }
+        ]
+      },
+      {
+        "id": "audiophile",
+        "name": "Audiophile",
+        "missing_prerequisites": [
+          {
+            "id": "ballet_lover",
+            "name": "Ballet Lover",
+            "npc": "ragman"
+          },
+          {
+            "id": "minibus",
+            "name": "Minibus",
+            "npc": "ragman"
+          }
+        ]
+      },
+      {
+        "id": "the_key_to_success",
+        "name": "The Key to Success",
+        "missing_prerequisites": [
+          {
+            "id": "sew_it_good_part_2",
+            "name": "Sew it Good - Part 2",
+            "npc": "ragman"
+          }
+        ]
+      },
+      {
+        "id": "no_fuss_needed",
+        "name": "No Fuss Needed",
+        "missing_prerequisites": [
+          {
+            "id": "the_key_to_success",
+            "name": "The Key to Success",
+            "npc": "ragman"
+          }
+        ]
+      },
+      {
+        "id": "key_to_the_city",
+        "name": "Key to the City",
+        "missing_prerequisites": [
+          {
+            "id": "proper_comeback",
+            "name": "Proper Comeback",
+            "npc": "skier"
+          }
+        ]
+      },
+      {
+        "id": "living_high_is_not_a_crime_part_1",
+        "name": "Living High is Not a Crime - Part 1",
+        "missing_prerequisites": [
+          {
+            "id": "the_blood_of_war_part_1",
+            "name": "The Blood of War - Part 1",
+            "npc": "ragman"
+          },
+          {
+            "id": "sew_it_good_part_3",
+            "name": "Sew it Good - Part 3",
+            "npc": "ragman"
+          }
+        ]
+      },
+      {
+        "id": "hot_delivery",
+        "name": "Hot Delivery",
+        "missing_prerequisites": [
+          {
+            "id": "gratitude",
+            "name": "Gratitude",
+            "npc": "ragman"
+          }
+        ]
+      },
+      {
+        "id": "scavenger",
+        "name": "Scavenger",
+        "missing_prerequisites": [
+          {
+            "id": "hot_delivery",
+            "name": "Hot Delivery",
+            "npc": "ragman"
+          }
+        ]
+      },
+      {
+        "id": "sales_night",
+        "name": "Sales Night",
+        "missing_prerequisites": [
+          {
+            "id": "gratitude",
+            "name": "Gratitude",
+            "npc": "ragman"
+          }
+        ]
+      },
+      {
+        "id": "the_blood_of_war_part_3",
+        "name": "The Blood of War - Part 3",
+        "missing_prerequisites": [
+          {
+            "id": "the_blood_of_war_part_2",
+            "name": "The Blood of War - Part 2",
+            "npc": "ragman"
+          }
+        ]
+      },
+      {
+        "id": "know_your_place",
+        "name": "Know Your Place!",
+        "missing_prerequisites": [
+          {
+            "id": "the_blood_of_war_part_3",
+            "name": "The Blood of War - Part 3",
+            "npc": "ragman"
+          }
+        ]
+      },
+      {
+        "id": "living_high_is_not_a_crime_part_2",
+        "name": "Living High is Not a Crime - Part 2",
+        "missing_prerequisites": [
+          {
+            "id": "living_high_is_not_a_crime_part_1",
+            "name": "Living High is Not a Crime - Part 1",
+            "npc": "ragman"
+          },
+          {
+            "id": "the_blood_of_war_part_3",
+            "name": "The Blood of War - Part 3",
+            "npc": "ragman"
+          }
+        ]
+      },
+      {
+        "id": "dandies",
+        "name": "Dandies",
+        "missing_prerequisites": [
+          {
+            "id": "ballet_lover",
+            "name": "Ballet Lover",
+            "npc": "ragman"
+          }
+        ]
+      },
+      {
+        "id": "drip_out_part_2",
+        "name": "Drip-Out - Part 2",
+        "missing_prerequisites": [
+          {
+            "id": "dandies",
+            "name": "Dandies",
+            "npc": "ragman"
+          }
+        ]
+      },
+      {
+        "id": "drip_out_part_2_1",
+        "name": "Drip-Out - Part 2",
+        "missing_prerequisites": [
+          {
+            "id": "dandies",
+            "name": "Dandies",
+            "npc": "ragman"
+          }
+        ]
+      },
+      {
+        "id": "the_invisible_hand",
+        "name": "The Invisible Hand",
+        "missing_prerequisites": [
+          {
+            "id": "only_business",
+            "name": "Only Business",
+            "npc": "ragman"
+          }
+        ]
+      },
+      {
+        "id": "circulate",
+        "name": "Circulate",
+        "missing_prerequisites": [
+          {
+            "id": "the_invisible_hand",
+            "name": "The Invisible Hand",
+            "npc": "ragman"
+          }
+        ]
+      },
+      {
+        "id": "special_offer",
+        "name": "Special Offer",
+        "missing_prerequisites": [
+          {
+            "id": "circulate",
+            "name": "Circulate",
+            "npc": "ragman"
+          }
+        ]
+      },
+      {
+        "id": "combat_proven",
+        "name": "Combat Proven",
+        "missing_prerequisites": [
+          {
+            "id": "special_offer",
+            "name": "Special Offer",
+            "npc": "ragman"
+          }
+        ]
+      },
+      {
+        "id": "old_patterns",
+        "name": "Old Patterns",
+        "missing_prerequisites": [
+          {
+            "id": "combat_proven",
+            "name": "Combat Proven",
+            "npc": "ragman"
+          }
+        ]
+      },
+      {
+        "id": "supervisor",
+        "name": "Supervisor",
+        "missing_prerequisites": [
+          {
+            "id": "the_key_to_success",
+            "name": "The Key to Success",
+            "npc": "ragman"
+          },
+          {
+            "id": "sales_night",
+            "name": "Sales Night",
+            "npc": "ragman"
+          }
+        ]
+      },
+      {
+        "id": "textile_part_1",
+        "name": "Textile - Part 1",
+        "missing_prerequisites": [
+          {
+            "id": "sew_it_good_part_4",
+            "name": "Sew it Good - Part 4",
+            "npc": "ragman"
+          }
+        ]
+      },
+      {
+        "id": "textile_part_1_1",
+        "name": "Textile - Part 1",
+        "missing_prerequisites": [
+          {
+            "id": "sew_it_good_part_4",
+            "name": "Sew it Good - Part 4",
+            "npc": "ragman"
+          }
+        ]
+      },
+      {
+        "id": "textile_part_2",
+        "name": "Textile - Part 2",
+        "missing_prerequisites": [
+          {
+            "id": "textile_part_1",
+            "name": "Textile - Part 1",
+            "npc": "ragman"
+          }
+        ]
+      },
+      {
+        "id": "textile_part_2_1",
+        "name": "Textile - Part 2",
+        "missing_prerequisites": [
+          {
+            "id": "textile_part_1_1",
+            "name": "Textile - Part 1",
+            "npc": "ragman"
+          }
+        ]
+      },
+      {
+        "id": "long_line",
+        "name": "Long Line",
+        "missing_prerequisites": [
+          {
+            "id": "supervisor",
+            "name": "Supervisor",
+            "npc": "ragman"
+          }
+        ]
+      },
+      {
+        "id": "booze",
+        "name": "Booze",
+        "missing_prerequisites": [
+          {
+            "id": "long_line",
+            "name": "Long Line",
+            "npc": "ragman"
+          }
+        ]
+      }
+    ],
+    "jaeger": [
+      {
+        "id": "the_tarkov_shooter_part_1",
+        "name": "The Tarkov Shooter - Part 1",
+        "missing_prerequisites": [
+          {
+            "id": "acquaintance",
+            "name": "Acquaintance",
+            "npc": "jaeger"
+          }
+        ]
+      },
+      {
+        "id": "the_tarkov_shooter_part_2",
+        "name": "The Tarkov Shooter - Part 2",
+        "missing_prerequisites": [
+          {
+            "id": "the_tarkov_shooter_part_1",
+            "name": "The Tarkov Shooter - Part 1",
+            "npc": "jaeger"
+          }
+        ]
+      },
+      {
+        "id": "the_tarkov_shooter_part_3",
+        "name": "The Tarkov Shooter - Part 3",
+        "missing_prerequisites": [
+          {
+            "id": "the_tarkov_shooter_part_2",
+            "name": "The Tarkov Shooter - Part 2",
+            "npc": "jaeger"
+          }
+        ]
+      },
+      {
+        "id": "the_tarkov_shooter_part_4",
+        "name": "The Tarkov Shooter - Part 4",
+        "missing_prerequisites": [
+          {
+            "id": "the_tarkov_shooter_part_3",
+            "name": "The Tarkov Shooter - Part 3",
+            "npc": "jaeger"
+          }
+        ]
+      },
+      {
+        "id": "the_tarkov_shooter_part_5",
+        "name": "The Tarkov Shooter - Part 5",
+        "missing_prerequisites": [
+          {
+            "id": "the_tarkov_shooter_part_4",
+            "name": "The Tarkov Shooter - Part 4",
+            "npc": "jaeger"
+          }
+        ]
+      },
+      {
+        "id": "the_tarkov_shooter_part_6",
+        "name": "The Tarkov Shooter - Part 6",
+        "missing_prerequisites": [
+          {
+            "id": "the_tarkov_shooter_part_5",
+            "name": "The Tarkov Shooter - Part 5",
+            "npc": "jaeger"
+          }
+        ]
+      },
+      {
+        "id": "the_tarkov_shooter_part_7",
+        "name": "The Tarkov Shooter - Part 7",
+        "missing_prerequisites": [
+          {
+            "id": "the_tarkov_shooter_part_6",
+            "name": "The Tarkov Shooter - Part 6",
+            "npc": "jaeger"
+          }
+        ]
+      },
+      {
+        "id": "the_tarkov_shooter_part_8",
+        "name": "The Tarkov Shooter - Part 8",
+        "missing_prerequisites": [
+          {
+            "id": "the_tarkov_shooter_part_7",
+            "name": "The Tarkov Shooter - Part 7",
+            "npc": "jaeger"
+          }
+        ]
+      },
+      {
+        "id": "acquaintance",
+        "name": "Acquaintance",
+        "missing_prerequisites": [
+          {
+            "id": "introduction",
+            "name": "Introduction",
+            "npc": "mechanic"
+          }
+        ]
+      },
+      {
+        "id": "the_survivalist_path_unprotected_but_dangerous",
+        "name": "The Survivalist Path - Unprotected but Dangerous",
+        "missing_prerequisites": [
+          {
+            "id": "acquaintance",
+            "name": "Acquaintance",
+            "npc": "jaeger"
+          }
+        ]
+      },
+      {
+        "id": "the_survivalist_path_thrifty",
+        "name": "The Survivalist Path - Thrifty",
+        "missing_prerequisites": [
+          {
+            "id": "the_survivalist_path_unprotected_but_dangerous",
+            "name": "The Survivalist Path - Unprotected but Dangerous",
+            "npc": "jaeger"
+          }
+        ]
+      },
+      {
+        "id": "the_survivalist_path_zhivchik",
+        "name": "The Survivalist Path - Zhivchik",
+        "missing_prerequisites": [
+          {
+            "id": "the_survivalist_path_thrifty",
+            "name": "The Survivalist Path - Thrifty",
+            "npc": "jaeger"
+          }
+        ]
+      },
+      {
+        "id": "the_survivalist_path_wounded_beast",
+        "name": "The Survivalist Path - Wounded Beast",
+        "missing_prerequisites": [
+          {
+            "id": "the_survivalist_path_zhivchik",
+            "name": "The Survivalist Path - Zhivchik",
+            "npc": "jaeger"
+          }
+        ]
+      },
+      {
+        "id": "the_survivalist_path_tough_guy",
+        "name": "The Survivalist Path - Tough Guy",
+        "missing_prerequisites": [
+          {
+            "id": "the_survivalist_path_wounded_beast",
+            "name": "The Survivalist Path - Wounded Beast",
+            "npc": "jaeger"
+          }
+        ]
+      },
+      {
+        "id": "the_survivalist_path_cold_blooded",
+        "name": "The Survivalist Path - Cold Blooded",
+        "missing_prerequisites": [
+          {
+            "id": "the_survivalist_path_wounded_beast",
+            "name": "The Survivalist Path - Wounded Beast",
+            "npc": "jaeger"
+          }
+        ]
+      },
+      {
+        "id": "the_survivalist_path_eagle_owl",
+        "name": "The Survivalist Path - Eagle-Owl",
+        "missing_prerequisites": [
+          {
+            "id": "the_survivalist_path_tough_guy",
+            "name": "The Survivalist Path - Tough Guy",
+            "npc": "jaeger"
+          }
+        ]
+      },
+      {
+        "id": "the_survivalist_path_combat_medic",
+        "name": "The Survivalist Path - Combat Medic",
+        "missing_prerequisites": [
+          {
+            "id": "the_survivalist_path_eagle_owl",
+            "name": "The Survivalist Path - Eagle-Owl",
+            "npc": "jaeger"
+          }
+        ]
+      },
+      {
+        "id": "the_huntsman_path_trophy",
+        "name": "The Huntsman Path - Trophy",
+        "missing_prerequisites": [
+          {
+            "id": "the_huntsman_path_secured_perimeter",
+            "name": "The Huntsman Path - Secured Perimeter",
+            "npc": "jaeger"
+          }
+        ]
+      },
+      {
+        "id": "the_huntsman_path_forest_cleaning",
+        "name": "The Huntsman Path - Forest Cleaning",
+        "missing_prerequisites": [
+          {
+            "id": "the_huntsman_path_secured_perimeter",
+            "name": "The Huntsman Path - Secured Perimeter",
+            "npc": "jaeger"
+          }
+        ]
+      },
+      {
+        "id": "the_huntsman_path_controller",
+        "name": "The Huntsman Path - Controller",
+        "missing_prerequisites": [
+          {
+            "id": "the_huntsman_path_forest_cleaning",
+            "name": "The Huntsman Path - Forest Cleaning",
+            "npc": "jaeger"
+          }
+        ]
+      },
+      {
+        "id": "the_huntsman_path_justice",
+        "name": "The Huntsman Path - Justice",
+        "missing_prerequisites": [
+          {
+            "id": "the_huntsman_path_trophy",
+            "name": "The Huntsman Path - Trophy",
+            "npc": "jaeger"
+          }
+        ]
+      },
+      {
+        "id": "the_huntsman_path_evil_watchman",
+        "name": "The Huntsman Path - Evil Watchman",
+        "missing_prerequisites": [
+          {
+            "id": "the_huntsman_path_forest_cleaning",
+            "name": "The Huntsman Path - Forest Cleaning",
+            "npc": "jaeger"
+          }
+        ]
+      },
+      {
+        "id": "the_survivalist_path_junkie",
+        "name": "The Survivalist Path - Junkie",
+        "missing_prerequisites": [
+          {
+            "id": "the_survivalist_path_combat_medic",
+            "name": "The Survivalist Path - Combat Medic",
+            "npc": "jaeger"
+          }
+        ]
+      },
+      {
+        "id": "claustrophobia",
+        "name": "Claustrophobia",
+        "missing_prerequisites": [
+          {
+            "id": "the_huntsman_path_forest_cleaning",
+            "name": "The Huntsman Path - Forest Cleaning",
+            "npc": "jaeger"
+          }
+        ]
+      },
+      {
+        "id": "rough_tarkov",
+        "name": "Rough Tarkov",
+        "missing_prerequisites": [
+          {
+            "id": "acquaintance",
+            "name": "Acquaintance",
+            "npc": "jaeger"
+          }
+        ]
+      },
+      {
+        "id": "every_hunter_knows_this",
+        "name": "Every Hunter Knows This",
+        "missing_prerequisites": [
+          {
+            "id": "rough_tarkov",
+            "name": "Rough Tarkov",
+            "npc": "jaeger"
+          }
+        ]
+      },
+      {
+        "id": "work_smarter",
+        "name": "Work Smarter",
+        "missing_prerequisites": [
+          {
+            "id": "acquaintance",
+            "name": "Acquaintance",
+            "npc": "jaeger"
+          }
+        ]
+      },
+      {
+        "id": "rite_of_passage",
+        "name": "Rite of Passage",
+        "missing_prerequisites": [
+          {
+            "id": "work_smarter",
+            "name": "Work Smarter",
+            "npc": "jaeger"
+          }
+        ]
+      },
+      {
+        "id": "the_huntsman_path_secured_perimeter",
+        "name": "The Huntsman Path - Secured Perimeter",
+        "missing_prerequisites": [
+          {
+            "id": "the_tarkov_shooter_part_3",
+            "name": "The Tarkov Shooter - Part 3",
+            "npc": "jaeger"
+          },
+          {
+            "id": "the_survivalist_path_tough_guy",
+            "name": "The Survivalist Path - Tough Guy",
+            "npc": "jaeger"
+          }
+        ]
+      },
+      {
+        "id": "the_delicious_sausage",
+        "name": "The Delicious Sausage",
+        "missing_prerequisites": [
+          {
+            "id": "the_survivalist_path_thrifty",
+            "name": "The Survivalist Path - Thrifty",
+            "npc": "jaeger"
+          }
+        ]
+      },
+      {
+        "id": "cease_fire",
+        "name": "Cease Fire!",
+        "missing_prerequisites": [
+          {
+            "id": "the_delicious_sausage",
+            "name": "The Delicious Sausage",
+            "npc": "jaeger"
+          }
+        ]
+      },
+      {
+        "id": "the_huntsman_path_factory_chief",
+        "name": "The Huntsman Path - Factory Chief",
+        "missing_prerequisites": [
+          {
+            "id": "the_huntsman_path_forest_cleaning",
+            "name": "The Huntsman Path - Forest Cleaning",
+            "npc": "jaeger"
+          },
+          {
+            "id": "scout",
+            "name": "Scout",
+            "npc": "mechanic"
+          }
+        ]
+      },
+      {
+        "id": "the_huntsman_path_woods_keeper",
+        "name": "The Huntsman Path - Woods Keeper",
+        "missing_prerequisites": [
+          {
+            "id": "the_huntsman_path_secured_perimeter",
+            "name": "The Huntsman Path - Secured Perimeter",
+            "npc": "jaeger"
+          },
+          {
+            "id": "supply_plans",
+            "name": "Supply Plans",
+            "npc": "therapist"
+          }
+        ]
+      },
+      {
+        "id": "thirsty_hounds",
+        "name": "Thirsty - Hounds",
+        "missing_prerequisites": [
+          {
+            "id": "the_delicious_sausage",
+            "name": "The Delicious Sausage",
+            "npc": "jaeger"
+          }
+        ]
+      },
+      {
+        "id": "dragnet",
+        "name": "Dragnet",
+        "missing_prerequisites": [
+          {
+            "id": "one_less_loose_end",
+            "name": "One Less Loose End",
+            "npc": "peacekeeper"
+          }
+        ]
+      },
+      {
+        "id": "the_huntsman_path_big_game",
+        "name": "The Huntsman Path - Big Game",
+        "missing_prerequisites": [
+          {
+            "id": "the_huntsman_path_forest_cleaning",
+            "name": "The Huntsman Path - Forest Cleaning",
+            "npc": "jaeger"
+          },
+          {
+            "id": "urban_medicine",
+            "name": "Urban Medicine",
+            "npc": "therapist"
+          }
+        ]
+      },
+      {
+        "id": "courtesy_visit",
+        "name": "Courtesy Visit",
+        "missing_prerequisites": [
+          {
+            "id": "the_survivalist_path_tough_guy",
+            "name": "The Survivalist Path - Tough Guy",
+            "npc": "jaeger"
+          }
+        ]
+      },
+      {
+        "id": "the_hermit",
+        "name": "The Hermit",
+        "missing_prerequisites": [
+          {
+            "id": "the_survivalist_path_tough_guy",
+            "name": "The Survivalist Path - Tough Guy",
+            "npc": "jaeger"
+          }
+        ]
+      },
+      {
+        "id": "reserve",
+        "name": "Reserve",
+        "missing_prerequisites": [
+          {
+            "id": "the_delicious_sausage",
+            "name": "The Delicious Sausage",
+            "npc": "jaeger"
+          }
+        ]
+      },
+      {
+        "id": "shady_business",
+        "name": "Shady Business",
+        "missing_prerequisites": [
+          {
+            "id": "acquaintance",
+            "name": "Acquaintance",
+            "npc": "jaeger"
+          },
+          {
+            "id": "whats_on_the_flash_drive",
+            "name": "What’s on the Flash Drive?",
+            "npc": "skier"
+          }
+        ]
+      },
+      {
+        "id": "broadcast_part_3",
+        "name": "Broadcast - Part 3",
+        "missing_prerequisites": [
+          {
+            "id": "broadcast_part_2",
+            "name": "Broadcast - Part 2",
+            "npc": "mechanic"
+          }
+        ]
+      },
+      {
+        "id": "the_huntsman_path_eraser_part_1",
+        "name": "The Huntsman Path - Eraser - Part 1",
+        "missing_prerequisites": [
+          {
+            "id": "pest_control",
+            "name": "Pest Control",
+            "npc": "jaeger"
+          }
+        ]
+      },
+      {
+        "id": "pest_control",
+        "name": "Pest Control",
+        "missing_prerequisites": [
+          {
+            "id": "reserve",
+            "name": "Reserve",
+            "npc": "jaeger"
+          }
+        ]
+      },
+      {
+        "id": "the_huntsman_path_outcasts",
+        "name": "The Huntsman Path - Outcasts",
+        "missing_prerequisites": [
+          {
+            "id": "the_huntsman_path_forest_cleaning",
+            "name": "The Huntsman Path - Forest Cleaning",
+            "npc": "jaeger"
+          }
+        ]
+      },
+      {
+        "id": "the_huntsman_path_sadist",
+        "name": "The Huntsman Path - Sadist",
+        "missing_prerequisites": [
+          {
+            "id": "rigged_game",
+            "name": "Rigged Game",
+            "npc": "skier"
+          },
+          {
+            "id": "colleagues_part_2",
+            "name": "Colleagues - Part 2",
+            "npc": "therapist"
+          },
+          {
+            "id": "chemistry_closet",
+            "name": "Chemistry Closet",
+            "npc": "mechanic"
+          }
+        ]
+      },
+      {
+        "id": "the_huntsman_path_administrator",
+        "name": "The Huntsman Path - Administrator",
+        "missing_prerequisites": [
+          {
+            "id": "the_huntsman_path_forest_cleaning",
+            "name": "The Huntsman Path - Forest Cleaning",
+            "npc": "jaeger"
+          }
+        ]
+      },
+      {
+        "id": "the_huntsman_path_crooked_cop",
+        "name": "The Huntsman Path - Crooked Cop",
+        "missing_prerequisites": [
+          {
+            "id": "the_huntsman_path_administrator",
+            "name": "The Huntsman Path - Administrator",
+            "npc": "jaeger"
+          }
+        ]
+      },
+      {
+        "id": "ambulance",
+        "name": "Ambulance",
+        "missing_prerequisites": [
+          {
+            "id": "shady_business",
+            "name": "Shady Business",
+            "npc": "jaeger"
+          }
+        ]
+      },
+      {
+        "id": "broadcast_part_4",
+        "name": "Broadcast - Part 4",
+        "missing_prerequisites": [
+          {
+            "id": "broadcast_part_3",
+            "name": "Broadcast - Part 3",
+            "npc": "jaeger"
+          }
+        ]
+      },
+      {
+        "id": "broadcast_part_5",
+        "name": "Broadcast - Part 5",
+        "missing_prerequisites": [
+          {
+            "id": "broadcast_part_4",
+            "name": "Broadcast - Part 4",
+            "npc": "jaeger"
+          }
+        ]
+      },
+      {
+        "id": "nostalgia",
+        "name": "Nostalgia",
+        "missing_prerequisites": [
+          {
+            "id": "courtesy_visit",
+            "name": "Courtesy Visit",
+            "npc": "jaeger"
+          }
+        ]
+      },
+      {
+        "id": "fishing_place",
+        "name": "Fishing Place",
+        "missing_prerequisites": [
+          {
+            "id": "nostalgia",
+            "name": "Nostalgia",
+            "npc": "jaeger"
+          }
+        ]
+      },
+      {
+        "id": "foresters_duty",
+        "name": "Forester's Duty",
+        "missing_prerequisites": [
+          {
+            "id": "nostalgia",
+            "name": "Nostalgia",
+            "npc": "jaeger"
+          }
+        ]
+      },
+      {
+        "id": "the_huntsman_path_eraser_part_2",
+        "name": "The Huntsman Path - Eraser - Part 2",
+        "missing_prerequisites": [
+          {
+            "id": "the_huntsman_path_secured_perimeter",
+            "name": "The Huntsman Path - Secured Perimeter",
+            "npc": "jaeger"
+          },
+          {
+            "id": "the_huntsman_path_eraser_part_1",
+            "name": "The Huntsman Path - Eraser - Part 1",
+            "npc": "jaeger"
+          }
+        ]
+      },
+      {
+        "id": "the_huntsman_path_sellout",
+        "name": "The Huntsman Path - Sellout",
+        "missing_prerequisites": [
+          {
+            "id": "the_huntsman_path_forest_cleaning",
+            "name": "The Huntsman Path - Forest Cleaning",
+            "npc": "jaeger"
+          },
+          {
+            "id": "sales_night",
+            "name": "Sales Night",
+            "npc": "ragman"
+          }
+        ]
+      },
+      {
+        "id": "hunting_trip",
+        "name": "Hunting Trip",
+        "missing_prerequisites": [
+          {
+            "id": "the_huntsman_path_woods_keeper",
+            "name": "The Huntsman Path - Woods Keeper",
+            "npc": "jaeger"
+          }
+        ]
+      },
+      {
+        "id": "hunter",
+        "name": "Hunter",
+        "missing_prerequisites": [
+          {
+            "id": "the_huntsman_path_woods_keeper",
+            "name": "The Huntsman Path - Woods Keeper",
+            "npc": "jaeger"
+          }
+        ]
+      },
+      {
+        "id": "stray_dogs",
+        "name": "Stray Dogs",
+        "missing_prerequisites": [
+          {
+            "id": "the_huntsman_path_trophy",
+            "name": "The Huntsman Path - Trophy",
+            "npc": "jaeger"
+          },
+          {
+            "id": "the_huntsman_path_woods_keeper",
+            "name": "The Huntsman Path - Woods Keeper",
+            "npc": "jaeger"
+          },
+          {
+            "id": "the_huntsman_path_sellout",
+            "name": "The Huntsman Path - Sellout",
+            "npc": "jaeger"
+          }
+        ]
+      },
+      {
+        "id": "slaughterhouse",
+        "name": "Slaughterhouse",
+        "missing_prerequisites": [
+          {
+            "id": "the_huntsman_path_administrator",
+            "name": "The Huntsman Path - Administrator",
+            "npc": "jaeger"
+          },
+          {
+            "id": "broadcast_part_4",
+            "name": "Broadcast - Part 4",
+            "npc": "jaeger"
+          }
+        ]
+      },
+      {
+        "id": "swift_one",
+        "name": "Swift One",
+        "missing_prerequisites": [
+          {
+            "id": "the_huntsman_path_sadist",
+            "name": "The Huntsman Path - Sadist",
+            "npc": "jaeger"
+          }
+        ]
+      },
+      {
+        "id": "the_huntsman_path_relentless",
+        "name": "The Huntsman Path - Relentless",
+        "missing_prerequisites": [
+          {
+            "id": "the_huntsman_path_trophy",
+            "name": "The Huntsman Path - Trophy",
+            "npc": "jaeger"
+          },
+          {
+            "id": "the_huntsman_path_factory_chief",
+            "name": "The Huntsman Path - Factory Chief",
+            "npc": "jaeger"
+          },
+          {
+            "id": "the_huntsman_path_woods_keeper",
+            "name": "The Huntsman Path - Woods Keeper",
+            "npc": "jaeger"
+          },
+          {
+            "id": "the_huntsman_path_eraser_part_1",
+            "name": "The Huntsman Path - Eraser - Part 1",
+            "npc": "jaeger"
+          },
+          {
+            "id": "the_huntsman_path_sadist",
+            "name": "The Huntsman Path - Sadist",
+            "npc": "jaeger"
+          },
+          {
+            "id": "the_huntsman_path_sellout",
+            "name": "The Huntsman Path - Sellout",
+            "npc": "jaeger"
+          }
+        ]
+      }
+    ],
+    "lightkeeper": [
+      {
+        "id": "keepers_word",
+        "name": "Keeper's Word",
+        "missing_prerequisites": [
+          {
+            "id": "hot_zone",
+            "name": "Hot Zone",
+            "npc": "ragman"
+          },
+          {
+            "id": "the_tarkov_butcher",
+            "name": "The Tarkov Butcher",
+            "npc": "therapist"
+          },
+          {
+            "id": "hypotheses_testing",
+            "name": "Hypotheses Testing",
+            "npc": "mechanic"
+          },
+          {
+            "id": "vacate_the_premises",
+            "name": "Vacate the Premises",
+            "npc": "ragman"
+          },
+          {
+            "id": "confidential_info",
+            "name": "Confidential Info",
+            "npc": "peacekeeper"
+          },
+          {
+            "id": "indisputable_authority",
+            "name": "Indisputable Authority",
+            "npc": "skier"
+          },
+          {
+            "id": "this_tape_sucks",
+            "name": "This Tape Sucks",
+            "npc": "therapist"
+          }
+        ]
+      },
+      {
+        "id": "information_source",
+        "name": "Information Source",
+        "missing_prerequisites": [
+          {
+            "id": "knock_knock",
+            "name": "Knock-Knock",
+            "npc": "mechanic"
+          }
+        ]
+      },
+      {
+        "id": "missing_informant",
+        "name": "Missing Informant",
+        "missing_prerequisites": [
+          {
+            "id": "information_source",
+            "name": "Information Source",
+            "npc": "lightkeeper"
+          }
+        ]
+      },
+      {
+        "id": "snatch",
+        "name": "Snatch",
+        "missing_prerequisites": [
+          {
+            "id": "missing_informant",
+            "name": "Missing Informant",
+            "npc": "lightkeeper"
+          }
+        ]
+      },
+      {
+        "id": "payback",
+        "name": "Payback",
+        "missing_prerequisites": [
+          {
+            "id": "return_the_favor",
+            "name": "Return the Favor",
+            "npc": "lightkeeper"
+          }
+        ]
+      },
+      {
+        "id": "return_the_favor",
+        "name": "Return the Favor",
+        "missing_prerequisites": [
+          {
+            "id": "snatch",
+            "name": "Snatch",
+            "npc": "lightkeeper"
+          }
+        ]
+      },
+      {
+        "id": "provocation",
+        "name": "Provocation",
+        "missing_prerequisites": [
+          {
+            "id": "payback",
+            "name": "Payback",
+            "npc": "lightkeeper"
+          }
+        ]
+      },
+      {
+        "id": "following_the_bread_crumbs",
+        "name": "Following the Bread Crumbs",
+        "missing_prerequisites": [
+          {
+            "id": "provocation",
+            "name": "Provocation",
+            "npc": "lightkeeper"
+          }
+        ]
+      },
+      {
+        "id": "spotter",
+        "name": "Spotter",
+        "missing_prerequisites": [
+          {
+            "id": "following_the_bread_crumbs",
+            "name": "Following the Bread Crumbs",
+            "npc": "lightkeeper"
+          }
+        ]
+      },
+      {
+        "id": "make_an_impression",
+        "name": "Make an Impression",
+        "missing_prerequisites": [
+          {
+            "id": "spotter",
+            "name": "Spotter",
+            "npc": "lightkeeper"
+          }
+        ]
+      },
+      {
+        "id": "trouble_in_the_big_city",
+        "name": "Trouble in the Big City",
+        "missing_prerequisites": [
+          {
+            "id": "make_an_impression",
+            "name": "Make an Impression",
+            "npc": "lightkeeper"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -314,7 +314,8 @@
           "name": "The Punisher - Part 3",
           "tier": null,
           "prerequisites": [
-            "the_punisher_part_2_1"
+            "the_punisher_part_2_1",
+            "the_punisher_part_1_1"
           ],
           "prerequisitesExternal": [],
           "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/The_Punisher_-_Part_3",
@@ -356,7 +357,8 @@
           "name": "The Punisher - Part 4",
           "tier": null,
           "prerequisites": [
-            "the_punisher_part_3_1"
+            "the_punisher_part_3_1",
+            "the_punisher_part_2_1"
           ],
           "prerequisitesExternal": [],
           "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/The_Punisher_-_Part_4",
@@ -367,7 +369,8 @@
           "name": "The Punisher - Part 5",
           "tier": null,
           "prerequisites": [
-            "the_punisher_part_4_1"
+            "the_punisher_part_4_1",
+            "the_punisher_part_3_1"
           ],
           "prerequisitesExternal": [],
           "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/The_Punisher_-_Part_5",
@@ -431,7 +434,8 @@
           "name": "The Punisher - Part 6",
           "tier": null,
           "prerequisites": [
-            "the_punisher_part_5_1"
+            "the_punisher_part_5_1",
+            "the_punisher_part_4_1"
           ],
           "prerequisitesExternal": [],
           "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/The_Punisher_-_Part_6",
@@ -563,7 +567,9 @@
           "id": "the_good_times_part_2_1",
           "name": "The Good Times - Part 2",
           "tier": null,
-          "prerequisites": [],
+          "prerequisites": [
+            "the_good_times_part_1_1"
+          ],
           "prerequisitesExternal": [
             "airmail"
           ],
@@ -617,7 +623,8 @@
           "name": "Test Drive - Part 3",
           "tier": null,
           "prerequisites": [
-            "test_drive_part_2_1"
+            "test_drive_part_2_1",
+            "test_drive_part_1_1"
           ],
           "prerequisitesExternal": [],
           "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Test_Drive_-_Part_3",
@@ -650,7 +657,8 @@
           "name": "Test Drive - Part 4",
           "tier": null,
           "prerequisites": [
-            "test_drive_part_3_1"
+            "test_drive_part_3_1",
+            "test_drive_part_2_1"
           ],
           "prerequisitesExternal": [],
           "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Test_Drive_-_Part_4",
@@ -661,7 +669,8 @@
           "name": "Test Drive - Part 5",
           "tier": null,
           "prerequisites": [
-            "test_drive_part_4_1"
+            "test_drive_part_4_1",
+            "test_drive_part_3_1"
           ],
           "prerequisitesExternal": [],
           "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Test_Drive_-_Part_5",
@@ -672,7 +681,8 @@
           "name": "Test Drive - Part 6",
           "tier": null,
           "prerequisites": [
-            "test_drive_part_5_1"
+            "test_drive_part_5_1",
+            "test_drive_part_4_1"
           ],
           "prerequisitesExternal": [],
           "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Test_Drive_-_Part_6",
@@ -893,7 +903,9 @@
           "name": "All Is Revealed",
           "tier": null,
           "prerequisites": [],
-          "prerequisitesExternal": [],
+          "prerequisitesExternal": [
+            "capacity_check"
+          ],
           "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/All_Is_Revealed",
           "kappaRequired": true
         },
@@ -1081,7 +1093,8 @@
           "name": "Health Care Privacy - Part 3",
           "tier": null,
           "prerequisites": [
-            "health_care_privacy_part_2"
+            "health_care_privacy_part_2",
+            "health_care_privacy_part_1"
           ],
           "prerequisitesExternal": [],
           "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Health_Care_Privacy_-_Part_3",
@@ -1092,7 +1105,8 @@
           "name": "Health Care Privacy - Part 4",
           "tier": null,
           "prerequisites": [
-            "health_care_privacy_part_3"
+            "health_care_privacy_part_3",
+            "health_care_privacy_part_2"
           ],
           "prerequisitesExternal": [],
           "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Health_Care_Privacy_-_Part_4",
@@ -1103,7 +1117,8 @@
           "name": "Health Care Privacy - Part 5",
           "tier": null,
           "prerequisites": [
-            "health_care_privacy_part_4"
+            "health_care_privacy_part_4",
+            "health_care_privacy_part_3"
           ],
           "prerequisitesExternal": [],
           "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Health_Care_Privacy_-_Part_5",
@@ -1125,7 +1140,8 @@
           "name": "Health Care Privacy - Part 6",
           "tier": null,
           "prerequisites": [
-            "health_care_privacy_part_5"
+            "health_care_privacy_part_5",
+            "health_care_privacy_part_4"
           ],
           "prerequisitesExternal": [],
           "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Health_Care_Privacy_-_Part_6",
@@ -1157,7 +1173,9 @@
           "id": "colleagues_part_3",
           "name": "Colleagues - Part 3",
           "tier": null,
-          "prerequisites": [],
+          "prerequisites": [
+            "colleagues_part_2"
+          ],
           "prerequisitesExternal": [],
           "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Colleagues_-_Part_3",
           "kappaRequired": true
@@ -1358,7 +1376,8 @@
           "name": "Chemical - Part 3",
           "tier": null,
           "prerequisites": [
-            "chemical_part_2"
+            "chemical_part_2",
+            "chemical_part_1"
           ],
           "prerequisitesExternal": [],
           "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Chemical_-_Part_3",
@@ -1369,7 +1388,8 @@
           "name": "Chemical - Part 4",
           "tier": null,
           "prerequisites": [
-            "chemical_part_3"
+            "chemical_part_3",
+            "chemical_part_2"
           ],
           "prerequisitesExternal": [],
           "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Chemical_-_Part_4",
@@ -2042,7 +2062,8 @@
           "name": "Spa Tour - Part 3",
           "tier": null,
           "prerequisites": [
-            "spa_tour_part_2"
+            "spa_tour_part_2",
+            "spa_tour_part_1"
           ],
           "prerequisitesExternal": [],
           "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Spa_Tour_-_Part_3",
@@ -2053,7 +2074,8 @@
           "name": "Spa Tour - Part 4",
           "tier": null,
           "prerequisites": [
-            "spa_tour_part_3"
+            "spa_tour_part_3",
+            "spa_tour_part_2"
           ],
           "prerequisitesExternal": [],
           "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Spa_Tour_-_Part_4",
@@ -2064,7 +2086,8 @@
           "name": "Spa Tour - Part 5",
           "tier": null,
           "prerequisites": [
-            "spa_tour_part_4"
+            "spa_tour_part_4",
+            "spa_tour_part_3"
           ],
           "prerequisitesExternal": [],
           "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Spa_Tour_-_Part_5",
@@ -2075,7 +2098,8 @@
           "name": "Spa Tour - Part 6",
           "tier": null,
           "prerequisites": [
-            "spa_tour_part_5"
+            "spa_tour_part_5",
+            "spa_tour_part_4"
           ],
           "prerequisitesExternal": [],
           "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Spa_Tour_-_Part_6",
@@ -2086,7 +2110,8 @@
           "name": "Spa Tour - Part 7",
           "tier": null,
           "prerequisites": [
-            "spa_tour_part_6"
+            "spa_tour_part_6",
+            "spa_tour_part_5"
           ],
           "prerequisitesExternal": [],
           "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Spa_Tour_-_Part_7",
@@ -2119,7 +2144,8 @@
           "name": "Cargo X - Part 3",
           "tier": null,
           "prerequisites": [
-            "cargo_x_part_2"
+            "cargo_x_part_2",
+            "cargo_x_part_1"
           ],
           "prerequisitesExternal": [],
           "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Cargo_X_-_Part_3",
@@ -2130,7 +2156,8 @@
           "name": "Cargo X - Part 4",
           "tier": null,
           "prerequisites": [
-            "cargo_x_part_3"
+            "cargo_x_part_3",
+            "cargo_x_part_2"
           ],
           "prerequisitesExternal": [],
           "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Cargo_X_-_Part_4",
@@ -2174,7 +2201,8 @@
           "name": "Wet Job - Part 3",
           "tier": null,
           "prerequisites": [
-            "wet_job_part_2"
+            "wet_job_part_2",
+            "wet_job_part_1"
           ],
           "prerequisitesExternal": [],
           "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Wet_Job_-_Part_3",
@@ -2185,7 +2213,8 @@
           "name": "Wet Job - Part 4",
           "tier": null,
           "prerequisites": [
-            "wet_job_part_3"
+            "wet_job_part_3",
+            "wet_job_part_2"
           ],
           "prerequisitesExternal": [],
           "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Wet_Job_-_Part_4",
@@ -2196,7 +2225,8 @@
           "name": "Wet Job - Part 5",
           "tier": null,
           "prerequisites": [
-            "wet_job_part_4"
+            "wet_job_part_4",
+            "wet_job_part_3"
           ],
           "prerequisitesExternal": [],
           "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Wet_Job_-_Part_5",
@@ -2207,7 +2237,8 @@
           "name": "Wet Job - Part 6",
           "tier": null,
           "prerequisites": [
-            "wet_job_part_5"
+            "wet_job_part_5",
+            "wet_job_part_4"
           ],
           "prerequisitesExternal": [],
           "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Wet_Job_-_Part_6",
@@ -2532,7 +2563,8 @@
           "name": "Friend from Norvinsk - Part 3",
           "tier": null,
           "prerequisites": [
-            "friend_from_norvinsk_part_2"
+            "friend_from_norvinsk_part_2",
+            "friend_from_norvinsk_part_1"
           ],
           "prerequisitesExternal": [],
           "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Friend_from_Norvinsk_-_Part_3",
@@ -2543,7 +2575,8 @@
           "name": "Friend from Norvinsk - Part 4",
           "tier": null,
           "prerequisites": [
-            "friend_from_norvinsk_part_3"
+            "friend_from_norvinsk_part_3",
+            "friend_from_norvinsk_part_2"
           ],
           "prerequisitesExternal": [],
           "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Friend_from_Norvinsk_-_Part_4",
@@ -2554,7 +2587,8 @@
           "name": "Friend from Norvinsk - Part 5",
           "tier": null,
           "prerequisites": [
-            "friend_from_norvinsk_part_4"
+            "friend_from_norvinsk_part_4",
+            "friend_from_norvinsk_part_3"
           ],
           "prerequisitesExternal": [],
           "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Friend_from_Norvinsk_-_Part_5",
@@ -2631,7 +2665,8 @@
           "name": "Game Review - Part 2",
           "tier": null,
           "prerequisites": [
-            "progression_difficulties_part_2"
+            "progression_difficulties_part_2",
+            "game_review_part_1"
           ],
           "prerequisitesExternal": [],
           "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Game_Review_-_Part_2",
@@ -2642,7 +2677,8 @@
           "name": "Game Review - Part 3",
           "tier": null,
           "prerequisites": [
-            "last_spurt_pioneer"
+            "last_spurt_pioneer",
+            "game_review_part_2"
           ],
           "prerequisitesExternal": [],
           "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Game_Review_-_Part_3",
@@ -2653,7 +2689,8 @@
           "name": "Gunsmith - Part 3",
           "tier": null,
           "prerequisites": [
-            "gunsmith_part_1"
+            "gunsmith_part_1",
+            "gunsmith_part_2"
           ],
           "prerequisitesExternal": [],
           "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Gunsmith_-_Part_3",
@@ -2665,7 +2702,8 @@
           "tier": null,
           "prerequisites": [
             "gunsmith_part_2",
-            "gunsmith_part_3"
+            "gunsmith_part_3",
+            "gunsmith_part_1"
           ],
           "prerequisitesExternal": [],
           "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Gunsmith_-_Part_4",
@@ -2676,7 +2714,8 @@
           "name": "Gunsmith - Part 5",
           "tier": null,
           "prerequisites": [
-            "gunsmith_part_4"
+            "gunsmith_part_4",
+            "gunsmith_part_3"
           ],
           "prerequisitesExternal": [],
           "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Gunsmith_-_Part_5",
@@ -2832,7 +2871,8 @@
           "name": "Gunsmith - Part 6",
           "tier": null,
           "prerequisites": [
-            "gunsmith_part_5"
+            "gunsmith_part_5",
+            "gunsmith_part_4"
           ],
           "prerequisitesExternal": [],
           "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Gunsmith_-_Part_6",
@@ -2843,7 +2883,8 @@
           "name": "Farming - Part 3",
           "tier": null,
           "prerequisites": [
-            "farming_part_2"
+            "farming_part_2",
+            "farming_part_1"
           ],
           "prerequisitesExternal": [],
           "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Farming_-_Part_3",
@@ -2865,7 +2906,8 @@
           "name": "Farming - Part 4",
           "tier": null,
           "prerequisites": [
-            "farming_part_3"
+            "farming_part_3",
+            "farming_part_2"
           ],
           "prerequisitesExternal": [],
           "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Farming_-_Part_4",
@@ -2909,7 +2951,8 @@
           "name": "Signal - Part 3",
           "tier": null,
           "prerequisites": [
-            "signal_part_2"
+            "signal_part_2",
+            "signal_part_1"
           ],
           "prerequisitesExternal": [],
           "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Signal_-_Part_3",
@@ -2931,7 +2974,8 @@
           "name": "Gunsmith - Part 7",
           "tier": null,
           "prerequisites": [
-            "gunsmith_part_6"
+            "gunsmith_part_6",
+            "gunsmith_part_5"
           ],
           "prerequisitesExternal": [],
           "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Gunsmith_-_Part_7",
@@ -2942,7 +2986,8 @@
           "name": "Signal - Part 4",
           "tier": null,
           "prerequisites": [
-            "signal_part_3"
+            "signal_part_3",
+            "signal_part_2"
           ],
           "prerequisitesExternal": [],
           "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Signal_-_Part_4",
@@ -3041,7 +3086,8 @@
           "name": "Gunsmith - Part 8",
           "tier": null,
           "prerequisites": [
-            "gunsmith_part_7"
+            "gunsmith_part_7",
+            "gunsmith_part_6"
           ],
           "prerequisitesExternal": [],
           "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Gunsmith_-_Part_8",
@@ -3063,7 +3109,8 @@
           "name": "Gunsmith - Part 9",
           "tier": null,
           "prerequisites": [
-            "gunsmith_part_8"
+            "gunsmith_part_8",
+            "gunsmith_part_7"
           ],
           "prerequisitesExternal": [],
           "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Gunsmith_-_Part_9",
@@ -3096,7 +3143,8 @@
           "name": "Gunsmith - Part 10",
           "tier": null,
           "prerequisites": [
-            "gunsmith_part_9"
+            "gunsmith_part_9",
+            "gunsmith_part_8"
           ],
           "prerequisitesExternal": [],
           "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Gunsmith_-_Part_10",
@@ -3107,7 +3155,8 @@
           "name": "Gunsmith - Part 11",
           "tier": null,
           "prerequisites": [
-            "gunsmith_part_10"
+            "gunsmith_part_10",
+            "gunsmith_part_9"
           ],
           "prerequisitesExternal": [],
           "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Gunsmith_-_Part_11",
@@ -3130,7 +3179,8 @@
           "name": "Gunsmith - Part 12",
           "tier": null,
           "prerequisites": [
-            "gunsmith_part_11"
+            "gunsmith_part_11",
+            "gunsmith_part_10"
           ],
           "prerequisitesExternal": [],
           "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Gunsmith_-_Part_12",
@@ -3152,7 +3202,8 @@
           "name": "Gunsmith - Part 13",
           "tier": null,
           "prerequisites": [
-            "gunsmith_part_12"
+            "gunsmith_part_12",
+            "gunsmith_part_11"
           ],
           "prerequisitesExternal": [],
           "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Gunsmith_-_Part_13",
@@ -3197,7 +3248,8 @@
           "name": "Gunsmith - Part 14",
           "tier": null,
           "prerequisites": [
-            "gunsmith_part_13"
+            "gunsmith_part_13",
+            "gunsmith_part_12"
           ],
           "prerequisitesExternal": [],
           "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Gunsmith_-_Part_14",
@@ -3230,7 +3282,8 @@
           "name": "Gunsmith - Part 15",
           "tier": null,
           "prerequisites": [
-            "gunsmith_part_14"
+            "gunsmith_part_14",
+            "gunsmith_part_13"
           ],
           "prerequisitesExternal": [],
           "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Gunsmith_-_Part_15",
@@ -3252,7 +3305,8 @@
           "name": "Gunsmith - Part 16",
           "tier": null,
           "prerequisites": [
-            "gunsmith_part_15"
+            "gunsmith_part_15",
+            "gunsmith_part_14"
           ],
           "prerequisitesExternal": [],
           "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Gunsmith_-_Part_16",
@@ -3263,7 +3317,8 @@
           "name": "Gunsmith - Part 17",
           "tier": null,
           "prerequisites": [
-            "gunsmith_part_16"
+            "gunsmith_part_16",
+            "gunsmith_part_15"
           ],
           "prerequisitesExternal": [],
           "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Gunsmith_-_Part_17",
@@ -3274,7 +3329,8 @@
           "name": "Gunsmith - Part 18",
           "tier": null,
           "prerequisites": [
-            "gunsmith_part_17"
+            "gunsmith_part_17",
+            "gunsmith_part_16"
           ],
           "prerequisitesExternal": [],
           "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Gunsmith_-_Part_18",
@@ -3318,7 +3374,8 @@
           "name": "Assessment - Part 3",
           "tier": null,
           "prerequisites": [
-            "assessment_part_2"
+            "assessment_part_2",
+            "assessment_part_1"
           ],
           "prerequisitesExternal": [],
           "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Assessment_-_Part_3",
@@ -3503,7 +3560,8 @@
           "name": "Gunsmith - Part 19",
           "tier": null,
           "prerequisites": [
-            "gunsmith_part_18"
+            "gunsmith_part_18",
+            "gunsmith_part_17"
           ],
           "prerequisitesExternal": [],
           "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Gunsmith_-_Part_19",
@@ -3514,7 +3572,8 @@
           "name": "Gunsmith - Part 20",
           "tier": null,
           "prerequisites": [
-            "gunsmith_part_19"
+            "gunsmith_part_19",
+            "gunsmith_part_18"
           ],
           "prerequisitesExternal": [],
           "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Gunsmith_-_Part_20",
@@ -3525,7 +3584,8 @@
           "name": "Gunsmith - Part 21",
           "tier": null,
           "prerequisites": [
-            "gunsmith_part_20"
+            "gunsmith_part_20",
+            "gunsmith_part_19"
           ],
           "prerequisitesExternal": [],
           "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Gunsmith_-_Part_21",
@@ -3536,7 +3596,8 @@
           "name": "Gunsmith - Part 22",
           "tier": null,
           "prerequisites": [
-            "gunsmith_part_21"
+            "gunsmith_part_21",
+            "gunsmith_part_20"
           ],
           "prerequisitesExternal": [],
           "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Gunsmith_-_Part_22",
@@ -3547,7 +3608,8 @@
           "name": "Gunsmith - Part 23",
           "tier": null,
           "prerequisites": [
-            "gunsmith_part_22"
+            "gunsmith_part_22",
+            "gunsmith_part_21"
           ],
           "prerequisitesExternal": [],
           "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Gunsmith_-_Part_23",
@@ -3558,7 +3620,8 @@
           "name": "Gunsmith - Part 24",
           "tier": null,
           "prerequisites": [
-            "gunsmith_part_23"
+            "gunsmith_part_23",
+            "gunsmith_part_22"
           ],
           "prerequisitesExternal": [],
           "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Gunsmith_-_Part_24",
@@ -3569,7 +3632,8 @@
           "name": "Gunsmith - Part 25",
           "tier": null,
           "prerequisites": [
-            "gunsmith_part_24"
+            "gunsmith_part_24",
+            "gunsmith_part_23"
           ],
           "prerequisitesExternal": [],
           "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Gunsmith_-_Part_25",
@@ -3879,7 +3943,8 @@
           "name": "Sew it Good - Part 3",
           "tier": null,
           "prerequisites": [
-            "sew_it_good_part_2"
+            "sew_it_good_part_2",
+            "sew_it_good_part_1"
           ],
           "prerequisitesExternal": [],
           "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Sew_it_Good_-_Part_3",
@@ -3890,7 +3955,8 @@
           "name": "Sew it Good - Part 4",
           "tier": null,
           "prerequisites": [
-            "sew_it_good_part_3"
+            "sew_it_good_part_3",
+            "sew_it_good_part_2"
           ],
           "prerequisitesExternal": [],
           "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Sew_it_Good_-_Part_4",
@@ -4015,7 +4081,8 @@
           "name": "The Blood of War - Part 3",
           "tier": null,
           "prerequisites": [
-            "the_blood_of_war_part_2"
+            "the_blood_of_war_part_2",
+            "the_blood_of_war_part_1"
           ],
           "prerequisitesExternal": [],
           "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/The_Blood_of_War_-_Part_3",
@@ -4060,7 +4127,8 @@
           "name": "Drip-Out - Part 2",
           "tier": null,
           "prerequisites": [
-            "dandies"
+            "dandies",
+            "drip_out_part_1_1"
           ],
           "prerequisitesExternal": [],
           "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Drip-Out_-_Part_2",
@@ -4071,7 +4139,8 @@
           "name": "Drip-Out - Part 2",
           "tier": null,
           "prerequisites": [
-            "dandies"
+            "dandies",
+            "drip_out_part_1_1"
           ],
           "prerequisitesExternal": [],
           "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Drip-Out_-_Part_2",
@@ -4171,7 +4240,8 @@
           "name": "Textile - Part 2",
           "tier": null,
           "prerequisites": [
-            "textile_part_1"
+            "textile_part_1",
+            "textile_part_1_1"
           ],
           "prerequisitesExternal": [],
           "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Textile_-_Part_2",
@@ -4278,7 +4348,8 @@
           "name": "The Tarkov Shooter - Part 3",
           "tier": null,
           "prerequisites": [
-            "the_tarkov_shooter_part_2"
+            "the_tarkov_shooter_part_2",
+            "the_tarkov_shooter_part_1"
           ],
           "prerequisitesExternal": [],
           "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/The_Tarkov_Shooter_-_Part_3",
@@ -4289,7 +4360,8 @@
           "name": "The Tarkov Shooter - Part 4",
           "tier": null,
           "prerequisites": [
-            "the_tarkov_shooter_part_3"
+            "the_tarkov_shooter_part_3",
+            "the_tarkov_shooter_part_2"
           ],
           "prerequisitesExternal": [],
           "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/The_Tarkov_Shooter_-_Part_4",
@@ -4300,7 +4372,8 @@
           "name": "The Tarkov Shooter - Part 5",
           "tier": null,
           "prerequisites": [
-            "the_tarkov_shooter_part_4"
+            "the_tarkov_shooter_part_4",
+            "the_tarkov_shooter_part_3"
           ],
           "prerequisitesExternal": [],
           "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/The_Tarkov_Shooter_-_Part_5",
@@ -4311,7 +4384,8 @@
           "name": "The Tarkov Shooter - Part 6",
           "tier": null,
           "prerequisites": [
-            "the_tarkov_shooter_part_5"
+            "the_tarkov_shooter_part_5",
+            "the_tarkov_shooter_part_4"
           ],
           "prerequisitesExternal": [],
           "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/The_Tarkov_Shooter_-_Part_6",
@@ -4322,7 +4396,8 @@
           "name": "The Tarkov Shooter - Part 7",
           "tier": null,
           "prerequisites": [
-            "the_tarkov_shooter_part_6"
+            "the_tarkov_shooter_part_6",
+            "the_tarkov_shooter_part_5"
           ],
           "prerequisitesExternal": [],
           "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/The_Tarkov_Shooter_-_Part_7",
@@ -4333,7 +4408,8 @@
           "name": "The Tarkov Shooter - Part 8",
           "tier": null,
           "prerequisites": [
-            "the_tarkov_shooter_part_7"
+            "the_tarkov_shooter_part_7",
+            "the_tarkov_shooter_part_6"
           ],
           "prerequisitesExternal": [],
           "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/The_Tarkov_Shooter_-_Part_8",
@@ -4706,7 +4782,8 @@
           "tier": null,
           "prerequisites": [],
           "prerequisitesExternal": [
-            "broadcast_part_2"
+            "broadcast_part_2",
+            "broadcast_part_1"
           ],
           "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Broadcast_-_Part_3",
           "kappaRequired": false
@@ -4797,7 +4874,9 @@
           "prerequisites": [
             "broadcast_part_3"
           ],
-          "prerequisitesExternal": [],
+          "prerequisitesExternal": [
+            "broadcast_part_2"
+          ],
           "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Broadcast_-_Part_4",
           "kappaRequired": false
         },
@@ -4806,7 +4885,8 @@
           "name": "Broadcast - Part 5",
           "tier": null,
           "prerequisites": [
-            "broadcast_part_4"
+            "broadcast_part_4",
+            "broadcast_part_3"
           ],
           "prerequisitesExternal": [],
           "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Broadcast_-_Part_5",

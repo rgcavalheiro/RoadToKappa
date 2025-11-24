@@ -335,7 +335,7 @@ h1 {
     align-items: center;
     gap: 6px;
     color: var(--text-color);
-    font-size: 0.85em;
+    font-size: 0.75em;
     cursor: pointer;
 }
 
@@ -477,6 +477,17 @@ h1 {
 
 .quest-list-item-status.locked {
     background: var(--danger-color);
+    color: white;
+}
+
+.quest-list-item.blocked-exclusive {
+    opacity: 0.5;
+    border-color: var(--warning-color);
+    background: rgba(243, 156, 18, 0.1);
+}
+
+.quest-list-item-status.blocked-exclusive {
+    background: var(--warning-color);
     color: white;
 }
 

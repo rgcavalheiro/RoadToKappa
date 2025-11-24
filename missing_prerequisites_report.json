@@ -1,0 +1,966 @@
+{
+  "suspicious_quests": [
+    {
+      "npc": "Prapor",
+      "quest_id": "shooting_cans_1",
+      "quest_name": "Shooting Cans",
+      "reason": "Referenciada por outras quests mas sem pre-requisitos",
+      "referenced_by": [
+        [
+          "Prapor",
+          "Debut"
+        ],
+        [
+          "Prapor",
+          "The Good Times - Part 1"
+        ]
+      ]
+    },
+    {
+      "npc": "Prapor",
+      "quest_id": "big_customer_1",
+      "quest_name": "Big Customer",
+      "reason": "Referenciada por outras quests mas sem pre-requisitos",
+      "referenced_by": [
+        [
+          "Prapor",
+          "No Offence"
+        ]
+      ]
+    },
+    {
+      "npc": "Prapor",
+      "quest_id": "grenadier_1",
+      "quest_name": "Grenadier",
+      "reason": "Referenciada por outras quests mas sem pre-requisitos",
+      "referenced_by": [
+        [
+          "Prapor",
+          "The Art of Explosion"
+        ]
+      ]
+    },
+    {
+      "npc": "Prapor",
+      "quest_id": "forge_a_friendship_1",
+      "quest_name": "Forge a Friendship",
+      "reason": "Referenciada por outras quests mas sem pre-requisitos",
+      "referenced_by": [
+        [
+          "Prapor",
+          "Half-Empty"
+        ]
+      ]
+    },
+    {
+      "npc": "Prapor",
+      "quest_id": "test_drive_part_1_1",
+      "quest_name": "Test Drive - Part 1",
+      "reason": "Quest com \"Part\" mas sem pre-requisitos",
+      "referenced_by": [
+        [
+          "Prapor",
+          "Test Drive - Part 2"
+        ]
+      ]
+    },
+    {
+      "npc": "Therapist",
+      "quest_id": "first_in_line",
+      "quest_name": "First in Line",
+      "reason": "Referenciada por outras quests mas sem pre-requisitos",
+      "referenced_by": [
+        [
+          "Therapist",
+          "Shortage"
+        ]
+      ]
+    },
+    {
+      "npc": "Therapist",
+      "quest_id": "out_of_curiosity",
+      "quest_name": "Out of Curiosity",
+      "reason": "Referenciada por outras quests mas sem pre-requisitos",
+      "referenced_by": [
+        [
+          "Therapist",
+          "Trust Regain"
+        ]
+      ]
+    },
+    {
+      "npc": "Therapist",
+      "quest_id": "thirsty_echo",
+      "quest_name": "Thirsty - Echo",
+      "reason": "Referenciada por outras quests mas sem pre-requisitos",
+      "referenced_by": [
+        [
+          "Therapist",
+          "Thirsty - Secrets"
+        ]
+      ]
+    },
+    {
+      "npc": "Therapist",
+      "quest_id": "the_tarkov_butcher",
+      "quest_name": "The Tarkov Butcher",
+      "reason": "Referenciada por outras quests mas sem pre-requisitos",
+      "referenced_by": [
+        [
+          "Lightkeeper",
+          "Keeper's Word"
+        ]
+      ]
+    },
+    {
+      "npc": "Therapist",
+      "quest_id": "this_tape_sucks",
+      "quest_name": "This Tape Sucks",
+      "reason": "Referenciada por outras quests mas sem pre-requisitos",
+      "referenced_by": [
+        [
+          "Lightkeeper",
+          "Keeper's Word"
+        ]
+      ]
+    },
+    {
+      "npc": "Therapist",
+      "quest_id": "colleagues_part_3",
+      "quest_name": "Colleagues - Part 3",
+      "reason": "Quest com \"Part\" mas sem pre-requisitos",
+      "referenced_by": [
+        [
+          "Peacekeeper",
+          "TerraGroup Employee"
+        ]
+      ]
+    },
+    {
+      "npc": "Skier",
+      "quest_id": "burning_rubber",
+      "quest_name": "Burning Rubber",
+      "reason": "Referenciada por outras quests mas sem pre-requisitos",
+      "referenced_by": [
+        [
+          "Skier",
+          "Supplier"
+        ],
+        [
+          "Skier",
+          "Easy Money - Part 1 [PVP ZONE]"
+        ]
+      ]
+    },
+    {
+      "npc": "Skier",
+      "quest_id": "exit_here",
+      "quest_name": "Exit Here",
+      "reason": "Referenciada por outras quests mas sem pre-requisitos",
+      "referenced_by": [
+        [
+          "Skier",
+          "The Walls Have Eyes"
+        ]
+      ]
+    },
+    {
+      "npc": "Skier",
+      "quest_id": "thirsty_breadwinner",
+      "quest_name": "Thirsty - Breadwinner",
+      "reason": "Referenciada por outras quests mas sem pre-requisitos",
+      "referenced_by": [
+        [
+          "Skier",
+          "Thirsty - Delivery"
+        ]
+      ]
+    },
+    {
+      "npc": "Skier",
+      "quest_id": "indisputable_authority",
+      "quest_name": "Indisputable Authority",
+      "reason": "Referenciada por outras quests mas sem pre-requisitos",
+      "referenced_by": [
+        [
+          "Lightkeeper",
+          "Keeper's Word"
+        ]
+      ]
+    },
+    {
+      "npc": "Skier",
+      "quest_id": "the_higher_they_fly",
+      "quest_name": "The Higher They Fly",
+      "reason": "Referenciada por outras quests mas sem pre-requisitos",
+      "referenced_by": [
+        [
+          "Skier",
+          "Route Deviation"
+        ]
+      ]
+    },
+    {
+      "npc": "Skier",
+      "quest_id": "proper_comeback",
+      "quest_name": "Proper Comeback",
+      "reason": "Referenciada por outras quests mas sem pre-requisitos",
+      "referenced_by": [
+        [
+          "Ragman",
+          "Key to the City"
+        ]
+      ]
+    },
+    {
+      "npc": "Skier",
+      "quest_id": "fair_price_part_1",
+      "quest_name": "Fair Price - Part 1",
+      "reason": "Quest com \"Part\" mas sem pre-requisitos",
+      "referenced_by": [
+        [
+          "Skier",
+          "Fair Price - Part 2"
+        ]
+      ]
+    },
+    {
+      "npc": "Skier",
+      "quest_id": "profitable_venture",
+      "quest_name": "Profitable Venture",
+      "reason": "Referenciada por outras quests mas sem pre-requisitos",
+      "referenced_by": [
+        [
+          "Skier",
+          "Safety Guarantee"
+        ]
+      ]
+    },
+    {
+      "npc": "Peacekeeper",
+      "quest_id": "confidential_info",
+      "quest_name": "Confidential Info",
+      "reason": "Referenciada por outras quests mas sem pre-requisitos",
+      "referenced_by": [
+        [
+          "Lightkeeper",
+          "Keeper's Word"
+        ]
+      ]
+    },
+    {
+      "npc": "Mechanic",
+      "quest_id": "saving_the_mole",
+      "quest_name": "Saving the Mole",
+      "reason": "Referenciada por outras quests mas sem pre-requisitos",
+      "referenced_by": [
+        [
+          "Mechanic",
+          "Gunsmith - Part 1"
+        ],
+        [
+          "Mechanic",
+          "Shady Contractor"
+        ],
+        [
+          "Mechanic",
+          "A Helping Hand"
+        ],
+        [
+          "Mechanic",
+          "Hobby Club"
+        ]
+      ]
+    },
+    {
+      "npc": "Ragman",
+      "quest_id": "only_business",
+      "quest_name": "Only Business",
+      "reason": "Referenciada por outras quests mas sem pre-requisitos",
+      "referenced_by": [
+        [
+          "Ragman",
+          "Make ULTRA Great Again"
+        ],
+        [
+          "Ragman",
+          "Big Sale"
+        ],
+        [
+          "Ragman",
+          "Audit"
+        ],
+        [
+          "Ragman",
+          "The Invisible Hand"
+        ]
+      ]
+    }
+  ],
+  "missing_prerequisites": [
+    {
+      "npc": "Prapor",
+      "quest_id": "the_good_times_part_2_1",
+      "quest_name": "The Good Times - Part 2",
+      "issue": "Pode precisar de \"The Good Times - Part 1\" (the_good_times_part_1_1) como pre-requisito",
+      "suggested_prerequisite": "the_good_times_part_1_1",
+      "suggested_npc": "Prapor"
+    },
+    {
+      "npc": "Mechanic",
+      "quest_id": "gunsmith_part_2",
+      "quest_name": "Gunsmith - Part 2",
+      "issue": "Pode precisar de \"Gunsmith - Part 10\" (gunsmith_part_10) como pre-requisito",
+      "suggested_prerequisite": "gunsmith_part_10",
+      "suggested_npc": "Mechanic"
+    },
+    {
+      "npc": "Mechanic",
+      "quest_id": "gunsmith_part_2",
+      "quest_name": "Gunsmith - Part 2",
+      "issue": "Pode precisar de \"Gunsmith - Part 11\" (gunsmith_part_11) como pre-requisito",
+      "suggested_prerequisite": "gunsmith_part_11",
+      "suggested_npc": "Mechanic"
+    },
+    {
+      "npc": "Mechanic",
+      "quest_id": "gunsmith_part_2",
+      "quest_name": "Gunsmith - Part 2",
+      "issue": "Pode precisar de \"Gunsmith - Part 12\" (gunsmith_part_12) como pre-requisito",
+      "suggested_prerequisite": "gunsmith_part_12",
+      "suggested_npc": "Mechanic"
+    },
+    {
+      "npc": "Mechanic",
+      "quest_id": "gunsmith_part_2",
+      "quest_name": "Gunsmith - Part 2",
+      "issue": "Pode precisar de \"Gunsmith - Part 13\" (gunsmith_part_13) como pre-requisito",
+      "suggested_prerequisite": "gunsmith_part_13",
+      "suggested_npc": "Mechanic"
+    },
+    {
+      "npc": "Mechanic",
+      "quest_id": "gunsmith_part_2",
+      "quest_name": "Gunsmith - Part 2",
+      "issue": "Pode precisar de \"Gunsmith - Part 14\" (gunsmith_part_14) como pre-requisito",
+      "suggested_prerequisite": "gunsmith_part_14",
+      "suggested_npc": "Mechanic"
+    },
+    {
+      "npc": "Mechanic",
+      "quest_id": "gunsmith_part_2",
+      "quest_name": "Gunsmith - Part 2",
+      "issue": "Pode precisar de \"Gunsmith - Part 15\" (gunsmith_part_15) como pre-requisito",
+      "suggested_prerequisite": "gunsmith_part_15",
+      "suggested_npc": "Mechanic"
+    },
+    {
+      "npc": "Mechanic",
+      "quest_id": "gunsmith_part_2",
+      "quest_name": "Gunsmith - Part 2",
+      "issue": "Pode precisar de \"Gunsmith - Part 16\" (gunsmith_part_16) como pre-requisito",
+      "suggested_prerequisite": "gunsmith_part_16",
+      "suggested_npc": "Mechanic"
+    },
+    {
+      "npc": "Mechanic",
+      "quest_id": "gunsmith_part_2",
+      "quest_name": "Gunsmith - Part 2",
+      "issue": "Pode precisar de \"Gunsmith - Part 17\" (gunsmith_part_17) como pre-requisito",
+      "suggested_prerequisite": "gunsmith_part_17",
+      "suggested_npc": "Mechanic"
+    },
+    {
+      "npc": "Mechanic",
+      "quest_id": "gunsmith_part_2",
+      "quest_name": "Gunsmith - Part 2",
+      "issue": "Pode precisar de \"Gunsmith - Part 18\" (gunsmith_part_18) como pre-requisito",
+      "suggested_prerequisite": "gunsmith_part_18",
+      "suggested_npc": "Mechanic"
+    },
+    {
+      "npc": "Mechanic",
+      "quest_id": "gunsmith_part_2",
+      "quest_name": "Gunsmith - Part 2",
+      "issue": "Pode precisar de \"Gunsmith - Part 19\" (gunsmith_part_19) como pre-requisito",
+      "suggested_prerequisite": "gunsmith_part_19",
+      "suggested_npc": "Mechanic"
+    },
+    {
+      "npc": "Mechanic",
+      "quest_id": "game_review_part_2",
+      "quest_name": "Game Review - Part 2",
+      "issue": "Pode precisar de \"Game Review - Part 1\" (game_review_part_1) como pre-requisito",
+      "suggested_prerequisite": "game_review_part_1",
+      "suggested_npc": "Mechanic"
+    },
+    {
+      "npc": "Mechanic",
+      "quest_id": "gunsmith_part_20",
+      "quest_name": "Gunsmith - Part 20",
+      "issue": "Pode precisar de \"Gunsmith - Part 1\" (gunsmith_part_1) como pre-requisito",
+      "suggested_prerequisite": "gunsmith_part_1",
+      "suggested_npc": "Mechanic"
+    },
+    {
+      "npc": "Mechanic",
+      "quest_id": "gunsmith_part_20",
+      "quest_name": "Gunsmith - Part 20",
+      "issue": "Pode precisar de \"Gunsmith - Part 10\" (gunsmith_part_10) como pre-requisito",
+      "suggested_prerequisite": "gunsmith_part_10",
+      "suggested_npc": "Mechanic"
+    },
+    {
+      "npc": "Mechanic",
+      "quest_id": "gunsmith_part_20",
+      "quest_name": "Gunsmith - Part 20",
+      "issue": "Pode precisar de \"Gunsmith - Part 11\" (gunsmith_part_11) como pre-requisito",
+      "suggested_prerequisite": "gunsmith_part_11",
+      "suggested_npc": "Mechanic"
+    },
+    {
+      "npc": "Mechanic",
+      "quest_id": "gunsmith_part_20",
+      "quest_name": "Gunsmith - Part 20",
+      "issue": "Pode precisar de \"Gunsmith - Part 12\" (gunsmith_part_12) como pre-requisito",
+      "suggested_prerequisite": "gunsmith_part_12",
+      "suggested_npc": "Mechanic"
+    },
+    {
+      "npc": "Mechanic",
+      "quest_id": "gunsmith_part_20",
+      "quest_name": "Gunsmith - Part 20",
+      "issue": "Pode precisar de \"Gunsmith - Part 13\" (gunsmith_part_13) como pre-requisito",
+      "suggested_prerequisite": "gunsmith_part_13",
+      "suggested_npc": "Mechanic"
+    },
+    {
+      "npc": "Mechanic",
+      "quest_id": "gunsmith_part_20",
+      "quest_name": "Gunsmith - Part 20",
+      "issue": "Pode precisar de \"Gunsmith - Part 14\" (gunsmith_part_14) como pre-requisito",
+      "suggested_prerequisite": "gunsmith_part_14",
+      "suggested_npc": "Mechanic"
+    },
+    {
+      "npc": "Mechanic",
+      "quest_id": "gunsmith_part_20",
+      "quest_name": "Gunsmith - Part 20",
+      "issue": "Pode precisar de \"Gunsmith - Part 15\" (gunsmith_part_15) como pre-requisito",
+      "suggested_prerequisite": "gunsmith_part_15",
+      "suggested_npc": "Mechanic"
+    },
+    {
+      "npc": "Mechanic",
+      "quest_id": "gunsmith_part_20",
+      "quest_name": "Gunsmith - Part 20",
+      "issue": "Pode precisar de \"Gunsmith - Part 16\" (gunsmith_part_16) como pre-requisito",
+      "suggested_prerequisite": "gunsmith_part_16",
+      "suggested_npc": "Mechanic"
+    },
+    {
+      "npc": "Mechanic",
+      "quest_id": "gunsmith_part_20",
+      "quest_name": "Gunsmith - Part 20",
+      "issue": "Pode precisar de \"Gunsmith - Part 17\" (gunsmith_part_17) como pre-requisito",
+      "suggested_prerequisite": "gunsmith_part_17",
+      "suggested_npc": "Mechanic"
+    },
+    {
+      "npc": "Mechanic",
+      "quest_id": "gunsmith_part_20",
+      "quest_name": "Gunsmith - Part 20",
+      "issue": "Pode precisar de \"Gunsmith - Part 18\" (gunsmith_part_18) como pre-requisito",
+      "suggested_prerequisite": "gunsmith_part_18",
+      "suggested_npc": "Mechanic"
+    },
+    {
+      "npc": "Mechanic",
+      "quest_id": "gunsmith_part_21",
+      "quest_name": "Gunsmith - Part 21",
+      "issue": "Pode precisar de \"Gunsmith - Part 1\" (gunsmith_part_1) como pre-requisito",
+      "suggested_prerequisite": "gunsmith_part_1",
+      "suggested_npc": "Mechanic"
+    },
+    {
+      "npc": "Mechanic",
+      "quest_id": "gunsmith_part_21",
+      "quest_name": "Gunsmith - Part 21",
+      "issue": "Pode precisar de \"Gunsmith - Part 10\" (gunsmith_part_10) como pre-requisito",
+      "suggested_prerequisite": "gunsmith_part_10",
+      "suggested_npc": "Mechanic"
+    },
+    {
+      "npc": "Mechanic",
+      "quest_id": "gunsmith_part_21",
+      "quest_name": "Gunsmith - Part 21",
+      "issue": "Pode precisar de \"Gunsmith - Part 11\" (gunsmith_part_11) como pre-requisito",
+      "suggested_prerequisite": "gunsmith_part_11",
+      "suggested_npc": "Mechanic"
+    },
+    {
+      "npc": "Mechanic",
+      "quest_id": "gunsmith_part_21",
+      "quest_name": "Gunsmith - Part 21",
+      "issue": "Pode precisar de \"Gunsmith - Part 12\" (gunsmith_part_12) como pre-requisito",
+      "suggested_prerequisite": "gunsmith_part_12",
+      "suggested_npc": "Mechanic"
+    },
+    {
+      "npc": "Mechanic",
+      "quest_id": "gunsmith_part_21",
+      "quest_name": "Gunsmith - Part 21",
+      "issue": "Pode precisar de \"Gunsmith - Part 13\" (gunsmith_part_13) como pre-requisito",
+      "suggested_prerequisite": "gunsmith_part_13",
+      "suggested_npc": "Mechanic"
+    },
+    {
+      "npc": "Mechanic",
+      "quest_id": "gunsmith_part_21",
+      "quest_name": "Gunsmith - Part 21",
+      "issue": "Pode precisar de \"Gunsmith - Part 14\" (gunsmith_part_14) como pre-requisito",
+      "suggested_prerequisite": "gunsmith_part_14",
+      "suggested_npc": "Mechanic"
+    },
+    {
+      "npc": "Mechanic",
+      "quest_id": "gunsmith_part_21",
+      "quest_name": "Gunsmith - Part 21",
+      "issue": "Pode precisar de \"Gunsmith - Part 15\" (gunsmith_part_15) como pre-requisito",
+      "suggested_prerequisite": "gunsmith_part_15",
+      "suggested_npc": "Mechanic"
+    },
+    {
+      "npc": "Mechanic",
+      "quest_id": "gunsmith_part_21",
+      "quest_name": "Gunsmith - Part 21",
+      "issue": "Pode precisar de \"Gunsmith - Part 16\" (gunsmith_part_16) como pre-requisito",
+      "suggested_prerequisite": "gunsmith_part_16",
+      "suggested_npc": "Mechanic"
+    },
+    {
+      "npc": "Mechanic",
+      "quest_id": "gunsmith_part_21",
+      "quest_name": "Gunsmith - Part 21",
+      "issue": "Pode precisar de \"Gunsmith - Part 17\" (gunsmith_part_17) como pre-requisito",
+      "suggested_prerequisite": "gunsmith_part_17",
+      "suggested_npc": "Mechanic"
+    },
+    {
+      "npc": "Mechanic",
+      "quest_id": "gunsmith_part_21",
+      "quest_name": "Gunsmith - Part 21",
+      "issue": "Pode precisar de \"Gunsmith - Part 18\" (gunsmith_part_18) como pre-requisito",
+      "suggested_prerequisite": "gunsmith_part_18",
+      "suggested_npc": "Mechanic"
+    },
+    {
+      "npc": "Mechanic",
+      "quest_id": "gunsmith_part_21",
+      "quest_name": "Gunsmith - Part 21",
+      "issue": "Pode precisar de \"Gunsmith - Part 19\" (gunsmith_part_19) como pre-requisito",
+      "suggested_prerequisite": "gunsmith_part_19",
+      "suggested_npc": "Mechanic"
+    },
+    {
+      "npc": "Mechanic",
+      "quest_id": "gunsmith_part_22",
+      "quest_name": "Gunsmith - Part 22",
+      "issue": "Pode precisar de \"Gunsmith - Part 1\" (gunsmith_part_1) como pre-requisito",
+      "suggested_prerequisite": "gunsmith_part_1",
+      "suggested_npc": "Mechanic"
+    },
+    {
+      "npc": "Mechanic",
+      "quest_id": "gunsmith_part_22",
+      "quest_name": "Gunsmith - Part 22",
+      "issue": "Pode precisar de \"Gunsmith - Part 10\" (gunsmith_part_10) como pre-requisito",
+      "suggested_prerequisite": "gunsmith_part_10",
+      "suggested_npc": "Mechanic"
+    },
+    {
+      "npc": "Mechanic",
+      "quest_id": "gunsmith_part_22",
+      "quest_name": "Gunsmith - Part 22",
+      "issue": "Pode precisar de \"Gunsmith - Part 11\" (gunsmith_part_11) como pre-requisito",
+      "suggested_prerequisite": "gunsmith_part_11",
+      "suggested_npc": "Mechanic"
+    },
+    {
+      "npc": "Mechanic",
+      "quest_id": "gunsmith_part_22",
+      "quest_name": "Gunsmith - Part 22",
+      "issue": "Pode precisar de \"Gunsmith - Part 12\" (gunsmith_part_12) como pre-requisito",
+      "suggested_prerequisite": "gunsmith_part_12",
+      "suggested_npc": "Mechanic"
+    },
+    {
+      "npc": "Mechanic",
+      "quest_id": "gunsmith_part_22",
+      "quest_name": "Gunsmith - Part 22",
+      "issue": "Pode precisar de \"Gunsmith - Part 13\" (gunsmith_part_13) como pre-requisito",
+      "suggested_prerequisite": "gunsmith_part_13",
+      "suggested_npc": "Mechanic"
+    },
+    {
+      "npc": "Mechanic",
+      "quest_id": "gunsmith_part_22",
+      "quest_name": "Gunsmith - Part 22",
+      "issue": "Pode precisar de \"Gunsmith - Part 14\" (gunsmith_part_14) como pre-requisito",
+      "suggested_prerequisite": "gunsmith_part_14",
+      "suggested_npc": "Mechanic"
+    },
+    {
+      "npc": "Mechanic",
+      "quest_id": "gunsmith_part_22",
+      "quest_name": "Gunsmith - Part 22",
+      "issue": "Pode precisar de \"Gunsmith - Part 15\" (gunsmith_part_15) como pre-requisito",
+      "suggested_prerequisite": "gunsmith_part_15",
+      "suggested_npc": "Mechanic"
+    },
+    {
+      "npc": "Mechanic",
+      "quest_id": "gunsmith_part_22",
+      "quest_name": "Gunsmith - Part 22",
+      "issue": "Pode precisar de \"Gunsmith - Part 16\" (gunsmith_part_16) como pre-requisito",
+      "suggested_prerequisite": "gunsmith_part_16",
+      "suggested_npc": "Mechanic"
+    },
+    {
+      "npc": "Mechanic",
+      "quest_id": "gunsmith_part_22",
+      "quest_name": "Gunsmith - Part 22",
+      "issue": "Pode precisar de \"Gunsmith - Part 17\" (gunsmith_part_17) como pre-requisito",
+      "suggested_prerequisite": "gunsmith_part_17",
+      "suggested_npc": "Mechanic"
+    },
+    {
+      "npc": "Mechanic",
+      "quest_id": "gunsmith_part_22",
+      "quest_name": "Gunsmith - Part 22",
+      "issue": "Pode precisar de \"Gunsmith - Part 18\" (gunsmith_part_18) como pre-requisito",
+      "suggested_prerequisite": "gunsmith_part_18",
+      "suggested_npc": "Mechanic"
+    },
+    {
+      "npc": "Mechanic",
+      "quest_id": "gunsmith_part_22",
+      "quest_name": "Gunsmith - Part 22",
+      "issue": "Pode precisar de \"Gunsmith - Part 19\" (gunsmith_part_19) como pre-requisito",
+      "suggested_prerequisite": "gunsmith_part_19",
+      "suggested_npc": "Mechanic"
+    },
+    {
+      "npc": "Mechanic",
+      "quest_id": "gunsmith_part_23",
+      "quest_name": "Gunsmith - Part 23",
+      "issue": "Pode precisar de \"Gunsmith - Part 1\" (gunsmith_part_1) como pre-requisito",
+      "suggested_prerequisite": "gunsmith_part_1",
+      "suggested_npc": "Mechanic"
+    },
+    {
+      "npc": "Mechanic",
+      "quest_id": "gunsmith_part_23",
+      "quest_name": "Gunsmith - Part 23",
+      "issue": "Pode precisar de \"Gunsmith - Part 10\" (gunsmith_part_10) como pre-requisito",
+      "suggested_prerequisite": "gunsmith_part_10",
+      "suggested_npc": "Mechanic"
+    },
+    {
+      "npc": "Mechanic",
+      "quest_id": "gunsmith_part_23",
+      "quest_name": "Gunsmith - Part 23",
+      "issue": "Pode precisar de \"Gunsmith - Part 11\" (gunsmith_part_11) como pre-requisito",
+      "suggested_prerequisite": "gunsmith_part_11",
+      "suggested_npc": "Mechanic"
+    },
+    {
+      "npc": "Mechanic",
+      "quest_id": "gunsmith_part_23",
+      "quest_name": "Gunsmith - Part 23",
+      "issue": "Pode precisar de \"Gunsmith - Part 12\" (gunsmith_part_12) como pre-requisito",
+      "suggested_prerequisite": "gunsmith_part_12",
+      "suggested_npc": "Mechanic"
+    },
+    {
+      "npc": "Mechanic",
+      "quest_id": "gunsmith_part_23",
+      "quest_name": "Gunsmith - Part 23",
+      "issue": "Pode precisar de \"Gunsmith - Part 13\" (gunsmith_part_13) como pre-requisito",
+      "suggested_prerequisite": "gunsmith_part_13",
+      "suggested_npc": "Mechanic"
+    },
+    {
+      "npc": "Mechanic",
+      "quest_id": "gunsmith_part_23",
+      "quest_name": "Gunsmith - Part 23",
+      "issue": "Pode precisar de \"Gunsmith - Part 14\" (gunsmith_part_14) como pre-requisito",
+      "suggested_prerequisite": "gunsmith_part_14",
+      "suggested_npc": "Mechanic"
+    },
+    {
+      "npc": "Mechanic",
+      "quest_id": "gunsmith_part_23",
+      "quest_name": "Gunsmith - Part 23",
+      "issue": "Pode precisar de \"Gunsmith - Part 15\" (gunsmith_part_15) como pre-requisito",
+      "suggested_prerequisite": "gunsmith_part_15",
+      "suggested_npc": "Mechanic"
+    },
+    {
+      "npc": "Mechanic",
+      "quest_id": "gunsmith_part_23",
+      "quest_name": "Gunsmith - Part 23",
+      "issue": "Pode precisar de \"Gunsmith - Part 16\" (gunsmith_part_16) como pre-requisito",
+      "suggested_prerequisite": "gunsmith_part_16",
+      "suggested_npc": "Mechanic"
+    },
+    {
+      "npc": "Mechanic",
+      "quest_id": "gunsmith_part_23",
+      "quest_name": "Gunsmith - Part 23",
+      "issue": "Pode precisar de \"Gunsmith - Part 17\" (gunsmith_part_17) como pre-requisito",
+      "suggested_prerequisite": "gunsmith_part_17",
+      "suggested_npc": "Mechanic"
+    },
+    {
+      "npc": "Mechanic",
+      "quest_id": "gunsmith_part_23",
+      "quest_name": "Gunsmith - Part 23",
+      "issue": "Pode precisar de \"Gunsmith - Part 18\" (gunsmith_part_18) como pre-requisito",
+      "suggested_prerequisite": "gunsmith_part_18",
+      "suggested_npc": "Mechanic"
+    },
+    {
+      "npc": "Mechanic",
+      "quest_id": "gunsmith_part_23",
+      "quest_name": "Gunsmith - Part 23",
+      "issue": "Pode precisar de \"Gunsmith - Part 19\" (gunsmith_part_19) como pre-requisito",
+      "suggested_prerequisite": "gunsmith_part_19",
+      "suggested_npc": "Mechanic"
+    },
+    {
+      "npc": "Mechanic",
+      "quest_id": "gunsmith_part_24",
+      "quest_name": "Gunsmith - Part 24",
+      "issue": "Pode precisar de \"Gunsmith - Part 1\" (gunsmith_part_1) como pre-requisito",
+      "suggested_prerequisite": "gunsmith_part_1",
+      "suggested_npc": "Mechanic"
+    },
+    {
+      "npc": "Mechanic",
+      "quest_id": "gunsmith_part_24",
+      "quest_name": "Gunsmith - Part 24",
+      "issue": "Pode precisar de \"Gunsmith - Part 10\" (gunsmith_part_10) como pre-requisito",
+      "suggested_prerequisite": "gunsmith_part_10",
+      "suggested_npc": "Mechanic"
+    },
+    {
+      "npc": "Mechanic",
+      "quest_id": "gunsmith_part_24",
+      "quest_name": "Gunsmith - Part 24",
+      "issue": "Pode precisar de \"Gunsmith - Part 11\" (gunsmith_part_11) como pre-requisito",
+      "suggested_prerequisite": "gunsmith_part_11",
+      "suggested_npc": "Mechanic"
+    },
+    {
+      "npc": "Mechanic",
+      "quest_id": "gunsmith_part_24",
+      "quest_name": "Gunsmith - Part 24",
+      "issue": "Pode precisar de \"Gunsmith - Part 12\" (gunsmith_part_12) como pre-requisito",
+      "suggested_prerequisite": "gunsmith_part_12",
+      "suggested_npc": "Mechanic"
+    },
+    {
+      "npc": "Mechanic",
+      "quest_id": "gunsmith_part_24",
+      "quest_name": "Gunsmith - Part 24",
+      "issue": "Pode precisar de \"Gunsmith - Part 13\" (gunsmith_part_13) como pre-requisito",
+      "suggested_prerequisite": "gunsmith_part_13",
+      "suggested_npc": "Mechanic"
+    },
+    {
+      "npc": "Mechanic",
+      "quest_id": "gunsmith_part_24",
+      "quest_name": "Gunsmith - Part 24",
+      "issue": "Pode precisar de \"Gunsmith - Part 14\" (gunsmith_part_14) como pre-requisito",
+      "suggested_prerequisite": "gunsmith_part_14",
+      "suggested_npc": "Mechanic"
+    },
+    {
+      "npc": "Mechanic",
+      "quest_id": "gunsmith_part_24",
+      "quest_name": "Gunsmith - Part 24",
+      "issue": "Pode precisar de \"Gunsmith - Part 15\" (gunsmith_part_15) como pre-requisito",
+      "suggested_prerequisite": "gunsmith_part_15",
+      "suggested_npc": "Mechanic"
+    },
+    {
+      "npc": "Mechanic",
+      "quest_id": "gunsmith_part_24",
+      "quest_name": "Gunsmith - Part 24",
+      "issue": "Pode precisar de \"Gunsmith - Part 16\" (gunsmith_part_16) como pre-requisito",
+      "suggested_prerequisite": "gunsmith_part_16",
+      "suggested_npc": "Mechanic"
+    },
+    {
+      "npc": "Mechanic",
+      "quest_id": "gunsmith_part_24",
+      "quest_name": "Gunsmith - Part 24",
+      "issue": "Pode precisar de \"Gunsmith - Part 17\" (gunsmith_part_17) como pre-requisito",
+      "suggested_prerequisite": "gunsmith_part_17",
+      "suggested_npc": "Mechanic"
+    },
+    {
+      "npc": "Mechanic",
+      "quest_id": "gunsmith_part_24",
+      "quest_name": "Gunsmith - Part 24",
+      "issue": "Pode precisar de \"Gunsmith - Part 18\" (gunsmith_part_18) como pre-requisito",
+      "suggested_prerequisite": "gunsmith_part_18",
+      "suggested_npc": "Mechanic"
+    },
+    {
+      "npc": "Mechanic",
+      "quest_id": "gunsmith_part_24",
+      "quest_name": "Gunsmith - Part 24",
+      "issue": "Pode precisar de \"Gunsmith - Part 19\" (gunsmith_part_19) como pre-requisito",
+      "suggested_prerequisite": "gunsmith_part_19",
+      "suggested_npc": "Mechanic"
+    },
+    {
+      "npc": "Mechanic",
+      "quest_id": "gunsmith_part_25",
+      "quest_name": "Gunsmith - Part 25",
+      "issue": "Pode precisar de \"Gunsmith - Part 1\" (gunsmith_part_1) como pre-requisito",
+      "suggested_prerequisite": "gunsmith_part_1",
+      "suggested_npc": "Mechanic"
+    },
+    {
+      "npc": "Mechanic",
+      "quest_id": "gunsmith_part_25",
+      "quest_name": "Gunsmith - Part 25",
+      "issue": "Pode precisar de \"Gunsmith - Part 10\" (gunsmith_part_10) como pre-requisito",
+      "suggested_prerequisite": "gunsmith_part_10",
+      "suggested_npc": "Mechanic"
+    },
+    {
+      "npc": "Mechanic",
+      "quest_id": "gunsmith_part_25",
+      "quest_name": "Gunsmith - Part 25",
+      "issue": "Pode precisar de \"Gunsmith - Part 11\" (gunsmith_part_11) como pre-requisito",
+      "suggested_prerequisite": "gunsmith_part_11",
+      "suggested_npc": "Mechanic"
+    },
+    {
+      "npc": "Mechanic",
+      "quest_id": "gunsmith_part_25",
+      "quest_name": "Gunsmith - Part 25",
+      "issue": "Pode precisar de \"Gunsmith - Part 12\" (gunsmith_part_12) como pre-requisito",
+      "suggested_prerequisite": "gunsmith_part_12",
+      "suggested_npc": "Mechanic"
+    },
+    {
+      "npc": "Mechanic",
+      "quest_id": "gunsmith_part_25",
+      "quest_name": "Gunsmith - Part 25",
+      "issue": "Pode precisar de \"Gunsmith - Part 13\" (gunsmith_part_13) como pre-requisito",
+      "suggested_prerequisite": "gunsmith_part_13",
+      "suggested_npc": "Mechanic"
+    },
+    {
+      "npc": "Mechanic",
+      "quest_id": "gunsmith_part_25",
+      "quest_name": "Gunsmith - Part 25",
+      "issue": "Pode precisar de \"Gunsmith - Part 14\" (gunsmith_part_14) como pre-requisito",
+      "suggested_prerequisite": "gunsmith_part_14",
+      "suggested_npc": "Mechanic"
+    },
+    {
+      "npc": "Mechanic",
+      "quest_id": "gunsmith_part_25",
+      "quest_name": "Gunsmith - Part 25",
+      "issue": "Pode precisar de \"Gunsmith - Part 15\" (gunsmith_part_15) como pre-requisito",
+      "suggested_prerequisite": "gunsmith_part_15",
+      "suggested_npc": "Mechanic"
+    },
+    {
+      "npc": "Mechanic",
+      "quest_id": "gunsmith_part_25",
+      "quest_name": "Gunsmith - Part 25",
+      "issue": "Pode precisar de \"Gunsmith - Part 16\" (gunsmith_part_16) como pre-requisito",
+      "suggested_prerequisite": "gunsmith_part_16",
+      "suggested_npc": "Mechanic"
+    },
+    {
+      "npc": "Mechanic",
+      "quest_id": "gunsmith_part_25",
+      "quest_name": "Gunsmith - Part 25",
+      "issue": "Pode precisar de \"Gunsmith - Part 17\" (gunsmith_part_17) como pre-requisito",
+      "suggested_prerequisite": "gunsmith_part_17",
+      "suggested_npc": "Mechanic"
+    },
+    {
+      "npc": "Mechanic",
+      "quest_id": "gunsmith_part_25",
+      "quest_name": "Gunsmith - Part 25",
+      "issue": "Pode precisar de \"Gunsmith - Part 18\" (gunsmith_part_18) como pre-requisito",
+      "suggested_prerequisite": "gunsmith_part_18",
+      "suggested_npc": "Mechanic"
+    },
+    {
+      "npc": "Mechanic",
+      "quest_id": "gunsmith_part_25",
+      "quest_name": "Gunsmith - Part 25",
+      "issue": "Pode precisar de \"Gunsmith - Part 19\" (gunsmith_part_19) como pre-requisito",
+      "suggested_prerequisite": "gunsmith_part_19",
+      "suggested_npc": "Mechanic"
+    },
+    {
+      "npc": "Ragman",
+      "quest_id": "drip_out_part_2",
+      "quest_name": "Drip-Out - Part 2",
+      "issue": "Pode precisar de \"Drip-Out - Part 1\" (drip_out_part_1) como pre-requisito",
+      "suggested_prerequisite": "drip_out_part_1",
+      "suggested_npc": "Ragman"
+    },
+    {
+      "npc": "Ragman",
+      "quest_id": "drip_out_part_2",
+      "quest_name": "Drip-Out - Part 2",
+      "issue": "Pode precisar de \"Drip-Out - Part 1\" (drip_out_part_1_1) como pre-requisito",
+      "suggested_prerequisite": "drip_out_part_1_1",
+      "suggested_npc": "Ragman"
+    },
+    {
+      "npc": "Ragman",
+      "quest_id": "drip_out_part_2_1",
+      "quest_name": "Drip-Out - Part 2",
+      "issue": "Pode precisar de \"Drip-Out - Part 1\" (drip_out_part_1) como pre-requisito",
+      "suggested_prerequisite": "drip_out_part_1",
+      "suggested_npc": "Ragman"
+    },
+    {
+      "npc": "Ragman",
+      "quest_id": "drip_out_part_2_1",
+      "quest_name": "Drip-Out - Part 2",
+      "issue": "Pode precisar de \"Drip-Out - Part 1\" (drip_out_part_1_1) como pre-requisito",
+      "suggested_prerequisite": "drip_out_part_1_1",
+      "suggested_npc": "Ragman"
+    },
+    {
+      "npc": "Ragman",
+      "quest_id": "textile_part_2",
+      "quest_name": "Textile - Part 2",
+      "issue": "Pode precisar de \"Textile - Part 1\" (textile_part_1_1) como pre-requisito",
+      "suggested_prerequisite": "textile_part_1_1",
+      "suggested_npc": "Ragman"
+    },
+    {
+      "npc": "Ragman",
+      "quest_id": "textile_part_2_1",
+      "quest_name": "Textile - Part 2",
+      "issue": "Pode precisar de \"Textile - Part 1\" (textile_part_1) como pre-requisito",
+      "suggested_prerequisite": "textile_part_1",
+      "suggested_npc": "Ragman"
+    }
+  ]
+}

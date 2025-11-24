@@ -14,6 +14,18 @@ const npcUnlockRequirements = {
     // Adicione outros NPCs bloqueados aqui se necessário
 };
 
+// Quests mutuamente exclusivas (escolhas)
+// Quando uma quest é completada, as outras do mesmo grupo ficam bloqueadas
+// Formato: { groupId: [questId1, questId2, ...] }
+const mutuallyExclusiveQuests = {
+    'postman_pat_choice': [
+        'youve_got_mail_1',      // Prapor - escolha 1
+        'possessor_1',            // Prapor - escolha 2
+        'postman_pat_part_2'      // Therapist - escolha 3
+    ]
+    // Adicione outros grupos de escolhas aqui
+};
+
 // Verificar se um NPC está desbloqueado
 function isNPCUnlocked(npcId) {
     // Se não há requisito de desbloqueio, está sempre desbloqueado
@@ -126,6 +138,10 @@ async function loadQuestData() {
         });
         
         questsData = cleanData;
+        
+        // Validar quests completadas - remover quests que não deveriam estar completadas
+        validateCompletedQuests();
+        
         initializeNPCs();
         // Atualizar checks verdes e NPCs bloqueados após inicializar
         setTimeout(() => {
@@ -274,6 +290,29 @@ function selectNPC(npcId, buttonElement) {
     updateNPCButtons();
 }
 
+// Verificar se uma quest está bloqueada por quests mutuamente exclusivas
+function isBlockedByMutuallyExclusive(questId, allProgress) {
+    // Verificar se esta quest está em algum grupo de exclusão mútua
+    for (const groupId in mutuallyExclusiveQuests) {
+        const group = mutuallyExclusiveQuests[groupId];
+        if (group.includes(questId)) {
+            // Verificar se alguma outra quest do grupo foi completada
+            for (const otherQuestId of group) {
+                if (otherQuestId === questId) continue;
+                
+                // Procurar em todos os NPCs
+                for (const npcId in allProgress) {
+                    const npcProgress = allProgress[npcId] || { completed: [], current: null };
+                    if (npcProgress.completed && npcProgress.completed.includes(otherQuestId)) {
+                        return true; // Bloqueada porque outra quest do grupo foi completada
+                    }
+                }
+            }
+        }
+    }
+    return false;
+}
+
 // Verificar se todos os pré-requisitos de uma quest foram completados (incluindo cross-NPC)
 function areAllPrerequisitesMet(quest, npcId, allProgress) {
     if (!quest.prerequisites || quest.prerequisites.length === 0) {
@@ -303,6 +342,65 @@ function areAllPrerequisitesMet(quest, npcId, allProgress) {
     });
 }
 
+// Validar quests completadas - remover quests que não têm pré-requisitos completados
+function validateCompletedQuests() {
+    if (!questsData || !questsData.npcs) {
+        console.warn('validateCompletedQuests: questsData nao carregado ainda');
+        return;
+    }
+    
+    let removedCount = 0;
+    const removedQuests = [];
+    
+    for (const npcId in progress) {
+        const npcProgress = progress[npcId];
+        if (!npcProgress || !npcProgress.completed || npcProgress.completed.length === 0) continue;
+        
+        const npc = questsData.npcs[npcId];
+        if (!npc) {
+            console.warn(`validateCompletedQuests: NPC ${npcId} nao encontrado em questsData`);
+            continue;
+        }
+        
+        const validCompleted = [];
+        
+        for (const questId of [...npcProgress.completed]) { // Copiar array para evitar problemas durante iteração
+            const quest = npc.quests.find(q => q.id === questId);
+            if (!quest) {
+                // Quest não existe mais - remover
+                removedCount++;
+                removedQuests.push(`${questId} (nao existe)`);
+                continue;
+            }
+            
+            // Verificar se todos os pré-requisitos foram completados
+            const allPrerequisitesMet = areAllPrerequisitesMet(quest, npcId, progress);
+            
+            if (allPrerequisitesMet) {
+                validCompleted.push(questId);
+            } else {
+                // Quest foi completada mas não tem pré-requisitos completados - remover
+                removedCount++;
+                removedQuests.push(`${quest.name} (${questId})`);
+                console.warn(`Removendo quest completada invalida: ${quest.name} (${questId}) - pre-requisitos nao completos`);
+            }
+        }
+        
+        if (removedCount > 0 || validCompleted.length !== npcProgress.completed.length) {
+            npcProgress.completed = validCompleted;
+        }
+    }
+    
+    if (removedCount > 0) {
+        saveProgress();
+        console.log(`Validacao: ${removedCount} quest(s) removida(s) da lista de completadas:`, removedQuests);
+        // Mostrar alerta para o usuário
+        alert(`${removedCount} quest(s) foram removidas da lista de completadas porque nao tinham pre-requisitos completos.\n\nQuests removidas:\n${removedQuests.join('\n')}`);
+    } else {
+        console.log('Validacao: Todas as quests completadas sao validas');
+    }
+}
+
 // Atualizar lista de quests disponíveis
 function updateQuestList() {
     if (!currentNPC) return;
@@ -313,6 +411,7 @@ function updateQuestList() {
     
     const showCompleted = document.getElementById('showCompleted').checked;
     const showLocked = document.getElementById('showLocked').checked;
+    const showKappa = document.getElementById('showKappa').checked;
     
     const container = document.getElementById('questListContainer');
     container.innerHTML = '';
@@ -323,18 +422,19 @@ function updateQuestList() {
     // Filtrar e preparar quests
     const filteredQuests = [];
     npc.quests.forEach(quest => {
-        // Filtrar apenas quests necessárias para o Kappa
-        if (!quest.kappaRequired) return;
+        // Filtrar por Kappa se o checkbox estiver marcado
+        if (showKappa && !quest.kappaRequired) return;
         
         const isCompleted = completedIds.includes(quest.id);
         const allPrerequisitesMet = areAllPrerequisitesMet(quest, currentNPC, progress);
+        const isBlockedByExclusive = !isCompleted && isBlockedByMutuallyExclusive(quest.id, progress);
         const isLocked = !allPrerequisitesMet && !isCompleted;
         
         // Filtrar quests baseado nas opções
         if (isCompleted && !showCompleted) return;
-        if (isLocked && !showLocked) return;
+        if ((isLocked || isBlockedByExclusive) && !showLocked) return;
         
-        if (!isCompleted && allPrerequisitesMet) {
+        if (!isCompleted && allPrerequisitesMet && !isBlockedByExclusive) {
             availableCount++;
         }
         if (isCompleted) {
@@ -344,7 +444,8 @@ function updateQuestList() {
         filteredQuests.push({
             quest: quest,
             isCompleted: isCompleted,
-            isLocked: isLocked
+            isLocked: isLocked,
+            isBlockedByExclusive: isBlockedByExclusive
         });
     });
     
@@ -366,7 +467,7 @@ function updateQuestList() {
     }
     
     // Criar elementos das quests
-    filteredQuests.forEach(({quest, isCompleted, isLocked}) => {
+    filteredQuests.forEach(({quest, isCompleted, isLocked, isBlockedByExclusive}) => {
         const questItem = document.createElement('div');
         questItem.className = 'quest-list-item';
         questItem.draggable = true;
@@ -378,12 +479,21 @@ function updateQuestList() {
         if (isLocked) {
             questItem.classList.add('locked');
         }
+        if (isBlockedByExclusive) {
+            questItem.classList.add('blocked-exclusive');
+            questItem.title = 'Esta quest esta bloqueada porque voce completou uma quest alternativa';
+        }
+        
+        let statusText = '';
+        if (isBlockedByExclusive && !isCompleted) {
+            statusText = '<span class="quest-list-item-status blocked-exclusive">Bloqueada (escolha alternativa)</span>';
+        }
         
         questItem.innerHTML = `
             <div class="quest-list-item-header">
                 <div class="quest-list-item-drag-handle">⋮⋮</div>
                 <div class="quest-list-item-name">${quest.name}</div>
-                ${!isCompleted && !isLocked ? `
+                ${!isCompleted && !isLocked && !isBlockedByExclusive ? `
                     <button class="quest-list-item-complete-btn" onclick="completeQuest('${quest.id}'); event.stopPropagation();">
                         ✓ Complete
                     </button>
@@ -391,6 +501,8 @@ function updateQuestList() {
                     <button class="quest-list-item-undo-btn" onclick="undoCompleteQuest('${quest.id}'); event.stopPropagation();">
                         ↶ Desfazer
                     </button>
+                ` : isBlockedByExclusive ? `
+                    ${statusText}
                 ` : isLocked ? `
                     <span class="quest-list-item-status locked">Locked</span>
                 ` : ''}
@@ -868,6 +980,43 @@ function completeQuest(questId) {
     
     if (!allPrerequisitesMet) {
         alert('Você precisa completar os pré-requisitos primeiro!');
+        return;
+    }
+    
+    // Verificar se está bloqueada por exclusão mútua
+    const isBlockedByExclusive = isBlockedByMutuallyExclusive(questId, progress);
+    if (isBlockedByExclusive) {
+        // Encontrar qual quest alternativa foi completada
+        let alternativeQuest = null;
+        for (const groupId in mutuallyExclusiveQuests) {
+            const group = mutuallyExclusiveQuests[groupId];
+            if (group.includes(questId)) {
+                for (const otherQuestId of group) {
+                    if (otherQuestId === questId) continue;
+                    for (const npcId in progress) {
+                        const npcProgress = progress[npcId] || { completed: [], current: null };
+                        if (npcProgress.completed && npcProgress.completed.includes(otherQuestId)) {
+                            // Encontrar nome da quest
+                            for (const checkNpcId in questsData.npcs) {
+                                const checkQuest = questsData.npcs[checkNpcId].quests.find(q => q.id === otherQuestId);
+                                if (checkQuest) {
+                                    alternativeQuest = checkQuest.name;
+                                    break;
+                                }
+                            }
+                            if (alternativeQuest) break;
+                        }
+                    }
+                    if (alternativeQuest) break;
+                }
+                if (alternativeQuest) break;
+            }
+        }
+        
+        const message = alternativeQuest 
+            ? `Esta quest está bloqueada porque você completou "${alternativeQuest}". Quests mutuamente exclusivas não podem ser completadas juntas.`
+            : 'Esta quest está bloqueada porque você completou uma quest alternativa. Quests mutuamente exclusivas não podem ser completadas juntas.';
+        alert(message);
         return;
     }
     

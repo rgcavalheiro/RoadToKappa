@@ -1,0 +1,165 @@
+{
+  "errors": [],
+  "warnings": [],
+  "circular_dependencies": [],
+  "orphan_quests": [],
+  "blocked_quests": [],
+  "available_quests": [
+    {
+      "npc": "Prapor",
+      "quest_id": "shooting_cans_1",
+      "quest_name": "Shooting Cans"
+    },
+    {
+      "npc": "Prapor",
+      "quest_id": "big_customer_1",
+      "quest_name": "Big Customer"
+    },
+    {
+      "npc": "Prapor",
+      "quest_id": "grenadier_1",
+      "quest_name": "Grenadier"
+    },
+    {
+      "npc": "Prapor",
+      "quest_id": "forge_a_friendship_1",
+      "quest_name": "Forge a Friendship"
+    },
+    {
+      "npc": "Prapor",
+      "quest_id": "test_drive_part_1_1",
+      "quest_name": "Test Drive - Part 1"
+    },
+    {
+      "npc": "Therapist",
+      "quest_id": "first_in_line",
+      "quest_name": "First in Line"
+    },
+    {
+      "npc": "Therapist",
+      "quest_id": "out_of_curiosity",
+      "quest_name": "Out of Curiosity"
+    },
+    {
+      "npc": "Therapist",
+      "quest_id": "thirsty_echo",
+      "quest_name": "Thirsty - Echo"
+    },
+    {
+      "npc": "Therapist",
+      "quest_id": "a_healthy_alternative",
+      "quest_name": "A Healthy Alternative"
+    },
+    {
+      "npc": "Therapist",
+      "quest_id": "the_tarkov_butcher",
+      "quest_name": "The Tarkov Butcher"
+    },
+    {
+      "npc": "Therapist",
+      "quest_id": "this_tape_sucks",
+      "quest_name": "This Tape Sucks"
+    },
+    {
+      "npc": "Skier",
+      "quest_id": "burning_rubber",
+      "quest_name": "Burning Rubber"
+    },
+    {
+      "npc": "Skier",
+      "quest_id": "exit_here",
+      "quest_name": "Exit Here"
+    },
+    {
+      "npc": "Skier",
+      "quest_id": "thirsty_breadwinner",
+      "quest_name": "Thirsty - Breadwinner"
+    },
+    {
+      "npc": "Skier",
+      "quest_id": "indisputable_authority",
+      "quest_name": "Indisputable Authority"
+    },
+    {
+      "npc": "Skier",
+      "quest_id": "the_higher_they_fly",
+      "quest_name": "The Higher They Fly"
+    },
+    {
+      "npc": "Skier",
+      "quest_id": "proper_comeback",
+      "quest_name": "Proper Comeback"
+    },
+    {
+      "npc": "Skier",
+      "quest_id": "fair_price_part_1",
+      "quest_name": "Fair Price - Part 1"
+    },
+    {
+      "npc": "Skier",
+      "quest_id": "profitable_venture",
+      "quest_name": "Profitable Venture"
+    },
+    {
+      "npc": "Peacekeeper",
+      "quest_id": "confidential_info",
+      "quest_name": "Confidential Info"
+    },
+    {
+      "npc": "Mechanic",
+      "quest_id": "saving_the_mole",
+      "quest_name": "Saving the Mole"
+    },
+    {
+      "npc": "Ragman",
+      "quest_id": "only_business",
+      "quest_name": "Only Business"
+    },
+    {
+      "npc": "Ragman",
+      "quest_id": "stabilize_business",
+      "quest_name": "Stabilize Business"
+    },
+    {
+      "npc": "Ragman",
+      "quest_id": "another_shipping_delay",
+      "quest_name": "Another Shipping Delay"
+    },
+    {
+      "npc": "Ragman",
+      "quest_id": "new_beginning",
+      "quest_name": "New Beginning"
+    },
+    {
+      "npc": "Ragman",
+      "quest_id": "new_beginning_1",
+      "quest_name": "New Beginning"
+    },
+    {
+      "npc": "Ragman",
+      "quest_id": "new_beginning_2",
+      "quest_name": "New Beginning"
+    },
+    {
+      "npc": "Ragman",
+      "quest_id": "new_beginning_3",
+      "quest_name": "New Beginning"
+    },
+    {
+      "npc": "Lightkeeper",
+      "quest_id": "order_from_outside",
+      "quest_name": "Order From Outside"
+    },
+    {
+      "npc": "Lightkeeper",
+      "quest_id": "simple_side_job",
+      "quest_name": "Simple Side Job"
+    },
+    {
+      "npc": "Lightkeeper",
+      "quest_id": "surprise_gift_pvp_zone",
+      "quest_name": "Surprise Gift [PVP ZONE]"
+    }
+  ],
+  "blocked_by_missing": []
+}
