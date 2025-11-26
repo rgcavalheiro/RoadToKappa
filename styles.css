@@ -44,18 +44,19 @@ body {
 }
 
 .header-section {
-    flex: 0 0 5%;
+    flex: 0 0 auto;
     min-height: 0;
     display: flex;
     flex-direction: column;
+    gap: 4px;
 }
 
 .traders-section {
-    flex: 0 0 15%;
-    min-height: 0;
+    flex: 0 0 auto;
+    min-height: fit-content;
     display: flex;
     flex-direction: column;
-    overflow: hidden;
+    overflow: visible;
     padding: 5px 0;
 }
 
@@ -67,6 +68,12 @@ body {
     overflow: hidden;
 }
 
+/* Ajustar layout quando na aba de busca */
+#tab-content-search .traders-section,
+#tab-content-search .quests-section {
+    display: none;
+}
+
 header {
     text-align: center;
     padding: 4px;
@@ -74,7 +81,7 @@ header {
     background: var(--card-bg);
     border-radius: 4px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-    height: 100%;
+    flex: 0 0 auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -94,6 +101,236 @@ h1 {
     margin: 2px 0 0 0;
     padding: 0;
     line-height: 1.2;
+}
+
+/* Sistema de Abas */
+.tabs-container {
+    display: flex;
+    gap: 8px;
+    padding: 8px;
+    background: var(--card-bg);
+    border-radius: 4px;
+    margin-top: 4px;
+    justify-content: center;
+}
+
+.tab-btn {
+    padding: 8px 20px;
+    background: var(--primary-color);
+    color: var(--text-color);
+    border: 2px solid var(--border-color);
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9em;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    flex: 0 0 auto;
+}
+
+.tab-btn:hover {
+    background: var(--hover-color);
+    border-color: var(--secondary-color);
+}
+
+.tab-btn.active {
+    background: var(--secondary-color);
+    color: white;
+    border-color: var(--secondary-color);
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.3);
+}
+
+.tab-content {
+    display: none;
+    flex: 1;
+    min-height: 0;
+    overflow: hidden;
+    flex-direction: column;
+}
+
+.tab-content.active {
+    display: flex;
+}
+
+/* Seção de Busca */
+.search-section {
+    flex: 1;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    gap: 10px;
+}
+
+.search-header {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    padding: 10px;
+    background: var(--card-bg);
+    border-radius: 8px;
+    border: 2px solid var(--border-color);
+    flex-wrap: wrap;
+}
+
+.search-input {
+    flex: 1;
+    padding: 10px 15px;
+    background: var(--primary-color);
+    border: 2px solid var(--border-color);
+    border-radius: 6px;
+    color: var(--text-color);
+    font-size: 1em;
+    transition: all 0.3s ease;
+}
+
+.search-input:focus {
+    outline: none;
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 8px rgba(52, 152, 219, 0.3);
+}
+
+.search-results-count {
+    color: var(--text-color);
+    font-size: 0.9em;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.search-layout {
+    flex: 1;
+    min-height: 0;
+    display: grid;
+    grid-template-columns: minmax(250px, 400px) 1fr;
+    gap: 10px;
+    overflow: hidden;
+}
+
+.search-results-panel {
+    background: var(--card-bg);
+    border-radius: 8px;
+    border: 2px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.search-results-container {
+    flex: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 10px;
+    min-height: 0;
+    scrollbar-width: thin;
+    scrollbar-color: #5A5A5A #1A1A1A;
+}
+
+.search-results-container::-webkit-scrollbar {
+    width: 6px;
+}
+
+.search-results-container::-webkit-scrollbar-track {
+    background: #1A1A1A;
+}
+
+.search-results-container::-webkit-scrollbar-thumb {
+    background: #5A5A5A;
+    border-radius: 3px;
+}
+
+.search-results-container::-webkit-scrollbar-thumb:hover {
+    background: #7A7A7A;
+}
+
+.search-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    color: #7f8c8d;
+    font-style: italic;
+    padding: 20px;
+    font-size: 0.9em;
+    text-align: center;
+}
+
+.search-result-item {
+    background: var(--primary-color);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    padding: 10px;
+    margin-bottom: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.search-result-item:hover {
+    border-color: var(--secondary-color);
+    background: var(--hover-color);
+}
+
+.search-result-item.selected {
+    border-color: var(--secondary-color);
+    border-width: 2px;
+    box-shadow: 0 0 10px rgba(52, 152, 219, 0.3);
+    background: var(--hover-color);
+}
+
+.search-result-item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 6px;
+    gap: 8px;
+    min-width: 0;
+}
+
+.search-result-item-name {
+    font-weight: 600;
+    font-size: 0.95em;
+    color: var(--text-color);
+    flex: 1;
+    line-height: 1.3;
+    word-wrap: break-word;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    min-width: 0;
+}
+
+.search-result-item-npc {
+    font-size: 0.75em;
+    color: var(--secondary-color);
+    background: rgba(52, 152, 219, 0.2);
+    padding: 2px 8px;
+    border-radius: 10px;
+    white-space: nowrap;
+}
+
+.search-result-item-id {
+    font-size: 0.7em;
+    color: #7f8c8d;
+    margin-top: 4px;
+}
+
+.search-result-item.completed {
+    opacity: 0.6;
+    border-color: var(--success-color);
+}
+
+.search-result-item.locked {
+    opacity: 0.4;
+    cursor: not-allowed;
+    border-color: var(--danger-color);
+}
+
+.search-details-panel {
+    background: var(--card-bg);
+    border-radius: 8px;
+    border: 2px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    min-height: 0;
+    max-height: 100%;
 }
 
 /* .npc-selector removido - não é mais necessário */
@@ -137,13 +374,16 @@ h1 {
     cursor: pointer;
     transition: all 0.2s ease;
     position: relative;
-    overflow: hidden;
+    overflow: visible;
     flex: 0 0 auto;
-    width: 90px;
+    width: clamp(70px, 8vw, 120px);
+    min-width: 70px;
+    max-width: 120px;
     height: auto;
     display: flex;
     flex-direction: column;
     margin: 0;
+    align-items: stretch;
 }
 
 .npc-btn-content {
@@ -153,6 +393,8 @@ h1 {
     display: flex;
     flex-direction: column;
     padding: 0;
+    min-height: 0;
+    overflow: visible;
 }
 
 .npc-btn-level {
@@ -201,7 +443,8 @@ h1 {
 
 .npc-btn-portrait {
     width: 100%;
-    height: 90px;
+    height: clamp(70px, 8vw, 100px);
+    aspect-ratio: 1;
     overflow: hidden;
     background: #000;
     display: flex;
@@ -241,17 +484,23 @@ h1 {
     flex: 0 0 auto;
     background: #1A1A1A;
     color: #C0C0C0;
-    font-size: 0.65em;
+    font-size: clamp(0.6em, 1.2vw, 0.75em);
     font-weight: 400;
     text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 3px 2px;
+    display: block;
+    padding: clamp(4px, 0.5vw, 6px) clamp(2px, 0.3vw, 4px);
     font-family: 'Segoe UI', sans-serif;
     border-top: 1px solid #5A5A5A;
-    min-height: 18px;
-    line-height: 1.1;
+    min-height: auto;
+    line-height: 1.3;
+    word-wrap: break-word;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+    white-space: normal;
+    overflow: visible;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .npc-btn:hover {
@@ -293,7 +542,7 @@ h1 {
 /* Layout de duas colunas para quests */
 .quest-layout {
     display: grid;
-    grid-template-columns: 350px 1fr;
+    grid-template-columns: minmax(250px, 350px) 1fr;
     gap: 10px;
     flex: 1;
     min-height: 0;
@@ -328,6 +577,7 @@ h1 {
     align-items: center;
     gap: 16px;
     margin-bottom: 0;
+    flex-wrap: wrap;
 }
 
 .checkbox-label {
@@ -419,6 +669,7 @@ h1 {
     align-items: flex-start;
     margin-bottom: 4px;
     gap: 8px;
+    min-width: 0;
 }
 
 .quest-list-item-drag-handle {
@@ -453,6 +704,10 @@ h1 {
     color: var(--text-color);
     flex: 1;
     line-height: 1.3;
+    word-wrap: break-word;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    min-width: 0;
 }
 
 .quest-list-item-status {
@@ -1251,16 +1506,26 @@ h1 {
         grid-template-rows: 300px 1fr;
     }
 
+    .search-layout {
+        grid-template-columns: 1fr;
+        grid-template-rows: 300px 1fr;
+    }
+
     .quest-display {
         grid-template-columns: 1fr;
     }
 
     .npc-buttons {
-        grid-template-columns: repeat(2, 1fr);
+        justify-content: flex-start;
+        padding: 5px;
     }
 
     h1 {
-        font-size: 2em;
+        font-size: 1.2em;
+    }
+
+    .subtitle {
+        font-size: 0.7em;
     }
 
     .quest-details-content {
@@ -1270,6 +1535,102 @@ h1 {
 
     .guide-images {
         grid-template-columns: 1fr;
+    }
+
+    .tabs-container {
+        flex-wrap: wrap;
+        gap: 4px;
+        padding: 6px;
+    }
+
+    .tab-btn {
+        padding: 6px 12px;
+        font-size: 0.8em;
+        flex: 1 1 auto;
+        min-width: 100px;
+    }
+
+    .npc-btn {
+        width: clamp(100px, 15vw, 120px);
+        min-width: 100px;
+        max-width: 120px;
+    }
+
+    .npc-btn-portrait {
+        height: clamp(100px, 15vw, 120px);
+    }
+
+    .npc-btn-name {
+        font-size: clamp(0.7em, 1.8vw, 0.8em);
+        padding: clamp(6px, 1vw, 8px) clamp(4px, 0.6vw, 6px);
+        min-height: auto;
+    }
+
+    .quest-list-item-name {
+        font-size: 0.85em;
+    }
+
+    .search-result-item-name {
+        font-size: 0.85em;
+    }
+
+    .search-header {
+        flex-wrap: wrap;
+    }
+
+    .search-results-count {
+        width: 100%;
+        text-align: center;
+        margin-top: 4px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1em;
+    }
+
+    .subtitle {
+        font-size: 0.65em;
+    }
+
+    .tab-btn {
+        padding: 5px 8px;
+        font-size: 0.75em;
+        min-width: 80px;
+    }
+
+    .npc-btn {
+        width: clamp(110px, 20vw, 130px);
+        min-width: 110px;
+        max-width: 130px;
+    }
+
+    .npc-btn-portrait {
+        height: clamp(110px, 20vw, 130px);
+    }
+
+    .npc-btn-name {
+        font-size: clamp(0.75em, 2.2vw, 0.85em);
+        min-height: auto;
+        padding: clamp(7px, 1.2vw, 9px) clamp(5px, 0.8vw, 7px);
+    }
+
+    .quest-list-item-name {
+        font-size: 0.8em;
+    }
+
+    .search-result-item-name {
+        font-size: 0.8em;
+    }
+
+    .quest-list-controls {
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .checkbox-label {
+        font-size: 0.7em;
     }
 }
 
