@@ -16,15 +16,26 @@
                         <h1>🎯 Tarkov Kappa Quest Tracker</h1>
                         <p class="subtitle">Acompanhe seu progresso para o Kappa Container</p>
                     </header>
-                </div>
-
-                <div class="traders-section">
-                    <div class="npc-buttons" id="npcButtons">
-                        <!-- NPCs serão inseridos via JavaScript -->
+                    <!-- Sistema de Abas -->
+                    <div class="tabs-container">
+                        <button class="tab-btn active" onclick="switchTab('npcs')" id="tab-npcs">
+                            🎮 NPCs
+                        </button>
+                        <button class="tab-btn" onclick="switchTab('search')" id="tab-search">
+                            🔍 Buscar
+                        </button>
                     </div>
                 </div>
 
-                <div class="quests-section">
+                <!-- Conteúdo da Aba NPCs -->
+                <div id="tab-content-npcs" class="tab-content active">
+                    <div class="traders-section">
+                        <div class="npc-buttons" id="npcButtons">
+                            <!-- NPCs serão inseridos via JavaScript -->
+                        </div>
+                    </div>
+
+                    <div class="quests-section">
                     <div class="quest-layout" id="questLayout" style="display: none;">
                         <!-- Lista de Quests à Esquerda -->
                         <div class="quest-list-panel">
@@ -62,6 +73,35 @@
                         <button class="btn btn-reset" id="resetBtn" onclick="resetProgress()">
                             🔄 Resetar Progresso
                         </button>
+                    </div>
+                    </div>
+                </div>
+
+                <!-- Conteúdo da Aba Buscar -->
+                <div id="tab-content-search" class="tab-content">
+                    <div class="search-section">
+                        <div class="search-header">
+                            <input type="text" id="questSearchInput" class="search-input" placeholder="Digite o nome da quest..." onkeyup="performSearch()">
+                            <div class="search-results-count" id="searchResultsCount"></div>
+                        </div>
+                        
+                        <div class="search-layout">
+                            <!-- Lista de Resultados da Busca -->
+                            <div class="search-results-panel">
+                                <div class="search-results-container" id="searchResultsContainer">
+                                    <div class="search-placeholder">
+                                        <p>Digite no campo acima para buscar quests...</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Detalhes da Quest Selecionada -->
+                            <div class="search-details-panel" id="searchDetailsPanel">
+                                <div class="quest-details-placeholder">
+                                    <p>Selecione uma quest para ver os detalhes</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

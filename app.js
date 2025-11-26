@@ -1862,6 +1862,190 @@ document.addEventListener('keydown', function(e) {
     }
 });
 
+// ==================== SISTEMA DE ABAS ====================
+
+// Trocar entre abas
+function switchTab(tabName) {
+    // Atualizar botões de aba
+    document.querySelectorAll('.tab-btn').forEach(btn => {
+        btn.classList.remove('active');
+    });
+    document.getElementById(`tab-${tabName}`).classList.add('active');
+    
+    // Atualizar conteúdo das abas
+    document.querySelectorAll('.tab-content').forEach(content => {
+        content.classList.remove('active');
+    });
+    document.getElementById(`tab-content-${tabName}`).classList.add('active');
+    
+    // Se mudou para a aba de busca, focar no input
+    if (tabName === 'search') {
+        setTimeout(() => {
+            const searchInput = document.getElementById('questSearchInput');
+            if (searchInput) {
+                searchInput.focus();
+            }
+        }, 100);
+    }
+}
+
+// ==================== SISTEMA DE BUSCA ====================
+
+// Realizar busca de quests
+function performSearch() {
+    const searchInput = document.getElementById('questSearchInput');
+    const searchTerm = searchInput.value.trim().toLowerCase();
+    const resultsContainer = document.getElementById('searchResultsContainer');
+    const resultsCount = document.getElementById('searchResultsCount');
+    const detailsPanel = document.getElementById('searchDetailsPanel');
+    
+    // Limpar detalhes ao buscar
+    clearSearchDetails();
+    
+    if (!searchTerm) {
+        resultsContainer.innerHTML = `
+            <div class="search-placeholder">
+                <p>Digite no campo acima para buscar quests...</p>
+            </div>
+        `;
+        resultsCount.textContent = '';
+        return;
+    }
+    
+    if (!questsData || !questsData.npcs) {
+        resultsContainer.innerHTML = `
+            <div class="search-placeholder">
+                <p>Carregando dados das quests...</p>
+            </div>
+        `;
+        return;
+    }
+    
+    // Buscar em todas as quests
+    const results = [];
+    Object.keys(questsData.npcs).forEach(npcId => {
+        const npc = questsData.npcs[npcId];
+        npc.quests.forEach(quest => {
+            const searchableText = `${quest.name} ${quest.id} ${npc.name}`.toLowerCase();
+            if (searchableText.includes(searchTerm)) {
+                results.push({
+                    quest: quest,
+                    npc: npc,
+                    npcId: npcId
+                });
+            }
+        });
+    });
+    
+    // Atualizar contador
+    resultsCount.textContent = `${results.length} resultado(s)`;
+    
+    // Limpar container
+    resultsContainer.innerHTML = '';
+    
+    if (results.length === 0) {
+        resultsContainer.innerHTML = `
+            <div class="search-placeholder">
+                <p>Nenhuma quest encontrada para "${searchInput.value}"</p>
+            </div>
+        `;
+        return;
+    }
+    
+    // Exibir resultados
+    results.forEach(({quest, npc, npcId}) => {
+        const resultItem = document.createElement('div');
+        resultItem.className = 'search-result-item';
+        resultItem.dataset.questId = quest.id;
+        resultItem.dataset.npcId = npcId;
+        
+        // Verificar status da quest
+        const npcProgress = progress[npcId] || { completed: [], current: null };
+        const isCompleted = npcProgress.completed && npcProgress.completed.includes(quest.id);
+        const allPrerequisitesMet = areAllPrerequisitesMet(quest, npcId, progress);
+        const isLocked = !allPrerequisitesMet && !isCompleted;
+        
+        if (isCompleted) {
+            resultItem.classList.add('completed');
+        }
+        if (isLocked) {
+            resultItem.classList.add('locked');
+        }
+        
+        resultItem.innerHTML = `
+            <div class="search-result-item-header">
+                <div class="search-result-item-name">${quest.name}</div>
+                <div class="search-result-item-npc">${npc.name}</div>
+            </div>
+            <div class="search-result-item-id">ID: ${quest.id}</div>
+        `;
+        
+        // Adicionar evento de clique
+        resultItem.addEventListener('click', () => {
+            selectSearchQuest(quest, npc, npcId, resultItem);
+        });
+        
+        resultsContainer.appendChild(resultItem);
+    });
+}
+
+// Selecionar quest na busca
+function selectSearchQuest(quest, npc, npcId, resultElement) {
+    // Atualizar seleção visual
+    document.querySelectorAll('.search-result-item').forEach(item => {
+        item.classList.remove('selected');
+    });
+    resultElement.classList.add('selected');
+    
+    // Mostrar detalhes
+    showSearchQuestDetails(quest, npc, npcId);
+}
+
+// Mostrar detalhes da quest na busca
+function showSearchQuestDetails(quest, npc, npcId) {
+    const panel = document.getElementById('searchDetailsPanel');
+    const placeholder = panel.querySelector('.quest-details-placeholder');
+    
+    // Remover conteúdo anterior se existir
+    const existingContent = panel.querySelector('.quest-details-content');
+    if (existingContent) {
+        existingContent.remove();
+    }
+    
+    // Criar novo conteúdo
+    const content = document.createElement('div');
+    content.className = 'quest-details-content';
+    content.id = 'searchQuestDetailsContent';
+    
+    // Mostrar loading
+    content.innerHTML = `
+        <div class="quest-details-loading">
+            <p>Carregando informações da quest...</p>
+        </div>
+    `;
+    
+    placeholder.style.display = 'none';
+    content.style.display = 'flex';
+    content.classList.add('active');
+    panel.appendChild(content);
+    
+    // Carregar dados da quest
+    loadQuestDetailsForPanel(quest.wikiUrl, content);
+}
+
+// Limpar detalhes da busca
+function clearSearchDetails() {
+    const panel = document.getElementById('searchDetailsPanel');
+    const placeholder = panel.querySelector('.quest-details-placeholder');
+    const existingContent = panel.querySelector('.quest-details-content');
+    
+    if (existingContent) {
+        existingContent.remove();
+    }
+    
+    placeholder.style.display = 'flex';
+}
+
 // Inicializar aplicação
 loadProgress();
 loadQuestDetailsCache(); // Carregar cache de detalhes das quests
