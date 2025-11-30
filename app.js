@@ -1013,20 +1013,46 @@ function displayQuestDetails(data, contentElement) {
                 });
             };
             
-            img.onerror = function() {
-                const loading = document.getElementById(`guide-loading-${index}`);
-                if (loading) {
-                    loading.textContent = 'Erro ao carregar';
-                    loading.style.color = '#e74c3c';
-                }
-            };
-            
-            // Usar proxy se API disponível
+            // Usar proxy se API disponível, senão usar proxy CORS público
             if (API_BASE_URL) {
                 const proxyUrl = `${API_BASE_URL}/api/image-proxy?url=${encodeURIComponent(imgSrc)}`;
                 img.src = proxyUrl;
+                
+                // Handler de erro para API
+                img.onerror = function() {
+                    const loading = document.getElementById(`guide-loading-${index}`);
+                    if (loading) {
+                        loading.textContent = 'Erro ao carregar';
+                        loading.style.color = '#e74c3c';
+                    }
+                };
             } else {
-                img.src = imgSrc;
+                // Usar proxy CORS público para GitHub Pages
+                // Tentar múltiplos proxies para maior confiabilidade
+                const corsProxies = [
+                    `https://api.allorigins.win/raw?url=${encodeURIComponent(imgSrc)}`,
+                    `https://corsproxy.io/?${encodeURIComponent(imgSrc)}`,
+                    imgSrc // Fallback direto (pode falhar por CORS)
+                ];
+                
+                // Tentar primeiro proxy
+                let proxyIndex = 0;
+                img.src = corsProxies[proxyIndex];
+                
+                // Se falhar, tentar próximo proxy
+                img.onerror = function() {
+                    if (proxyIndex < corsProxies.length - 1) {
+                        proxyIndex++;
+                        this.src = corsProxies[proxyIndex];
+                    } else {
+                        // Todos os proxies falharam
+                        const loading = document.getElementById(`guide-loading-${index}`);
+                        if (loading) {
+                            loading.textContent = 'Erro ao carregar imagem';
+                            loading.style.color = '#e74c3c';
+                        }
+                    }
+                };
             }
         });
     }
@@ -1476,8 +1502,26 @@ function fillQuestDetailsScreen(data) {
                 const proxyUrl = `${API_BASE_URL}/api/image-proxy?url=${encodeURIComponent(imgSrc)}`;
                 img.src = proxyUrl;
             } else {
-                // Tentar carregar diretamente (pode falhar por CORS)
-                img.src = imgSrc;
+                // Usar proxy CORS público para GitHub Pages
+                const corsProxies = [
+                    `https://api.allorigins.win/raw?url=${encodeURIComponent(imgSrc)}`,
+                    `https://corsproxy.io/?${encodeURIComponent(imgSrc)}`,
+                    imgSrc // Fallback direto
+                ];
+                
+                let proxyIndex = 0;
+                img.src = corsProxies[proxyIndex];
+                
+                // Se falhar, tentar próximo proxy
+                const originalOnError = img.onerror;
+                img.onerror = function() {
+                    if (proxyIndex < corsProxies.length - 1) {
+                        proxyIndex++;
+                        this.src = corsProxies[proxyIndex];
+                    } else if (originalOnError) {
+                        originalOnError.call(this);
+                    }
+                };
             }
             
             guideImages.appendChild(imgContainer);
@@ -1525,10 +1569,14 @@ function openImageModal(imgSrc, clickEvent) {
     loadingIndicator.textContent = 'Carregando imagem...';
     modalContainer.appendChild(loadingIndicator);
     
-    // Usar proxy se API disponível, senão tentar direto
-    let finalSrc = API_BASE_URL 
-        ? `${API_BASE_URL}/api/image-proxy?url=${encodeURIComponent(imgSrc)}`
-        : imgSrc;
+    // Usar proxy se API disponível, senão usar proxy CORS público
+    let finalSrc;
+    if (API_BASE_URL) {
+        finalSrc = `${API_BASE_URL}/api/image-proxy?url=${encodeURIComponent(imgSrc)}`;
+    } else {
+        // Usar proxy CORS público para GitHub Pages
+        finalSrc = `https://api.allorigins.win/raw?url=${encodeURIComponent(imgSrc)}`;
+    }
     
     modalImg.onload = function() {
         this.style.opacity = '1';
