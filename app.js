@@ -1030,8 +1030,9 @@ function displayQuestDetails(data, contentElement) {
                 // Usar proxy CORS público para GitHub Pages
                 // Tentar múltiplos proxies para maior confiabilidade
                 const corsProxies = [
-                    `https://api.allorigins.win/raw?url=${encodeURIComponent(imgSrc)}`,
                     `https://corsproxy.io/?${encodeURIComponent(imgSrc)}`,
+                    `https://api.codetabs.com/v1/proxy?quest=${encodeURIComponent(imgSrc)}`,
+                    `https://cors-anywhere.herokuapp.com/${imgSrc}`,
                     imgSrc // Fallback direto (pode falhar por CORS)
                 ];
                 
@@ -1043,9 +1044,11 @@ function displayQuestDetails(data, contentElement) {
                 img.onerror = function() {
                     if (proxyIndex < corsProxies.length - 1) {
                         proxyIndex++;
+                        console.log(`[IMAGE] Tentando proxy ${proxyIndex + 1}/${corsProxies.length}: ${corsProxies[proxyIndex]}`);
                         this.src = corsProxies[proxyIndex];
                     } else {
                         // Todos os proxies falharam
+                        console.error('[IMAGE] Todos os proxies falharam para:', imgSrc);
                         const loading = document.getElementById(`guide-loading-${index}`);
                         if (loading) {
                             loading.textContent = 'Erro ao carregar imagem';
@@ -1505,8 +1508,9 @@ function fillQuestDetailsScreen(data) {
             } else {
                 // Usar proxy CORS público para GitHub Pages
                 const corsProxies = [
-                    `https://api.allorigins.win/raw?url=${encodeURIComponent(imgSrc)}`,
                     `https://corsproxy.io/?${encodeURIComponent(imgSrc)}`,
+                    `https://api.codetabs.com/v1/proxy?quest=${encodeURIComponent(imgSrc)}`,
+                    `https://cors-anywhere.herokuapp.com/${imgSrc}`,
                     imgSrc // Fallback direto
                 ];
                 
@@ -1517,6 +1521,7 @@ function fillQuestDetailsScreen(data) {
                 img.onerror = function() {
                     if (proxyIndex < corsProxies.length - 1) {
                         proxyIndex++;
+                        console.log(`[IMAGE] Tentando proxy ${proxyIndex + 1}/${corsProxies.length}`);
                         this.src = corsProxies[proxyIndex];
                     } else {
                         // Todos os proxies falharam
@@ -1580,8 +1585,8 @@ function openImageModal(imgSrc, clickEvent) {
     if (API_BASE_URL) {
         finalSrc = `${API_BASE_URL}/api/image-proxy?url=${encodeURIComponent(imgSrc)}`;
     } else {
-        // Usar proxy CORS público para GitHub Pages
-        finalSrc = `https://api.allorigins.win/raw?url=${encodeURIComponent(imgSrc)}`;
+        // Usar proxy CORS público para GitHub Pages (tentar corsproxy.io primeiro)
+        finalSrc = `https://corsproxy.io/?${encodeURIComponent(imgSrc)}`;
     }
     
     modalImg.onload = function() {
