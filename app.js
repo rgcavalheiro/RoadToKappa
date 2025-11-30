@@ -149,6 +149,9 @@ async function loadQuestData() {
             updateNPCButtons();
             checkNPCUnlocks();
         }, 100);
+        
+        // Verificar se há busca automática pendente
+        checkAndExecuteAutoSearch();
     } catch (error) {
         console.error('Erro ao carregar dados:', error);
         console.error('Detalhes do erro:', error.message);
@@ -166,6 +169,8 @@ async function loadQuestData() {
                     checkNPCUnlocks();
                 }, 100);
                 console.log('Fallback carregado com sucesso!');
+                // Verificar se há busca automática pendente
+                checkAndExecuteAutoSearch();
                 return;
             }
         } catch (fallbackError) {
@@ -2240,48 +2245,63 @@ loadQuestDetailsCache(); // Carregar cache de detalhes das quests (localStorage)
 loadPreprocessedQuestDetails(); // Carregar detalhes pré-processados (quests-details.json)
 loadQuestData();
 
-// Verificar se há parâmetros de URL para busca automática
-(function() {
+// Função para verificar e executar busca automática (chamada após dados carregarem)
+function checkAndExecuteAutoSearch() {
     const urlParams = new URLSearchParams(window.location.search);
     const searchTerm = urlParams.get('search');
-    if (searchTerm) {
-        // Função para executar busca quando dados estiverem prontos
-        function executeAutoSearch() {
-            // Verificar se os dados foram carregados
-            if (!questsData || !questsData.npcs || Object.keys(questsData.npcs).length === 0) {
-                // Ainda não carregou, tentar novamente
-                setTimeout(executeAutoSearch, 500);
-                return;
-            }
-            
-            // Mudar para aba de busca
-            switchTab('search');
-            
-            // Preencher campo de busca
-            const searchInput = document.getElementById('questSearchInput');
-            if (searchInput) {
-                // Decodificar e normalizar o termo de busca
-                let decodedTerm = decodeURIComponent(searchTerm);
-                // Substituir underscores por espaços
-                decodedTerm = decodedTerm.replace(/_/g, ' ');
-                // Normalizar espaços e hífens
-                decodedTerm = decodedTerm.replace(/\s*-\s*/g, ' - ');
-                decodedTerm = decodedTerm.replace(/\s+/g, ' ').trim();
-                
-                searchInput.value = decodedTerm;
-                
-                // Pequeno delay para garantir que a aba mudou
-                setTimeout(() => {
-                    // Executar busca
-                    performSearch();
-                    console.log('[AUTO-SEARCH] Busca automática executada para:', decodedTerm);
-                }, 200);
-            }
-        }
-        
-        // Iniciar tentativas após um pequeno delay
-        setTimeout(executeAutoSearch, 500);
+    
+    if (!searchTerm) {
+        return; // Não há busca pendente
     }
+    
+    // Verificar se os dados foram carregados
+    if (!questsData || !questsData.npcs || Object.keys(questsData.npcs).length === 0) {
+        console.log('[AUTO-SEARCH] Dados ainda não carregados, aguardando...');
+        return; // Ainda não carregou, será chamado novamente quando carregar
+    }
+    
+    console.log('[AUTO-SEARCH] Executando busca automática para:', searchTerm);
+    
+    // Mudar para aba de busca
+    switchTab('search');
+    
+    // Preencher campo de busca
+    const searchInput = document.getElementById('questSearchInput');
+    if (searchInput) {
+        // Decodificar e normalizar o termo de busca
+        let decodedTerm = decodeURIComponent(searchTerm);
+        // Substituir underscores por espaços
+        decodedTerm = decodedTerm.replace(/_/g, ' ');
+        // Normalizar espaços e hífens
+        decodedTerm = decodedTerm.replace(/\s*-\s*/g, ' - ');
+        decodedTerm = decodedTerm.replace(/\s+/g, ' ').trim();
+        
+        searchInput.value = decodedTerm;
+        
+        // Pequeno delay para garantir que a aba mudou e o DOM está pronto
+        setTimeout(() => {
+            // Executar busca
+            performSearch();
+            console.log('[AUTO-SEARCH] Busca automática executada para:', decodedTerm);
+            
+            // Se houver apenas um resultado, selecionar automaticamente
+            setTimeout(() => {
+                const results = document.querySelectorAll('.search-result-item');
+                if (results.length === 1) {
+                    console.log('[AUTO-SEARCH] Apenas um resultado encontrado, selecionando automaticamente...');
+                    results[0].click();
+                }
+            }, 300);
+        }, 300);
+    }
+}
+
+// Verificar busca automática na inicialização (caso os dados já estejam carregados)
+(function() {
+    // Aguardar um pouco para garantir que o DOM está pronto
+    setTimeout(() => {
+        checkAndExecuteAutoSearch();
+    }, 1000);
 })();
 
 // Esconder botão de configurações se não estiver em localhost
