@@ -2260,14 +2260,22 @@ loadQuestData();
             // Preencher campo de busca
             const searchInput = document.getElementById('questSearchInput');
             if (searchInput) {
-                // Decodificar o termo de busca (pode ter underscores ou outros caracteres)
-                const decodedTerm = decodeURIComponent(searchTerm).replace(/_/g, ' ');
+                // Decodificar e normalizar o termo de busca
+                let decodedTerm = decodeURIComponent(searchTerm);
+                // Substituir underscores por espaços
+                decodedTerm = decodedTerm.replace(/_/g, ' ');
+                // Normalizar espaços e hífens
+                decodedTerm = decodedTerm.replace(/\s*-\s*/g, ' - ');
+                decodedTerm = decodedTerm.replace(/\s+/g, ' ').trim();
+                
                 searchInput.value = decodedTerm;
                 
-                // Executar busca
-                performSearch();
-                
-                console.log('[AUTO-SEARCH] Busca automática executada para:', decodedTerm);
+                // Pequeno delay para garantir que a aba mudou
+                setTimeout(() => {
+                    // Executar busca
+                    performSearch();
+                    console.log('[AUTO-SEARCH] Busca automática executada para:', decodedTerm);
+                }, 200);
             }
         }
         
