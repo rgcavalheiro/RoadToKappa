@@ -5,6 +5,9 @@ from bs4 import BeautifulSoup
 import re
 import sys
 import io
+import json
+import os
+from datetime import datetime, timedelta
 
 # Corrigir encoding no Windows
 if sys.platform == 'win32':
@@ -12,10 +15,10 @@ if sys.platform == 'win32':
     sys.stderr = io.TextIOWrapper(sys.stderr.buffer, encoding='utf-8')
 
 app = Flask(__name__)
-# Configurar CORS para permitir requisições de localhost:8000
+# Configurar CORS para permitir requisições de localhost:8000 e outras origens
 CORS(app, resources={
     r"/api/*": {
-        "origins": ["http://localhost:8000", "http://127.0.0.1:8000"],
+        "origins": ["http://localhost:8000", "http://127.0.0.1:8000", "*"],
         "methods": ["GET", "POST", "OPTIONS"],
         "allow_headers": ["Content-Type", "Accept"]
     }

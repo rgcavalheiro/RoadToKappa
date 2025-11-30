@@ -48,11 +48,12 @@ const RENDER_API_URL = 'https://roadtokappa.onrender.com';
 // Detectar URL da API automaticamente
 let API_BASE_URL;
 if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
-    // Desenvolvimento local
+    // Desenvolvimento local - tentar Flask local primeiro
     API_BASE_URL = 'http://localhost:5000';
 } else if (window.location.hostname.includes('github.io')) {
-    // GitHub Pages - usar Render se configurado, senão desabilitar API
-    API_BASE_URL = RENDER_API_URL || null;
+    // GitHub Pages - não usar API externa por padrão (usar dados pré-processados)
+    // Mas manter Render como fallback se configurado
+    API_BASE_URL = null; // Desabilitado por padrão - usar dados pré-processados
 } else {
     // Render ou outro servidor - usar a mesma origem
     API_BASE_URL = window.location.origin;
@@ -679,7 +680,10 @@ function showQuestDetailsInPanel(quest) {
 
 // ==================== SISTEMA DE CACHE DE DETALHES ====================
 
-// Carregar cache de detalhes das quests
+// Detalhes pré-processados (carregados do quests-details.json)
+let preprocessedQuestDetails = {};
+
+// Carregar cache de detalhes das quests (localStorage)
 let questDetailsCache = {};
 
 function loadQuestDetailsCache() {
@@ -737,26 +741,114 @@ function setCachedQuestDetails(wikiUrl, details) {
     saveQuestDetailsCache();
 }
 
+// Carregar detalhes pré-processados do arquivo JSON
+async function loadPreprocessedQuestDetails() {
+    try {
+        const response = await fetch('quests-details.json');
+        if (response.ok) {
+            const data = await response.json();
+            preprocessedQuestDetails = data.details || {};
+            console.log('[PREPROCESSED] Carregados', Object.keys(preprocessedQuestDetails).length, 'detalhes pré-processados');
+        } else {
+            console.warn('[PREPROCESSED] quests-details.json não encontrado (status:', response.status, '). Execute preprocess_quest_details.py para gerar.');
+            preprocessedQuestDetails = {}; // Garantir que é um objeto vazio
+        }
+    } catch (error) {
+        console.warn('[PREPROCESSED] Erro ao carregar quests-details.json:', error);
+        preprocessedQuestDetails = {}; // Garantir que é um objeto vazio mesmo em caso de erro
+    }
+}
+
+// Normalizar URL da wiki para busca
+function normalizeWikiUrl(url) {
+    if (!url || typeof url !== 'string') return null;
+    
+    try {
+        // Se não começar com http, adicionar
+        if (!url.startsWith('http://') && !url.startsWith('https://')) {
+            url = 'https://' + url;
+        }
+        
+        // Parsear e normalizar
+        const urlObj = new URL(url);
+        let path = urlObj.pathname;
+        
+        // Garantir que começa com /wiki/
+        if (!path.startsWith('/wiki/')) {
+            if (path.startsWith('wiki/')) {
+                path = '/' + path;
+            } else if (path === '/' || path === '') {
+                // URL vazia ou só domínio
+                return null;
+            } else {
+                path = '/wiki/' + path;
+            }
+        }
+        
+        // Reconstruir URL normalizada (sem query params e fragmentos)
+        return `${urlObj.protocol}//${urlObj.host}${path}`;
+    } catch (e) {
+        // Se falhar o parse, retornar URL original limpa
+        console.warn('[normalizeWikiUrl] Erro ao normalizar URL:', url, e);
+        return url ? url.split('?')[0].split('#')[0] : null;
+    }
+}
+
 // ==================== FIM DO SISTEMA DE CACHE ====================
 
 // Carregar detalhes da quest para o painel
 function loadQuestDetailsForPanel(wikiUrl, contentElement) {
-    // Primeiro, verificar se está em cache
-    const cachedDetails = getCachedQuestDetails(wikiUrl);
-    if (cachedDetails) {
-        console.log('[CACHE] Usando dados do cache');
-        displayQuestDetails(cachedDetails, contentElement);
+    if (!wikiUrl) {
+        contentElement.innerHTML = `
+            <div class="quest-details-error">
+                URL da quest não fornecida.
+            </div>
+        `;
         return;
     }
     
-    // Se não está em cache, fazer requisição à API
-    console.log('[CACHE] Dados não encontrados em cache, fazendo requisição à API');
+    // 1. PRIMEIRO: Verificar dados pré-processados (mais rápido, funciona offline)
+    try {
+        const normalizedUrl = normalizeWikiUrl(wikiUrl);
+        if (normalizedUrl && preprocessedQuestDetails && preprocessedQuestDetails[normalizedUrl]) {
+            const preprocessed = preprocessedQuestDetails[normalizedUrl];
+            // Verificar se não é um erro
+            if (preprocessed && preprocessed.name && !preprocessed.error) {
+                console.log('[PREPROCESSED] Usando dados pré-processados para:', normalizedUrl);
+                displayQuestDetails(preprocessed, contentElement);
+                return;
+            }
+        }
+    } catch (e) {
+        console.warn('[PREPROCESSED] Erro ao verificar dados pré-processados:', e);
+    }
+    
+    // 2. SEGUNDO: Verificar cache do localStorage
+    try {
+        const cachedDetails = getCachedQuestDetails(wikiUrl);
+        if (cachedDetails) {
+            console.log('[CACHE] Usando dados do cache localStorage');
+            displayQuestDetails(cachedDetails, contentElement);
+            return;
+        }
+    } catch (e) {
+        console.warn('[CACHE] Erro ao verificar cache:', e);
+    }
+    
+    // 3. TERCEIRO: Fazer requisição à API (fallback, apenas se disponível)
+    console.log('[API] Dados não encontrados localmente, tentando API...');
     
     // Verificar se a API está disponível
     if (!API_BASE_URL) {
         contentElement.innerHTML = `
             <div class="quest-details-error">
-                API não configurada. Configure a URL do Render no app.js (RENDER_API_URL) ou use o Render para hospedar o backend.
+                <p>Detalhes não encontrados localmente e API não disponível.</p>
+                <p style="margin-top: 10px; font-size: 0.9em; opacity: 0.8;">
+                    Para usar offline, execute: <code>python preprocess_quest_details.py</code>
+                </p>
+                <p style="margin-top: 10px; font-size: 0.9em; opacity: 0.8;">
+                    Ou inicie o servidor Flask local na porta 5000.
+                </p>
             </div>
         `;
         return;
@@ -1175,11 +1267,30 @@ function showQuestDetailsScreen(wikiUrl, retryCount = 0) {
     document.getElementById('objectivesSection').style.display = 'none';
     document.getElementById('guideSection').style.display = 'none';
     
-    // Verificar se a API está disponível
+    // 1. PRIMEIRO: Verificar dados pré-processados
+    const normalizedUrl = normalizeWikiUrl(wikiUrl);
+    if (normalizedUrl && preprocessedQuestDetails[normalizedUrl]) {
+        const preprocessed = preprocessedQuestDetails[normalizedUrl];
+        if (preprocessed.name && !preprocessed.error) {
+            loading.style.display = 'none';
+            fillQuestDetailsScreen(preprocessed);
+            return;
+        }
+    }
+    
+    // 2. SEGUNDO: Verificar cache do localStorage
+    const cachedDetails = getCachedQuestDetails(wikiUrl);
+    if (cachedDetails) {
+        loading.style.display = 'none';
+        fillQuestDetailsScreen(cachedDetails);
+        return;
+    }
+    
+    // 3. TERCEIRO: Fazer requisição à API (fallback)
     if (!API_BASE_URL) {
         loading.style.display = 'none';
         error.style.display = 'block';
-        error.textContent = 'API não configurada. Configure a URL do Render no app.js (RENDER_API_URL) ou use o Render para hospedar o backend.';
+        error.textContent = 'Detalhes não encontrados localmente e API não disponível.\n\nExecute python preprocess_quest_details.py para gerar os dados localmente.';
         return;
     }
     
@@ -1231,85 +1342,11 @@ function showQuestDetailsScreen(wikiUrl, retryCount = 0) {
                 return;
             }
             
+            // Salvar no cache antes de exibir
+            setCachedQuestDetails(wikiUrl, data);
+            
             // Preencher informações
-            if (data.name) {
-                document.getElementById('questDetailsName').textContent = data.name;
-            }
-            
-            if (data.npc) {
-                document.getElementById('questDetailsNPC').textContent = data.npc;
-            }
-            
-            if (data.objectives && data.objectives.length > 0) {
-                const objectivesList = document.getElementById('objectivesList');
-                data.objectives.forEach(objective => {
-                    const li = document.createElement('li');
-                    li.textContent = objective;
-                    objectivesList.appendChild(li);
-                });
-                document.getElementById('objectivesSection').style.display = 'block';
-            }
-            
-            if (data.guide_images && data.guide_images.length > 0) {
-                const guideImages = document.getElementById('guideImages');
-                
-                data.guide_images.forEach((imgSrc, index) => {
-                    const imgContainer = document.createElement('div');
-                    imgContainer.className = 'guide-image-container';
-                    
-                    // Adicionar loading state
-                    const loadingDiv = document.createElement('div');
-                    loadingDiv.style.cssText = 'text-align:center;padding:20px;color:#7f8c8d;';
-                    loadingDiv.textContent = 'Carregando imagem...';
-                    loadingDiv.id = `guide-loading-${index}`;
-                    imgContainer.appendChild(loadingDiv);
-                    
-                    const img = document.createElement('img');
-                    img.alt = `Guia da quest - Imagem ${index + 1}`;
-                    img.className = 'guide-image';
-                    img.style.display = 'none';
-                    
-                    img.onload = function() {
-                        const loading = document.getElementById(`guide-loading-${index}`);
-                        if (loading) {
-                            loading.remove();
-                        }
-                        img.style.display = 'block';
-                        img.style.cursor = 'pointer';
-                        
-                        // Adicionar evento de clique para abrir modal de zoom
-                        img.addEventListener('click', function(e) {
-                            e.stopPropagation();
-                            openImageModal(imgSrc, e);
-                        });
-                        
-                        imgContainer.appendChild(img);
-                    };
-                    
-                    img.onerror = function() {
-                        console.error('Erro ao carregar imagem:', imgSrc);
-                        const loading = document.getElementById(`guide-loading-${index}`);
-                        if (loading) {
-                            loading.textContent = 'Erro ao carregar';
-                            loading.style.color = '#e74c3c';
-                        }
-                    };
-                    
-                    // Usar proxy para evitar problemas de CORS (se API disponível)
-                    if (API_BASE_URL) {
-                        const proxyUrl = `${API_BASE_URL}/api/image-proxy?url=${encodeURIComponent(imgSrc)}`;
-                        img.src = proxyUrl;
-                    } else {
-                        // Tentar carregar diretamente (pode falhar por CORS)
-                        img.src = imgSrc;
-                    }
-                    
-                    guideImages.appendChild(imgContainer);
-                });
-                document.getElementById('guideSection').style.display = 'block';
-            }
-            
-            content.style.display = 'block';
+            fillQuestDetailsScreen(data);
         })
         .catch(err => {
             clearTimeout(timeoutId);
@@ -1343,9 +1380,9 @@ function showQuestDetailsScreen(wikiUrl, retryCount = 0) {
             let errorMessage = 'Erro ao carregar informações da quest. ';
             
             if (err.name === 'AbortError') {
-                errorMessage += 'Timeout: O servidor Render pode estar "dormindo" (cold start). Aguarde alguns segundos e tente novamente clicando em "Ver Detalhes".';
+                errorMessage += 'Timeout: O servidor pode estar lento ou indisponível.';
             } else if (err.message.includes('Failed to fetch') || err.message.includes('NetworkError') || err.message.includes('Network request failed')) {
-                errorMessage += `Não foi possível conectar com o servidor Render (${API_BASE_URL}). O servidor pode estar iniciando. Aguarde 30-60 segundos e tente novamente.`;
+                errorMessage += `Não foi possível conectar com o servidor (${API_BASE_URL}).`;
             } else if (err.message.includes('HTTP')) {
                 errorMessage += err.message;
             } else {
@@ -1354,9 +1391,101 @@ function showQuestDetailsScreen(wikiUrl, retryCount = 0) {
             
             error.textContent = errorMessage;
             console.error('Erro ao carregar quest:', err);
-            console.error('URL tentada:', `${API_BASE_URL}/api/quest/${questUrl}`);
-            console.error('API_BASE_URL:', API_BASE_URL);
         });
+}
+
+// Função auxiliar para preencher a tela de detalhes
+function fillQuestDetailsScreen(data) {
+    if (data.error) {
+        const error = document.getElementById('questDetailsError');
+        error.style.display = 'block';
+        error.textContent = 'Erro ao carregar informações: ' + data.error;
+        return;
+    }
+    
+    const content = document.getElementById('questDetailsContent');
+    
+    // Preencher informações
+    if (data.name) {
+        document.getElementById('questDetailsName').textContent = data.name;
+    }
+    
+    if (data.npc) {
+        document.getElementById('questDetailsNPC').textContent = data.npc;
+    }
+    
+    if (data.objectives && data.objectives.length > 0) {
+        const objectivesList = document.getElementById('objectivesList');
+        objectivesList.innerHTML = ''; // Limpar antes
+        data.objectives.forEach(objective => {
+            const li = document.createElement('li');
+            li.textContent = objective;
+            objectivesList.appendChild(li);
+        });
+        document.getElementById('objectivesSection').style.display = 'block';
+    }
+    
+    if (data.guide_images && data.guide_images.length > 0) {
+        const guideImages = document.getElementById('guideImages');
+        guideImages.innerHTML = ''; // Limpar antes
+        
+        data.guide_images.forEach((imgSrc, index) => {
+            const imgContainer = document.createElement('div');
+            imgContainer.className = 'guide-image-container';
+            
+            // Adicionar loading state
+            const loadingDiv = document.createElement('div');
+            loadingDiv.style.cssText = 'text-align:center;padding:20px;color:#7f8c8d;';
+            loadingDiv.textContent = 'Carregando imagem...';
+            loadingDiv.id = `guide-loading-${index}`;
+            imgContainer.appendChild(loadingDiv);
+            
+            const img = document.createElement('img');
+            img.alt = `Guia da quest - Imagem ${index + 1}`;
+            img.className = 'guide-image';
+            img.style.display = 'none';
+            
+            img.onload = function() {
+                const loading = document.getElementById(`guide-loading-${index}`);
+                if (loading) {
+                    loading.remove();
+                }
+                img.style.display = 'block';
+                img.style.cursor = 'pointer';
+                
+                // Adicionar evento de clique para abrir modal de zoom
+                img.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    openImageModal(imgSrc, e);
+                });
+                
+                imgContainer.appendChild(img);
+            };
+            
+            img.onerror = function() {
+                console.error('Erro ao carregar imagem:', imgSrc);
+                const loading = document.getElementById(`guide-loading-${index}`);
+                if (loading) {
+                    loading.textContent = 'Erro ao carregar';
+                    loading.style.color = '#e74c3c';
+                }
+            };
+            
+            // Usar proxy para evitar problemas de CORS (se API disponível)
+            if (API_BASE_URL) {
+                const proxyUrl = `${API_BASE_URL}/api/image-proxy?url=${encodeURIComponent(imgSrc)}`;
+                img.src = proxyUrl;
+            } else {
+                // Tentar carregar diretamente (pode falhar por CORS)
+                img.src = imgSrc;
+            }
+            
+            guideImages.appendChild(imgContainer);
+        });
+        document.getElementById('guideSection').style.display = 'block';
+    }
+    
+    content.style.display = 'block';
 }
 
 
@@ -2048,7 +2177,8 @@ function clearSearchDetails() {
 
 // Inicializar aplicação
 loadProgress();
-loadQuestDetailsCache(); // Carregar cache de detalhes das quests
+loadQuestDetailsCache(); // Carregar cache de detalhes das quests (localStorage)
+loadPreprocessedQuestDetails(); // Carregar detalhes pré-processados (quests-details.json)
 loadQuestData();
 
 // Esconder botão de configurações se não estiver em localhost
