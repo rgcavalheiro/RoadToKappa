@@ -1488,19 +1488,20 @@ function fillQuestDetailsScreen(data) {
                 imgContainer.appendChild(img);
             };
             
-            img.onerror = function() {
-                console.error('Erro ao carregar imagem:', imgSrc);
-                const loading = document.getElementById(`guide-loading-${index}`);
-                if (loading) {
-                    loading.textContent = 'Erro ao carregar';
-                    loading.style.color = '#e74c3c';
-                }
-            };
-            
             // Usar proxy para evitar problemas de CORS (se API disponível)
             if (API_BASE_URL) {
                 const proxyUrl = `${API_BASE_URL}/api/image-proxy?url=${encodeURIComponent(imgSrc)}`;
                 img.src = proxyUrl;
+                
+                // Handler de erro para API
+                img.onerror = function() {
+                    console.error('Erro ao carregar imagem:', imgSrc);
+                    const loading = document.getElementById(`guide-loading-${index}`);
+                    if (loading) {
+                        loading.textContent = 'Erro ao carregar';
+                        loading.style.color = '#e74c3c';
+                    }
+                };
             } else {
                 // Usar proxy CORS público para GitHub Pages
                 const corsProxies = [
@@ -1513,13 +1514,18 @@ function fillQuestDetailsScreen(data) {
                 img.src = corsProxies[proxyIndex];
                 
                 // Se falhar, tentar próximo proxy
-                const originalOnError = img.onerror;
                 img.onerror = function() {
                     if (proxyIndex < corsProxies.length - 1) {
                         proxyIndex++;
                         this.src = corsProxies[proxyIndex];
-                    } else if (originalOnError) {
-                        originalOnError.call(this);
+                    } else {
+                        // Todos os proxies falharam
+                        console.error('Erro ao carregar imagem:', imgSrc);
+                        const loading = document.getElementById(`guide-loading-${index}`);
+                        if (loading) {
+                            loading.textContent = 'Erro ao carregar';
+                            loading.style.color = '#e74c3c';
+                        }
                     }
                 };
             }
