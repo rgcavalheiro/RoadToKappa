@@ -2240,6 +2240,42 @@ loadQuestDetailsCache(); // Carregar cache de detalhes das quests (localStorage)
 loadPreprocessedQuestDetails(); // Carregar detalhes pré-processados (quests-details.json)
 loadQuestData();
 
+// Verificar se há parâmetros de URL para busca automática
+(function() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const searchTerm = urlParams.get('search');
+    if (searchTerm) {
+        // Função para executar busca quando dados estiverem prontos
+        function executeAutoSearch() {
+            // Verificar se os dados foram carregados
+            if (!questsData || !questsData.npcs || Object.keys(questsData.npcs).length === 0) {
+                // Ainda não carregou, tentar novamente
+                setTimeout(executeAutoSearch, 500);
+                return;
+            }
+            
+            // Mudar para aba de busca
+            switchTab('search');
+            
+            // Preencher campo de busca
+            const searchInput = document.getElementById('questSearchInput');
+            if (searchInput) {
+                // Decodificar o termo de busca (pode ter underscores ou outros caracteres)
+                const decodedTerm = decodeURIComponent(searchTerm).replace(/_/g, ' ');
+                searchInput.value = decodedTerm;
+                
+                // Executar busca
+                performSearch();
+                
+                console.log('[AUTO-SEARCH] Busca automática executada para:', decodedTerm);
+            }
+        }
+        
+        // Iniciar tentativas após um pequeno delay
+        setTimeout(executeAutoSearch, 500);
+    }
+})();
+
 // Esconder botão de configurações se não estiver em localhost
 (function() {
     const isLocalhost = window.location.hostname === 'localhost' || 

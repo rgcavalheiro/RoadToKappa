@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste Extensão RoadToKappa</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #1a1a1a;
+            color: #fff;
+        }
+        h1 {
+            color: #3498db;
+        }
+        .test-link {
+            display: block;
+            padding: 15px;
+            margin: 10px 0;
+            background: #2c3e50;
+            border-radius: 5px;
+            text-decoration: none;
+            color: #3498db;
+            border: 2px solid #3498db;
+            transition: all 0.3s;
+        }
+        .test-link:hover {
+            background: #3498db;
+            color: #fff;
+        }
+        .info {
+            background: #27ae60;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+        .warning {
+            background: #e67e22;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>🧪 Teste da Extensão RoadToKappa</h1>
+    
+    <div class="info">
+        <strong>✅ Instruções:</strong><br>
+        1. Certifique-se de que a extensão está instalada no Chrome<br>
+        2. Clique nos links abaixo<br>
+        3. Deve redirecionar para o GitHub Pages com busca automática
+    </div>
+    
+    <div class="warning">
+        <strong>⚠️ Importante:</strong><br>
+        Se os links abrirem a wiki normalmente, a extensão não está funcionando.<br>
+        Verifique se está instalada corretamente em <code>chrome://extensions/</code>
+    </div>
+    
+    <h2>Links de Teste:</h2>
+    
+    <a href="https://escapefromtarkov.fandom.com/wiki/Introduction" class="test-link">
+        🔗 Introduction (deve redirecionar)
+    </a>
+    
+    <a href="https://escapefromtarkov.fandom.com/wiki/Shooting_Cans" class="test-link">
+        🔗 Shooting Cans (deve redirecionar)
+    </a>
+    
+    <a href="https://escapefromtarkov.fandom.com/wiki/Debut" class="test-link">
+        🔗 Debut (deve redirecionar)
+    </a>
+    
+    <a href="https://escapefromtarkov.fandom.com/wiki/The_Punisher_-_Part_1" class="test-link">
+        🔗 The Punisher - Part 1 (deve redirecionar)
+    </a>
+    
+    <a href="https://escapefromtarkov.fandom.com/wiki/Peacekeeping_Mission" class="test-link">
+        🔗 Peacekeeping Mission (deve redirecionar)
+    </a>
+    
+    <h2>Como Verificar:</h2>
+    <ol>
+        <li>Abra o DevTools (F12)</li>
+        <li>Vá para a aba "Console"</li>
+        <li>Clique em um link acima</li>
+        <li>Você deve ver mensagens como:
+            <ul>
+                <li><code>[RoadToKappa] Link interceptado: ...</code></li>
+                <li><code>[RoadToKappa] Quest: ...</code></li>
+                <li><code>[RoadToKappa] Redirecionando para: ...</code></li>
+            </ul>
+        </li>
+        <li>A página deve redirecionar para o GitHub Pages</li>
+        <li>A aba de busca deve abrir automaticamente com a quest pesquisada</li>
+    </ol>
+</body>
+</html>
+
