@@ -56,17 +56,16 @@
             const questName = extractQuestNameFromWikiUrl(href);
             
             if (questName) {
-                // Redirecionar para o GitHub Pages com busca automática
-                // A aplicação vai abrir a aba de busca e pesquisar pela quest
+                // Abrir GitHub Pages em nova aba com busca automática
                 const searchUrl = `${GITHUB_PAGES_URL}?search=${encodeURIComponent(questName)}`;
-                window.location.href = searchUrl;
+                window.open(searchUrl, '_blank');
                 
                 console.log('[RoadToKappa] Link interceptado:', href);
                 console.log('[RoadToKappa] Quest:', questName);
-                console.log('[RoadToKappa] Redirecionando para:', searchUrl);
+                console.log('[RoadToKappa] Abrindo em nova aba:', searchUrl);
             } else {
-                // Se não conseguir extrair o nome, apenas redireciona para a página principal
-                window.location.href = GITHUB_PAGES_URL;
+                // Se não conseguir extrair o nome, apenas abre a página principal em nova aba
+                window.open(GITHUB_PAGES_URL, '_blank');
             }
             
             return false;
@@ -82,7 +81,8 @@
                 ? `${GITHUB_PAGES_URL}?search=${encodeURIComponent(questName)}`
                 : GITHUB_PAGES_URL;
             console.log('[RoadToKappa] window.open interceptado:', url);
-            return originalOpen.call(this, redirectUrl, target, features);
+            // Sempre abrir em nova aba (_blank)
+            return originalOpen.call(this, redirectUrl, '_blank', features);
         }
         return originalOpen.apply(this, arguments);
     };
